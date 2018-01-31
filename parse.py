@@ -1,3 +1,6 @@
+#Push data from file to pymongo db
+#Author: Yashar Asgari
+
 import csv, json, pymongo
 from pymongo import MongoClient
 
