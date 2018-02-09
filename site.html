@@ -6,8 +6,12 @@
 <head>
     <meta charset="utf-8">
     <title> Sancar Lab DB </title>
-
+    
     <script src="jquery-3.2.1.js"></script>
+    <link rel="stylesheet" href="ui/jquery-ui.min.css">
+    <link rel = "stylesheet" href = "style.css">
+    <script src="ui/external/jquery/jquery.js"></script>
+    <script src="ui/jquery-ui.min.js"></script>
     <script src = "script.js"></script>
     <script src="https://s3.amazonaws.com/stitch-sdks/js/library/v3/stable/stitch.min.js"></script>
 
@@ -15,18 +19,24 @@
 <body>
     <!-- more organisms to be added -->
 <div id = "querySelectors">
+    <div id = "nameSelector">
+       <b> Search by Organism and Gene Name </b><br>
     Organism: <select id = 'chooseOrg'> 
         <option value = 'mouse'> Mouse </option> 
         <option value = 'human'> Human </option>
     </select> 
-    Gene: <input type = 'text' id = 'gene'> <br>
-
-    <div id = 'chrSelector'>
+    Gene: <input type = 'text' id = 'gene' placeholder="Gene name"> 
+    <button id = "submitName"> Search </button>
     </div>
-    Start: <input type = 'number' id = 'startChr'> 
-    End: <input type = 'number' id = 'endChr'>
-    <button id = 'submit'>Submit</button>
-    
+<br>
+    <b>Search by Chromosome Placement</b> <br>
+    <div id = 'chrSelector'>
+            <div id = 'chrDropDiv'> </div>
+    </div>
+    * Start: <input type = 'number' id = 'startChr' placeholder="Start position"> 
+    * End: <input type = 'number' id = 'endChr' placeholder="End position">
+    <button id = 'submitChr'>Submit</button>
+    <br><br><br>* denotes required fields
     <br><br>
 </div>
 <div id = 'results'> Results from query will display here </div>
