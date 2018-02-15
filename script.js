@@ -20,10 +20,12 @@ jQuery(document).ready(function(){
     var endSelected = false;
     var inputStartChr;
     var inputEndChr;
-    let client;
-    let db;
+    var client;
+    var db;
     var returned;
     var geneInputName;
+    var queryArray = [];
+    var queryArray2 = [];
     
     //page loads this by default, can change later
     orgDict.organism = 'mouse'
@@ -38,18 +40,30 @@ jQuery(document).ready(function(){
             return client.login().then(queryChr(arg1))
         });
     }
+    var last_id1 = null;
     function queryChr(arg1){
         
-        arg1.push(orgDict)
         arg1 = arg1.length > 0 ? { $and: arg1 } : {};
         
-        db.collection('gene').find(arg1).limit(10).execute().then(docs => {
-            var html = createDynamicTable(docs)
-               document.getElementById("results").innerHTML = html; 
-               console.log(docs)
-               returned = docs;
-        
-        });
+
+        if(last_id1 === null){
+            db.collection('gene').find(arg1).limit(10).execute().then(docs => {
+                var html;
+                
+                html = createDynamicTable(docs)  
+                document.getElementById("results").innerHTML = html; 
+                last_id1 = docs[docs.length-1]['_id'] 
+                
+            });
+        }else{
+            db.collection('gene').find({"$and":[{'_id':{"$gt":last_id1}},arg1]}).limit(10).execute().then(docs => {
+                var html;
+                html = createDynamicTable(docs)  
+                document.getElementById("results").innerHTML = html; 
+                last_id1 = docs[docs.length-1]['_id'] 
+                
+            });
+        }
     }
 
 
@@ -63,40 +77,56 @@ jQuery(document).ready(function(){
         });
     }
     var nameInput;
+    var last_id2 = null;
     function queryName(arg2){
         
         nameInput = geneInputName; //working        
-        arg2.push(orgDict)
         arg2 = arg2.length > 0 ? { $and: arg2 } : {};
-        console.log('arg2 begin = ' + JSON.stringify(arg2)) //working
         
-        db.collection('gene').find(arg2).limit(10).execute().then(docs2 => {
-            var html;
-            
-            // //if no results are found,  regex search
-            // if(docs2.length === 0){
-            //     var inputString = '^' + nameInput
-            //     //var rgx = new RegExp(inputString, "i") //do toString() in query to show up in console
+
+        if(last_id2 === null){
+            db.collection('gene').find(arg2).limit(1).execute().then(docs2 => {
+                var html;
                 
-            //     var arg3 = {"$and":[{"name":{"$regex": inputString, "$options":"i"}}, {"organism": selectedOrganism}]}
-            //     console.log('arg3 in if = ' + JSON.stringify(arg3))
-            //     db.collection('gene').find(arg3).limit(10).execute().then(docs3=>{
-            //         html = createDynamicTable(docs3)
-            //         //html = docs3.map(c => "<div> <pre>" + JSON.stringify(c, null, 4) + "</pre></div> <br>").join("");
-            //     })
-            // }else{
-            //     //console.log('docs2'  + JSON.parse(docs2[0]))
+                html = createDynamicTable(docs2)  
+                document.getElementById("results").innerHTML = html; 
+                last_id2 = docs2[docs2.length-1]['_id'] 
                 
-            //     console.log("returned = " + JSON.stringify(docs2))
-            //     //html = docs2.map(c => "<div> <pre>" + JSON.stringify(c, null, 4) + "</pre></div> <br>").join("");
-            //     html = createDynamicTable(docs2)
                 
-            // } 
-            html = createDynamicTable(docs2)  
-            document.getElementById("results").innerHTML = html;             
-        });
+            });
+        }else{
+            db.collection('gene').find({"$and":[{'_id':{"$gt":last_id2}},arg2]}).limit(1).execute().then(docs2 => {
+                var html;
+    
+                html = createDynamicTable(docs2)  
+                document.getElementById("results").innerHTML = html; 
+                last_id2 = docs2[docs2.length-1]['_id'] 
+                
+                
+            });
+        }
+
     }
 
+
+    //pagination event handlers (next&prev buttons)
+    $('#next').click(function(){
+        if(queryArray2.length === 0){
+            queryResultsChr(queryArray)
+        }else if(queryArray.length === 0){
+            queryResultsName(queryArray2)
+        }
+        
+    })
+
+
+    $('#prev').click(function(){
+        if(queryArray2.length === 0){
+            queryResultsChr(queryArray)
+        }else if (queryArray.length === 0){
+            queryResultsName(queryArray2)
+        }
+    })
 
 
     //autocomplete tryout
@@ -169,6 +199,8 @@ jQuery(document).ready(function(){
                 orgDict.organism = 'human'
                 buildChrDropdown(24)
         }
+        last_id1 = null;
+        last_id2 = null;
     })
 
 
@@ -180,6 +212,7 @@ jQuery(document).ready(function(){
             //$('#startChr').css("background-color", "")
             $('#startChr').removeClass('ui-state-error ui-corner-all');
         }
+        last_id1 = null
     })
 
     $('#endChr').change(function(){
@@ -188,8 +221,8 @@ jQuery(document).ready(function(){
             console.log('inputEndChr changed')
             //$('#endChr').css("background-color", "")
             $('#endChr').removeClass('ui-state-error ui-corner-all');
-            
         }
+        last_id1 = null;
     })
 
     $('#chrDropdown').change(function(){
@@ -197,6 +230,7 @@ jQuery(document).ready(function(){
             //$('#chrDropDiv').css("color", "")
             $('#chrDropdown').removeClass('ui-state-error ui-corner-all');
         }
+        last_id1 = null;
     })
 
     $('#gene').change(function(){
@@ -204,6 +238,7 @@ jQuery(document).ready(function(){
             //$('#gene').css("background-color", "")
             $('#gene').removeClass('ui-state-error ui-corner-all');
         }
+        last_id2 = null;
     })
 
 
@@ -216,6 +251,7 @@ jQuery(document).ready(function(){
         console.log("endChr val = " + $('#endChr').val())
         
         //change of gif loading
+        document.getElementById('results').innerHTML = "<img src = 'loading.gif' alt = 'Loading...'>"
         
         if($('#chrDropdown').val() === '-'){
             //change div color to show where to select
@@ -230,10 +266,11 @@ jQuery(document).ready(function(){
         }
 
         if($('#startChr').val().length != 0 && $('#endChr').val().length != 0){
-            
-            queryArray.push({"start":{"$gte": inputStartChr, "$lte": inputEndChr}})
-            queryArray.push({"end":{"$gte":inputStartChr, "$lte": inputEndChr}})
-            queryResultsChr(queryArray);
+            if($('#chrDropdown').val() != '-'){
+                queryArray.push({"$and":[{"start":{"$gte": inputStartChr}},{"end":{"$lte": inputEndChr}}]})
+                queryArray.push(orgDict)
+                queryResultsChr(queryArray);
+            }
         }else{
             //change div color to show to select both start and end
             console.log('input start and end')
@@ -246,6 +283,7 @@ jQuery(document).ready(function(){
                 $('#endChr').addClass('ui-state-error ui-corner-all');
             }
         }
+       queryArray2 = [];
         
     })
 
@@ -256,14 +294,19 @@ jQuery(document).ready(function(){
         if($('#gene').val().length != 0){
             console.log('gene field has input')
             geneInputName = document.getElementById('gene').value;
-            queryArray2.push({'name':document.getElementById('gene').value})   //exact search
+            queryArray2.push({'name':document.getElementById('gene').value})
+            queryArray2.push(orgDict)
+
             queryResultsName(queryArray2);
         }else{
             console.log('enter gene name') //add div color change here
             //$('#gene').css('background-color', "yellow")
             $('#gene').addClass('ui-state-error ui-corner-all');
         } 
+        queryArray = [];
+     
     })
+
 
     function createDynamicTable(objArray) {
         var array = objArray;
@@ -285,6 +328,6 @@ jQuery(document).ready(function(){
         str += '</tbody>'
         str += '</table>';
         return str;
-        }
+    }
     
 })
