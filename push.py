@@ -4,7 +4,7 @@
 import csv, json, pymongo
 from pymongo import MongoClient
 
-txtfile = open('small.txt', 'r') #txt file with subset of sample data
+txtfile = open('sample.txt', 'r') #txt file with subset of sample data
 
 reader = csv.DictReader(txtfile, delimiter = '\t')
 
@@ -14,7 +14,7 @@ collection = db['gene']
 
 for row in reader:
     data = dict(row)
-    data['organism'] = 'human'
+    data['organism'] = 'mouse'
     collection.insert(json.loads(json.dumps(data)))
 
 connection.close()
