@@ -16,9 +16,19 @@ for row in reader:
     data = dict(row) #convert from OrderedDict to dict object
     data['organism'] = 'mouse'
     geneName = data['name']
-    
+
 
     cursor = collection.find({'$and':[{"organism":"mouse"}, {"name": geneName}]})
+    
+    if(cursor.count() == 0):
+        
+        iterData = dict.copy(data)
+        for key in iterData.keys():
+            if(iterData[key] is None):
+                data.pop(key,None)
+
+        collection.insert(data)
+
     for oldDoc in cursor: 
             for key in data.keys():
         
