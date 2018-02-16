@@ -19,15 +19,17 @@ for row in reader:
 
 
     cursor = collection.find({'$and':[{"organism":"mouse"}, {"name": geneName}]})
-    #if the cursor doesn't return any docs
+
     if(cursor.count() == 0):
         
         iterData = dict.copy(data)
         for key in iterData.keys():
             if(iterData[key] is None):
-                data.pop(key,None) #get rid of null fields
+                data.pop(key,None)
 
         collection.insert(data)
+    elif(cursor.count() > 1): #there should only be 1 document for each organism/gene pair
+        raise ValueError("Duplicate document found. More than one found for Gene " + geneName)
 
     for oldDoc in cursor: 
             for key in data.keys():
