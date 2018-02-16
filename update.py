@@ -19,13 +19,13 @@ for row in reader:
 
 
     cursor = collection.find({'$and':[{"organism":"mouse"}, {"name": geneName}]})
-    
+    #if the cursor doesn't return any docs
     if(cursor.count() == 0):
         
         iterData = dict.copy(data)
         for key in iterData.keys():
             if(iterData[key] is None):
-                data.pop(key,None)
+                data.pop(key,None) #get rid of null fields
 
         collection.insert(data)
 
