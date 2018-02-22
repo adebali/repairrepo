@@ -7,9 +7,9 @@ from pymongo import MongoClient
 parser = argparse.ArgumentParser(description = 'argparse for organism type')
 parser.add_argument('organism')
 args = parser.parse_args()
-print('here is the arg: ' + args.organism)
 
-#txtfile = open('testUpsert.txt', 'r') #txt file with subset of sample data
+
+txtfile = open('testUpsert.txt', 'r') #txt file with subset of sample data
 
 reader = csv.DictReader(txtfile, delimiter = '\t')
 
@@ -34,7 +34,7 @@ for row in reader:
             if(iterData[key] is None):
                 data.pop(key,None)
 
-        #collection.insert(data)
+        collection.insert(data)
     elif(cursor.count() > 1): #there should only be 1 document for each organism/gene pair
         raise ValueError("Duplicate document found. More than one found for Gene " + geneName + " for " + args.organism)
 
@@ -46,8 +46,9 @@ for row in reader:
                 if(data[key] is None):
                     oldDoc.pop(key, None) #get rid of null fields
                 else:
+                    print('')
                     #update using document's unique ID
-                    #collection.update({"_id": uqId}, {"$set":{key:oldDoc[key]}})    
+                    collection.update({"_id": uqId}, {"$set":{key:oldDoc[key]}})    
 
 
 connection.close()
