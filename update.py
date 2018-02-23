@@ -27,7 +27,7 @@ for row in reader:
 
     cursor = collection.find({'$and':[{"organism":args.organism}, {"name": geneName}]})
 
-    if(cursor.count() == 0):
+    if(cursor.count() == 0): #insert entry if doesn't exist in db
         
         iterData = dict.copy(data)
         for key in iterData.keys():
@@ -46,7 +46,6 @@ for row in reader:
                 if(data[key] is None):
                     oldDoc.pop(key, None) #get rid of null fields
                 else:
-                    print('')
                     #update using document's unique ID
                     collection.update({"_id": uqId}, {"$set":{key:oldDoc[key]}})    
 
