@@ -32,16 +32,16 @@ jQuery(document).ready(function(){
 
 
     //sets up server connection and chromosome placement query method
-    function queryResultsChr(arg1){
+    function queryResultsChr(arg1, prev){
         clientPromise.then(stitchClient =>{
             client = stitchClient;
             db = client.service('mongodb', 'mongodb-atlas').db('data');
           
-            return client.login().then(queryChr(arg1))
+            return client.login().then(queryChr(arg1, prev))
         });
     }
     var last_id1 = null;
-    function queryChr(arg1){
+    function queryChr(arg1, prev){
         
         arg1 = arg1.length > 0 ? { $and: arg1 } : {};
         
@@ -55,13 +55,20 @@ jQuery(document).ready(function(){
                 last_id1 = docs[docs.length-1]['_id'] 
                 
             });
-        }else{
+        }else if(!prev){
             db.collection('gene').find({"$and":[{'_id':{"$gt":last_id1}},arg1]}).limit(10).execute().then(docs => {
                 var html;
                 html = createDynamicTable(docs)  
                 document.getElementById("results").innerHTML = html; 
                 last_id1 = docs[docs.length-1]['_id'] 
                 
+            });
+        }else if(prev){
+            db.collection('gene').find({"$and":[{'_id':{"$lt":last_id1}},arg1]}).limit(10).execute().then(docs => {
+                var html;
+                html = createDynamicTable(docs)  
+                document.getElementById("results").innerHTML = html; 
+                last_id1 = docs[docs.length-1]['_id']
             });
         }
     }
@@ -112,9 +119,9 @@ jQuery(document).ready(function(){
     //pagination event handlers (next&prev buttons)
     $('#next').click(function(){
         if(queryArray2.length === 0){
-            queryResultsChr(queryArray)
+            queryResultsChr(queryArray, false)
         }else if(queryArray.length === 0){
-            queryResultsName(queryArray2)
+            queryResultsName(queryArray2, false)
         }
         
     })
@@ -122,9 +129,9 @@ jQuery(document).ready(function(){
 
     $('#prev').click(function(){
         if(queryArray2.length === 0){
-            queryResultsChr(queryArray)
+            queryResultsChr(queryArray, true)
         }else if (queryArray.length === 0){
-            queryResultsName(queryArray2)
+            queryResultsName(queryArray2, true)
         }
     })
 
