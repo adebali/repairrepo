@@ -74,7 +74,7 @@ jQuery(document).ready(function(){
     }
 
 
-    //helper functions for name query
+    //helper functions for name query TODO--- do we need pagination for name query?
     function queryResultsName(arg2){
         clientPromise.then(stitchClient =>{
             client = stitchClient;
@@ -258,7 +258,7 @@ jQuery(document).ready(function(){
         console.log("endChr val = " + $('#endChr').val())
         
         //change of gif loading
-        document.getElementById('results').innerHTML = "<img src = 'loading.gif' alt = 'Loading...'>"
+        document.getElementById('results').append("<img src = 'loading.gif' alt = 'Loading...'>")
         
         if($('#chrDropdown').val() === '-'){
             //change div color to show where to select
@@ -307,7 +307,7 @@ jQuery(document).ready(function(){
             queryResultsName(queryArray2);
         }else{
             console.log('enter gene name') //add div color change here
-            //$('#gene').css('background-color', "yellow")
+            
             $('#gene').addClass('ui-state-error ui-corner-all');
         } 
         queryArray = [];
@@ -317,24 +317,64 @@ jQuery(document).ready(function(){
 
     function createDynamicTable(objArray) {
         var array = objArray;
-    
+        
         var str = '<table class="lightPro">';
         str += '<tr>';
         for (var index in array[0]) {
             str += '<th scope="col">' + index + '</th>';
         }
+        
         str += '</tr>';
-        str += '<tbody>';
+        str += "<tbody id = 'plot'> </tbody>"
+        str += "<tbody>";
         for (var i = 0; i < array.length; i++) {
-            str += (i % 2 == 0) ? '<tr class="alt">' : '<tr>';
+            str += "<tr id = 'dataRow_" + i +"'> ";
+        
             for (var index in array[i]) {
                 str += '<td>' + array[i][index] + '</td>';
+                
             }
+            $(document).on("click", "#dataRow_"  + i, function(){
+                var columnNames = [];
+                var data = [];
+                var arrayIndex = this.id.slice(-1)
+                console.log(array[arrayIndex]) //dict of whole row
+                //get column names
+                for (var index in array[0]) {
+                    columnNames.push(index)
+                }
+                //get corresponding data
+                for (var i = 0; i < array.length; i++) {              
+                    for (var index in array[i]) {
+                        data.push(array[i][index])
+                    }
+                }
+                console.log('data' +data)
+                var graphData = [{x:columnNames, y:data, type:'bar'}];
+                var layout = {
+                    autosize: false,
+                    width: 500,
+                    height: 500,
+                    margin: {
+                      l: 50,
+                      r: 50,
+                      b: 100,
+                      t: 100,
+                      pad: 4
+                    }
+                  };
+                Plotly.newPlot('plots', graphData,layout)
+                
+            })
+
             str += '</tr>';
         }
         str += '</tbody>'
         str += '</table>';
         return str;
+
     }
+    
+
     
 })
