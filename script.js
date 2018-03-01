@@ -157,7 +157,7 @@ jQuery(document).ready(function(){
             names = docs;
             
             for(var i in names){
-                //console.log(names[i]["name"])
+                
                 namesList.push(names[i]["name"])
             }
             console.log('names list for autocomplete ready.')
@@ -180,6 +180,7 @@ jQuery(document).ready(function(){
 
     function buildChrDropdown(numChr){
     //setting up dropdown for chromosomes- changes depending on organism selected
+        console.log('building dropdown' + numChr)
         var select = "* <b>Chromosome: </b><select id = 'chrDropdown' >";
         for (i=0;i<=numChr-2;i++){
             if(i == 0){
@@ -197,7 +198,7 @@ jQuery(document).ready(function(){
 
     //adjusts query for user changes in organism dropdown, need to add other organisms
     $('#chooseOrg').change(function(){
-        console.log('chooseOrg selected')
+        console.log($('#chooseOrg').val() + ' was selected')
         switch($('#chooseOrg').val()){
             case 'mouse':
                 orgDict.organism = 'mouse'
@@ -258,7 +259,7 @@ jQuery(document).ready(function(){
         console.log("endChr val = " + $('#endChr').val())
         
         //change of gif loading
-        document.getElementById('results').append("<img src = 'loading.gif' alt = 'Loading...'>")
+        $('#results').html("<img src = 'loading.gif' alt = 'Loading...'>")
         
         if($('#chrDropdown').val() === '-'){
             //change div color to show where to select
@@ -317,6 +318,7 @@ jQuery(document).ready(function(){
 
     function createDynamicTable(objArray) {
         var array = objArray;
+       
         
         var str = '<table class="lightPro">';
         str += '<tr>';
@@ -335,24 +337,53 @@ jQuery(document).ready(function(){
                 
             }
             $(document).on("click", "#dataRow_"  + i, function(){
+                //add radio buttons for user to choose graph type
+                $('#plots').html("Choose Graph Type:  <label class='container'>Bar<input class = 'graphSelect' name = 'graphSelect' type='radio' value = 'Bar'><span class='checkmark'></span></label><label class='container'>Line<input class = 'graphSelect' name = 'graphSelect' type='radio' value = 'Line'><span class='checkmark'></span></label>");
+                $(document).on('change', '.graphSelect', function(){
+                    if($('.graphSelect:checked').val() == 'Bar'){
+                        graphData = [{x:columnNames, y:data, type:'bar'}];
+                        Plotly.newPlot('plots', graphData,layout)
+                        
+                    }else if($('.graphSelect:checked').val() == 'Line'){
+                        graphData = [{x:columnNames, y:data, type:'scatter'}];
+                        Plotly.newPlot('plots', graphData,layout)
+                        
+                    }
+                })
                 var columnNames = [];
                 var data = [];
                 var arrayIndex = this.id.slice(-1)
-                console.log(array[arrayIndex]) //dict of whole row
-                //get column names
+                
+                //get column names, skip first 8 columns
+                var count = 0;
                 for (var index in array[0]) {
-                    columnNames.push(index)
-                }
-                //get corresponding data
-                for (var i = 0; i < array.length; i++) {              
+                    if(count < 8){
+                        count += 1;
+                    }else{
+                        columnNames.push(index)
+                    }
+                } 
+                columnNames.splice(-1,1) //correct, get rid of last column ('organism')
+                //get corresponding data, skip first 8 columns
+                for (var i = 0; i < array.length; i++) {
+                    var count = 0;            
                     for (var index in array[i]) {
-                        data.push(array[i][index])
+                        if(count < 8){
+                            count +=1;
+                        }else if(index == 'organism'){
+                            console.log('skipping organism column')
+
+                        }else{
+                            data.push(array[i][index])//each data cell in row
+                        }
+                        
                     }
                 }
-                console.log('data' +data)
-                var graphData = [{x:columnNames, y:data, type:'bar'}];
+                console.log(data.length)
+               
+                var graphData = [{x:columnNames, y:data, type:'scatter'}];
                 var layout = {
-                    autosize: false,
+                    autosize: true,
                     width: 500,
                     height: 500,
                     margin: {
@@ -363,7 +394,6 @@ jQuery(document).ready(function(){
                       pad: 4
                     }
                   };
-                Plotly.newPlot('plots', graphData,layout)
                 
             })
 
@@ -374,7 +404,5 @@ jQuery(document).ready(function(){
         return str;
 
     }
-    
-
     
 })
