@@ -379,11 +379,9 @@ jQuery(document).ready(function(){
                         
                     }
                 }
-                console.log(data.length)
-               
-                var graphData = [{x:columnNames, y:data, type:'scatter'}];
+                
                 var layout = {
-                    autosize: true,
+                    autosize: false,
                     width: 500,
                     height: 500,
                     margin: {
