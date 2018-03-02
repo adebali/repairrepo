@@ -18,14 +18,19 @@ body{
 }
 #bodyDiv{
   padding-left: 10px;
+  padding-bottom: 35px;
 }
 #plots{
     font-size: 14px;
 }
-.thead-dark {
+.thead-dark, .navbar-fixed-bottom {
     color: #fff;
     background-color: #373a3c;
 }
+.page-header{
+    font-size: 20px;
+}
+
 /* CSS for radio buttons (first version, non bootstrap)
 /* Customize the label (the container) */
 /*

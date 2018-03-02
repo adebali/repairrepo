@@ -23,13 +23,15 @@
 <body>
     
     <div class = "jumbotron">
-        Sancar Lab Data Website
+        <h1>Sancar Lab Data Website</h1>
     </div>
 <div id = "bodyDiv">
     <!-- more organisms to be added -->
     <div id = "querySelectors">
     <div id = "nameSelector">
-       <b> Search by Organism and Gene Name </b><br>
+        <div class = 'page-header'>
+       <b> Search by Organism and Gene Name </b>
+        </div>
     Organism: <select id = 'chooseOrg'> 
         <option value = 'mouse'> Mouse </option> 
         <option value = 'human'> Human </option>
@@ -37,15 +39,17 @@
     Gene: <input type = 'text' id = 'gene' placeholder="Gene name"> 
     <button id = "submitName"> Search </button>
     </div>
-<br>
-    <b>Search by Chromosome Placement</b> <br>
+
+    <div class = 'page-header'>
+    <b>Search by Chromosome Placement</b>
+    </div>
     <div id = 'chrSelector'>
             <div id = 'chrDropDiv'> </div>
     </div>
     * Start: <input type = 'number' id = 'startChr' placeholder="Start position"> 
     * End: <input type = 'number' id = 'endChr' placeholder="End position">
     <button id = 'submitChr'>Submit</button>
-    <br><br><br>* denotes required fields
+    <br>* denotes required fields
     <br><br>
     </div>
 
@@ -56,6 +60,9 @@
 
 <button id = 'prev'> Previous</button>
 <button id = 'next'>Next -></button>
-<div>
+</div>
+<nav id = "footer" class = "navbar-fixed-bottom">
+    Developed by Yashar Asgari
+</nav>
 </body>
 </html>

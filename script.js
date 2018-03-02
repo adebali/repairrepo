@@ -50,25 +50,43 @@ jQuery(document).ready(function(){
             db.collection('gene').find(arg1).limit(10).execute().then(docs => {
                 var html;
                 
-                html = createDynamicTable(docs)  
-                document.getElementById("results").innerHTML = html; 
-                last_id1 = docs[docs.length-1]['_id'] 
-                
+                if(docs.length == 0){
+                    //$('#results').html("<h1><span class='label label-warning'>No results left</span></h1>")
+                    $('#results').html("<div class = 'alert alert-warning' role = 'alert'> <strong> No results left</strong></div>")
+                    
+                }else{
+                    html = createDynamicTable(docs)                      
+                    document.getElementById("results").innerHTML = html; 
+                    last_id1 = docs[docs.length-1]['_id']
+                }
             });
         }else if(!prev){
             db.collection('gene').find({"$and":[{'_id':{"$gt":last_id1}},arg1]}).limit(10).execute().then(docs => {
                 var html;
-                html = createDynamicTable(docs)  
-                document.getElementById("results").innerHTML = html; 
-                last_id1 = docs[docs.length-1]['_id'] 
+                 
+                if(docs.length == 0){
+                    //$('#results').html("<h1><span class='label label-warning'>No results left</span></h1>")
+                    $('#results').html("<div class = 'alert alert-warning' role = 'alert'> <strong> No results left</strong></div>")
+                    
+                }else{
+                    html = createDynamicTable(docs) 
+                    document.getElementById("results").innerHTML = html; 
+                    last_id1 = docs[docs.length-1]['_id']
+                }
+                 
                 
             });
         }else if(prev){
             db.collection('gene').find({"$and":[{'_id':{"$lt":last_id1}},arg1]}).limit(10).execute().then(docs => {
                 var html;
-                html = createDynamicTable(docs)  
+                if(docs.length == 0){
+                    //$('#results').html("<h1><span class='label label-warning'>No results left</span></h1>")
+                    $('#results').html("<div class = 'alert alert-warning' role = 'alert'> <strong> No results left</strong></div>")
+                }else{
+                html = createDynamicTable(docs) 
                 document.getElementById("results").innerHTML = html; 
                 last_id1 = docs[docs.length-1]['_id']
+                }
             });
         }
     }
