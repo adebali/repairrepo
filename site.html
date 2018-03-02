@@ -1,4 +1,4 @@
-<!-- Sancar Lab Project: wesbite to retrieve data from pymongo db -->
+<!-- Sancar Lab Project: wesbite to retrieve data from mongo db -->
 <!-- Yashar Asgari -->
 
 <!DOCTYPE html>
@@ -6,7 +6,7 @@
 <head>
     <meta charset="utf-8">
     <title> Sancar Lab DB </title>
-    
+    <!-- import JQuery, JQuery UI, Stitch, Plotly JS, BootstrapJS, and Google Fonts -->
     <script src="jquery-3.2.1.js"></script>
     <link rel="stylesheet" href="ui/jquery-ui.min.css">
     <link rel = "stylesheet" href = "style.css">
@@ -15,11 +15,19 @@
     <script src = "script.js"></script>
     <script src="https://s3.amazonaws.com/stitch-sdks/js/library/v3/stable/stitch.min.js"></script>
     <script src="plotly-latest.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css?family=Cabin" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Trocchi" rel="stylesheet">
 
 </head>
 <body>
+    
+    <div class = "jumbotron">
+        Sancar Lab Data Website
+    </div>
+<div id = "bodyDiv">
     <!-- more organisms to be added -->
-<div id = "querySelectors">
+    <div id = "querySelectors">
     <div id = "nameSelector">
        <b> Search by Organism and Gene Name </b><br>
     Organism: <select id = 'chooseOrg'> 
@@ -39,7 +47,7 @@
     <button id = 'submitChr'>Submit</button>
     <br><br><br>* denotes required fields
     <br><br>
-</div>
+    </div>
 
 <div id = 'results'> Results from query will display here </div>
 <div id = 'plots'> Plots will display here once user clicks on table row 
@@ -48,5 +56,6 @@
 
 <button id = 'prev'> Previous</button>
 <button id = 'next'>Next -></button>
+<div>
 </body>
 </html>

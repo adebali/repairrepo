@@ -108,20 +108,25 @@ jQuery(document).ready(function(){
                 html = createDynamicTable(docs2)  
                 document.getElementById("results").innerHTML = html; 
                 last_id2 = docs2[docs2.length-1]['_id'] 
-                
-                
+
             });
         }
 
     }
 
-
+    var appended = false;
     //pagination event handlers (next&prev buttons)
     $('#next').click(function(){
         if(queryArray2.length === 0){
             queryResultsChr(queryArray, false)
         }else if(queryArray.length === 0){
-            queryResultsName(queryArray2, false)
+            if(appended){
+                return;
+            }
+            //queryResultsName(queryArray2, false)
+            //pagination not necessary for Gene name search
+            $('#results').append('<b> Only one gene for each name')
+            appended = true;
         }
         
     })
@@ -131,7 +136,13 @@ jQuery(document).ready(function(){
         if(queryArray2.length === 0){
             queryResultsChr(queryArray, true)
         }else if (queryArray.length === 0){
-            queryResultsName(queryArray2, true)
+            if(appended){
+                return;
+            }
+            //queryResultsName(queryArray2, true)
+            //pagination not necessary for Gene name search
+            $('#results').append('<b> Only one gene for each name')
+            appended = true;
         }
     })
 
@@ -318,16 +329,15 @@ jQuery(document).ready(function(){
 
     function createDynamicTable(objArray) {
         var array = objArray;
-       
-        
-        var str = '<table class="lightPro">';
+ 
+        var str = '<table class="table-striped"> <thead class = "thead-dark">';
         str += '<tr>';
         for (var index in array[0]) {
             str += '<th scope="col">' + index + '</th>';
         }
         
-        str += '</tr>';
-        str += "<tbody id = 'plot'> </tbody>"
+        str += '</tr></thead>';
+        //str += "<tbody id = 'plot'> </tbody>"
         str += "<tbody>";
         for (var i = 0; i < array.length; i++) {
             str += "<tr id = 'dataRow_" + i +"'> ";
@@ -338,7 +348,9 @@ jQuery(document).ready(function(){
             }
             $(document).on("click", "#dataRow_"  + i, function(){
                 //add radio buttons for user to choose graph type
-                $('#plots').html("Choose Graph Type:  <label class='container'>Bar<input class = 'graphSelect' name = 'graphSelect' type='radio' value = 'Bar'><span class='checkmark'></span></label><label class='container'>Line<input class = 'graphSelect' name = 'graphSelect' type='radio' value = 'Line'><span class='checkmark'></span></label>");
+                //v1 (non bootstrap) radio buttons
+                //$('#plots').html("Choose Graph Type:  <label class='container'>Bar<input class = 'graphSelect' name = 'graphSelect' type='radio' value = 'Bar'><span class='checkmark'></span></label><label class='container'>Line<input class = 'graphSelect' name = 'graphSelect' type='radio' value = 'Line'><span class='checkmark'></span></label>");
+                $('#plots').html("<b>Choose Graph Type:</b> <br><div class = 'btn-group' data-toggle='buttons' <label class='btn btn-primary'><label class='btn btn-primary'>Bar<input class = 'graphSelect' name = 'graphSelect' type='radio' value = 'Bar'></label><label class='btn btn-primary'>Line<input class = 'graphSelect' name = 'graphSelect' type='radio' value = 'Line'></label></div> <br><br>");
                 $(document).on('change', '.graphSelect', function(){
                     if($('.graphSelect:checked').val() == 'Bar'){
                         graphData = [{x:columnNames, y:data, type:'bar'}];
@@ -363,7 +375,7 @@ jQuery(document).ready(function(){
                         columnNames.push(index)
                     }
                 } 
-                columnNames.splice(-1,1) //correct, get rid of last column ('organism')
+                columnNames.splice(-1,1) //get rid of last column ('organism')
                 //get corresponding data, skip first 8 columns
                 for (var i = 0; i < array.length; i++) {
                     var count = 0;            
@@ -371,7 +383,7 @@ jQuery(document).ready(function(){
                         if(count < 8){
                             count +=1;
                         }else if(index == 'organism'){
-                            console.log('skipping organism column')
+                            console.log('skipping organism column data')
 
                         }else{
                             data.push(array[i][index])//each data cell in row
