@@ -23,7 +23,7 @@ body{
 #plots{
     font-size: 14px;
 }
-.thead-dark, .navbar-fixed-bottom {
+.thead-dark {
     color: #fff;
     background-color: #373a3c;
 }
