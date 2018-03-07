@@ -30,6 +30,18 @@ body{
 .page-header{
     font-size: 20px;
 }
+#barGraphPlot{
+  position: relative;
+  float: right;
+  
+}
+#lineGraphPlot{
+  float: left;
+ position: relative;
+}
+#plotsContainer{
+  margin: auto;
+}
 
 /* CSS for radio buttons (first version, non bootstrap)
 /* Customize the label (the container) */

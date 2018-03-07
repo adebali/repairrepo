@@ -369,11 +369,13 @@ jQuery(document).ready(function(){
                 $(document).on('change', '.graphSelect', function(){
                     if($('.graphSelect:checked').val() === 'Bar'){
                         graphData = [{x:columnNames, y:data, type:'bar'}];
-                        Plotly.newPlot('plots', graphData,layout)
+                        $("#plotsContainer").append("<div id = 'barGraphPlot'></div>")
+                        Plotly.newPlot('barGraphPlot', graphData,layout)
                         
                     }else if($('.graphSelect:checked').val() === 'Line'){
                         graphData = [{x:columnNames, y:data, type:'scatter'}];
-                        Plotly.newPlot('plots', graphData,layout)
+                        $("#plotsContainer").append("<div id = 'lineGraphPlot'></div>")
+                        Plotly.newPlot('lineGraphPlot', graphData,layout)
                         console.log('column nanmes'+ columnNames)
                         
                     }
@@ -452,5 +454,6 @@ jQuery(document).ready(function(){
 
     }
 
+    
     
 })
