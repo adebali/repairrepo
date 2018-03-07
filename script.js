@@ -165,7 +165,7 @@ jQuery(document).ready(function(){
     })
 
 
-    //autocomplete tryout
+    //autocomplete
     var names = [];
     var namesList = [];
     function queryResultsAuto(arg4){
@@ -206,9 +206,11 @@ jQuery(document).ready(function(){
     });
    
   
-
+    /**
+     * Sets up dropdown for chromosome numbers. 
+     * @param {int} numChr Number of chromosomes for the given organism
+     */
     function buildChrDropdown(numChr){
-    //setting up dropdown for chromosomes- changes depending on organism selected
         console.log('building dropdown' + numChr)
         var select = "* <b>Chromosome: </b><select id = 'chrDropdown' >";
         for (i=0;i<=numChr-2;i++){
@@ -282,12 +284,7 @@ jQuery(document).ready(function(){
     //submit button event handler for chromosome placement query
     $('#submitChr').click(function(){
         queryArray = [];
-        console.log('clicked submit')
-        console.log("chrDropdown val = " + $('#chrDropdown').val())
-        console.log("startChr val = " + $('#startChr').val())
-        console.log("endChr val = " + $('#endChr').val())
-        
-        //change of gif loading
+
         $('#results').html("<img src = 'loading.gif' alt = 'Loading...'>")
         
         if($('#chrDropdown').val() === '-'){
@@ -312,11 +309,9 @@ jQuery(document).ready(function(){
             //change div color to show to select both start and end
             console.log('input start and end')
             if($('#startChr').val().length== 0){
-                //$('#startChr').css("background-color", "yellow");
                 $('#startChr').addClass('ui-state-error ui-corner-all');
             }
             if($('#endChr').val().length == 0){
-                //$('#endChr').css("background-color", "yellow");
                 $('#endChr').addClass('ui-state-error ui-corner-all');
             }
         }
@@ -324,7 +319,7 @@ jQuery(document).ready(function(){
         
     })
 
-    //submit event handler for Name query
+    //submit event handler for gene name query
     $('#submitName').click(function(){
         queryArray2 = [];
         console.log($("#gene").val())
@@ -344,7 +339,11 @@ jQuery(document).ready(function(){
      
     })
 
-
+    /**
+     * Given the results from a query, the method will build a table with embedded click 
+     * event handlers for each row (to enable plots to be shown)
+     * @param {*} objArray Query results stored here
+     */
     function createDynamicTable(objArray) {
         var array = objArray;
  
@@ -361,22 +360,21 @@ jQuery(document).ready(function(){
             str += "<tr id = 'dataRow_" + i +"'> ";
         
             for (var index in array[i]) {
-                str += '<td>' + array[i][index] + '</td>';
+                str += '<td>' + parseFloat(array[i][index]).toFixed(2) + '</td>';
                 
             }
             $(document).on("click", "#dataRow_"  + i, function(){
-                //add radio buttons for user to choose graph type
-                //v1 (non bootstrap) radio buttons
-                //$('#plots').html("Choose Graph Type:  <label class='container'>Bar<input class = 'graphSelect' name = 'graphSelect' type='radio' value = 'Bar'><span class='checkmark'></span></label><label class='container'>Line<input class = 'graphSelect' name = 'graphSelect' type='radio' value = 'Line'><span class='checkmark'></span></label>");
+                
                 $('#plots').html("<b>Choose Graph Type:</b> <br><div class = 'btn-group' data-toggle='buttons' <label class='btn btn-primary'><label class='btn btn-primary'>Bar<input class = 'graphSelect' name = 'graphSelect' type='radio' value = 'Bar'></label><label class='btn btn-primary'>Line<input class = 'graphSelect' name = 'graphSelect' type='radio' value = 'Line'></label></div> <br><br>");
                 $(document).on('change', '.graphSelect', function(){
-                    if($('.graphSelect:checked').val() == 'Bar'){
+                    if($('.graphSelect:checked').val() === 'Bar'){
                         graphData = [{x:columnNames, y:data, type:'bar'}];
                         Plotly.newPlot('plots', graphData,layout)
                         
-                    }else if($('.graphSelect:checked').val() == 'Line'){
+                    }else if($('.graphSelect:checked').val() === 'Line'){
                         graphData = [{x:columnNames, y:data, type:'scatter'}];
                         Plotly.newPlot('plots', graphData,layout)
+                        console.log('column nanmes'+ columnNames)
                         
                     }
                 })
@@ -400,7 +398,7 @@ jQuery(document).ready(function(){
                     for (var index in array[i]) {
                         if(count < 8){
                             count +=1;
-                        }else if(index == 'organism'){
+                        }else if(index === 'organism'){
                             console.log('skipping organism column data')
 
                         }else{
@@ -432,5 +430,27 @@ jQuery(document).ready(function(){
         return str;
 
     }
+    
+
+
+    /**
+     * Plots experiment X's data to 'plots' div
+     * @param {[{}]} data Data to plot 
+     */
+    function plotExpX(data){
+        //column names should come from sample sheet
+
+    }
+
+
+    /**
+     * Plots experiment Y's data to plots div
+     * @param {[{}]} data Data to plot
+     */
+    function plotExpY(data){
+        //column names should come from sample sheet
+
+    }
+
     
 })
