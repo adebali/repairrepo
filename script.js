@@ -105,7 +105,7 @@ jQuery(document).ready(function(){
     var last_id2 = null;
     function queryName(arg2){
         
-        nameInput = geneInputName; //working        
+        nameInput = geneInputName;       
         arg2 = arg2.length > 0 ? { $and: arg2 } : {};
         
 
