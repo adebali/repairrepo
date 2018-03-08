@@ -33,13 +33,12 @@ body{
 #plotsY{
   position: relative;
   float: right;
-
-  
+  padding-bottom: 20px;
 }
 #plotsX{
   float: left;
- position: relative;
-
+  position: relative;
+  padding-bottom: 20px;
 }
 
 

@@ -374,12 +374,13 @@ $(document).ready(function(){
                 $('#plots').html("<b>Choose Graph Type:</b> <br><div class = 'btn-group' data-toggle='buttons' <label class='btn btn-primary'><label class='btn btn-primary'>Bar<input class = 'graphSelect' name = 'graphSelect' type='radio' value = 'Bar'></label><label class='btn btn-primary'>Line<input class = 'graphSelect' name = 'graphSelect' type='radio' value = 'Line'></label></div> <br><br>");
                 $(document).on('change', '.graphSelect', function(){
                     if($('.graphSelect:checked').val() === 'Bar'){
-                        //plotExpX(columnNames, data);
+                        //plotExpX(columnNames, data); 
+                        //TODO pass in single data row to plot
                         
                         
                     }else if($('.graphSelect:checked').val() === 'Line'){
                         //plotExpY(columnNames, data);
-                        
+                        //TODO pass in single data row to plot
                     }
                 })
                 var columnNames = [];
@@ -414,7 +415,6 @@ $(document).ready(function(){
                             //skip
                         }else{
                             data.push(array[i][index])//each data cell in row
-                            //console.log('data[i][0]= ' + array[i][index])
                         }
                         
                     }
@@ -518,7 +518,6 @@ console.log(document.getElementById('plotsX'))
      * @param {[{}]} data to be analyzed
      */
     function analyzeData(data){
-        console.log('sample sheet in analyzeData = ' + JSON.stringify(sampleSheet))
         var argColumnNames = []; 
         var argExpXNames = []; //x values for exp x
         var argExpXData = []; //y values for exp x
@@ -544,7 +543,7 @@ console.log(document.getElementById('plotsX'))
                         }
                     }
                 }
-                //get columns organized for alternating bar colors b/w TS and NTS
+                //get columns organized for alternating bar colors b/w TS and NTS, will be implemeneted later
                 if(index.substr(index.length-3) === 'NTS'){
                     oddColor.push(index)
                 }else if(index.substr(index.length-3) === '_TS'){
@@ -556,18 +555,19 @@ console.log(document.getElementById('plotsX'))
         //get corresponding data, skip first 8 columns
         for (var i = 0; i < data.length; i++) {
             var count = 0;            
-            
             for (var index in data[i]) {
                 if(count < 8){
                     count +=1;
-                }else{ //index is each column name
-                    if(index === sampleSheet[i]['Sample'] ){
-                        var experiment = sampleSheet[i]['Experiment']
-                        if(experiment === "X"){
-                            console.log('data at i at index' + data[i][index])
-                            argExpXData.push(data[i][index]);                            
-                        }else if(experiment === "Y"){
-                            argExpYData.push(data[i][index])
+                }else{ 
+                    //index is each column name
+                    for(var j = 0; j<sampleSheet.length; j++){
+                        if(index === sampleSheet[j]['Sample'] ){
+                            var experiment = sampleSheet[j]['Experiment']
+                            if(experiment === "X"){
+                                argExpXData.push(data[i][index]);                            
+                            }else if(experiment === "Y"){
+                                argExpYData.push(data[i][index]);
+                            }
                         }
                     }
                 }
@@ -575,7 +575,10 @@ console.log(document.getElementById('plotsX'))
             }
         }
         //TODO column names are correct, just need data 
-        
+        console.log('Exp X columns' + argExpXNames)
+        console.log('Exp X data' + argExpXData)
+        console.log('Exp Y columns' + argExpYNames)
+        console.log('Exp Y data' + argExpYData)
         plotExpX(argExpXNames,argExpXData)
         plotExpY(argExpYNames,argExpYData)
     }
