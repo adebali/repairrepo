@@ -1,11 +1,14 @@
 //Script for Sancar Lab database project, written by Yashar Asgari
-jQuery(document).ready(function(){
+$(document).ready(function(){
 
     //first, create list of gene names for autocomplete
     queryResultsAuto([{}])
 
     //setting up dropdown for chromosomes. changes depending on organism selected
     buildChrDropdown(21);
+
+    //query db for sample sheet in order to get columns/data for each experiment for plotting purposes
+    getSampleSheet();
 
     //prep server connection
     const clientPromise = stitch.StitchClientFactory.create('dataretrieval-vwdtg');
@@ -26,6 +29,7 @@ jQuery(document).ready(function(){
     var geneInputName;
     var queryArray = [];
     var queryArray2 = [];
+    var sampleSheet = []; //seeing which columns/data go to which experiment for plotting purposes
     
     //page loads this by default, can change later
     orgDict.organism = 'mouse'
@@ -112,9 +116,10 @@ jQuery(document).ready(function(){
         if(last_id2 === null){
             db.collection('gene').find(arg2).limit(1).execute().then(docs2 => {
                 var html;
-                
+                //analyzeData(docs2) 
                 html = createDynamicTable(docs2)  
                 document.getElementById("results").innerHTML = html; 
+                //call function to see if columns match which experiment, then call the experiment
                 last_id2 = docs2[docs2.length-1]['_id'] 
                 
                 
@@ -122,7 +127,8 @@ jQuery(document).ready(function(){
         }else{
             db.collection('gene').find({"$and":[{'_id':{"$gt":last_id2}},arg2]}).limit(1).execute().then(docs2 => {
                 var html;
-    
+                
+                //analyzeData(docs2) 
                 html = createDynamicTable(docs2)  
                 document.getElementById("results").innerHTML = html; 
                 last_id2 = docs2[docs2.length-1]['_id'] 
@@ -364,25 +370,23 @@ jQuery(document).ready(function(){
                 
             }
             $(document).on("click", "#dataRow_"  + i, function(){
-                
+                console.log('row clicked')
                 $('#plots').html("<b>Choose Graph Type:</b> <br><div class = 'btn-group' data-toggle='buttons' <label class='btn btn-primary'><label class='btn btn-primary'>Bar<input class = 'graphSelect' name = 'graphSelect' type='radio' value = 'Bar'></label><label class='btn btn-primary'>Line<input class = 'graphSelect' name = 'graphSelect' type='radio' value = 'Line'></label></div> <br><br>");
                 $(document).on('change', '.graphSelect', function(){
                     if($('.graphSelect:checked').val() === 'Bar'){
-                        graphData = [{x:columnNames, y:data, type:'bar'}];
-                        $("#plotsContainer").append("<div id = 'barGraphPlot'></div>")
-                        Plotly.newPlot('barGraphPlot', graphData,layout)
+                        plotExpX(columnNames, data);
+                        
                         
                     }else if($('.graphSelect:checked').val() === 'Line'){
-                        graphData = [{x:columnNames, y:data, type:'scatter'}];
-                        $("#plotsContainer").append("<div id = 'lineGraphPlot'></div>")
-                        Plotly.newPlot('lineGraphPlot', graphData,layout)
-                        console.log('column nanmes'+ columnNames)
+                        plotExpY(columnNames, data);
                         
                     }
                 })
                 var columnNames = [];
                 var data = [];
                 var arrayIndex = this.id.slice(-1)
+                var tsColor = [];
+                var ntsColor = [];
                 
                 //get column names, skip first 8 columns
                 var count = 0;
@@ -391,6 +395,12 @@ jQuery(document).ready(function(){
                         count += 1;
                     }else{
                         columnNames.push(index)
+                        //get columns organized for alternating bar colors b/w TS and NTS
+                        if(index.substr(index.length-3) === 'NTS'){
+                            ntsColor.push(index)
+                        }else if(index.substr(index.length-3) === '_TS'){
+                            tsColor.push(index)
+                        }
                     }
                 } 
                 columnNames.splice(-1,1) //get rid of last column ('organism')
@@ -401,10 +411,10 @@ jQuery(document).ready(function(){
                         if(count < 8){
                             count +=1;
                         }else if(index === 'organism'){
-                            console.log('skipping organism column data')
-
+                            //skip
                         }else{
                             data.push(array[i][index])//each data cell in row
+                            //console.log('data[i][0]= ' + array[i][index])
                         }
                         
                     }
@@ -420,7 +430,8 @@ jQuery(document).ready(function(){
                       b: 100,
                       t: 100,
                       pad: 4
-                    }
+                    },
+                    title: "Experiment 1"
                   };
                 
             })
@@ -437,23 +448,130 @@ jQuery(document).ready(function(){
 
     /**
      * Plots experiment X's data to 'plots' div
+     * @param {[]} columnNames array of column names 
      * @param {[{}]} data Data to plot 
      */
-    function plotExpX(data){
+    function plotExpX(columnNames, data){
         //column names should come from sample sheet
-
+        graphData = [{x:columnNames, y:data, type:'bar'}];
+        var layout = {
+            autosize: false,
+            width: 500,
+            height: 500,
+            margin: {
+              l: 50,
+              r: 50,
+              b: 100,
+              t: 100,
+              pad: 4
+            },
+            title: "Experiment X"
+          };
+        
+        Plotly.newPlot('plotsX', graphData,layout)
     }
 
-
+console.log(document.getElementById('plotsX'))
     /**
      * Plots experiment Y's data to plots div
+     * @param {[]} columnNames array of column titles
      * @param {[{}]} data Data to plot
      */
-    function plotExpY(data){
+    function plotExpY(columnNames, data){
         //column names should come from sample sheet
-
+        graphData = [{x:columnNames, y:data, type:'scatter'}];
+        var layout = {
+            autosize: false,
+            width: 500,
+            height: 500,
+            margin: {
+              l: 50,
+              r: 50,
+              b: 100,
+              t: 100,
+              pad: 4
+            },
+            title: "Experiment Y"
+          };
+        Plotly.newPlot('plotsY', graphData,layout)
+    }
+    /**
+     * Get sample sheet to inform script of how to plot depending on experiment, stored in the 
+     */
+    
+    function getSampleSheet(){
+        const clientPromise = stitch.StitchClientFactory.create('dataretrieval-vwdtg');        
+        clientPromise.then(stitchClient =>{
+            client = stitchClient;
+            db = client.service('mongodb', 'mongodb-atlas').db('data');
+            client.login()
+            db.collection('sample').find({}).execute().then(result => {
+                sampleSheet = result;
+                console.log(sampleSheet)
+            })
+        });
     }
 
-    
-    
+    /**
+     * Function to compare the sampleSheet queried to data provided
+     * in order to see where to call each experiment function
+     * @param {[{}]} data to be analyzed
+     */
+    function analyzeData(data){
+        var argColumnNames = []; 
+        var argExpXNames = []; //x values for exp x
+        var argExpXData = []; //y values for exp x
+        var argExpYNames = []; //x values for exp y
+        var argExpYData = []; //y values for exp y
+        var oddColor = [];
+        var evenColor = [];
+
+        //organize columns for each experiment
+        var count = 0;
+        for (var index in data[0]) {
+            //skip extra columns
+            if(count < 8){
+                count += 1;
+            }else{
+                //argColumnNames.push(index)
+                if(index === sampleSheet[i]['Sample']){
+                    var experiment = sampleSheet[i]['Experiment']
+                    if(experiment === 'X'){
+                        argExpXNames.push(index)
+                    }else if(experiment === 'Y'){
+                        argExpYNames.push(index)
+                    }
+                }
+                //get columns organized for alternating bar colors b/w TS and NTS
+                if(index.substr(index.length-3) === 'NTS'){
+                    oddColor.push(index)
+                }else if(index.substr(index.length-3) === '_TS'){
+                    evenColor.push(index)
+                }
+            }
+        }
+        //get corresponding data, skip first 8 columns
+        for (var i = 0; i < data.length; i++) {
+            var count = 0;            
+            for (var index in data[i]) {
+                if(count < 8){
+                    count +=1;
+                }else{
+                    if(data[i][argColumnNames[i]] === sampleSheet[i]['Sample'] ){
+                        var experiment = sampleSheet[i]['Experiment']
+                        if(experiment === "X"){
+                            argExpXData.push(data[i][index]);                            
+                        }else if(experiment === "Y"){
+                            argExpYData.push(data[i][index])
+                        }
+                    }
+                }
+                
+            }
+        }
+
+        plotExpX(argExpXNames,argExpXData)
+        plotExpY(argExpYNames,argExpYData)
+    }
+
 })
