@@ -116,9 +116,9 @@ $(document).ready(function(){
         if(last_id2 === null){
             db.collection('gene').find(arg2).limit(1).execute().then(docs2 => {
                 var html;
-                //analyzeData(docs2) 
-                html = createDynamicTable(docs2)  
-                document.getElementById("results").innerHTML = html; 
+                analyzeData(docs2) 
+                //html = createDynamicTable(docs2)  
+                //document.getElementById("results").innerHTML = html; 
                 //call function to see if columns match which experiment, then call the experiment
                 last_id2 = docs2[docs2.length-1]['_id'] 
                 
@@ -128,9 +128,9 @@ $(document).ready(function(){
             db.collection('gene').find({"$and":[{'_id':{"$gt":last_id2}},arg2]}).limit(1).execute().then(docs2 => {
                 var html;
                 
-                //analyzeData(docs2) 
-                html = createDynamicTable(docs2)  
-                document.getElementById("results").innerHTML = html; 
+                analyzeData(docs2) 
+                //html = createDynamicTable(docs2)  
+                //document.getElementById("results").innerHTML = html; 
                 last_id2 = docs2[docs2.length-1]['_id'] 
 
             });
@@ -374,11 +374,11 @@ $(document).ready(function(){
                 $('#plots').html("<b>Choose Graph Type:</b> <br><div class = 'btn-group' data-toggle='buttons' <label class='btn btn-primary'><label class='btn btn-primary'>Bar<input class = 'graphSelect' name = 'graphSelect' type='radio' value = 'Bar'></label><label class='btn btn-primary'>Line<input class = 'graphSelect' name = 'graphSelect' type='radio' value = 'Line'></label></div> <br><br>");
                 $(document).on('change', '.graphSelect', function(){
                     if($('.graphSelect:checked').val() === 'Bar'){
-                        plotExpX(columnNames, data);
+                        //plotExpX(columnNames, data);
                         
                         
                     }else if($('.graphSelect:checked').val() === 'Line'){
-                        plotExpY(columnNames, data);
+                        //plotExpY(columnNames, data);
                         
                     }
                 })
@@ -507,7 +507,7 @@ console.log(document.getElementById('plotsX'))
             client.login()
             db.collection('sample').find({}).execute().then(result => {
                 sampleSheet = result;
-                console.log(sampleSheet)
+                
             })
         });
     }
@@ -518,6 +518,7 @@ console.log(document.getElementById('plotsX'))
      * @param {[{}]} data to be analyzed
      */
     function analyzeData(data){
+        console.log('sample sheet in analyzeData = ' + JSON.stringify(sampleSheet))
         var argColumnNames = []; 
         var argExpXNames = []; //x values for exp x
         var argExpXData = []; //y values for exp x
@@ -533,13 +534,14 @@ console.log(document.getElementById('plotsX'))
             if(count < 8){
                 count += 1;
             }else{
-                //argColumnNames.push(index)
-                if(index === sampleSheet[i]['Sample']){
-                    var experiment = sampleSheet[i]['Experiment']
-                    if(experiment === 'X'){
-                        argExpXNames.push(index)
-                    }else if(experiment === 'Y'){
-                        argExpYNames.push(index)
+                for(var i = 0; i<sampleSheet.length; i++){
+                    if(index === sampleSheet[i]['Sample']){
+                        var experiment = sampleSheet[i]['Experiment']
+                        if(experiment === 'X'){
+                            argExpXNames.push(index)
+                        }else if(experiment === 'Y'){
+                            argExpYNames.push(index)
+                        }
                     }
                 }
                 //get columns organized for alternating bar colors b/w TS and NTS
@@ -550,16 +552,19 @@ console.log(document.getElementById('plotsX'))
                 }
             }
         }
+        
         //get corresponding data, skip first 8 columns
         for (var i = 0; i < data.length; i++) {
             var count = 0;            
+            
             for (var index in data[i]) {
                 if(count < 8){
                     count +=1;
-                }else{
-                    if(data[i][argColumnNames[i]] === sampleSheet[i]['Sample'] ){
+                }else{ //index is each column name
+                    if(index === sampleSheet[i]['Sample'] ){
                         var experiment = sampleSheet[i]['Experiment']
                         if(experiment === "X"){
+                            console.log('data at i at index' + data[i][index])
                             argExpXData.push(data[i][index]);                            
                         }else if(experiment === "Y"){
                             argExpYData.push(data[i][index])
@@ -569,7 +574,8 @@ console.log(document.getElementById('plotsX'))
                 
             }
         }
-
+        //TODO column names are correct, just need data 
+        
         plotExpX(argExpXNames,argExpXData)
         plotExpY(argExpYNames,argExpYData)
     }
