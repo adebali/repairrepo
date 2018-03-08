@@ -366,7 +366,8 @@ $(document).ready(function(){
             str += "<tr id = 'dataRow_" + i +"'> ";
         
             for (var index in array[i]) {
-                str += '<td>' + parseFloat(array[i][index]).toFixed(2) + '</td>';
+                //ERROR HERE FOR NAME, cant parse float from string
+                str += '<td>' + array[i][index] + '</td>';
                 
             }
             $(document).on("click", "#dataRow_"  + i, function(){
@@ -376,6 +377,7 @@ $(document).ready(function(){
                     if($('.graphSelect:checked').val() === 'Bar'){
                         //plotExpX(columnNames, data); 
                         //TODO pass in single data row to plot
+                        
                         
                         
                     }else if($('.graphSelect:checked').val() === 'Line'){
