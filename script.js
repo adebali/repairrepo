@@ -30,7 +30,7 @@ $(document).ready(function(){
     var queryArray = [];
     var queryArray2 = [];
     var sampleSheet = []; //seeing which columns/data go to which experiment for plotting purposes
-    
+
     //page loads this by default, can change later
     orgDict.organism = 'mouse'
 
@@ -40,45 +40,45 @@ $(document).ready(function(){
         clientPromise.then(stitchClient =>{
             client = stitchClient;
             db = client.service('mongodb', 'mongodb-atlas').db('data');
-          
+
             return client.login().then(queryChr(arg1, prev))
         });
     }
     var last_id1 = null;
     function queryChr(arg1, prev){
-        
+
         arg1 = arg1.length > 0 ? { $and: arg1 } : {};
-        
+
 
         if(last_id1 === null){
             db.collection('gene').find(arg1).limit(10).execute().then(docs => {
                 var html;
-                
+
                 if(docs.length == 0){
                     //$('#results').html("<h1><span class='label label-warning'>No results left</span></h1>")
                     $('#results').html("<div class = 'alert alert-warning' role = 'alert'> <strong> No results left</strong></div>")
-                    
+
                 }else{
-                    html = createDynamicTable(docs)                      
-                    document.getElementById("results").innerHTML = html; 
+                    html = createDynamicTable(docs)
+                    document.getElementById("results").innerHTML = html;
                     last_id1 = docs[docs.length-1]['_id']
                 }
             });
         }else if(!prev){
             db.collection('gene').find({"$and":[{'_id':{"$gt":last_id1}},arg1]}).limit(10).execute().then(docs => {
                 var html;
-                 
+
                 if(docs.length == 0){
                     //$('#results').html("<h1><span class='label label-warning'>No results left</span></h1>")
                     $('#results').html("<div class = 'alert alert-warning' role = 'alert'> <strong> No results left</strong></div>")
-                    
+
                 }else{
-                    html = createDynamicTable(docs) 
-                    document.getElementById("results").innerHTML = html; 
+                    html = createDynamicTable(docs)
+                    document.getElementById("results").innerHTML = html;
                     last_id1 = docs[docs.length-1]['_id']
                 }
-                 
-                
+
+
             });
         }else if(prev){
             db.collection('gene').find({"$and":[{'_id':{"$lt":last_id1}},arg1]}).limit(10).execute().then(docs => {
@@ -87,8 +87,8 @@ $(document).ready(function(){
                     //$('#results').html("<h1><span class='label label-warning'>No results left</span></h1>")
                     $('#results').html("<div class = 'alert alert-warning' role = 'alert'> <strong> No results left</strong></div>")
                 }else{
-                html = createDynamicTable(docs) 
-                document.getElementById("results").innerHTML = html; 
+                html = createDynamicTable(docs)
+                document.getElementById("results").innerHTML = html;
                 last_id1 = docs[docs.length-1]['_id']
                 }
             });
@@ -96,45 +96,24 @@ $(document).ready(function(){
     }
 
 
-    //helper functions for name query TODO--- do we need pagination for name query?
+    //helper functions for name query 
     function queryResultsName(arg2){
         clientPromise.then(stitchClient =>{
             client = stitchClient;
             db = client.service('mongodb', 'mongodb-atlas').db('data');
-          
+
             return client.login().then(queryName(arg2))
         });
     }
     var nameInput;
-    var last_id2 = null;
     function queryName(arg2){
-        
-        nameInput = geneInputName;       
+
+        nameInput = geneInputName;
         arg2 = arg2.length > 0 ? { $and: arg2 } : {};
-        
 
-        if(last_id2 === null){
-            db.collection('gene').find(arg2).limit(1).execute().then(docs2 => {
-                var html;
-                analyzeData(docs2) 
-                //html = createDynamicTable(docs2)  
-                //document.getElementById("results").innerHTML = html; 
-                //call function to see if columns match which experiment, then call the experiment
-                last_id2 = docs2[docs2.length-1]['_id'] 
-                
-                
-            });
-        }else{
-            db.collection('gene').find({"$and":[{'_id':{"$gt":last_id2}},arg2]}).limit(1).execute().then(docs2 => {
-                var html;
-                
-                analyzeData(docs2) 
-                //html = createDynamicTable(docs2)  
-                //document.getElementById("results").innerHTML = html; 
-                last_id2 = docs2[docs2.length-1]['_id'] 
-
-            });
-        }
+        db.collection('gene').find(arg2).limit(1).execute().then(docs2 => {
+            analyzeData(docs2)
+        });
 
     }
 
@@ -147,12 +126,10 @@ $(document).ready(function(){
             if(appended){
                 return;
             }
-            //queryResultsName(queryArray2, false)
-            //pagination not necessary for Gene name search
             $('#results').append('<b> Only one gene for each name')
             appended = true;
         }
-        
+
     })
 
 
@@ -179,20 +156,20 @@ $(document).ready(function(){
         clientPromise.then(stitchClient =>{
             client = stitchClient;
             db = client.service('mongodb', 'mongodb-atlas').db('data');
-          
+
             return client.login().then(queryAuto(arg4))
         });
     }
     function queryAuto(arg4){
-        
+
         arg4.push(orgDict)
         arg4 = arg4.length > 0 ? { $and: arg4 } : {};
-        
-        db.collection('gene').find(arg4, {"name":1, "_id" : 0}).execute().then(docs => {    
+
+        db.collection('gene').find(arg4, {"name":1, "_id" : 0}).execute().then(docs => {
             names = docs;
-            
+
             for(var i in names){
-                
+
                 namesList.push(names[i]["name"])
             }
             console.log('names list for autocomplete ready.')
@@ -203,17 +180,17 @@ $(document).ready(function(){
     $("#gene").autocomplete({ //pause auto for first 2 chars, implement scroll bar for list
         source: function(request, response) {
             var results = $.ui.autocomplete.filter(namesList, request.term);
-    
+
             response(results.slice(0, 20)); //show only 20 in the list at a time
             autoFocus:true;
             delay: 600; //600 milliseconds
             minLength: 3; //min length of inputted chars before search begins
         }
     });
-   
-  
+
+
     /**
-     * Sets up dropdown for chromosome numbers. 
+     * Sets up dropdown for chromosome numbers.
      * @param {int} numChr Number of chromosomes for the given organism
      */
     function buildChrDropdown(numChr){
@@ -292,7 +269,7 @@ $(document).ready(function(){
         queryArray = [];
 
         $('#results').html("<img src = 'loading.gif' alt = 'Loading...'>")
-        
+
         if($('#chrDropdown').val() === '-'){
             //change div color to show where to select
             //$("#chrDropDiv").css("color","#DF0E0E");
@@ -302,7 +279,7 @@ $(document).ready(function(){
 
             var val = 'chr'+ $('#chrDropdown').val();
             queryArray.push({'chr': val})
-            
+
         }
 
         if($('#startChr').val().length != 0 && $('#endChr').val().length != 0){
@@ -322,7 +299,7 @@ $(document).ready(function(){
             }
         }
        queryArray2 = [];
-        
+
     })
 
     //submit event handler for gene name query
@@ -338,59 +315,48 @@ $(document).ready(function(){
             queryResultsName(queryArray2);
         }else{
             console.log('enter gene name') //add div color change here
-            
+
             $('#gene').addClass('ui-state-error ui-corner-all');
-        } 
+        }
         queryArray = [];
-     
+
     })
 
     /**
-     * Given the results from a query, the method will build a table with embedded click 
+     * Given the results from a query, the method will build a table with embedded click
      * event handlers for each row (to enable plots to be shown)
      * @param {*} objArray Query results stored here
      */
     function createDynamicTable(objArray) {
         var array = objArray;
- 
+
         var str = '<table class="table-striped"> <thead class = "thead-dark">';
         str += '<tr>';
         for (var index in array[0]) {
             str += '<th scope="col">' + index + '</th>';
         }
-        
+
         str += '</tr></thead>';
         //str += "<tbody id = 'plot'> </tbody>"
         str += "<tbody>";
         for (var i = 0; i < array.length; i++) {
             str += "<tr id = 'dataRow_" + i +"'> ";
-        
+
             for (var index in array[i]) {
                 //ERROR HERE FOR NAME, cant parse float from string
                 str += '<td>' + array[i][index] + '</td>';
-                
+
             }
             $(document).on("click", "#dataRow_"  + i, function(){
-                console.log('row clicked')
-                $('#plots').html("<b>Choose Graph Type:</b> <br><div class = 'btn-group' data-toggle='buttons' <label class='btn btn-primary'><label class='btn btn-primary'>Bar<input class = 'graphSelect' name = 'graphSelect' type='radio' value = 'Bar'></label><label class='btn btn-primary'>Line<input class = 'graphSelect' name = 'graphSelect' type='radio' value = 'Line'></label></div> <br><br>");
-                $(document).on('change', '.graphSelect', function(){
-                    if($('.graphSelect:checked').val() === 'Bar'){
-                        //plotExpX(columnNames, data); 
-                        //TODO pass in single data row to plot
-                        
-                        
-                        
-                    }else if($('.graphSelect:checked').val() === 'Line'){
-                        //plotExpY(columnNames, data);
-                        //TODO pass in single data row to plot
-                    }
-                })
+                //pass in single data row
+
+                analyzeData(array[i])
                 var columnNames = [];
                 var data = [];
                 var arrayIndex = this.id.slice(-1)
                 var tsColor = [];
                 var ntsColor = [];
-                
+
                 //get column names, skip first 8 columns
                 var count = 0;
                 for (var index in array[0]) {
@@ -405,11 +371,11 @@ $(document).ready(function(){
                             tsColor.push(index)
                         }
                     }
-                } 
+                }
                 columnNames.splice(-1,1) //get rid of last column ('organism')
                 //get corresponding data, skip first 8 columns
                 for (var i = 0; i < array.length; i++) {
-                    var count = 0;            
+                    var count = 0;
                     for (var index in array[i]) {
                         if(count < 8){
                             count +=1;
@@ -418,10 +384,10 @@ $(document).ready(function(){
                         }else{
                             data.push(array[i][index])//each data cell in row
                         }
-                        
+
                     }
                 }
-                
+
                 var layout = {
                     autosize: false,
                     width: 500,
@@ -435,7 +401,7 @@ $(document).ready(function(){
                     },
                     title: "Experiment 1"
                   };
-                
+
             })
 
             str += '</tr>';
@@ -445,13 +411,13 @@ $(document).ready(function(){
         return str;
 
     }
-    
+
 
 
     /**
      * Plots experiment X's data to 'plots' div
-     * @param {[]} columnNames array of column names 
-     * @param {[{}]} data Data to plot 
+     * @param {[]} columnNames array of column names
+     * @param {[{}]} data Data to plot
      */
     function plotExpX(columnNames, data){
         //column names should come from sample sheet
@@ -469,11 +435,9 @@ $(document).ready(function(){
             },
             title: "Experiment X"
           };
-        
         Plotly.newPlot('plotsX', graphData,layout)
     }
 
-console.log(document.getElementById('plotsX'))
     /**
      * Plots experiment Y's data to plots div
      * @param {[]} columnNames array of column titles
@@ -498,18 +462,18 @@ console.log(document.getElementById('plotsX'))
         Plotly.newPlot('plotsY', graphData,layout)
     }
     /**
-     * Get sample sheet to inform script of how to plot depending on experiment, stored in the 
+     * Get sample sheet to inform script of how to plot depending on experiment, stored in the
      */
-    
+
     function getSampleSheet(){
-        const clientPromise = stitch.StitchClientFactory.create('dataretrieval-vwdtg');        
+        const clientPromise = stitch.StitchClientFactory.create('dataretrieval-vwdtg');
         clientPromise.then(stitchClient =>{
             client = stitchClient;
             db = client.service('mongodb', 'mongodb-atlas').db('data');
             client.login()
             db.collection('sample').find({}).execute().then(result => {
                 sampleSheet = result;
-                
+
             })
         });
     }
@@ -519,16 +483,21 @@ console.log(document.getElementById('plotsX'))
      * in order to see where to call each experiment function
      * @param {[{}]} data to be analyzed
      */
+
     function analyzeData(data){
-        var argColumnNames = []; 
-        var argExpXNames = []; //x values for exp x
-        var argExpXData = []; //y values for exp x
-        var argExpYNames = []; //x values for exp y
-        var argExpYData = []; //y values for exp y
-        var oddColor = [];
-        var evenColor = [];
+        // var argExpXNames = []; //x values for exp x
+        // var argExpXData = []; //y values for exp x
+        // var argExpYNames = []; //x values for exp y
+        // var argExpYData = []; //y values for exp y
+        // var oddColor = [];
+        // var evenColor = [];
+        var experiments = []; //for adding divs later
+        //both below passed plot functions
+        var columnNames = [];
+        var data = [];
 
         //organize columns for each experiment
+        
         var count = 0;
         for (var index in data[0]) {
             //skip extra columns
@@ -537,52 +506,61 @@ console.log(document.getElementById('plotsX'))
             }else{
                 for(var i = 0; i<sampleSheet.length; i++){
                     if(index === sampleSheet[i]['Sample']){
-                        var experiment = sampleSheet[i]['Experiment']
-                        if(experiment === 'X'){
-                            argExpXNames.push(index)
-                        }else if(experiment === 'Y'){
-                            argExpYNames.push(index)
+                        var experiment = sampleSheet[i]["Experiment"];
+                        //check if experiment is already in the array
+                        if($.inArray(experiment, experiments) === -1){
+                            experiments.push(experiment);
+                            console.log('pushed exps')
+                        }
+                        //check if experiment has changed when adding column names 
+                        if(experiment === sampleSheet[i-1]["Experiment"]){
+                            console.log('made tp push')
+                            columnNames.push(index);
+                        }else if(experiment != sampleSheet[i-1]["Experiment"]){
+                            console.log('new exp foudn')
                         }
                     }
                 }
                 //get columns organized for alternating bar colors b/w TS and NTS, will be implemeneted later
-                if(index.substr(index.length-3) === 'NTS'){
-                    oddColor.push(index)
-                }else if(index.substr(index.length-3) === '_TS'){
-                    evenColor.push(index)
-                }
+                // if(index.substr(index.length-3) === 'NTS'){
+                //     oddColor.push(index)
+                // }else if(index.substr(index.length-3) === '_TS'){
+                //     evenColor.push(index)
+                // }
             }
         }
-        
+    
         //get corresponding data, skip first 8 columns
         for (var i = 0; i < data.length; i++) {
-            var count = 0;            
+            var count = 0;
             for (var index in data[i]) {
                 if(count < 8){
                     count +=1;
-                }else{ 
-                    //index is each column name
-                    for(var j = 0; j<sampleSheet.length; j++){
-                        if(index === sampleSheet[j]['Sample'] ){
-                            var experiment = sampleSheet[j]['Experiment']
-                            if(experiment === "X"){
-                                argExpXData.push(data[i][index]);                            
-                            }else if(experiment === "Y"){
-                                argExpYData.push(data[i][index]);
-                            }
-                        }
-                    }
+                }else{
+                    // //index is each column name
+                    // for(var j = 0; j<sampleSheet.length; j++){
+                    //     if(index === sampleSheet[j]['Sample'] ){
+                    //         var experiment = sampleSheet[j]['Experiment']
+                    //         if(experiment === "X"){
+                    //             argExpXData.push(data[i][index]);
+                    //         }else if(experiment === "Y"){
+                    //             argExpYData.push(data[i][index]);
+                    //         }
+                    //     }
+                    // }
                 }
-                
+
             }
         }
-        //TODO column names are correct, just need data 
-        console.log('Exp X columns' + argExpXNames)
-        console.log('Exp X data' + argExpXData)
-        console.log('Exp Y columns' + argExpYNames)
-        console.log('Exp Y data' + argExpYData)
-        plotExpX(argExpXNames,argExpXData)
-        plotExpY(argExpYNames,argExpYData)
+        //add divs for each experiment's plot
+        experiments.forEach(function(experiment) {
+            $('#plots').append("<div id = 'plot"+ experiment+"'></div>")
+            console.log(document.getElementById('plot'+experiment))
+            
+        }, this);
+
+        //plotExpX(argExpXNames,argExpXData)
+        //plotExpY(argExpYNames,argExpYData)
     }
 
 })
