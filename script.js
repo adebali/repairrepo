@@ -521,11 +521,8 @@ $(document).ready(function(){
          * @param {[{}]} data to be analyzed
          */
         function analyzeData(data){
-            var argColumnNames = []; 
-            var argExpXNames = []; //x values for exp x
-            var argExpXData = []; //y values for exp x
-            var argExpYNames = []; //x values for exp y
-            var argExpYData = []; //y values for exp y
+            var columnNames = []; 
+
             var oddColor = [];
             var evenColor = [];
     
@@ -536,25 +533,25 @@ $(document).ready(function(){
                 if(count < 8){
                     count += 1;
                 }else{
+                    var currentExperiment = sampleSheet[0]['Experiment']
                     for(var i = 0; i<sampleSheet.length; i++){
-                        if(index === sampleSheet[i]['Sample']){
-                            var experiment = sampleSheet[i]['Experiment']
-                            if(experiment === 'X'){
-                                argExpXNames.push(index)
-                            }else if(experiment === 'Y'){
-                                argExpYNames.push(index)
-                            }
+                        if(index === sampleSheet[i]['Sample'] && currentExperiment === sampleSheet[i]['Experiment']){
+                            columnNames.push(index)
+                            console.log('current exp = ' + currentExperiment + " sampleSheet @ " + i + "= " + sampleSheet[i]['Experiment'])
+                        }else if (currentExperiment != sampleSheet[i]['Experiment']){
+                            currentExperiment = sampleSheet[i]['Experiment'];
+                            console.log('new exp @ ' + i+ " = " + currentExperiment)
+                            
                         }
                     }
                     //get columns organized for alternating bar colors b/w TS and NTS, will be implemeneted later
-                    if(index.substr(index.length-3) === 'NTS'){
-                        oddColor.push(index)
-                    }else if(index.substr(index.length-3) === '_TS'){
-                        evenColor.push(index)
-                    }
+                    // if(index.substr(index.length-3) === 'NTS'){
+                    //     oddColor.push(index)
+                    // }else if(index.substr(index.length-3) === '_TS'){
+                    //     evenColor.push(index)
+                    // }
                 }
             }
-            
             //get corresponding data, skip first 8 columns
             for (var i = 0; i < data.length; i++) {
                 var count = 0;            
@@ -564,26 +561,23 @@ $(document).ready(function(){
                     }else{ 
                         //index is each column name
                         for(var j = 0; j<sampleSheet.length; j++){
-                            if(index === sampleSheet[j]['Sample'] ){
-                                var experiment = sampleSheet[j]['Experiment']
-                                if(experiment === "X"){
-                                    argExpXData.push(data[i][index]);                            
-                                }else if(experiment === "Y"){
-                                    argExpYData.push(data[i][index]);
-                                }
-                            }
+                            if(index === sampleSheet[j]['Sample'] && currentExperiment === sampleSheet[j]['Experiment']){
+                                data.push(data[i][index])
+                                console.log('current exp = ' + currentExperiment + " sampleSheet @ " + j + "= " + sampleSheet[j]['Experiment'])
+                            }else if (currentExperiment != sampleSheet[j]['Experiment']){
+                                currentExperiment = sampleSheet[j]['Experiment'];
+                                console.log('new exp @ ' + j+ " = " + currentExperiment)
+                                
+                            } 
                         }
                     }
                     
                 }
             }
-            //TODO column names are correct, just need data 
-            console.log('Exp X columns' + argExpXNames)
-            console.log('Exp X data' + argExpXData)
-            console.log('Exp Y columns' + argExpYNames)
-            console.log('Exp Y data' + argExpYData)
-            plotExpX(argExpXNames,argExpXData)
-            plotExpY(argExpYNames,argExpYData)
+           
+        
+            //plotExpX(argExpXNames,argExpXData)
+            //plotExpY(argExpYNames,argExpYData)
         }
     
     })
