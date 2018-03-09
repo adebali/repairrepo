@@ -485,10 +485,6 @@ $(document).ready(function(){
      */
 
     function analyzeData(data){
-        // var argExpXNames = []; //x values for exp x
-        // var argExpXData = []; //y values for exp x
-        // var argExpYNames = []; //x values for exp y
-        // var argExpYData = []; //y values for exp y
         // var oddColor = [];
         // var evenColor = [];
         var experiments = []; //for adding divs later
