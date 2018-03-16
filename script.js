@@ -30,6 +30,7 @@ $(document).ready(function(){
         var queryArray = [];
         var queryArray2 = [];
         var sampleSheet = []; //seeing which columns/data go to which experiment for plotting purposes
+        var experiments = []; //list of each unique experiment name used in analyzeData
         
         //page loads this by default, can change later
         orgDict.organism = 'mouse'
@@ -512,37 +513,52 @@ $(document).ready(function(){
                     sampleSheet = result;
                     
                 })
-            });
+            }); 
         }
-    
+
         /**
          * Function to compare the sampleSheet queried to data provided
          * in order to see where to call each experiment function
          * @param {[{}]} data to be analyzed
          */
         function analyzeData(data){
+
+            //first get all unique experiment names from sample sheet and create their respective arrays
+            for(var i = 0; i < sampleSheet.length; i++){
+                if(!experiments.includes(sampleSheet[i]['Experiment'])){
+                    experiments.push(sampleSheet[i]['Experiment'])
+                    var expCols = 'exp' + sampleSheet[i]['Experiment'] + 'Columns'
+                    var expData = 'exp' + sampleSheet[i]['Experiment']+ 'Data'
+                    window[expCols] = [];
+                    window[expData] = [];
+                                        
+                }
+            }
             var columnNames = []; 
 
-            var oddColor = [];
-            var evenColor = [];
+            // var oddColor = [];
+            // var evenColor = [];
     
             //organize columns for each experiment
             var count = 0;
             for (var index in data[0]) {
-                //skip extra columns
+                //skip extra columns, index is column name
                 if(count < 8){
                     count += 1;
                 }else{
-                    var currentExperiment = sampleSheet[0]['Experiment']
                     for(var i = 0; i<sampleSheet.length; i++){
-                        if(index === sampleSheet[i]['Sample'] && currentExperiment === sampleSheet[i]['Experiment']){
-                            columnNames.push(index)
-                            console.log('current exp = ' + currentExperiment + " sampleSheet @ " + i + "= " + sampleSheet[i]['Experiment'])
-                        }else if (currentExperiment != sampleSheet[i]['Experiment']){
-                            currentExperiment = sampleSheet[i]['Experiment'];
-                            console.log('new exp @ ' + i+ " = " + currentExperiment)
-                            
+                        if(index === sampleSheet[i]['Sample']){
+                            var experiment = sampleSheet[i]['Experiment']
+
+                            for(var j =0; j<experiments.length; j++){
+                                if(experiment === experiments[j]){
+                                    //push column name to its respective array
+                                    var varName = 'exp' + experiment + 'Columns'
+                                    window[varName].push(index)
+                                }
+                            }
                         }
+                        
                     }
                     //get columns organized for alternating bar colors b/w TS and NTS, will be implemeneted later
                     // if(index.substr(index.length-3) === 'NTS'){
@@ -561,24 +577,23 @@ $(document).ready(function(){
                     }else{ 
                         //index is each column name
                         for(var j = 0; j<sampleSheet.length; j++){
-                            if(index === sampleSheet[j]['Sample'] && currentExperiment === sampleSheet[j]['Experiment']){
-                                data.push(data[i][index])
-                                console.log('current exp = ' + currentExperiment + " sampleSheet @ " + j + "= " + sampleSheet[j]['Experiment'])
-                            }else if (currentExperiment != sampleSheet[j]['Experiment']){
-                                currentExperiment = sampleSheet[j]['Experiment'];
-                                console.log('new exp @ ' + j+ " = " + currentExperiment)
-                                
-                            } 
+                            if(index === sampleSheet[j]['Sample'] ){
+                                var experiment = sampleSheet[j]['Experiment']
+                            }
+                            for(var k =0; k<experiments.length; k++){
+                                if(experiment === experiments[k]){
+                                    //push column name to its respective array
+                                    var varName = 'exp' + experiment + 'Data'
+                                    window[varName].push(data[i][index])
+                                }
+                            }
                         }
                     }
                     
                 }
             }
-           
-        
-            //plotExpX(argExpXNames,argExpXData)
-            //plotExpY(argExpYNames,argExpYData)
+            plotExpX(argExpXColumns,argExpXData)
+            plotExpY(argExpYColumns,argExpYData)
         }
-    
     })
     
