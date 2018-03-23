@@ -4267,3 +4267,89 @@ table.hover tr:nth-of-type(even):hover {
   text-align: left;
 }
 }
+
+/* Accordion styling */
+/* Style the buttons that are used to open and close the accordion panel */
+.accordion {
+  background-color: #2D3840;
+  color: #FFFFFF;
+  cursor: pointer;
+  padding: 18px;
+  width: 100%;
+  text-align: left;
+  border: none;
+  outline: none;
+  transition: 0.4s;
+}
+
+/* Add a background color to the button if it is clicked on (add the .active class with JS), and when you move the mouse over it (hover) */
+.active, .accordion:hover {
+  background-color: #ccc;
+  color: black;
+}
+
+/* Style the accordion panel. Hidden by default; Styled for slide down upon click */
+.panel {
+  padding: 0 18px;
+  background-color: white;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.2s ease-out;
+}
+
+/* Table CSS for Downloads page */
+/* table {
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+} */
+
+.actions a {
+  display: block;
+  margin: 25px auto 0;
+  width: 200px;
+  text-align: center;
+  background: #0E4E66;
+  color: #c8c8c8;
+  padding: 6px;
+  border-radius: 3px;
+  text-decoration: none; }
+
+.filters {
+  margin-bottom: 20px; }
+
+.filter-container {
+  float: left;
+  width: 25%;
+  padding-right: 10px; }
+  .filter-container:last-of-type {
+    padding-right: 0; }
+  .filter-container input {
+    -webkit-appearance: none;
+    border: 2px solid #0E4E66;
+    background: white;
+    border-radius: 3px;
+    font-size: 18px;
+    width: 100%; }
+    .filter-container input:focus {
+      outline: none; }
+
+table {
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+  width: 100%;
+  border-collapse: collapse; }
+  td, th {
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: 8px;
+  }
+  tr:nth-child(even) {
+    background-color: #dddddd;
+  }
+
+    
+.clearfix {
+  clear: both;
+  width: 100%; }
