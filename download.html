@@ -1,0 +1,263 @@
+<!doctype html>
+<html class="no-js" lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DNA Damage and Repair Database</title>
+    <link rel="stylesheet" href="css/foundation.css">
+    <link rel="stylesheet" href="css/app.css">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!-- jquery for filter -->
+    <link href="http://www.jqueryscript.net/css/jquerysctipttop.css" rel="stylesheet" type="text/css">
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+    <script src="js/multifilter.js"></script>
+        
+    <!-- Font Style -->
+    <link href="https://fonts.googleapis.com/css?family=Karla" rel="stylesheet">
+    <script src="js/filter.min.js"></script>
+  </head>
+
+  <!-- call filtering function -->
+  <script type="text/javascript">
+      $(document).ready(function() {
+        $(".filter").multifilter()
+      })
+  </script>
+
+  <body>
+    <div class="off-canvas-wrapper">
+      <div class="off-canvas-wrapper-inner" data-off-canvas-wrapper>
+
+        <!-- OFF-CANVAS MENU -->
+        <div class="off-canvas position-left" id="mobile-menu" data-off-canvas>
+          <button class="accordion" id="home">HOME</button>
+            <script type="text/javascript">
+                document.getElementById("home").onclick = function () {
+                    location.href = "index.html";
+                };
+            </script>
+
+          <button class="accordion" id="browse">BROWSE</button>
+          <div class="panel">
+            <ul style="text-align:left">
+              <p>
+                <li>HUMAN</li>
+                <li>BROWSE</li>
+                <li>ARABIDOPSIS</li>
+                <li>PLANT</li>
+              </p>
+            </ul>
+          </div>
+
+          <button class="accordion" id="search">SEARCH</button>
+          <script type="text/javascript">
+            document.getElementById("search").onclick = function () {
+                location.href = "search.html";
+            };
+          </script>
+
+          <button class="accordion" id="download">DOWNLOAD</button>
+            <script type="text/javascript">
+                document.getElementById("download").onclick = function () {
+                    location.href = "download.html";
+                };
+            </script>
+
+          <button class="accordion" id="help">HELP</button>
+          <script type="text/javascript">
+            document.getElementById("help").onclick = function () {
+                location.href = "help.html";
+            };
+          </script>
+        </div>
+
+        <!-- KEEP -->
+        <div class="off-canvas-content" data-off-canvas-content>
+
+          <!-- MOBILE NAVIGATION -->
+
+          <div class="title-bar show-for-small-only">
+            <div class="title-bar-left">
+              <button class="menu-icon" type="button" data-open="mobile-menu"></button>
+              <!-- <span class="title-bar-title">MENU</span> -->
+              
+            </div>
+            <div class="title-bar-center show-for-small-only"><img class="logo-image logo-center" src="img/xr_logo_white.png" width="75" height="92"></img></div>
+          </div>
+
+          <!-- DESKTOP NAVIGATION -->
+
+          <nav class="top-bar nav-desktop">
+            <div class="wrap">
+              <div class="top-bar-left">
+                  <!-- <li class="name"> 
+                      <a href="#"><img src="img/xr_log_white.png"/></a> 
+               </li> -->
+               <div class="logo">
+                  <img class="logo-image" src="img/xr_logo_white.png" width="75" height="92"></img>
+                  <h3 class="site-logo">Excision Repair Database</h3>
+                </div>
+               <!-- <img src="img/xr_log_white.png"></img> -->
+              </div>
+              <div class="top-bar-right">
+                <ul class="menu menu-desktop">
+                  <li><a href="index.html">HOME</a></li>
+                  <li>
+                    <!-- <a href="#">Browse</a> -->
+                    <div class="dropdown">
+                      <button class="dropbtn">BROWSE
+                        <i class="fa fa-caret-down"></i>
+                      </button>
+                      <div class="dropdown-content">
+                        <a href="index.html">HUMAN</a>
+                        <a href="#">MOUSE</a>
+                        <a href="#">ARABIDOPSIS</a>
+                        <a href="#">PLANT</a>
+                      </div>
+                    </div> 
+                  </li>
+                  <li><a href="search.html">SEARCH</a></li>
+                  <li><a href="download.html">DOWNLOAD</a></li>
+                  <li><a href="help.html">HELP</a></li>
+                  <!-- <li><a href="#">Contact</a></li> -->
+                </ul>
+              </div>
+            </div>
+          </nav>
+
+          <!-- HERO SECTION -->
+
+          <section class="hero">
+            <div class="wrap" style="width:90%;">
+              <h1>Downloads</h1>
+              <blockquote>Out of six billion base pairs, pick out a spot and we"ll tell you how it is repaired.<cite>Aziz Sancar, 2015 Nobel Laureate in Chemistry</cite></blockquote>
+                  <p>This database serves the genomic maps of various DNA damage and repair of model organisms: Human, Mouse, Arabidopsis and E.coli. Damage and repair maps of the bulky adduct causing agents such as UV Cyclobutane pyrimidine dimers (CPDs), (6-4) Photoproduct, Cispatin, Oxiloplatin, Aflotoxin, Benzo[a]pyrene with a variety of treatments of different cell lines and strains are available. Start discovering now! </p>
+                  <a href="#" class="button">Learn More on XR-seq</a>
+                  <a href="#" class="button success">Learn More on Damage-seq</a>
+              <p>Feel free to navigate and filter through this section and download any files you"d like to browse and use!</p>
+              <!-- <a href="#" class="button">Learn More on XR-seq</a>
+              <a href="#" class="button success">Learn More on Damage-seq</a> -->
+            </div>
+          </section>
+          
+          <!-- MAIN SECTION -->
+          <section class="main">
+            <div class="wrap row">
+              <!-- Filters -->
+              <div class="container">
+                <div class="filters">
+                  <h2>Filters</h2>
+                  <div class="filter-container">
+                    <input autocomplete="on" class="filter" name="organism" placeholder="Organism" data-col="organism"/>
+                  </div>
+                  <div class="filter-container">
+                    <input autocomplete="on" class="filter" name="method" placeholder="Method" data-col="method"/>
+                  </div>
+                  <div class="filter-container">
+                    <input autocomplete="on" class="filter" name="damage" placeholder="Damage" data-col="damage"/>
+                  </div>
+                  <div class="filter-container">
+                    <input autocomplete="on" class="filter" name="celltype" placeholder="Cell Type" data-col="celltype"/>
+                  </div>
+                  <div class="filter-container">
+                    <input autocomplete="on" class="filter" name="strain" placeholder="Strain" data-col="strain"/>
+                  </div>
+                  <div class="filter-container">
+                    <input autocomplete="on" class="filter" name="time" placeholder="Time" data-col="time"/>
+                  </div>
+                  <div class="filter-container">
+                    <input autocomplete="on" class="filter" name="replicate" placeholder="Replicate (A/B)" data-col="replicate"/>
+                  </div>
+                  <div class="filter-container">
+                    <input autocomplete="on" class="filter" name="link" placeholder="Link name" data-col="link"/>
+                  </div>
+                  <div class="clearfix"></div>
+                </div>
+              </div>    
+            <!-- Downloads Table -->
+            <div class="container">
+                <h2>File Downloads</h2>
+                <table>
+                  <thead>
+                    <th>Organism</th>
+                    <th>Method</th>
+                    <th>Damage</th>
+                    <th>Cell Type</th>
+                    <th>Strain</th>
+                    <th>Time</th>
+                    <th>Replicate (A/B)</th>
+                    <th>Link name</th>
+                  </thead>
+                  
+                  <tbody>
+                    <tr><td>Human</td> <td>Damage-seq</td> <td>Cisplatin</td> <td>NHF1</td> <td>WT</td> <td>0 H</td> <td>A</td> <td>human1.txt</td></tr>
+                    <tr><td>Human</td> <td>Damage-seq</td> <td>Cisplatin</td> <td>NHF1</td> <td>WT</td> <td>0 H</td> <td>B</td> <td>human2.txt</td></tr>
+                    <tr><td>Human</td> <td>Damage-seq</td> <td>Cisplatin</td> <td>NHF1</td> <td>WT</td> <td>2 H</td> <td>A</td> <td>human3.txt</td></tr>
+                    <tr><td>Human</td> <td>Damage-seq</td> <td>Cisplatin</td> <td>NHF1</td> <td>WT</td> <td>2 H</td> <td>B</td> <td>human4.txt</td></tr>
+                    <tr><td>Human</td> <td>Damage-seq</td> <td>Cisplatin</td> <td>NHF1</td> <td>CSB</td> <td>0 H</td> <td>A</td> <td>human5.txt</td></tr>
+                    <tr><td>Human</td> <td>Damage-seq</td> <td>Cisplatin</td> <td>NHF1</td> <td>CSB</td> <td>0 H</td> <td>B</td> <td>human6.txt</td></tr>
+                    <tr><td>Human</td> <td>Damage-seq</td> <td>Cisplatin</td> <td>GM12878</td> <td>WT</td> <td>2 H</td> <td>A</td> <td>human7.txt</td></tr>
+                    <tr><td>Human</td> <td>Damage-seq</td> <td>Cisplatin</td> <td>GM12878</td> <td>WT</td> <td>2 H</td> <td>B</td> <td>human8.txt</td></tr>
+                    <tr><td>Human</td> <td>XR-seq</td> <td>CPD</td> <td>NHF1</td> <td>WT</td> <td>O H</td> <td>A</td> <td>human9.txt</td></tr>
+                    <tr><td>Human</td> <td>XR-seq</td> <td>CPD</td> <td>NHF1</td> <td>WT</td> <td>O H</td> <td>B</td> <td>human10.txt</td></tr>
+                    <tr><td>Human</td> <td>XR-seq</td> <td>CPD</td> <td>NHF1</td> <td>WT</td> <td>2 H</td> <td>A</td> <td>human11.txt</td></tr>
+                    <tr><td>Human</td> <td>XR-seq</td> <td>CPD</td> <td>NHF1</td> <td>WT</td> <td>2 H</td> <td>B</td> <td>human12.txt</td></tr>
+
+                    <tr><td>Mouse</td> <td>Damage-seq</td> <td>Cisplatin</td> <td>NHF1</td> <td>WT</td> <td>0 H</td> <td>A</td> <td>mouse1.txt</td></tr>
+                    <tr><td>Mouse</td> <td>Damage-seq</td> <td>Cisplatin</td> <td>NHF1</td> <td>WT</td> <td>0 H</td> <td>B</td> <td>mouse2.txt</td></tr>
+                    <tr><td>Mouse</td> <td>Damage-seq</td> <td>Cisplatin</td> <td>NHF1</td> <td>WT</td> <td>2 H</td> <td>A</td> <td>mouse3.txt</td></tr>
+                    <tr><td>Mouse</td> <td>Damage-seq</td> <td>Cisplatin</td> <td>NHF1</td> <td>WT</td> <td>2 H</td> <td>B</td> <td>mouse4.txt</td></tr>
+                    <tr><td>Mouse</td> <td>Damage-seq</td> <td>Cisplatin</td> <td>NHF1</td> <td>CSB</td> <td>0 H</td> <td>A</td> <td>mouse5.txt</td></tr>
+                    <tr><td>Mouse</td> <td>Damage-seq</td> <td>Cisplatin</td> <td>NHF1</td> <td>CSB</td> <td>0 H</td> <td>B</td> <td>mouse6.txt</td></tr>
+                    <tr><td>Mouse</td> <td>Damage-seq</td> <td>Cisplatin</td> <td>GM12878</td> <td>WT</td> <td>2 H</td> <td>A</td> <td>mouse7.txt</td></tr>
+                    <tr><td>Mouse</td> <td>Damage-seq</td> <td>Cisplatin</td> <td>GM12878</td> <td>WT</td> <td>2 H</td> <td>B</td> <td>mouse8.txt</td></tr>
+                    <tr><td>Mouse</td> <td>XR-seq</td> <td>CPD</td> <td>NHF1</td> <td>WT</td> <td>O H</td> <td>A</td> <td>mouse9.txt</td></tr>
+                    <tr><td>Mouse</td> <td>XR-seq</td> <td>CPD</td> <td>NHF1</td> <td>WT</td> <td>O H</td> <td>B</td> <td>mouse10.txt</td></tr>
+                    <tr><td>Mouse</td> <td>XR-seq</td> <td>CPD</td> <td>NHF1</td> <td>WT</td> <td>2 H</td> <td>A</td> <td>mouse11.txt</td></tr>
+                    <tr><td>Mouse</td> <td>XR-seq</td> <td>CPD</td> <td>NHF1</td> <td>WT</td> <td>2 H</td> <td>B</td> <td>mouse12.txt</td></tr>
+                  </tbody>
+                </table>
+            </div>
+          </section>
+
+
+
+          <!-- FOOTER -->
+          <footer>
+            <div class="wrap row small-up-1 medium-up-3">
+              <div class="column">
+                <h4>Contact Info</h4>
+                <hr>
+                <a href="mailto:adebali@unc.edu"><span>Email</span> adebali@unc.edu</a>
+              </div>
+              <div class="column">
+                <h4>Site Map</h4>
+                <hr>
+                <a href="#">Browse</a>
+                <a href="#">Search</a>
+                <a href="#">Download</a>
+                <a href="#">Help</a>
+              </div>
+              <div class="column">
+                <h4>Social Media :)</h4>
+                <hr>
+                <a href="#">Facebook</a>
+                <a href="#">Twitter</a>
+                <a href="#">Instagram</a>
+              </div>
+            </div>
+          </footer>
+        </div>
+      </div>
+    </div>
+
+    <!-- <script src="js/vendor/jquery.js"></script> -->
+    <!-- Keep above script out to prevent conflict w/ jquery script -->
+    <script src="js/vendor/what-input.js"></script>
+    <script src="js/vendor/foundation.js"></script>
+    <script src="js/app.js"></script>
+    <script src="js/accordion.js"></script>
+  </body>
+</html>

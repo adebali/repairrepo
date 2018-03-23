@@ -1,0 +1,56 @@
+[
+    {
+        "organism": "Human",
+        "scientific_name": "Homo sapiens",
+        "samples": [
+            {
+                "name": "WT_XR",
+                "treatment": "UV",
+                "product": "CPD",
+                "notes": "",
+                "url": {
+                    "bed": "",
+                    "raw_fastq": ""
+                }
+            },
+            {
+                "name": "WT_Damage",
+                "treatment": "UV",
+                "product": "(6-4)PP",
+                "notes": "",
+                "url": {
+                    "bed": "",
+                    "raw_fastq": ""
+                }
+            }
+        ]
+    },
+    {
+        "organism": "E. coli",
+        "scientific_name": "Escherichia coli",
+        "samples": [
+            {
+                "name": "WT",
+                "strain": "WT",
+                "treatment": "NA",
+                "product": "CPD",
+                "notes": "",
+                "url": {
+                    "bed": "",
+                    "raw_fastq": ""
+                }             
+            },
+            {
+                "name": "UvrD-",
+                "strain": "UvrD",
+                "treatment": "NA",
+                "product": "CPD",
+                "notes": "",
+                "url": {
+                    "bed": "",
+                    "raw_fastq": ""
+                }
+            }
+        ]
+    }
+]
