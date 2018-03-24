@@ -138,43 +138,49 @@
           <!-- MAIN SECTION -->
 
           <section class="main">
-            <div id = "bodyDiv">
-                <!-- more organisms to be added -->
-                <div id = "querySelectors">
-                <div id = "nameSelector">
-                    <div class = 'page-header'>
-                  <b> Search by Organism and Gene Name </b>
+ 
+            <div>
+              
+              <div id = "wrap row">
+                  <div class="small-12 column">              
+                  <!-- more organisms to be added -->
+                  <div id = "querySelectors">
+                    <div id = "nameSelector">
+                      Select an organism: 
+                      <select id = 'chooseOrg'> 
+                        <option value = 'mouse'> Mouse </option> 
+                        <option value = 'human'> Human </option>
+                      </select> 
+                      <div class = 'page-header'>
+                          <h3> Search a gene: </h3>
+                        </div>
+                      Gene: <input type = 'text' class='inline' id = 'gene' placeholder="Gene name"> 
+                      <button id = "submitName" class = "btn btn-default"> Search </button>
                     </div>
-                Organism: <select id = 'chooseOrg'> 
-                    <option value = 'mouse'> Mouse </option> 
-                    <option value = 'human'> Human </option>
-                </select> 
-                Gene: <input type = 'text' id = 'gene' placeholder="Gene name"> 
-                <button id = "submitName" class = "btn btn-default"> Search </button>
+                    <br>
+                    <div class = 'page-header'>
+                      <h3>Search genes by genome regions:</h3>
+                    </div>
+                    <div id = 'chrSelector'>
+                      Chromosome: <div id = 'chrDropDiv'> </div>
+                    </div>
+                    Start: <input type = 'number' class="inline" id = 'startChr' placeholder="Start position"> 
+                    End: <input type = 'number' class="inline" id = 'endChr' placeholder="End position">
+                    <button type="button" id = 'submitChr'>Submit</button>
+                    
+                    <br><br>
+                  </div>
                 </div>
-            
-                <div class = 'page-header'>
-                <b>Search by Chromosome Placement</b>
-                </div>
-                <div id = 'chrSelector'>
-                        <div id = 'chrDropDiv'> </div>
-                </div>
-                * Start: <input type = 'number' id = 'startChr' placeholder="Start position"> 
-                * End: <input type = 'number' id = 'endChr' placeholder="End position">
-                <button id = 'submitChr' class = "btn btn-default">Submit</button>
-                <br>* denotes required fields
-                <br><br>
-                </div>
-            
-            <div id = 'results'> Results from query will display here </div>
-            <div id = 'plots'>Plots will display below once user clicks on table row</div>
-            <div id = 'plotsX'> </div>
-            <div id = 'plotsY'> </div>
-            
-            
-            <button id ='prev' type="button" class="btn btn-default">Previous</button>
-            <button id = 'next' type="button" class="btn btn-default">Next -> </button>
-            
+              
+                <div id = 'results'> Results from query will display here </div>
+                <div id = 'plots'>Plots will display below once user clicks on table row</div>
+                <div id = 'plotsX'> </div>
+                <div id = 'plotsY'> </div>
+                
+                <button id ='prev' type="button" class="btn btn-default">Previous</button>
+                <button id = 'next' type="button" class="btn btn-default">Next -> </button>
+                
+              </div>
             </div>
           </section>
 

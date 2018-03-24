@@ -6,6 +6,11 @@ GENERAL
   outline: none;
 }
 
+.inline {
+  float: left;
+  width:30%;
+}
+
 .wrap {
   width: 90%;
   max-width: 1100px;

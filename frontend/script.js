@@ -224,7 +224,7 @@ $(document).ready(function(){
      */
     function buildChrDropdown(numChr){
         console.log('building dropdown' + numChr)
-        var select = "* <b>Chromosome: </b><select id = 'chrDropdown' >";
+        var select = "<select class='inline' id = 'chrDropdown' >";
         for (i=0;i<=numChr-2;i++){
             if(i == 0){
                 select += "<option val = 'chr'>-</option>";
