@@ -65,7 +65,7 @@ $(document).ready(function(){
                     $('#results').html("<div class = 'alert alert-warning' role = 'alert'> <strong> No results left</strong></div>")
                     
                 }else{
-                    html = "<div class = 'table-scroll'> " + createDynamicTable(docs)  + "</div"                     
+                    html = createDynamicTable(docs)                    
                     document.getElementById("results").innerHTML = html; 
                     last_id1 = docs[docs.length-1]['_id']
                 }
@@ -79,7 +79,7 @@ $(document).ready(function(){
                     $('#results').html("<div class = 'alert alert-warning' role = 'alert'> <strong> No results left</strong></div>")
                     
                 }else{
-                    html = "<div class = 'table-scroll'> " + createDynamicTable(docs)  + "</div"
+                    html =  createDynamicTable(docs) 
                     document.getElementById("results").innerHTML = html; 
                     last_id1 = docs[docs.length-1]['_id']
                 }
@@ -93,7 +93,7 @@ $(document).ready(function(){
                     //$('#results').html("<h1><span class='label label-warning'>No results left</span></h1>")
                     $('#results').html("<div class = 'alert alert-warning' role = 'alert'> <strong> No results left</strong></div>")
                 }else{
-                html = "<div class = 'table-scroll'> " + createDynamicTable(docs)  + "</div"
+                html =  createDynamicTable(docs) 
                 document.getElementById("results").innerHTML = html; 
                 last_id1 = docs[docs.length-1]['_id']
                 }
@@ -359,7 +359,7 @@ $(document).ready(function(){
     function createDynamicTable(objArray) {
         var array = objArray;
     
-        var str = '<table class="table-striped"> <thead class = "thead-dark">';
+        var str = '<div class = "table-scroll"> <table class="table-striped"> <thead class = "thead-dark">';
         str += '<tr>';
         for (var index in array[0]) {
             str += '<th scope="col">' + index + '</th>';
@@ -384,7 +384,7 @@ $(document).ready(function(){
             str += '</tr>';
         }
         str += '</tbody>'
-        str += '</table>';
+        str += '</table> </div>';
         return str;
 
     }
