@@ -65,7 +65,7 @@ $(document).ready(function(){
                     $('#results').html("<div class = 'alert alert-warning' role = 'alert'> <strong> No results left</strong></div>")
                     
                 }else{
-                    html = createDynamicTable(docs)                      
+                    html = "<div class = 'table-scroll'> " + createDynamicTable(docs)  + "</div"                     
                     document.getElementById("results").innerHTML = html; 
                     last_id1 = docs[docs.length-1]['_id']
                 }
@@ -79,7 +79,7 @@ $(document).ready(function(){
                     $('#results').html("<div class = 'alert alert-warning' role = 'alert'> <strong> No results left</strong></div>")
                     
                 }else{
-                    html = createDynamicTable(docs) 
+                    html = "<div class = 'table-scroll'> " + createDynamicTable(docs)  + "</div"
                     document.getElementById("results").innerHTML = html; 
                     last_id1 = docs[docs.length-1]['_id']
                 }
@@ -93,7 +93,7 @@ $(document).ready(function(){
                     //$('#results').html("<h1><span class='label label-warning'>No results left</span></h1>")
                     $('#results').html("<div class = 'alert alert-warning' role = 'alert'> <strong> No results left</strong></div>")
                 }else{
-                html = createDynamicTable(docs) 
+                html = "<div class = 'table-scroll'> " + createDynamicTable(docs)  + "</div"
                 document.getElementById("results").innerHTML = html; 
                 last_id1 = docs[docs.length-1]['_id']
                 }
