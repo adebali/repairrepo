@@ -359,7 +359,7 @@ $(document).ready(function(){
     function createDynamicTable(objArray) {
         var array = objArray;
     
-        var str = '<div class = "table-scroll"> <table class="table-striped"> <thead class = "thead-dark">';
+        var str = '<table class="table-striped"> <thead class = "thead-dark">';
         str += '<tr>';
         for (var index in array[0]) {
             str += '<th scope="col">' + index + '</th>';
@@ -384,7 +384,7 @@ $(document).ready(function(){
             str += '</tr>';
         }
         str += '</tbody>'
-        str += '</table> </div>';
+        str += '</table>';
         return str;
 
     }
