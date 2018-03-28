@@ -298,6 +298,7 @@ $(document).ready(function(){
         queryArray = [];
 
         $('#results').html("<img src = 'loading.gif' alt = 'Loading...'>")
+        $('#plots div').empty();
         
         if($('#chrDropdown').val() === '-'){
             //change div color to show where to select
