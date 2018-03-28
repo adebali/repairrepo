@@ -127,19 +127,12 @@
             </div>
           </nav>
 
-          <!-- HERO SECTION -->
-
-          <section class="hero">
-            <div class="wrap">
-                <h1>Search Section</h1>
-            </div>
-          </section>
 
           <!-- MAIN SECTION -->
 
           <section class="main">
  
-            <div>
+            <div id = 'mainDiv'>
               
               <div class = "wrap row">
                   <div class="small-12 column">              
@@ -147,38 +140,47 @@
                   <div id = "querySelectors">
                     <div id = "nameSelector">
                       Select an organism: 
-                      <select id = 'chooseOrg'> 
-                        <option value = 'mouse'> Mouse </option> 
-                        <option value = 'human'> Human </option>
-                      </select> 
-                      <div class = 'page-header'>
-                          <h3> Search a gene: </h3>
-                        </div>
-                      Gene: <input type = 'text' class='inline' id = 'gene' placeholder="Gene name"> 
-                      <button id = "submitName" class = "btn btn-default"> Search </button>
+                      <div class = "row medium-unstack" id = 'orgPics'>
+                        <img class = "thumbnail" id = "human" alt = "Pic of Human" src = "img/human.png">
+                        <img class = "thumbnail" id = "arabidopsis" alt = "Pic of Arabidopsis" src = "img/Arabidopsis.png">
+                        <img class = "thumbnail" id = "ecoli" alt = "Pic of E.Coli" src = "img/bacterium.png">
+                        <img class = "thumbnail" id = "mouse" alt = "Pic of Mouse" src = "img/mouse.png">
+                      </div> 
                     </div>
+                    <div class = "row medium-unstack">
+                      <div class = 'page-header'>
+                          <h3> Search a gene by name: </h3>
+                      </div>
+                      <div class = "columns">
+                      <input type = 'text' class='inline' id = 'gene' placeholder="Gene name"> 
+                      </div>
+                    
                     <br>
+                    <div class = "columns">
                     <div class = 'page-header'>
-                      <h3>Search genes by genome regions:</h3>
+                      <h3>Search genes genes in a region:</h3>
                     </div>
                     <div id = 'chrSelector'>
                       Chromosome: <div id = 'chrDropDiv'> </div>
                     </div>
-                    Start: <input type = 'number' class="inline" id = 'startChr' placeholder="Start position"> 
-                    End: <input type = 'number' class="inline" id = 'endChr' placeholder="End position">
-                    <button type="button" id = 'submitChr'>Submit</button>
+                    <input type = 'number' class="inline" id = 'startChr' placeholder="Start position"> 
                     
+                    <input type = 'number' class="inline" id = 'endChr' placeholder="End position">
+                    <div class = "columns">
+                    <button type="button" id = 'submitChr' class = "button">Submit</button>
+                    </div>
+                    </div>
+                  </div>
                     <br><br>
                   </div>
                 
               
                
-                <div id = 'results'> Results from query will display here </div>
+                <div id = 'results'></div>
                 
-                <div id = 'plots'>Plots will display below once user clicks on table row</div>
+                <div id = 'plots' class  = "row medium-unstack"></div>
                 
-                <button id ='prev' type="button" class="btn btn-default"> &lt;- Previous</button>
-                <button id = 'next' type="button" class="btn btn-default">Next -> </button>
+             
               </div>
               </div>
             </div>

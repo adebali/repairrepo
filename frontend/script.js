@@ -5,7 +5,8 @@ $(document).ready(function(){
     queryResultsAuto([{}])
 
     //setting up dropdown for chromosomes. changes depending on organism selected
-    buildChrDropdown(21);
+    //default selected is human
+    //buildChrDropdown(22);
 
     //query db for sample sheet in order to get columns/data for each experiment for plotting purposes
     getSampleSheet();
@@ -43,6 +44,8 @@ $(document).ready(function(){
 
     //sets up server connection and chromosome placement query method
     function queryResultsChr(arg1, prev){
+        $('#results').html("<img src = 'loading.gif' alt = 'Loading...'>")
+        
         clientPromise.then(stitchClient =>{
             client = stitchClient;
             db = client.service('mongodb', 'mongodb-atlas').db('data');
@@ -65,7 +68,7 @@ $(document).ready(function(){
                     $('#results').html("<div class = 'alert alert-warning' role = 'alert'> <strong> No results left</strong></div>")
                     
                 }else{
-                    html = createDynamicTable(docs)                    
+                    html =  createDynamicTable(docs) +"<button id ='prev' type='button' class='button'> &lt;- Previous</button> <button id = 'next' type='button' class='button'>Next -> </button>"
                     document.getElementById("results").innerHTML = html; 
                     last_id1 = docs[docs.length-1]['_id']
                 }
@@ -79,7 +82,7 @@ $(document).ready(function(){
                     $('#results').html("<div class = 'alert alert-warning' role = 'alert'> <strong> No results left</strong></div>")
                     
                 }else{
-                    html =  createDynamicTable(docs) 
+                    html =  createDynamicTable(docs) +"<button id ='prev' type='button' class='button'> &lt;- Previous</button> <button id = 'next' type='button' class='button'>Next -> </button>"
                     document.getElementById("results").innerHTML = html; 
                     last_id1 = docs[docs.length-1]['_id']
                 }
@@ -93,7 +96,7 @@ $(document).ready(function(){
                     //$('#results').html("<h1><span class='label label-warning'>No results left</span></h1>")
                     $('#results').html("<div class = 'alert alert-warning' role = 'alert'> <strong> No results left</strong></div>")
                 }else{
-                html =  createDynamicTable(docs) 
+                html =  createDynamicTable(docs) +"<button id ='prev' type='button' class='button'> &lt;- Previous</button> <button id = 'next' type='button' class='button'>Next -> </button>"
                 document.getElementById("results").innerHTML = html; 
                 last_id1 = docs[docs.length-1]['_id']
                 }
@@ -104,6 +107,8 @@ $(document).ready(function(){
 
     //helper functions for name query TODO--- do we need pagination for name query?
     function queryResultsName(arg2){
+        $('#results').html("<img src = 'loading.gif' alt = 'Loading...'>")
+        
         clientPromise.then(stitchClient =>{
             client = stitchClient;
             db = client.service('mongodb', 'mongodb-atlas').db('data');
@@ -141,19 +146,20 @@ $(document).ready(function(){
 
             });
         }
+        $('#results').html("")
 
     }
 
     var appended = false;
     //pagination event handlers (next&prev buttons)
-    $('#next').click(function(){
+    $('#results').on("click", "#next", function(){
         if(queryArray2.length === 0){
             queryResultsChr(queryArray, false)
         }else if(queryArray.length === 0){
             if(appended){
                 return;
             }
-            //queryResultsName(queryArray2, false)
+            
             //pagination not necessary for Gene name search
             $('#results').append('<b> Only one gene for each name')
             appended = true;
@@ -162,7 +168,7 @@ $(document).ready(function(){
     })
 
 
-    $('#prev').click(function(){
+    $('#results').on("click", "#prev", function(){
         if(queryArray2.length === 0){
             queryResultsChr(queryArray, true)
         }else if (queryArray.length === 0){
@@ -221,37 +227,59 @@ $(document).ready(function(){
     /**
      * Sets up dropdown for chromosome numbers. 
      * @param {int} numChr Number of chromosomes for the given organism
+     * @param {boolean} sexChr True if organism has sex chromosomes
      */
-    function buildChrDropdown(numChr){
+    function buildChrDropdown(numChr, sexChr){
         console.log('building dropdown' + numChr)
         var select = "<select class='inline' id = 'chrDropdown' >";
-        for (i=0;i<=numChr-2;i++){
-            if(i == 0){
-                select += "<option val = 'chr'>-</option>";
-            }else{
-                select += '<option val=' + i + '>' + i + '</option>';
+        if(numChr === 1){
+            select += "<option val = 'chr'>chr</option>"
+        }else{
+            for (i=0;i<=numChr;i++){
+                if(i == 0){
+                    select += "<option val = 'chr'>-</option>";
+                }else{
+                    select += '<option val=' + i + '>' + i + '</option>';
+                }
             }
         }
-        select += "<option val = 'x'> X </option>"
-        select += "<option val = 'y'> Y </option>"
+        if(sexChr){
+            select += "<option val = 'x'> X </option>"
+            select += "<option val = 'y'> Y </option>"
+        }
         select+='</select>'
         $('#chrDropDiv').html(select);
     }
 
 
-    //adjusts query for user changes in organism dropdown, need to add other organisms
-    $('#chooseOrg').change(function(){
-        console.log($('#chooseOrg').val() + ' was selected')
-        switch($('#chooseOrg').val()){
-            case 'mouse':
-                orgDict.organism = 'mouse'
-                buildChrDropdown(21)
+
+    $(".thumbnail").click(function(e){
+        $(".thumbnail").css("filter", "")
+        console.log('img clicked ' + e.target.id)
+        var org = e.target.id
+        switch(org){
             case 'human':
                 orgDict.organism = 'human'
-                buildChrDropdown(24)
+                buildChrDropdown(22, true)
+                $('#'+org).css("filter", "sepia() saturate(10000%) hue-rotate(30deg)")
+                break;
+            case 'mouse':
+                orgDict.organism = 'mouse'
+                buildChrDropdown(19, true)
+                $('#'+org).css("filter", "sepia() saturate(10000%) hue-rotate(30deg)")
+                break;
+            case 'arabidopsis':
+                orgDict.organism = 'arabidopsis'
+                buildChrDropdown(5, false)
+                $('#'+org).css("filter", "sepia() saturate(10000%) hue-rotate(30deg)")
+                break;
+            case 'ecoli':
+                orgDict.organism = 'ecoli'
+                buildChrDropdown(1, false)
+                $('#'+org).css("filter", "sepia() saturate(10000%) hue-rotate(30deg)")
+                break;
+
         }
-        last_id1 = null;
-        last_id2 = null;
     })
 
 
@@ -293,11 +321,22 @@ $(document).ready(function(){
     })
 
 
-    //submit button event handler for chromosome placement query
-    $('#submitChr').click(function(){
+    //event handlers for query (submit button and 'enter' press)
+    $('#submitChr').click(submitMethod);
+    $(document).keypress(function(e){
+        if(e.which === 13){
+            submitMethod();
+        }
+    })
+
+    function submitMethod(){
+        
+        if($("#gene").val() != ''){
+            submitGeneName()
+            return;
+        }
         queryArray = [];
 
-        $('#results').html("<img src = 'loading.gif' alt = 'Loading...'>")
         $('#plots div').empty();
         
         if($('#chrDropdown').val() === '-'){
@@ -330,10 +369,9 @@ $(document).ready(function(){
         }
         queryArray2 = [];
         
-    })
-
+    }
     //submit event handler for gene name query
-    $('#submitName').click(function(){
+    function submitGeneName(){
         queryArray2 = [];
         console.log($("#gene").val())
         if($('#gene').val().length != 0){
@@ -350,7 +388,7 @@ $(document).ready(function(){
         } 
         queryArray = [];
         
-    })
+    }
 
     /**
      * Given the results from a query, the method will build a table with embedded click 
@@ -387,7 +425,6 @@ $(document).ready(function(){
         str += '</tbody>'
         str += '</table>';
         return str;
-
     }
     
 
@@ -484,6 +521,7 @@ $(document).ready(function(){
                 var func =sampleSheet[i]['Function']
                 var plotsDiv = document.getElementById('plots')
                 var newDiv = document.createElement("div")
+                newDiv.class = "columns"
                 newDiv.id = 'plots'+exp
                 plotsDiv.appendChild(newDiv)
                 console.log('new divs' + newDiv.id)
