@@ -175,7 +175,7 @@ $(document).ready(function(){
             if(appended){
                 return;
             }
-            //queryResultsName(queryArray2, true)
+           
             //pagination not necessary for Gene name search
             $('#results').append('<b> Only one gene for each name')
             appended = true;
