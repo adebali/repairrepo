@@ -4348,8 +4348,13 @@ table {
   tr:nth-child(even) {
     background-color: #dddddd;
   }
-
-    
+ 
 .clearfix {
   clear: both;
   width: 100%; }
+
+/* editing help md file section */
+#help {
+  width: 100%;
+  height: 100%;
+}
