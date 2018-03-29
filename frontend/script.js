@@ -330,12 +330,14 @@ $(document).ready(function(){
     })
 
     function submitMethod(){
-        if($("#gene").val() != '' &&($('#startChr').val().length !=0 || $('#endChr').val().length != 0) || $('#chrDropdown').val() != '-'){
+        console.log($('#gene').val() != '');
+        if($("#gene").val() != '' && (($('#startChr').val().length !=0 || $('#endChr').val().length != 0) || $('#chrDropdown').val() != '-')){
             if($("#searchAlert").length === 1){
                 return;
             }else{
-            $('#results').append("<div class = 'callout alert' id = 'searchAlert'>Please choose to query based on name OR region, not both.</div>")
-            return;
+
+                $('#results').html("<div class = 'callout alert' id = 'searchAlert'>Please choose to query based on name OR region, not both.</div>")
+                return;
             }
         }
         if($("#gene").val() != ''){
