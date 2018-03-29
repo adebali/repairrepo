@@ -4,10 +4,6 @@ $(document).ready(function(){
     //first, create list of gene names for autocomplete
     queryResultsAuto([{}])
 
-    //setting up dropdown for chromosomes. changes depending on organism selected
-    //default selected is human
-    //buildChrDropdown(22);
-
     //query db for sample sheet in order to get columns/data for each experiment for plotting purposes
     getSampleSheet();
     
@@ -64,7 +60,6 @@ $(document).ready(function(){
                 var html;
                 
                 if(docs.length == 0){
-                    //$('#results').html("<h1><span class='label label-warning'>No results left</span></h1>")
                     $('#results').html("<div class = 'alert alert-warning' role = 'alert'> <strong> No results left</strong></div>")
                     
                 }else{
@@ -78,7 +73,6 @@ $(document).ready(function(){
                 var html;
                     
                 if(docs.length == 0){
-                    //$('#results').html("<h1><span class='label label-warning'>No results left</span></h1>")
                     $('#results').html("<div class = 'alert alert-warning' role = 'alert'> <strong> No results left</strong></div>")
                     
                 }else{
@@ -93,7 +87,6 @@ $(document).ready(function(){
             db.collection('gene').find({"$and":[{'_id':{"$lt":last_id1}},arg1]}).limit(10).execute().then(docs => {
                 var html;
                 if(docs.length == 0){
-                    //$('#results').html("<h1><span class='label label-warning'>No results left</span></h1>")
                     $('#results').html("<div class = 'alert alert-warning' role = 'alert'> <strong> No results left</strong></div>")
                 }else{
                 html =  createDynamicTable(docs) +"<button id ='prev' type='button' class='button'> &lt;- Previous</button> <button id = 'next' type='button' class='button'>Next -> </button>"
@@ -105,7 +98,7 @@ $(document).ready(function(){
     }
 
 
-    //helper functions for name query TODO--- do we need pagination for name query?
+    //helper functions for name query
     function queryResultsName(arg2){
         $('#results').html("<img src = 'loading.gif' alt = 'Loading...'>")
         
@@ -126,22 +119,16 @@ $(document).ready(function(){
 
         if(last_id2 === null){
             db.collection('gene').find(arg2).limit(1).execute().then(docs2 => {
-                var html;
+                
                 analyzeData(docs2) 
-                //html = createDynamicTable(docs2)  
-                //document.getElementById("results").innerHTML = html; 
-                //call function to see if columns match which experiment, then call the experiment
                 last_id2 = docs2[docs2.length-1]['_id'] 
                 
                 
             });
         }else{
             db.collection('gene').find({"$and":[{'_id':{"$gt":last_id2}},arg2]}).limit(1).execute().then(docs2 => {
-                var html;
-                
+
                 analyzeData(docs2) 
-                //html = createDynamicTable(docs2)  
-                //document.getElementById("results").innerHTML = html; 
                 last_id2 = docs2[docs2.length-1]['_id'] 
 
             });
@@ -219,7 +206,7 @@ $(document).ready(function(){
             response(results.slice(0, 20)); //show only 20 in the list at a time
             autoFocus:true;
             delay: 600; //600 milliseconds
-            minLength: 3; //min length of inputted chars before search begins
+            minLength: 3; //minimum length of inputted chars before search begins
         }
     });
     
@@ -230,7 +217,6 @@ $(document).ready(function(){
      * @param {boolean} sexChr True if organism has sex chromosomes
      */
     function buildChrDropdown(numChr, sexChr){
-        console.log('building dropdown' + numChr)
         var select = "<select class='inline' id = 'chrDropdown' >";
         if(numChr === 1){
             select += "<option val = 'chr'>chr</option>"
@@ -255,7 +241,6 @@ $(document).ready(function(){
 
     $(".thumbnail").click(function(e){
         $(".thumbnail").css("filter", "")
-        console.log('img clicked ' + e.target.id)
         var org = e.target.id
         switch(org){
             case 'human':
@@ -287,8 +272,6 @@ $(document).ready(function(){
     $('#startChr').change(function(){
         if($('#startChr').val() != ''){
             inputStartChr = $('#startChr').val();
-            console.log('inputStartChr changed')
-            //$('#startChr').css("background-color", "")
             $('#startChr').removeClass('ui-state-error ui-corner-all');
         }
         last_id1 = null
@@ -297,8 +280,6 @@ $(document).ready(function(){
     $('#endChr').change(function(){
         if($('#endChr').val() != ''){
             inputEndChr = $('#endChr').val();
-            console.log('inputEndChr changed')
-            //$('#endChr').css("background-color", "")
             $('#endChr').removeClass('ui-state-error ui-corner-all');
         }
         last_id1 = null;
@@ -306,7 +287,6 @@ $(document).ready(function(){
 
     $('#chrDropdown').change(function(){
         if($('#chrDropdown').val() != '-'){
-            //$('#chrDropDiv').css("color", "")
             $('#chrDropdown').removeClass('ui-state-error ui-corner-all');
         }
         last_id1 = null;
@@ -314,7 +294,6 @@ $(document).ready(function(){
 
     $('#gene').change(function(){
         if($('#gene').val().length != 0){
-            //$('#gene').css("background-color", "")
             $('#gene').removeClass('ui-state-error ui-corner-all');
         }
         last_id2 = null;
@@ -330,7 +309,6 @@ $(document).ready(function(){
     })
 
     function submitMethod(){
-        console.log($('#gene').val() != '');
         if($("#gene").val() != '' && (($('#startChr').val().length !=0 || $('#endChr').val().length != 0) || $('#chrDropdown').val() != '-')){
             if($("#searchAlert").length === 1){
                 return;
@@ -350,7 +328,6 @@ $(document).ready(function(){
         
         if($('#chrDropdown').val() === '-'){
             //change div color to show where to select
-            //$("#chrDropDiv").css("color","#DF0E0E");
             $('#chrDropdown').addClass('ui-state-error ui-corner-all');
             console.log('enter chromsome');
         }else{
@@ -384,14 +361,12 @@ $(document).ready(function(){
         queryArray2 = [];
         console.log($("#gene").val())
         if($('#gene').val().length != 0){
-            console.log('gene field has input')
             geneInputName = document.getElementById('gene').value;
             queryArray2.push({'name':document.getElementById('gene').value})
             queryArray2.push(orgDict)
 
             queryResultsName(queryArray2);
         }else{
-            console.log('enter gene name') //add div color change here
             
             $('#gene').addClass('ui-state-error ui-corner-all');
         } 
@@ -414,7 +389,6 @@ $(document).ready(function(){
         }
         
         str += '</tr></thead>';
-        //str += "<tbody id = 'plot'> </tbody>"
         str += "<tbody>";
         for (var i = 0; i < array.length; i++) {
             str += "<tr id = 'dataRow_" + i +"'> ";
@@ -425,7 +399,6 @@ $(document).ready(function(){
             }
             $(document).on("click", "#dataRow_"  + i, function(){
                 var arrayIndex = this.id.slice(-1)
-                console.log('data in createDynamicTable'+JSON.stringify([array[arrayIndex]]))
                 analyzeData([array[arrayIndex]])                
             })
 
@@ -533,11 +506,7 @@ $(document).ready(function(){
                 newDiv.class = "columns"
                 newDiv.id = 'plots'+exp
                 plotsDiv.appendChild(newDiv)
-                console.log('new divs' + newDiv.id)
-                //$(window).append("<div id = 'plots" + sampleSheet[i]['Experiment']+'"</div>')
-                functions.push({[exp]:func})
-                console.log('expcols in creating func ' + expCols)
-                console.log('expdata in creating func ' + expData)                    
+                                  
             }
 
         }
@@ -598,7 +567,6 @@ $(document).ready(function(){
                 
             }
         }
-        console.log(JSON.stringify(functions))
         //call plotting functions
         for(var l = 0; l < experiments.length; l++){
 
