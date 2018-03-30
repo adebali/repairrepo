@@ -501,6 +501,7 @@ $(document).ready(function(){
                 window[expCols] = [];
                 window[expData] = [];
                 var func =sampleSheet[i]['Function']
+                functions.push({[exp]:func})
                 var plotsDiv = document.getElementById('plots')
                 var newDiv = document.createElement("div")
                 newDiv.class = "columns"
@@ -567,9 +568,10 @@ $(document).ready(function(){
                 
             }
         }
+        console.log(experiments.length)
         //call plotting functions
         for(var l = 0; l < experiments.length; l++){
-
+            
             var cols = 'exp'+experiments[l]+'Columns'
             var data = 'exp'+experiments[l]+'Data'
             var func = functions[l][experiments[l]]
