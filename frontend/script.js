@@ -374,6 +374,12 @@ $(document).ready(function(){
         
     }
 
+    $('.thumbnail').hover(function(e){
+        $('#organismName').html('Select: <b>' + this.id + "</b>") 
+    }, function(){
+        $('#organismName').empty();
+    })
+   
     /**
      * Given the results from a query, the method will build a table with embedded click 
      * event handlers for each row (to enable plots to be shown)
