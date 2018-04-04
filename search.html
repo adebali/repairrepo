@@ -139,45 +139,45 @@
                   <!-- more organisms to be added -->
                   <div id = "querySelectors">
                     <div id = "nameSelector">
-                      <div id = 'organismName'> </div>
-                      Select an organism: 
+                      <div id = 'organismName'>Select an organism:<div id= 'nameHover'></div></div>
+                      
                       <div class = "row medium-unstack" id = 'orgPics'>
                         <img class = "thumbnail" id = "Human" alt = "Pic of Human" src = "img/human.png">
                         <img class = "thumbnail" id = "Arabidopsis" alt = "Pic of Arabidopsis" src = "img/Arabidopsis.png">
-                        <img class = "thumbnail" id = "E.coli" alt = "Pic of E.Coli" src = "img/bacterium.png">
+                        <img class = "thumbnail" id = "Ecoli" alt = "Pic of E.Coli" src = "img/bacterium.png">
                         <img class = "thumbnail" id = "Mouse" alt = "Pic of Mouse" src = "img/mouse.png">
                       </div> 
                     </div>
-                    <div class = "row medium-unstack">
+                    
+                    <div class = "row">
+                      <div class = 'small-6 large-6 columns' id = 'searchGeneName'>
                       <div class = 'page-header'>
                           <h3> Search a gene by name: </h3>
                       </div>
-                      <div class = "columns">
+                      
                       <input type = 'text' class='inline' id = 'gene' placeholder="Gene name"> 
+                      
                       </div>
                     
-                    <br>
-                    <div class = "columns">
+                    <div class = "small-6 large-6 columns" id = 'searchRegion'>
                     <div class = 'page-header'>
-                      <h3>Search genes in a region:</h3>
+                      <h3>or by Chromosome region:</h3>
                     </div>
                     <div id = 'chrSelector'>
-                      Chromosome: <div id = 'chrDropDiv'> </div>
+                    <div id = 'chrDropDiv'class= 'medium-5 columns'> </div>
                     </div>
+                    <div class = "medium-7 columns">
                     <input type = 'number' class="inline" id = 'startChr' placeholder="Start position"> 
                     
                     <input type = 'number' class="inline" id = 'endChr' placeholder="End position">
-                    <div class = "columns">
+                    </div>
+                    </div>
+
                     <button type="button" id = 'submitChr' class = "button">Submit</button>
                     </div>
-                    </div>
                   </div>
-                    <br><br>
-                  </div>
-                
-              
                
-                <div id = 'results'></div>
+                <div id = 'results'> </div>
                 
                 <div id = 'plots' class  = "row medium-unstack"></div>
                 

@@ -240,28 +240,32 @@ $(document).ready(function(){
 
 
     $(".thumbnail").click(function(e){
-        $(".thumbnail").css("filter", "")
+        $(".thumbnail").css("border-color", "")
         var org = e.target.id
-        switch(org){
-            case 'human':
+        switch(org){ 
+            case 'Human':
                 orgDict.organism = 'human'
+                $('#organismName').html('Organism: <b>' + org + "</b>") 
                 buildChrDropdown(22, true)
-                $('#'+org).css("filter", "sepia() saturate(10000%) hue-rotate(30deg)")
+                $('#'+org).css({'border-style':'solid', 'border-color':'#32CD32'})
                 break;
-            case 'mouse':
+            case 'Mouse':
                 orgDict.organism = 'mouse'
                 buildChrDropdown(19, true)
-                $('#'+org).css("filter", "sepia() saturate(10000%) hue-rotate(30deg)")
+                $('#organismName').html('Organism: <b>' + org + "</b>")                 
+                $('#'+org).css({'border-style':'solid', 'border-color':'#32CD32'})     
                 break;
-            case 'arabidopsis':
+            case 'Arabidopsis':
                 orgDict.organism = 'arabidopsis'
                 buildChrDropdown(5, false)
-                $('#'+org).css("filter", "sepia() saturate(10000%) hue-rotate(30deg)")
+                $('#organismName').html('Organism: <b>' + org + "</b>")                 
+                $('#'+org).css({'border-style':'solid', 'border-color':'#32CD32'})     
                 break;
-            case 'ecoli':
+            case 'Ecoli':
                 orgDict.organism = 'ecoli'
                 buildChrDropdown(1, false)
-                $('#'+org).css("filter", "sepia() saturate(10000%) hue-rotate(30deg)")
+                $('#organismName').html('Organism: <b>' + org + "</b>")                 
+                $('#'+org).css({'border-style':'solid', 'border-color':'#32CD32'})                
                 break;
 
         }
@@ -375,9 +379,9 @@ $(document).ready(function(){
     }
 
     $('.thumbnail').hover(function(e){
-        $('#organismName').html('Select: <b>' + this.id + "</b>") 
+        $('#nameHover').html('Select <b>' + this.id + "</b>") 
     }, function(){
-        $('#organismName').empty();
+        $('#nameHover').empty();
     })
    
     /**
@@ -388,7 +392,7 @@ $(document).ready(function(){
     function createDynamicTable(objArray) {
         var array = objArray;
     
-        var str = '<table class="table-striped"> <thead class = "thead-dark">';
+        var str = '<table class="table-striped" role = "grid"> <thead class = "thead-dark">';
         str += '<tr>';
         for (var index in array[0]) {
             str += '<th scope="col">' + index + '</th>';
