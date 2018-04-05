@@ -1,4 +1,4 @@
-//Script for Sancar Lab database project, written by Yashar Asgari
+//Script for RepairRepo database project's search page- written by Yashar Asgari
 $(document).ready(function(){
 
     //first, create list of gene names for autocomplete
@@ -154,7 +154,7 @@ $(document).ready(function(){
         
     })
 
-
+    
     $('#results').on("click", "#prev", function(){
         if(queryArray2.length === 0){
             queryResultsChr(queryArray, true)
@@ -170,7 +170,7 @@ $(document).ready(function(){
     })
 
 
-    //autocomplete
+    //autocomplete querying
     var names = [];
     var namesList = [];
     function queryResultsAuto(arg4){
@@ -198,7 +198,7 @@ $(document).ready(function(){
             return namesList;
         });
     }
-
+    //Setup autocomplete in gene dropdown
     $("#gene").autocomplete({ //pause auto for first 2 chars, implement scroll bar for list
         source: function(request, response) {
             var results = $.ui.autocomplete.filter(namesList, request.term);
@@ -237,8 +237,7 @@ $(document).ready(function(){
         $('#chrDropDiv').html(select);
     }
 
-
-
+    //Event handler for clicking on organism image
     $(".thumbnail").click(function(e){
         $(".thumbnail").css("border-color", "")
         var org = e.target.id
@@ -377,7 +376,7 @@ $(document).ready(function(){
         queryArray = [];
         
     }
-
+    //Hover event handler for organism images 
     $('.thumbnail').hover(function(e){
         $('#nameHover').html('Select <b>' + this.id + "</b>") 
     }, function(){
@@ -420,6 +419,7 @@ $(document).ready(function(){
     }
     
 
+//CODE FOR EXPERIMENT PLOTS BELOW
 
     /**
      * Plots experiment X's data to 'plots' div
