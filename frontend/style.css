@@ -60,3 +60,12 @@ table{
   overflow-x: auto;
   white-space: nowrap;
 }
+#submitButtonDiv{
+  display: flex;
+  justify-content: center;
+}
+#or{
+  text-align: center;
+  vertical-align: middle;
+  line-height: 90px
+}

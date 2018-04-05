@@ -217,7 +217,7 @@ $(document).ready(function(){
      * @param {boolean} sexChr True if organism has sex chromosomes
      */
     function buildChrDropdown(numChr, sexChr){
-        var select = "<select class='inline' id = 'chrDropdown' >";
+        var select = "<select class='inline' id = 'chrDropdown' width = '60' style='width: 60px' >";
         if(numChr === 1){
             select += "<option val = 'chr'>chr</option>"
         }else{
