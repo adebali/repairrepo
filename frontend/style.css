@@ -69,6 +69,7 @@ table{
   vertical-align: middle;
   line-height: 90px
 }
-.li:active{
-  background-color: green;
+#nav a.selected:link, a.selected:visited{
+
+  color: #066;
 }
