@@ -6,7 +6,10 @@ $(document).ready(function(){
 
     //query db for sample sheet in order to get columns/data for each experiment for plotting purposes
     getSampleSheet();        
-    
+    currentLinks = document.querySelectorAll('a[href="'+document.URL+'"]')
+    currentLinks.forEach(function(link) {
+        link.className += ' current-link'
+    });
 
     //prep server connection
     const clientPromise = stitch.StitchClientFactory.create('dataretrieval-vwdtg');
