@@ -272,13 +272,13 @@ $(document).ready(function(){
     })
 
    
-    function checkPage(){
-        $("[href]").each(function() {
+   function checkPage(){
+    $("[href]").each(function() {
         if (this.href == window.location.href) {
             $(this).addClass("active");
-            console.log(typeof this)
         }
     });
+   }
 
 
     //CHANGE handlers for input fields
