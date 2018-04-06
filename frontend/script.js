@@ -6,6 +6,7 @@ $(document).ready(function(){
 
     //query db for sample sheet in order to get columns/data for each experiment for plotting purposes
     getSampleSheet();
+    checkPage();
     
 
     //prep server connection
@@ -271,7 +272,8 @@ $(document).ready(function(){
     })
 
    
-    $("[href]").each(function() {
+    function checkPage(){
+        $("[href]").each(function() {
         if (this.href == window.location.href) {
             $(this).addClass("active");
             console.log(typeof this)
