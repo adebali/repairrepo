@@ -8,9 +8,10 @@ $(document).ready(function(){
     getSampleSheet();        
     currentLinks = document.querySelectorAll('a[href="'+document.URL+'"]')
     currentLinks.forEach(function(link) {
-        link.className += ' current-link'
+        link.className += 'current-link'
         console.log('added new current link')
     });
+    console.log(document.URL)
 
     //prep server connection
     const clientPromise = stitch.StitchClientFactory.create('dataretrieval-vwdtg');
@@ -599,8 +600,6 @@ $(document).ready(function(){
             window[cols] = [];
             window[data] = [];
         }
-         
- 
     }
 })
     
