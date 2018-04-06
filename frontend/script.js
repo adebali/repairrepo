@@ -9,6 +9,7 @@ $(document).ready(function(){
     currentLinks = document.querySelectorAll('a[href="'+document.URL+'"]')
     currentLinks.forEach(function(link) {
         link.className += ' current-link'
+        console.log('added new current link')
     });
 
     //prep server connection
