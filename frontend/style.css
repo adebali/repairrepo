@@ -76,6 +76,6 @@ table{
 .current-link{
   color:#baada7;
 }
-.navLinks active{
+.active{
   color: red;
 }

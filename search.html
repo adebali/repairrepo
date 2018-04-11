@@ -95,7 +95,12 @@
 
           <section class="main">
  
-            <div id = 'mainDiv'>
+            <div id = 'mainDiv' class = 'tabs'>
+           <!-- TODO-implement tabs -->
+              <ul>
+                <li> <a href = '#tabs-1'> Gene Name </a></li>
+                <li> <a href = '#tabs-2'> Chromosome Region</a></li>
+              </ul>
               
               <div class = "wrap row">
                   <div class="small-12 column">              
@@ -114,7 +119,8 @@
                     </div>
                     
                     <div class = "row">
-                      <div class = 'large-5 columns' id = 'searchGeneName'>
+                      <!-- Search gene name div below -->
+                      <div class = 'large-5 columns' id = 'tabs-1'>
                       <div class = 'page-header'>
                           <h3> Search by name </h3>
                       </div>
@@ -122,8 +128,8 @@
                       <input type = 'text' class='inline' id = 'gene' placeholder="Gene name"> 
                       </div>
                       <div class = "large-1 columns" id = 'or'> <h2>OR</h2> </div>
-                    
-                    <div class = "large-5 columns" id = 'searchRegion'>
+                    <!-- Search chr region div below-->
+                    <div class = "large-5 columns" id = 'tabs-2'>
                     <div class = 'page-header'>
                       <h3>by Chromosome region</h3>
                     </div>

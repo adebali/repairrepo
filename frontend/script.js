@@ -5,6 +5,8 @@ $(document).ready(function(){
         $('#header').load('/frontend/header.html', getCurrentPage());
         $('#footer').load('/frontend/footer.html');
 
+        //load tabs for gene queries
+        $('#tabs').tabs();
 
         //first, create list of gene names for autocomplete
         queryResultsAuto([{}])
