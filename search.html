@@ -26,6 +26,11 @@
         <script> 
             $(function(){
                 $('#header').load('/frontend/header.html');
+                $('#header .navLinks').each(function(){
+                  if (this.href == window.location.href) {
+                    $(this).addClass("active");
+                }
+                })
                 $('#footer').load('/frontend/footer.html');
             });
         </script>
