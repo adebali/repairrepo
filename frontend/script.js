@@ -240,7 +240,7 @@ $(document).ready(function(){
         }
 
         function getCurrentPage(){
-            $("li [href]").each(function() {
+            $("[href]").each(function() {
                 console.log('this.href' + this.href)
                 console.log('windowloc' + window.location.href)
                 if (this.href == window.location.href) {
