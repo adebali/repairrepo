@@ -5,13 +5,18 @@ $(document).ready(function(){
     queryResultsAuto([{}])
 
     //query db for sample sheet in order to get columns/data for each experiment for plotting purposes
-    getSampleSheet();        
+    getSampleSheet();{
+    function currentPage(){       
     currentLinks = document.querySelectorAll('a[href="'+document.URL+'"]')
+    console.log('doc url' + document.URL)
     currentLinks.forEach(function(link) {
-        link.className += 'current-link'
+        link.className += 'currentPage'
         console.log('added new current link')
     });
-    console.log(document.URL)
+    }
+    
+    currentPage();
+ 
 
     //prep server connection
     const clientPromise = stitch.StitchClientFactory.create('dataretrieval-vwdtg');
@@ -324,7 +329,7 @@ $(document).ready(function(){
                 return;
             }else{
 
-                $('#results').html("<div class = 'callout alert' id = 'searchAlert'>Please choose to query based on name OR region, not both.</div>")
+                $('#results').html("<div class = 'callout alert' id = 'searchAlert'>Select an organism, then please choose to query based on name OR region, not both.</div>")
                 return;
             }
         }
