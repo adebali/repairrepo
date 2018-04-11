@@ -95,12 +95,9 @@
 
           <section class="main">
  
-            <div id = 'mainDiv' class = 'tabs'>
+            <div id = 'mainDiv'>
            <!-- TODO-implement tabs -->
-              <ul>
-                <li> <a href = '#tabs-1'> Gene Name </a></li>
-                <li> <a href = '#tabs-2'> Chromosome Region</a></li>
-              </ul>
+              
               
               <div class = "wrap row">
                   <div class="small-12 column">              
@@ -118,7 +115,13 @@
                       </div> 
                     </div>
                     
+                    <!-- 'row' encompasses both query fields -->
                     <div class = "row">
+                      <div class = 'tabs'>
+                        <ul>
+                            <li> <a href = '#tabs-1'> Gene Name </a></li>
+                            <li> <a href = '#tabs-2'> Chromosome Region</a></li>
+                          </ul>
                       <!-- Search gene name div below -->
                       <div class = 'large-5 columns' id = 'tabs-1'>
                       <div class = 'page-header'>
@@ -139,7 +142,7 @@
                     <input type = 'number' class="inline" id = 'startChr' placeholder="Start position"> 
                     
                     <input type = 'number' class="inline" id = 'endChr' placeholder="End position">
-                    
+                    </div>
                     </div>                 
                     </div>
                     
