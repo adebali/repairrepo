@@ -116,26 +116,21 @@
                     </div>
                     
                     <!-- 'row' encompasses both query fields -->
-                    <div class = "row">
+                    <!--<div class = "row">-->
                       <div class = 'tabs'>
                         <ul>
                             <li> <a href = '#tabs-1'> Gene Name </a></li>
                             <li> <a href = '#tabs-2'> Chromosome Region</a></li>
                           </ul>
                       <!-- Search gene name div below -->
-                      <div class = 'cols' id = 'tabs-1'>
-                      <div class = 'page-header'>
-                          <h3> Search by name </h3>
-                      </div>
+                      <div id = 'tabs-1'>
+                      
                       
                       <input type = 'text' class='inline' id = 'gene' placeholder="Gene name"> 
                       </div>
                       <!--<div class = "large-1 columns" id = 'or'> <h2>OR</h2> </div> -->
                     <!-- Search chr region div below-->
-                    <div class = "cols" id = 'tabs-2'>
-                    <div class = 'page-header'>
-                      <h3>by Chromosome region</h3>
-                    </div>
+                    <div id = 'tabs-2'>
                     
                     <div id = 'chrDropDiv'> </div>
                    
@@ -143,7 +138,7 @@
                     
                     <input type = 'number' class="inline" id = 'endChr' placeholder="End position">
                     </div>
-                    </div>                 
+                   <!-- </div>  -->               
                     </div>
                     
                     <button id = 'submitChr' class="button" type="button" data-tooltip aria-haspopup="true" class="has-tip" data-disable-hover="false" tabindex="1" title="Or press 'Enter' to search :)" data-position="bottom" data-alignment="left">
