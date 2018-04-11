@@ -178,7 +178,8 @@ $(document).ready(function(){
             }
         })
 
-        $('.tabsList').click(function(e){
+        $('li').click(function(e){
+            console.log('tab clicked')
             var tabClicked = e.target.id;
             if(tabClicked === 'geneNameTab'){
                 //TODO delete info from chr region query selectors and vice versa for genename
@@ -618,7 +619,7 @@ $(document).ready(function(){
                     
                 }
             }
-            console.log(experiments.length)
+        
             //call plotting functions
             for(var l = 0; l < experiments.length; l++){
                 
