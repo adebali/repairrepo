@@ -183,11 +183,11 @@ $(document).ready(function(){
             var tabClicked = e.target.id;
             if(tabClicked === 'geneNameTab'){
                 //TODO delete info from chr region query selectors and vice versa for genename
-                $('#chrDropdown').empty();
-                $('#startChr').empty();
-                $('#endChr').empty();
+                $('#chrDropdown').val("-");
+                $('#startChr').val("");
+                $('#endChr').val("");
             }else if (tabClicked === 'chrRegionTab'){
-                $('#gene').empty();
+                $('#gene').val("");
             }
         })
     
