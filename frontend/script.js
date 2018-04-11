@@ -240,13 +240,16 @@ $(document).ready(function(){
         }
 
         function getCurrentPage(){
+            var count = 0;
             $("[href]").each(function() {
+                count+=1
                 console.log('this.href' + this.href)
                 console.log('windowloc' + window.location.href)
                 if (this.href == window.location.href) {
                     $(this).addClass("active");
                 }
             });
+            console.log('# of hrefs' + count)
         }
     
         //Event handler for clicking on organism image
