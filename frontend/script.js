@@ -241,7 +241,7 @@ $(document).ready(function(){
 
         function getCurrentPage(){
             var count = 0;
-            $("[href]").each(function() {
+            $("#header [href]").each(function() {
                 count+=1
                 console.log('this.href' + this.href)
                 console.log('windowloc' + window.location.href)
