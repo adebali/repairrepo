@@ -1,13 +1,16 @@
 //Script for RepairRepo database project's search page- written by Yashar Asgari
 $(document).ready(function(){
     
+        $('#header').load('/frontend/header.html', getCurrentPage());
+
+
         //first, create list of gene names for autocomplete
         queryResultsAuto([{}])
     
         //query db for sample sheet in order to get columns/data for each experiment for plotting purposes
         getSampleSheet();     
         
-        getCurrentPage();
+        
 
     
         //prep server connection

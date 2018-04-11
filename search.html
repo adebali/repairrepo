@@ -25,13 +25,6 @@
         <script src="/frontend/script.js"></script>
         <script> 
             $(function(){
-                $('#header').load('/frontend/header.html');
-                $('#header .navLinks').each(function(){
-                  if (this.href == window.location.href) {
-                    console.log('this.href' + this.href + 'window loc' + window.location.href)
-                    $(this).addClass("active");
-                }
-                })
                 $('#footer').load('/frontend/footer.html');
             });
         </script>
