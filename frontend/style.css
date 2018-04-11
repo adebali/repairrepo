@@ -74,8 +74,5 @@ table{
   color: #066;
 }
 .current-link{
-  color:#baada7;
-}
-a.active{
-  color: red;
+  color:red;
 }
