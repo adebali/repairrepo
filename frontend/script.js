@@ -469,6 +469,8 @@ $(document).ready(function(){
                 };
             
             Plotly.newPlot('plotsX', graphData,layout)
+            var elmnt = document.getElementById("plots");
+            elmnt.scrollIntoView();
         }
     
         /**
@@ -494,6 +496,8 @@ $(document).ready(function(){
                 title: "Experiment Y"
                 };
             Plotly.newPlot('plotsY', graphData,layout)
+            var elmnt = document.getElementById("plots");
+            elmnt.scrollIntoView();
         }
         /**
          * Get sample sheet to inform script of how to plot depending on experiment, stored in the 
