@@ -1,7 +1,9 @@
 //Script for RepairRepo database project's search page- written by Yashar Asgari
 $(document).ready(function(){
-    
+
+        // load in header/footer & call function to identify current page
         $('#header').load('/frontend/header.html', getCurrentPage());
+        $('#footer').load('/frontend/footer.html');
 
 
         //first, create list of gene names for autocomplete
