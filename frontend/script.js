@@ -178,17 +178,17 @@ $(document).ready(function(){
             }
         })
 
-        $('.tabsList').click(function(e){
-            var tabClicked = e.target.id;
-            if(tabClicked === 'geneNameTab'){
-                //TODO delete info from chr region query selectors and vice versa for genename
-                $('#chrDropdown').empty();
-                $('#startChr').empty();
-                $('#endChr').empty();
-            }else if (tabClicked === 'chrRegionTab'){
-                $('#gene').empty();
-            }
-        })
+        // $('.tabsList').click(function(e){
+        //     var tabClicked = e.target.id;
+        //     if(tabClicked === 'geneNameTab'){
+        //         //TODO delete info from chr region query selectors and vice versa for genename
+        //         $('#chrDropdown').empty();
+        //         $('#startChr').empty();
+        //         $('#endChr').empty();
+        //     }else if (tabClicked === 'chrRegionTab'){
+        //         $('#gene').empty();
+        //     }
+        // })
     
     
         //autocomplete querying
