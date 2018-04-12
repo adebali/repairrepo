@@ -349,19 +349,6 @@ $(document).ready(function(){
         })
     
         function submitMethod(){
-            if($("#gene").val() != '' && (($('#startChr').val().length !=0 || $('#endChr').val().length != 0) || $('#chrDropdown').val() != '-')){
-                if($("#searchAlert").length === 1){
-                    return;
-                }else{
-    
-                    $('#results').html("<div class = 'callout alert' id = 'searchAlert'>Please choose to query based on name OR region, not both.</div>")
-                    return;
-                }
-            }
-            if($("#gene").val() != ''){
-                submitGeneName()
-                return;
-            }
             queryArray = [];
     
             $('#plots div').empty();
@@ -396,8 +383,9 @@ $(document).ready(function(){
             queryArray2 = [];
             
         }
+        //attach event handler to submit button in gene search tab
         $('#submitGeneName').click(submitGeneName);
-        
+
         //submit event handler for gene name query
         function submitGeneName(){
             queryArray2 = [];
@@ -485,7 +473,9 @@ $(document).ready(function(){
             
             Plotly.newPlot('plotsX', graphData,layout)
             var elmnt = document.getElementById("plots");
-            elmnt.scrollIntoView();
+            elmnt.scrollIntoView({
+                behavior: 'smooth'
+            });
         }
     
         /**
