@@ -6,7 +6,7 @@ $(document).ready(function(){
         $('#footer').load('/frontend/footer.html');
 
         //load tabs for gene queries
-        var $tabs = $('.tabs').tabs();
+        var $tabs = $('#tabsList').tabs();
       
 
 
@@ -346,10 +346,9 @@ $(document).ready(function(){
         $('#submitChr').click(submitMethod);
         $(document).keypress(function(e){
             if(e.which === 13){
-                //submitMethod();
-                var tabId = $('#divName .ui-tabs-panel[aria-hidden="false"]').prop('id');
-                console.log(tabId)
-                if(selectedTab === 0){}
+                console.log($('div[id="mytabs"] ul .ui-tabs-active').attr("id"))
+            
+            
             }
         })
     
