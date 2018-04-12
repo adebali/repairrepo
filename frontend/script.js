@@ -473,7 +473,7 @@ $(document).ready(function(){
             
             Plotly.newPlot('plotsX', graphData,layout)
             var elmnt = document.getElementById("plots");
-            elmnt.scrollIntoView({
+            elmnt.scrollIntoView(false,{
                 behavior: 'smooth'
             });
         }
