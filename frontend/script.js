@@ -343,16 +343,21 @@ $(document).ready(function(){
     
     
         //event handlers for query (submit button and 'enter' press)
-        $('#submitChr').click(submitMethod);
+        $('#submitChr').click(submitChrMethod);
         $(document).keypress(function(e){
             if(e.which === 13){
-                console.log($('div[id="tabsList"] ul .ui-tabs-active').attr("id"))
-            
+                var tabId = $('div[id="tabsList"] ul .ui-tabs-active').attr("id")
+                if(tabID === 'geneNameTab'){
+                    submitGeneName();
+                    return;
+                }else if (tabId === 'chrRegionTab'){
+                    submitChrMethod();
+                }
             
             }
         })
     
-        function submitMethod(){
+        function submitChrMethod(){
             queryArray = [];
     
             $('#plots div').empty();
