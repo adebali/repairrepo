@@ -346,7 +346,7 @@ $(document).ready(function(){
         $('#submitChr').click(submitMethod);
         $(document).keypress(function(e){
             if(e.which === 13){
-                console.log($('div[id="mytabs"] ul .ui-tabs-active').attr("id"))
+                console.log($('div[id="tabsList"] ul .ui-tabs-active').attr("id"))
             
             
             }
