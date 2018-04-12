@@ -6,7 +6,10 @@ $(document).ready(function(){
         $('#footer').load('/frontend/footer.html');
 
         //load tabs for gene queries
-        $('.tabs').tabs();
+        var $tabs = $('.tabs').tabs();
+        var selectedTab = $tabs.tabs('option', 'selected');
+        console.log(selectedTab)
+
 
         //first, create list of gene names for autocomplete
         queryResultsAuto([{}])
@@ -306,7 +309,6 @@ $(document).ready(function(){
             }
         })
     
-       
     
     
         //CHANGE handlers for input fields
@@ -345,7 +347,8 @@ $(document).ready(function(){
         $('#submitChr').click(submitMethod);
         $(document).keypress(function(e){
             if(e.which === 13){
-                submitMethod();
+                //submitMethod();
+                if(selectedTab === 0){}
             }
         })
     
