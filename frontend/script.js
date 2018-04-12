@@ -347,8 +347,8 @@ $(document).ready(function(){
         $(document).keypress(function(e){
             if(e.which === 13){
                 //submitMethod();
-                var curTab = $('.ui-tabs-panel:not(.ui-tabs-hide)')
-                console.log(curTab.prop('id'))
+                var selectedTab = $tabs.tabs('option', 'active');
+                console.log(selectedTab.prop('id'))
                 if(selectedTab === 0){}
             }
         })
