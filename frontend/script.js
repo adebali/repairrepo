@@ -261,6 +261,7 @@ $(document).ready(function(){
 
         function getCurrentPage(){
             var count = 0;
+            console.log('count : ', $('.navLinks').length)
             $(".navLinks").each(function() {
                 count+=1
                 console.log('this.href' + this.href)
