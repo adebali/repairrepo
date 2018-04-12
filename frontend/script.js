@@ -347,8 +347,8 @@ $(document).ready(function(){
         $(document).keypress(function(e){
             if(e.which === 13){
                 //submitMethod();
-                var selectedTab = $tabs.tabs('option', 'active');
-                console.log(selectedTab.prop('id'))
+                var tabId = $('#divName .ui-tabs-panel[aria-hidden="false"]').prop('id');
+                console.log(tabId)
                 if(selectedTab === 0){}
             }
         })
