@@ -7,8 +7,7 @@ $(document).ready(function(){
 
         //load tabs for gene queries
         var $tabs = $('.tabs').tabs();
-        var selectedTab = $tabs.tabs('option', 'selected');
-        console.log(selectedTab)
+      
 
 
         //first, create list of gene names for autocomplete
@@ -348,6 +347,8 @@ $(document).ready(function(){
         $(document).keypress(function(e){
             if(e.which === 13){
                 //submitMethod();
+                var selectedTab = $tabs.tabs('option', 'selected');
+                console.log(selectedTab)
                 if(selectedTab === 0){}
             }
         })
