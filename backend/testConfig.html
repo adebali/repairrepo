@@ -2,4 +2,19 @@
 <html>
     <head>
         <title> Test configHelpers.js</title>
-        <script src = '/backend/configHelpers.js'></script>
+        <link rel="stylesheet" href="https://code.jquery.com/qunit/qunit-2.6.0.css">
+        <script src="https://code.jquery.com/qunit/qunit-2.6.0.js"></script>
+        <script src = 'configHelpers.js'></script>
+
+        <script> 
+            QUnit.test("test filterDictionary function", function (assert){
+            var dictionary = {"b": {"a": 1}, "c": {"a": 2}, "e": {"a": 1}};
+            var testSample = new Samples(dictionary)
+            assert.equal(testSample.filterDictionary(dictionary, 'a', 1), {"b": {"a": 1}, "e": {"a": 1}})
+        });
+        </script>
+    </head>
+    <body>
+        <div id = 'qunit'></div>
+    </body>
+</html>

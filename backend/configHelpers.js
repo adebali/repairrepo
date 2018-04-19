@@ -2,7 +2,7 @@ class Samples{
 
     constructor(inputJson){
         this.input = inputJson
-        this.sampleDict = JSON.parse(this.input); //load json file
+        this.sampleDict = JSON.parse(JSON.stringify(this.input)); //load json file (already is JSON when passed in??)
         this.qualityTest()
         this.completeSampleDict = this.completeSamples();
         
@@ -10,17 +10,17 @@ class Samples{
 }
 
 Samples.prototype.qualityTest =  function(){
-    var experiments = this.filterDictionary(this.sampleDict, 'isExperiment', True)
+    var experiments = this.filterDictionary(this.sampleDict, 'isExperiment', true)
     var experimentNoList = []
-    for (key in experiments.keys()){
-        if (experiments[key].get('experimentNo', False)){
+    for (key in Object.keys(experiments)){
+        if (experiments[key].get('experimentNo', false)){
             experimentNoList.append(experiments[key].get('experimentNo'))
         }else{
             console.log('Experiment must have a field of "experimentNo"')
         }
     }
     if (experimentNoList.length != new Set(experimentNoList).length){
-        print(experimentNoList)
+        console.log(experimentNoList)
         console.log('Duplicated experiment no was found!')
     }
 
@@ -43,7 +43,9 @@ return completeSampleDict
 
 Samples.prototype.completeSamples = function(){
     completeDict = {}
-    for (key in this.sampleDict.keys()){
+    console.log(this.sampleDict)
+    for (key in Object.keys(this.sampleDict)){
+        console.log(key)
         sample = this.sampleDict[key]
         if (sample.get('template', False) != True){
             completedSample = this.key2attributes(key)
@@ -53,9 +55,16 @@ Samples.prototype.completeSamples = function(){
     return completeDict
 }
 
-// Samples.prototype.filterDictionary = function(dictionary, key, value){
-//     return {k : v for k,v in dictionary.iteritems() if key in v.keys() and v[key] == value}
-// }
+Samples.prototype.filterDictionary = function(dictionary, key, value){
+    var dict = {};
+    
+    for (const [k, v] of Object.entries(dictionary)){
+        if(key in Object.keys(value) && v[key] === value){
+            dict.k = {key : value};
+        }
+    }
+    return dict;
+}
 
 Samples.prototype.getSamplesByKey = function(key, value){
     return this.filterDictionary(this.completeSampleDict, key, value)    
@@ -78,3 +87,50 @@ Samples.prototype.experimentNoAndNo2id = function(experimentNo, no){
     }
     return filteredByNo.keys()[0]
 }
+
+Samples.prototype.experiment2sampleNoList = function(experimentNo){
+    noList = []
+    experimentSamples = this.getSamplesByExperimentNo(experimentNo)
+    for(key in experimentSamples.keys()){
+        noList.append(experimentSamples[key]['no'])
+    }
+    return sorted(noList)
+}
+
+
+//Paths class
+
+class Paths{
+
+    constructor(inputJson){
+        this.input = inputJson
+        this.pathDict = JSON.parse(this.input)
+    }
+}
+
+Paths.prototype.genome2fullPaths = function(genome){
+    completeDict = {}
+    for (key in this.pathDict[genome].keys()){
+        completeDict[key] = os.path.join(this.pathDict[this.pathDict[genome][key]['base']], this.pathDict[genome][key]['location'])
+    }
+    return completeDict
+}
+
+Paths.prototype.getGenome = function(self, genome){
+    return this.genome2fullPaths(genome)
+}
+
+Paths.prototype.getPath = function(self, genome, key){
+    return this.getGenome(genome)[key]
+    
+}
+
+Paths.prototype.test_paths = function(){
+    pathClass = paths('reference.json')
+    console.assert(pathClass.getPath('hg19', 'bowtie2') === '/proj/seq/data/HG19_UCSC/Sequence/Bowtie2Index/genome', 'assertion thrown')
+}
+
+Paths.prototype.test_samples = function(){
+    sampleClass = samples('sample.json')
+}
+
