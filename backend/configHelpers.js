@@ -26,7 +26,7 @@ Samples.prototype.qualityTest =  function(){
 
 Samples.prototype.key2attributes = function(key){
     function recursiveBase(d){
-    if(d.get('base', false)){
+    if('base' in d === false){ //Is this correct?
         baseD = copy.copy(this.sampleDict[d['base']])
         d_updatedWithBase = copy.copy(recursiveBase(baseD))
         d_updatedWithBase.update(d)
@@ -48,7 +48,7 @@ Samples.prototype.completeSamples = function(){
         if(this.sampleDict.hasOwnProperty(key)){
         console.log('key in for loop: ' + key)
         sample = this.sampleDict[key]
-        if (sample.get('template', false) != true){
+        if ('template' in sample != true){ //this correct?
             completedSample = this.key2attributes(key)
             completeDict[key] = completedSample
         }
@@ -66,6 +66,7 @@ Samples.prototype.filterDictionary = function(dictionary, key, value){
         }
     }
     return dict;
+   
 }
 
 Samples.prototype.getSamplesByKey = function(key, value){
@@ -135,4 +136,3 @@ Paths.prototype.test_paths = function(){
 Paths.prototype.test_samples = function(){
     sampleClass = samples('sample.json')
 }
-
