@@ -13,23 +13,43 @@
     <link href="http://www.jqueryscript.net/css/jquerysctipttop.css" rel="stylesheet" type="text/css">
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
     <script src="js/multifilter.js"></script>
+    <!-- d3 script -->
+    <script type="text/javascript" src="http://d3js.org/d3.v3.min.js"></script>
         
     <!-- Font Style -->
     <link href="https://fonts.googleapis.com/css?family=Karla" rel="stylesheet">
-    <script src="js/filter.min.js"></script>
-  </head>
 
-  <!-- call filtering function -->
-  <script type="text/javascript">
+    <!-- script for reading in JSON to table -->
+    <!-- <script>
+      $(function() {
+        var rows = [];
+        $.getJSON('testDownloads.json', function(data) {
+          $.each(data.samples, function(i, f) {
+            var tableRow = "<tr>" + "<td>" + f.organism + "</td>" + "<td>" + f.method + "</td>" + "<td>" + f.damage + "</td>" + "<td>" + f.cellType + "</td>"
+                         + "<td>" + f.strain + "</td>" + "<td>" + f.time + "</td>" + "<td>" + f.replicate + "</td>" + "<td>" + f.link + "</td>" + "</tr>"
+            $(tableRow).appendTo("#downloads tbody");
+          });
+        });
+      });
+    </script> -->
+
+    <!-- call filtering function
+    <script type="text/javascript">
+      $(document).ready(function() {
+        $(".filter").multifilter()
+      });
+
       $(document).ready(function() {
         $(".filter").multifilter()
       })
-  </script>
+    </script> -->
+  </head>
 
   <body>
     <div class="off-canvas-wrapper">
       <div class="off-canvas-wrapper-inner" data-off-canvas-wrapper>
 
+        <a href="download2.html">Redirect</a>
         <!-- OFF-CANVAS MENU -->
         <div class="off-canvas position-left" id="mobile-menu" data-off-canvas>
           <button class="accordion" id="home">HOME</button>
@@ -136,7 +156,7 @@
                   <p>This database serves the genomic maps of various DNA damage and repair of model organisms: Human, Mouse, Arabidopsis and E.coli. Damage and repair maps of the bulky adduct causing agents such as UV Cyclobutane pyrimidine dimers (CPDs), (6-4) Photoproduct, Cispatin, Oxiloplatin, Aflotoxin, Benzo[a]pyrene with a variety of treatments of different cell lines and strains are available. Start discovering now! </p>
                   <a href="#" class="button">Learn More on XR-seq</a>
                   <a href="#" class="button success">Learn More on Damage-seq</a>
-              <p>Feel free to navigate and filter through this section and download any files you"d like to browse and use!</p>
+              <p>Feel free to navigate and filter through this section and download any files you'd like to browse and use!</p>
               <!-- <a href="#" class="button">Learn More on XR-seq</a>
               <a href="#" class="button success">Learn More on Damage-seq</a> -->
             </div>
@@ -144,9 +164,57 @@
           
           <!-- MAIN SECTION -->
           <section class="main">
-            <div class="wrap row">
+          <div>
+            <script type="text/javascript">
+              d3.json("testDownloads.json", function(error, data) {
+                if (error) throw error;
+		  
+                var sortAscending = true;
+                var table = d3.select('#page-wrap').append('table');
+                var titles = d3.keys(data[0]);
+                var headers = table.append('thead').append('tr')
+		                   .selectAll('th')
+		                   .data(titles).enter()
+		                   .append('th')
+		                   .text(function (d) {
+			                    return d;
+		                    })
+		                   .on('click', function (d) {
+		                	   headers.attr('class', 'header');
+		                	   
+		                	   if (sortAscending) {
+		                	     rows.sort(function(a, b) { return b[d] < a[d]; });
+		                	     sortAscending = false;
+		                	     this.className = 'aes';
+		                	   } else {
+		                		 rows.sort(function(a, b) { return b[d] > a[d]; });
+		                		 sortAscending = true;
+		                		 this.className = 'des';
+		                	   }
+		                	   
+		                   });
+		  
+		            var rows = table.append('tbody').selectAll('tr')
+		              .data(data).enter()
+		              .append('tr');
+		            rows.selectAll('td')
+		              .data(function (d) {
+		    	          return titles.map(function (k) {
+		    		          return { 'value': d[k], 'name': k};
+		    	        });
+		            }).enter()
+		            .append('td')
+		            .attr('data-th', function (d) {
+		    	        return d.name;
+		            })
+		            .text(function (d) {
+		    	        return d.value;
+		            });
+	            });
+            </script>
+          <!--   <div class="wrap row"> -->
               <!-- Filters -->
-              <div class="container">
+              <!-- <div class="container">
                 <div class="filters">
                   <h2>Filters</h2>
                   <div class="filter-container">
@@ -166,20 +234,20 @@
                   </div>
                   <div class="filter-container">
                     <input autocomplete="on" class="filter" name="time" placeholder="Time" data-col="time"/>
-                  </div>
-                  <div class="filter-container">
+                  </div> -->
+                  <!-- <div class="filter-container">
                     <input autocomplete="on" class="filter" name="replicate" placeholder="Replicate (A/B)" data-col="replicate"/>
-                  </div>
-                  <div class="filter-container">
+                  </div> -->
+                  <!-- <div class="filter-container">
                     <input autocomplete="on" class="filter" name="link" placeholder="Link name" data-col="link"/>
-                  </div>
-                  <div class="clearfix"></div>
+                  </div> -->
+                  <!-- <div class="clearfix"></div>
                 </div>
-              </div>    
+              </div>     -->
             <!-- Downloads Table -->
-            <div class="container">
+            <!-- <div class="container">
                 <h2>File Downloads</h2>
-                <table>
+                <table id="downloads">
                   <thead>
                     <th>Organism</th>
                     <th>Method</th>
@@ -191,8 +259,8 @@
                     <th>Link name</th>
                   </thead>
                   
-                  <tbody>
-                    <tr><td>Human</td> <td>Damage-seq</td> <td>Cisplatin</td> <td>NHF1</td> <td>WT</td> <td>0 H</td> <td>A</td> <td>human1.txt</td></tr>
+                  <tbody> -->
+                    <!-- <tr><td>Human</td> <td>Damage-seq</td> <td>Cisplatin</td> <td>NHF1</td> <td>WT</td> <td>0 H</td> <td>A</td> <td>human1.txt</td></tr>
                     <tr><td>Human</td> <td>Damage-seq</td> <td>Cisplatin</td> <td>NHF1</td> <td>WT</td> <td>0 H</td> <td>B</td> <td>human2.txt</td></tr>
                     <tr><td>Human</td> <td>Damage-seq</td> <td>Cisplatin</td> <td>NHF1</td> <td>WT</td> <td>2 H</td> <td>A</td> <td>human3.txt</td></tr>
                     <tr><td>Human</td> <td>Damage-seq</td> <td>Cisplatin</td> <td>NHF1</td> <td>WT</td> <td>2 H</td> <td>B</td> <td>human4.txt</td></tr>
@@ -200,8 +268,8 @@
                     <tr><td>Human</td> <td>Damage-seq</td> <td>Cisplatin</td> <td>NHF1</td> <td>CSB</td> <td>0 H</td> <td>B</td> <td>human6.txt</td></tr>
                     <tr><td>Human</td> <td>Damage-seq</td> <td>Cisplatin</td> <td>GM12878</td> <td>WT</td> <td>2 H</td> <td>A</td> <td>human7.txt</td></tr>
                     <tr><td>Human</td> <td>Damage-seq</td> <td>Cisplatin</td> <td>GM12878</td> <td>WT</td> <td>2 H</td> <td>B</td> <td>human8.txt</td></tr>
-                    <tr><td>Human</td> <td>XR-seq</td> <td>CPD</td> <td>NHF1</td> <td>WT</td> <td>O H</td> <td>A</td> <td>human9.txt</td></tr>
-                    <tr><td>Human</td> <td>XR-seq</td> <td>CPD</td> <td>NHF1</td> <td>WT</td> <td>O H</td> <td>B</td> <td>human10.txt</td></tr>
+                    <tr><td>Human</td> <td>XR-seq</td> <td>CPD</td> <td>NHF1</td> <td>WT</td> <td>0 H</td> <td>A</td> <td>human9.txt</td></tr>
+                    <tr><td>Human</td> <td>XR-seq</td> <td>CPD</td> <td>NHF1</td> <td>WT</td> <td>0 H</td> <td>B</td> <td>human10.txt</td></tr>
                     <tr><td>Human</td> <td>XR-seq</td> <td>CPD</td> <td>NHF1</td> <td>WT</td> <td>2 H</td> <td>A</td> <td>human11.txt</td></tr>
                     <tr><td>Human</td> <td>XR-seq</td> <td>CPD</td> <td>NHF1</td> <td>WT</td> <td>2 H</td> <td>B</td> <td>human12.txt</td></tr>
 
@@ -213,13 +281,14 @@
                     <tr><td>Mouse</td> <td>Damage-seq</td> <td>Cisplatin</td> <td>NHF1</td> <td>CSB</td> <td>0 H</td> <td>B</td> <td>mouse6.txt</td></tr>
                     <tr><td>Mouse</td> <td>Damage-seq</td> <td>Cisplatin</td> <td>GM12878</td> <td>WT</td> <td>2 H</td> <td>A</td> <td>mouse7.txt</td></tr>
                     <tr><td>Mouse</td> <td>Damage-seq</td> <td>Cisplatin</td> <td>GM12878</td> <td>WT</td> <td>2 H</td> <td>B</td> <td>mouse8.txt</td></tr>
-                    <tr><td>Mouse</td> <td>XR-seq</td> <td>CPD</td> <td>NHF1</td> <td>WT</td> <td>O H</td> <td>A</td> <td>mouse9.txt</td></tr>
-                    <tr><td>Mouse</td> <td>XR-seq</td> <td>CPD</td> <td>NHF1</td> <td>WT</td> <td>O H</td> <td>B</td> <td>mouse10.txt</td></tr>
+                    <tr><td>Mouse</td> <td>XR-seq</td> <td>CPD</td> <td>NHF1</td> <td>WT</td> <td>0 H</td> <td>A</td> <td>mouse9.txt</td></tr>
+                    <tr><td>Mouse</td> <td>XR-seq</td> <td>CPD</td> <td>NHF1</td> <td>WT</td> <td>0 H</td> <td>B</td> <td>mouse10.txt</td></tr>
                     <tr><td>Mouse</td> <td>XR-seq</td> <td>CPD</td> <td>NHF1</td> <td>WT</td> <td>2 H</td> <td>A</td> <td>mouse11.txt</td></tr>
-                    <tr><td>Mouse</td> <td>XR-seq</td> <td>CPD</td> <td>NHF1</td> <td>WT</td> <td>2 H</td> <td>B</td> <td>mouse12.txt</td></tr>
-                  </tbody>
-                </table>
-            </div>
+                    <tr><td>Mouse</td> <td>XR-seq</td> <td>CPD</td> <td>NHF1</td> <td>WT</td> <td>2 H</td> <td>B</td> <td>mouse12.txt</td></tr> -->
+                  <!-- </tbody>
+                </table> -->
+            <!-- </div> -->
+          </div>
           </section>
           
           <!-- FOOTER -->
@@ -234,9 +303,9 @@
                 <h4>Site Map</h4>
                 <hr>
                 <a href="#">Browse</a>
-                <a href="#">Search</a>
-                <a href="#">Download</a>
-                <a href="#">Help</a>
+                <a href="search.html">Search</a>
+                <a href="download.html">Download</a>
+                <a href="help.html">Help</a>
               </div>
               <div class="column">
                 <h4>Social Media :)</h4>

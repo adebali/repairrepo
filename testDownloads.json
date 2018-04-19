@@ -1,0 +1,242 @@
+[
+        {
+            "organism": "Human",
+            "method": "Damage-seq",
+            "damage": "Cisplatin",
+            "cellType": "NHF1", 
+            "strain": "WT",
+            "time": "O H", 
+            "replicate": "A",
+            "link": "human1.txt"
+        },
+        {
+            "organism": "Human",
+            "method": "Damage-seq",
+            "damage": "Cisplatin",
+            "cellType": "NHF1", 
+            "strain": "WT",
+            "time": "O H", 
+            "replicate": "B",
+            "link": "human2.txt"
+        },
+        {
+            "organism": "Human",
+            "method": "Damage-seq",
+            "damage": "Cisplatin",
+            "cellType": "NHF1", 
+            "strain": "WT",
+            "time": "2 H", 
+            "replicate": "A",
+            "link": "human3.txt"
+        },
+        {
+            "organism": "Human",
+            "method": "Damage-seq",
+            "damage": "Cisplatin",
+            "cellType": "NHF1", 
+            "strain": "WT",
+            "time": "2 H", 
+            "replicate": "B",
+            "link": "human4.txt"
+        },
+        {
+            "organism": "Human",
+            "method": "Damage-seq",
+            "damage": "Cisplatin",
+            "cellType": "NHF1", 
+            "strain": "CSB",
+            "time": "O H", 
+            "replicate": "A",
+            "link": "human5.txt"
+        },
+        {
+            "organism": "Human",
+            "method": "Damage-seq",
+            "damage": "Cisplatin",
+            "cellType": "NHF1", 
+            "strain": "CSB",
+            "time": "O H", 
+            "replicate": "B",
+            "link": "human6.txt"
+        },
+        {
+            "organism": "Human",
+            "method": "Damage-seq",
+            "damage": "Cisplatin",
+            "cellType": "GM12878", 
+            "strain": "WT",
+            "time": "2 H", 
+            "replicate": "A",
+            "link": "human7.txt"
+        },
+        {
+            "organism": "Human",
+            "method": "Damage-seq",
+            "damage": "Cisplatin",
+            "cellType": "GM12878", 
+            "strain": "WT",
+            "time": "2 H", 
+            "replicate": "B",
+            "link": "human8.txt"
+        },
+        {
+            "organism": "Human",
+            "method": "XR-seq",
+            "damage": "CPD",
+            "cellType": "NHF1", 
+            "strain": "WT",
+            "time": "O H", 
+            "replicate": "A",
+            "link": "human9.txt"
+        },
+        {
+            "organism": "Human",
+            "method": "XR-seq",
+            "damage": "CPD",
+            "cellType": "NHF1", 
+            "strain": "WT",
+            "time": "O H", 
+            "replicate": "B",
+            "link": "human10.txt"
+        },
+        {
+            "organism": "Human",
+            "method": "XR-seq",
+            "damage": "CPD",
+            "cellType": "NHF1", 
+            "strain": "WT",
+            "time": "2 H", 
+            "replicate": "A",
+            "link": "human11.txt"
+        },
+        {
+            "organism": "Human",
+            "method": "XR-seq",
+            "damage": "CPD",
+            "cellType": "NHF1", 
+            "strain": "WT",
+            "time": "2 H", 
+            "replicate": "B",
+            "link": "human12.txt"
+        },
+        {
+            "organism": "Mouse",
+            "method": "Damage-seq",
+            "damage": "Cisplatin",
+            "cellType": "NHF1", 
+            "strain": "WT",
+            "time": "O H", 
+            "replicate": "A",
+            "link": "mouse1.txt"
+        },
+        {
+            "organism": "Mouse",
+            "method": "Damage-seq",
+            "damage": "Cisplatin",
+            "cellType": "NHF1", 
+            "strain": "WT",
+            "time": "O H", 
+            "replicate": "B",
+            "link": "mouse2.txt"
+        },
+        {
+            "organism": "Mouse",
+            "method": "Damage-seq",
+            "damage": "Cisplatin",
+            "cellType": "NHF1", 
+            "strain": "WT",
+            "time": "2 H", 
+            "replicate": "A",
+            "link": "mouse3.txt"
+        },
+        {
+            "organism": "Mouse",
+            "method": "Damage-seq",
+            "damage": "Cisplatin",
+            "cellType": "NHF1", 
+            "strain": "WT",
+            "time": "2 H", 
+            "replicate": "B",
+            "link": "mouse4.txt"
+        },
+        {
+            "organism": "Mouse",
+            "method": "Damage-seq",
+            "damage": "Cisplatin",
+            "cellType": "NHF1", 
+            "strain": "CSB",
+            "time": "O H", 
+            "replicate": "A",
+            "link": "mouse5.txt"
+        },
+        {
+            "organism": "Mouse",
+            "method": "Damage-seq",
+            "damage": "Cisplatin",
+            "cellType": "NHF1", 
+            "strain": "CSB",
+            "time": "O H", 
+            "replicate": "B",
+            "link": "mouse6.txt"
+        },
+        {
+            "organism": "Mouse",
+            "method": "Damage-seq",
+            "damage": "Cisplatin",
+            "cellType": "GM12878", 
+            "strain": "WT",
+            "time": "2 H", 
+            "replicate": "A",
+            "link": "mouse7.txt"
+        },
+        {
+            "organism": "Mouse",
+            "method": "Damage-seq",
+            "damage": "Cisplatin",
+            "cellType": "GM12878", 
+            "strain": "WT",
+            "time": "2 H", 
+            "replicate": "B",
+            "link": "mouse8.txt"
+        },
+        {
+            "organism": "Mouse",
+            "method": "XR-seq",
+            "damage": "CPD",
+            "cellType": "NHF1", 
+            "strain": "WT",
+            "time": "O H", 
+            "replicate": "A",
+            "link": "mouse9.txt"
+        },
+        {
+            "organism": "Mouse",
+            "method": "XR-seq",
+            "damage": "CPD",
+            "cellType": "NHF1", 
+            "strain": "WT",
+            "time": "O H", 
+            "replicate": "B",
+            "link": "mouse10.txt"
+        },
+        {
+            "organism": "Mouse",
+            "method": "XR-seq",
+            "damage": "CPD",
+            "cellType": "NHF1", 
+            "strain": "WT",
+            "time": "2 H", 
+            "replicate": "A",
+            "link": "mouse11.txt"
+        },
+        {
+            "organism": "Mouse",
+            "method": "XR-seq",
+            "damage": "CPD",
+            "cellType": "NHF1", 
+            "strain": "WT",
+            "time": "2 H", 
+            "replicate": "B",
+            "link": "mouse12.txt"
+        }
+    ]
