@@ -1,11 +1,9 @@
 class Samples{
-
     constructor(inputJson){
         this.input = inputJson
         this.sampleDict = JSON.parse(JSON.stringify(this.input)); //load json file (already is JSON when passed in??)
         this.qualityTest()
         this.completeSampleDict = this.completeSamples();
-        
     }
 }
 
@@ -28,7 +26,7 @@ Samples.prototype.qualityTest =  function(){
 
 Samples.prototype.key2attributes = function(key){
     function recursiveBase(d){
-    if(d.get('base', False)){
+    if(d.get('base', false)){
         baseD = copy.copy(this.sampleDict[d['base']])
         d_updatedWithBase = copy.copy(recursiveBase(baseD))
         d_updatedWithBase.update(d)
@@ -44,13 +42,17 @@ return completeSampleDict
 Samples.prototype.completeSamples = function(){
     completeDict = {}
     console.log(this.sampleDict)
-    for (key in Object.keys(this.sampleDict)){
-        console.log(key)
+    console.log(Object.keys(this.sampleDict))
+
+    for (var key in this.sampleDict){
+        if(this.sampleDict.hasOwnProperty(key)){
+        console.log('key in for loop: ' + key)
         sample = this.sampleDict[key]
-        if (sample.get('template', False) != True){
+        if (sample.get('template', false) != true){
             completedSample = this.key2attributes(key)
             completeDict[key] = completedSample
         }
+    }
     }
     return completeDict
 }
