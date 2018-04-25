@@ -11,14 +11,15 @@ Samples.prototype.qualityTest =  function(){
     var experiments = this.filterDictionary(this.sampleDict, 'isExperiment', true)
     var experimentNoList = []
     for (key in Object.keys(experiments)){
-        if (experiments[key].get('experimentNo', false)){
-            experimentNoList.append(experiments[key].get('experimentNo'))
+        if ('experimentNo' in experiments[key]){
+            console.log('exp[key]'+experiments[key])
+            experimentNoList.append(experiments[key]['experimentNo'])
         }else{
             console.log('Experiment must have a field of "experimentNo"')
         }
     }
     if (experimentNoList.length != new Set(experimentNoList).length){
-        console.log(experimentNoList)
+        console.log(JSON.stringify(experimentNoList))
         console.log('Duplicated experiment no was found!')
     }
 
@@ -26,13 +27,13 @@ Samples.prototype.qualityTest =  function(){
 
 Samples.prototype.key2attributes = function(key){
     function recursiveBase(d){
-    if('base' in d === false){ //Is this correct?
-        baseD = copy.copy(this.sampleDict[d['base']])
-        d_updatedWithBase = copy.copy(recursiveBase(baseD))
-        d_updatedWithBase.update(d)
-        return d_updatedWithBase
-    }
-    return d
+        if('base' in d ){ //Is this correct?
+            baseD = Object.assign(this.sampleDict[d['base']])
+            d_updatedWithBase = Object.assign(recursiveBase(baseD))
+            d_updatedWithBase.update(d)
+            return d_updatedWithBase
+        }
+        return d
     }
 singleSampleDict = this.sampleDict[key]
 completeSampleDict = recursiveBase(singleSampleDict)
@@ -48,7 +49,7 @@ Samples.prototype.completeSamples = function(){
         if(this.sampleDict.hasOwnProperty(key)){
         console.log('key in for loop: ' + key)
         sample = this.sampleDict[key]
-        if ('template' in sample != true){ //this correct?
+        if ('template' in sample != true){ 
             completedSample = this.key2attributes(key)
             completeDict[key] = completedSample
         }
@@ -60,8 +61,10 @@ Samples.prototype.completeSamples = function(){
 Samples.prototype.filterDictionary = function(dictionary, key, value){
     var dict = {};
     
-    for (const [k, v] of Object.entries(dictionary)){
-        if(key in Object.keys(value) && v[key] === value){
+    for (let [k, v] of Object.entries(dictionary)){
+        console.log('[k,v]' + k  + ':' + JSON.stringify(v)) //working
+        console.log(key in Object.keys(v))
+        if(key in Object.keys(v) && v[key] === value){
             dict.k = {key : value};
         }
     }
