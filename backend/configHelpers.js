@@ -9,25 +9,26 @@ class Samples{
 
 Samples.prototype.qualityTest =  function(){
     var experiments = this.filterDictionary(this.sampleDict, 'isExperiment', true)
+    console.log('experiments in qualTest= ' + JSON.stringify(experiments))
     var experimentNoList = []
-    for (key in Object.keys(experiments)){
-        if ('experimentNo' in experiments[key]){
-            console.log('exp[key]'+experiments[key])
+    Object.keys(experiments).forEach(function (key) {
+        if ('experimentNo' in experiments[key]) {
+            console.log('exp[key]' + experiments[key])
             experimentNoList.append(experiments[key]['experimentNo'])
-        }else{
+        } else {
             console.log('Experiment must have a field of "experimentNo"')
         }
-    }
+    });
     if (experimentNoList.length != new Set(experimentNoList).length){
         console.log(JSON.stringify(experimentNoList))
         console.log('Duplicated experiment no was found!')
     }
-
+    console.log('expNoList= ' + experimentNoList.toString())
 }
 
 Samples.prototype.key2attributes = function(key){
     function recursiveBase(d){
-        if('base' in d ){ //Is this correct?
+        if('base' in d ){ 
             baseD = Object.assign(this.sampleDict[d['base']])
             d_updatedWithBase = Object.assign(recursiveBase(baseD))
             d_updatedWithBase.update(d)
@@ -42,32 +43,35 @@ return completeSampleDict
 
 Samples.prototype.completeSamples = function(){
     completeDict = {}
-    console.log(this.sampleDict)
-    console.log(Object.keys(this.sampleDict))
+  
 
-    for (var key in this.sampleDict){
-        if(this.sampleDict.hasOwnProperty(key)){
-        console.log('key in for loop: ' + key)
-        sample = this.sampleDict[key]
-        if ('template' in sample != true){ 
-            completedSample = this.key2attributes(key)
-            completeDict[key] = completedSample
+    Object.keys(this.sampleDict).forEach(function (key) {
+        if (this.sampleDict.hasOwnProperty(key)) {//check if key is in dict
+            console.log('key in for loop: ' + key)
+            sample = this.sampleDict[key]
+            if ('template' in sample != true) {
+                completedSample = this.key2attributes(key)
+                completeDict[key] = completedSample
+            }
         }
-    }
-    }
+    });
     return completeDict
 }
 
 Samples.prototype.filterDictionary = function(dictionary, key, value){
     var dict = {};
-    
+
     for (let [k, v] of Object.entries(dictionary)){
-        console.log('[k,v]' + k  + ':' + JSON.stringify(v)) //working
-        console.log(key in Object.keys(v))
-        if(key in Object.keys(v) && v[key] === value){
-            dict.k = {key : value};
-        }
+        //console.log('[k,v]' + k + ':' + JSON.stringify(v)) //working
+        //console.log(key == Object.keys(v).toString())
+        
+        Object.keys(v).forEach(function (keyV) {
+            if (keyV === key && v[key] === value) {
+                dict[k] = { [key] : value };
+            }
+        })
     }
+    console.log('filterDict result = ' + JSON.stringify(dict))
     return dict;
    
 }
