@@ -27,15 +27,23 @@ Samples.prototype.qualityTest =  function(){
 }
 
 Samples.prototype.key2attributes = function(key){
+    function updateDict(a,b){	
+        for(key in b){
+            a[key] = b[key]
+        }
+        return a;
+    }
+    var thisObject = this;
     function recursiveBase(d){
         if('base' in d ){ 
-            baseD = Object.assign(this.sampleDict[d['base']])
+            baseD = Object.assign(thisObject.sampleDict[d['base']])
             d_updatedWithBase = Object.assign(recursiveBase(baseD))
-            d_updatedWithBase.update(d)
+            console.log(JSON.stringify(d))
+            d_updatedWithBase.updateDict(this,d)
             return d_updatedWithBase
         }
         return d
-    }
+    } 
 singleSampleDict = this.sampleDict[key]
 completeSampleDict = recursiveBase(singleSampleDict)
 return completeSampleDict
@@ -43,17 +51,14 @@ return completeSampleDict
 
 Samples.prototype.completeSamples = function(){
     completeDict = {}
-  
 
+    var thisObject = this;
     Object.keys(this.sampleDict).forEach(function (key) {
-        if (this.sampleDict.hasOwnProperty(key)) {//check if key is in dict
-            console.log('key in for loop: ' + key)
-            sample = this.sampleDict[key]
+            sample = thisObject.sampleDict[key]
             if ('template' in sample != true) {
-                completedSample = this.key2attributes(key)
+                completedSample = thisObject.key2attributes(key)
                 completeDict[key] = completedSample
-            }
-        }
+            }   
     });
     return completeDict
 }
