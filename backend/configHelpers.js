@@ -9,8 +9,9 @@ class Samples{
 
 Samples.prototype.qualityTest =  function(){
     var experiments = this.filterDictionary(this.sampleDict, 'isExperiment', true)
+    console.log(experiments)
     console.log('experiments in qualTest= ' + JSON.stringify(experiments))
-    var experimentNoList = []
+    var experimentNoList = [];
     Object.keys(experiments).forEach(function (key) {
         if ('experimentNo' in experiments[key]) {
             console.log('exp[key]' + experiments[key])
@@ -27,25 +28,27 @@ Samples.prototype.qualityTest =  function(){
 }
 
 Samples.prototype.key2attributes = function(key){
-    function updateDict(a,b){	
-        for(key in b){
-            a[key] = b[key]
-        }
-        return a;
-    }
     var thisObject = this;
     function recursiveBase(d){
         if('base' in d ){ 
+            //console.log('base' in d)
             baseD = Object.assign(thisObject.sampleDict[d['base']])
-            d_updatedWithBase = Object.assign(recursiveBase(baseD))
-            console.log(JSON.stringify(d))
-            d_updatedWithBase.updateDict(this,d)
+            console.log(baseD)
+            // d_updatedWithBase = Object.assign(recursiveBase(baseD))
+            d_updatedWithBase = recursiveBase(baseD)
+            for(key in d){
+                d_updatedWithBase[key] = d[key]
+            }
             return d_updatedWithBase
         }
+        console.log('returning data')
+        console.log(d)
         return d
     } 
 singleSampleDict = this.sampleDict[key]
 completeSampleDict = recursiveBase(singleSampleDict)
+console.log('returned here complete')
+console.log(completeSampleDict)
 return completeSampleDict
 }
 
@@ -72,7 +75,7 @@ Samples.prototype.filterDictionary = function(dictionary, key, value){
         
         Object.keys(v).forEach(function (keyV) {
             if (keyV === key && v[key] === value) {
-                dict[k] = { [key] : value };
+                dict[k] = v;
             }
         })
     }
