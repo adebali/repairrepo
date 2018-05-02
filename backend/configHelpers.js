@@ -31,12 +31,7 @@ Samples.prototype.key2attributes = function(key){
     var thisObject = this;
     function recursiveBase(d){
         console.log(JSON.stringify(d))
-        if('base' in d){
-            console.log(true)
-        }else{
-            console.log(false)
-        }
-        console.log()
+
         if('base' in d ){ 
             
             //baseD = Object.assign(thisObject.sampleDict[d['base']])
