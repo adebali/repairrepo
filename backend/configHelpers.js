@@ -14,8 +14,8 @@ Samples.prototype.qualityTest =  function(){
     var experimentNoList = [];
     Object.keys(experiments).forEach(function (key) {
         if ('experimentNo' in experiments[key]) {
-            console.log('exp[key]' + experiments[key])
-            experimentNoList.append(experiments[key]['experimentNo'])
+            console.log('exp[key]' + JSON.stringify(experiments[key]))
+            experimentNoList.push(experiments[key]['experimentNo'])
         } else {
             console.log('Experiment must have a field of "experimentNo"')
         }
@@ -30,9 +30,11 @@ Samples.prototype.qualityTest =  function(){
 Samples.prototype.key2attributes = function(key){
     var thisObject = this;
     function recursiveBase(d){
+        console.log(JSON.stringify(d))
         if('base' in d ){ 
-            //console.log('base' in d)
-            baseD = Object.assign(thisObject.sampleDict[d['base']])
+            
+            //baseD = Object.assign(thisObject.sampleDict[d['base']])
+            baseD = thisObject.sampleDict[d['base']]
             console.log(baseD)
             // d_updatedWithBase = Object.assign(recursiveBase(baseD))
             d_updatedWithBase = recursiveBase(baseD)
@@ -70,8 +72,6 @@ Samples.prototype.filterDictionary = function(dictionary, key, value){
     var dict = {};
 
     for (let [k, v] of Object.entries(dictionary)){
-        //console.log('[k,v]' + k + ':' + JSON.stringify(v)) //working
-        //console.log(key == Object.keys(v).toString())
         
         Object.keys(v).forEach(function (keyV) {
             if (keyV === key && v[key] === value) {
