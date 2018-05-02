@@ -31,6 +31,12 @@ Samples.prototype.key2attributes = function(key){
     var thisObject = this;
     function recursiveBase(d){
         console.log(JSON.stringify(d))
+        if('base' in d){
+            console.log(true)
+        }else{
+            console.log(false)
+        }
+        console.log()
         if('base' in d ){ 
             
             //baseD = Object.assign(thisObject.sampleDict[d['base']])
@@ -38,6 +44,8 @@ Samples.prototype.key2attributes = function(key){
             console.log(baseD)
             // d_updatedWithBase = Object.assign(recursiveBase(baseD))
             d_updatedWithBase = recursiveBase(baseD)
+            //updating dict
+            console.log('length of d' + d.length)
             for(key in d){
                 d_updatedWithBase[key] = d[key]
             }
