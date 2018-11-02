@@ -22,7 +22,7 @@ $(document).ready(function(){
         //prep server connection
         const clientPromise = stitch.Stitch.initializeDefaultAppClient('dataretrieval-vwdtg');
         const db = clientPromise.getServiceClient(stitch.RemoteMongoClient.factory, 'mongodb-atlas').db('data');
-        
+        console.log(db.find({}, {limit:10}).asArray());
     
         //Global Variables
         var selectedOrganism = 'mouse';
@@ -210,7 +210,6 @@ $(document).ready(function(){
             return queryAuto(arg4)
         }
         function queryAuto(arg4){
-            const db = clientPromise.getServiceClient(stitch.RemoteMongoClient.factory, 'mongodb-atlas').db('data');
             
             arg4.push(orgDict)
             arg4 = arg4.length > 0 ? { $and: arg4 } : {};
