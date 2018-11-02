@@ -20,7 +20,7 @@ $(document).ready(function(){
 
     
         //prep server connection
-        const client = stitch.Stitch.initializeDefaultAppClient('dataretrieval-vwdtg');
+        const clientPromise = stitch.Stitch.initializeDefaultAppClient('dataretrieval-vwdtg');
     
     
         //Global Variables
