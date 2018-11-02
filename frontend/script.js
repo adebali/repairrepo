@@ -22,7 +22,7 @@ $(document).ready(function(){
         //prep server connection
         const clientPromise = stitch.Stitch.initializeDefaultAppClient('dataretrieval-vwdtg');
         const db = clientPromise.getServiceClient(stitch.RemoteMongoClient.factory, 'mongodb-atlas').db('data');
-        clientPromse.auth.loginWithCredential(new stitch.AnonymousCredential()).then(
+        clientPromise.auth.loginWithCredential(new stitch.AnonymousCredential()).then(
         console.log("test" + db.collection("gene").find({}, {limit:10}).asArray()).catch(console.error));
     
     //     //Global Variables
