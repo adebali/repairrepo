@@ -21,7 +21,7 @@ $(document).ready(function(){
     
         //prep server connection
         const clientPromise = stitch.Stitch.initializeDefaultAppClient('dataretrieval-vwdtg');
-        var db = clientPromise.getServiceClient(stitch.RemoteMongoClient.factory, 'mongodb-atlas').db('data');
+        const db = clientPromise.getServiceClient(stitch.RemoteMongoClient.factory, 'mongodb-atlas').db('data');
         
     
         //Global Variables
