@@ -23,6 +23,12 @@
         <link href="https://fonts.googleapis.com/css?family=Cabin" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css?family=Trocchi" rel="stylesheet">
         <script src="/frontend/script.js"></script>
+        <script> 
+            $(function(){
+                $('#header').load('/frontend/header.html');
+                $('#footer').load('/frontend/footer.html');
+            });
+        </script>
 
   </head>
   <body>
@@ -96,8 +102,6 @@
           <section class="main">
  
             <div id = 'mainDiv'>
-           <!-- TODO-implement tabs -->
-              
               
               <div class = "wrap row">
                   <div class="small-12 column">              
@@ -115,40 +119,33 @@
                       </div> 
                     </div>
                     
-                    <!-- 'row' encompasses both query fields -->
-                    <!--<div class = "row">-->
-                      <div class = 'tabs' id = 'tabsList'>
-                        <ul>
-                            <li class = 'tabsList' id = 'geneNameTab'> <a href = '#tabs-1'> Gene Name </a></li>
-                            <li class = 'tabsList' id = 'chrRegionTab'> <a href = '#tabs-2'> Chromosome Region</a></li>
-                          </ul>
-                      <!-- Search gene name div below -->
-                      <div id = 'tabs-1'>
-                      
+                    <div class = "row">
+                      <div class = 'large-5 columns' id = 'searchGeneName'>
+                      <div class = 'page-header'>
+                          <h3> Search by name </h3>
+                      </div>
                       
                       <input type = 'text' class='inline' id = 'gene' placeholder="Gene name"> 
-                      <button id = 'submitGeneName' class="button" type="button" data-tooltip aria-haspopup="true" class="has-tip" data-disable-hover="false" tabindex="1" title="Or press 'Enter' to search :)" data-position="bottom" data-alignment="left">
-                        Submit
-                      </button>
                       </div>
-                      <!--<div class = "large-1 columns" id = 'or'> <h2>OR</h2> </div> -->
-                    <!-- Search chr region div below-->
-                    <div id = 'tabs-2'>
+                      <div class = "large-1 columns" id = 'or'> <h2>OR</h2> </div>
+                    
+                    <div class = "large-5 columns" id = 'searchRegion'>
+                    <div class = 'page-header'>
+                      <h3>by Chromosome region</h3>
+                    </div>
                     
                     <div id = 'chrDropDiv'> </div>
                    
                     <input type = 'number' class="inline" id = 'startChr' placeholder="Start position"> 
                     
                     <input type = 'number' class="inline" id = 'endChr' placeholder="End position">
+                    
+                    </div>                 
+                    </div>
+                    
                     <button id = 'submitChr' class="button" type="button" data-tooltip aria-haspopup="true" class="has-tip" data-disable-hover="false" tabindex="1" title="Or press 'Enter' to search :)" data-position="bottom" data-alignment="left">
-                      Submit
-                    </button>
-                    </div>
-                   <!-- </div>  -->        
-
-                    </div>
-                    
-                    
+                        Submit
+                      </button>
                   </div>
 
                 <div id = 'results'> </div>

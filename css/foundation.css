@@ -4348,8 +4348,7 @@ table {
   tr:nth-child(even) {
     background-color: #dddddd;
   }
-
-    
+ 
 .clearfix {
   clear: both;
   width: 100%; }
