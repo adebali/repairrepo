@@ -34,7 +34,7 @@ $(document).ready(function(){
         var inputStartChr;
         var inputEndChr;
         var client;
-        //var db;
+        var db;
         var returned;
         var geneInputName;
         var queryArray = [];
@@ -203,6 +203,7 @@ $(document).ready(function(){
             clientPromise.auth.loginWithCredential(new stitch.AnonymousCredential()).then(user =>{
                 //client = stitchClient;
                 //db = client.service('mongodb', 'mongodb-atlas').db('data');
+                clientPromise.getServiceClient(stitch.RemoteMongoClient.factory, 'mongodb-atlas').db('data');
                 return queryAuto(arg4)
                 //return client.login().then(queryAuto(arg4))
             });
@@ -519,7 +520,8 @@ $(document).ready(function(){
          */
         
         function getSampleSheet(){
-            const clientPromise = stitch.StitchClientFactory.create('dataretrieval-vwdtg');        
+            //const clientPromise = stitch.StitchClientFactory.create('dataretrieval-vwdtg'); 
+            const clientPromise = stitch.Stitch.initializeDefaultAppClient('dataretrieval-vwdtg');            
             clientPromise.then(stitchClient =>{
                 client = stitchClient;
                 db = client.service('mongodb', 'mongodb-atlas').db('data');
