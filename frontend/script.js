@@ -20,7 +20,7 @@ $(document).ready(function(){
 
     
         //prep server connection
-        const clientPromise = stitch.StitchClientFactory.create('dataretrieval-vwdtg');
+        const client = stitch.Stitch.initializeDefaultAppClient('dataretrieval-vwdtg');
     
     
         //Global Variables
@@ -55,9 +55,9 @@ $(document).ready(function(){
             
             clientPromise.then(stitchClient =>{
                 client = stitchClient;
-                db = client.service('mongodb', 'mongodb-atlas').db('data');
+                db = client.getServiceClient(stitch.RemoteMongoClient.factory,'mongodb-atlas').db('data');
                 
-                return client.login().then(queryChr(arg1, prev))
+                return client.auth.loginWithCredential(new stitch.AnonymousCredential()).then(user => queryChr(arg1, prev))
             });
         }
         var last_id1 = null;
