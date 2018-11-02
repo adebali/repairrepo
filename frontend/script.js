@@ -62,7 +62,7 @@ $(document).ready(function(){
         }
         var last_id1 = null;
         function queryChr(arg1, prev){
-            
+            console.log(arg1)
             arg1 = arg1.length > 0 ? { $and: arg1 } : {};
             
     
