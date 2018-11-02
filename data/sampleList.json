@@ -1,0 +1,1943 @@
+[
+    {
+        "organism": "Homo sapiens",
+        "experiment": "Human_UV_Damage-seq",
+        "cell_line": "NHF1",
+        "tissue": false,
+        "damage": "UV_CPD",
+        "protocol": "Damage-seq",
+        "replicate": "A",
+        "treatment": {
+            "time_after_irradiation": "0h",
+            "DNA": "cell",
+            "damage_dose": "0J"
+        },
+        "title": "huDS_NHF1_CPD_A_0h_cell_0J",
+        "SRA": {
+            "id": "",
+            "runs": []
+        }
+    },
+    {
+        "organism": "Homo sapiens",
+        "experiment": "Human_UV_Damage-seq",
+        "cell_line": "NHF1",
+        "tissue": false,
+        "damage": "UV_CPD",
+        "protocol": "Damage-seq",
+        "replicate": "B",
+        "treatment": {
+            "time_after_irradiation": "0h",
+            "DNA": "cell",
+            "damage_dose": "0J"
+        },
+        "title": "huDS_NHF1_CPD_B_0h_cell_0J",
+        "SRA": {
+            "id": "",
+            "runs": []    
+        }
+    },
+    {
+        "organism": "Homo sapiens",
+        "experiment": "Human_UV_Damage-seq",
+        "cell_line": "NHF1",
+        "tissue": false,
+        "damage": "UV_CPD",
+        "protocol": "Damage-seq",
+        "replicate": "A",
+        "treatment": {
+            "time_after_irradiation": "0h",
+            "DNA": "cell",
+            "damage_dose": "10J"
+        },
+        "title": "huDS_NHF1_CPD_A_0h_cell_10J",
+        "SRA": {
+            "id": "",
+            "runs": []
+        }
+    },
+    {
+        "organism": "Homo sapiens",
+        "experiment": "Human_UV_Damage-seq",
+        "cell_line": "NHF1",
+        "tissue": false,
+        "damage": "UV_CPD",
+        "protocol": "Damage-seq",
+        "replicate": "B",
+        "treatment": {
+            "time_after_irradiation": "0h",
+            "DNA": "cell",
+            "damage_dose": "10J"
+        },
+        "title": "huDS_NHF1_CPD_B_0h_cell_10J",
+        "SRA": {
+            "id": "",
+            "runs": []    
+        }
+    },
+    {
+        "organism": "Homo sapiens",
+        "experiment": "Human_UV_Damage-seq",
+        "cell_line": "NHF1",
+        "tissue": false,
+        "damage": "UV_CPD",
+        "protocol": "Damage-seq",
+        "replicate": "A",
+        "treatment": {
+            "time_after_irradiation": "1h",
+            "DNA": "cell",
+            "damage_dose": "10J"
+        },
+        "title": "huDS_NHF1_CPD_A_1h_cell_10J",
+        "SRA": {
+            "id": "",
+            "runs": []    
+        }
+    },
+    {
+        "organism": "Homo sapiens",
+        "experiment": "Human_UV_Damage-seq",
+        "cell_line": "NHF1",
+        "tissue": false,
+        "damage": "UV_CPD",
+        "protocol": "Damage-seq",
+        "replicate": "B",
+        "treatment": {
+            "time_after_irradiation": "1h",
+            "DNA": "cell",
+            "damage_dose": "10J"
+        },
+        "title": "huDS_NHF1_CPD_B_1h_cell_10J",
+        "SRA": {
+            "id": "",
+            "runs": []    
+        }
+    },
+    {
+        "organism": "Homo sapiens",
+        "experiment": "Human_UV_Damage-seq",
+        "cell_line": "NHF1",
+        "tissue": false,
+        "damage": "UV_CPD",
+        "protocol": "Damage-seq",
+        "replicate": "A",
+        "treatment": {
+            "time_after_irradiation": "8h",
+            "DNA": "cell",
+            "damage_dose": "10J"
+        },
+        "title": "huDS_NHF1_CPD_A_8h_cell_10J",
+        "SRA": {
+            "id": "",
+            "runs": []    
+        }
+    },
+    {
+        "organism": "Homo sapiens",
+        "experiment": "Human_UV_Damage-seq",
+        "cell_line": "NHF1",
+        "tissue": false,
+        "damage": "UV_CPD",
+        "protocol": "Damage-seq",
+        "replicate": "B",
+        "treatment": {
+            "time_after_irradiation": "8h",
+            "DNA": "cell",
+            "damage_dose": "10J"
+        },
+        "title": "huDS_NHF1_CPD_B_8h_cell_10J",
+        "SRA": {
+            "id": "",
+            "runs": []    
+        }
+    },
+    {
+        "organism": "Homo sapiens",
+        "experiment": "Human_UV_Damage-seq",
+        "cell_line": "NHF1",
+        "tissue": false,
+        "damage": "UV_CPD",
+        "protocol": "Damage-seq",
+        "replicate": "A",
+        "treatment": {
+            "time_after_irradiation": "24h",
+            "DNA": "cell",
+            "damage_dose": "10J"
+        },
+        "title": "huDS_NHF1_CPD_A_24h_cell_10J",
+        "SRA": {
+            "id": "",
+            "runs": []    
+        }
+    },
+    {
+        "organism": "Homo sapiens",
+        "experiment": "Human_UV_Damage-seq",
+        "cell_line": "NHF1",
+        "tissue": false,
+        "damage": "UV_CPD",
+        "protocol": "Damage-seq",
+        "replicate": "B",
+        "treatment": {
+            "time_after_irradiation": "24h",
+            "DNA": "cell",
+            "damage_dose": "10J"
+        },
+        "title": "huDS_NHF1_CPD_B_24h_cell_10J",
+        "SRA": {
+            "id": "",
+            "runs": []    
+        }
+    },
+    {
+        "organism": "Homo sapiens",
+        "experiment": "Human_UV_Damage-seq",
+        "cell_line": "NHF1",
+        "tissue": false,
+        "damage": "UV_CPD",
+        "protocol": "Damage-seq",
+        "replicate": "A",
+        "treatment": {
+            "time_after_irradiation": "36h",
+            "DNA": "cell",
+            "damage_dose": "10J"
+        },
+        "title": "huDS_NHF1_CPD_A_36h_cell_10J",
+        "SRA": {
+            "id": "",
+            "runs": []    
+        }
+    },
+    {
+        "organism": "Homo sapiens",
+        "experiment": "Human_UV_Damage-seq",
+        "cell_line": "NHF1",
+        "tissue": false,
+        "damage": "UV_CPD",
+        "protocol": "Damage-seq",
+        "replicate": "B",
+        "treatment": {
+            "time_after_irradiation": "36h",
+            "DNA": "cell",
+            "damage_dose": "10J"
+        },
+        "title": "huDS_NHF1_CPD_B_36h_cell_10J",
+        "SRA": {
+            "id": "",
+            "runs": []    
+        }
+    },
+    {
+        "organism": "Homo sapiens",
+        "experiment": "Human_UV_Damage-seq",
+        "cell_line": "NHF1",
+        "tissue": false,
+        "damage": "UV_CPD",
+        "protocol": "Damage-seq",
+        "replicate": "A",
+        "treatment": {
+            "time_after_irradiation": "48h",
+            "DNA": "cell",
+            "damage_dose": "10J"
+        },
+        "title": "huDS_NHF1_CPD_A_48h_cell_10J",
+        "SRA": {
+            "id": "",
+            "runs": []    
+        }
+    },
+    {
+        "organism": "Homo sapiens",
+        "experiment": "Human_UV_Damage-seq",
+        "cell_line": "NHF1",
+        "tissue": false,
+        "damage": "UV_CPD",
+        "protocol": "Damage-seq",
+        "replicate": "B",
+        "treatment": {
+            "time_after_irradiation": "48h",
+            "DNA": "cell",
+            "damage_dose": "10J"
+        },
+        "title": "huDS_NHF1_CPD_B_48h_cell_10J",
+        "SRA": {
+            "id": "",
+            "runs": []    
+        }
+    },
+    {
+        "organism": "Homo sapiens",
+        "experiment": "Human_UV_Damage-seq",
+        "cell_line": "NHF1",
+        "tissue": false,
+        "damage": "UV_64PP",
+        "protocol": "Damage-seq",
+        "replicate": "A",
+        "treatment": {
+            "time_after_irradiation": "0h",
+            "DNA": "cell",
+            "damage_dose": "0J"
+        },
+        "title": "huDS_NHF1_64PP_A_0h_cell_0J",
+        "SRA": {
+            "id": "",
+            "runs": []    
+        }
+    },
+    {
+        "organism": "Homo sapiens",
+        "experiment": "Human_UV_Damage-seq",
+        "cell_line": "NHF1",
+        "tissue": false,
+        "damage": "UV_64PP",
+        "protocol": "Damage-seq",
+        "replicate": "B",
+        "treatment": {
+            "time_after_irradiation": "0h",
+            "DNA": "cell",
+            "damage_dose": "0J"
+        },
+        "title": "huDS_NHF1_64PP_B_0h_cell_0J",
+        "SRA": {
+            "id": "",
+            "runs": []    
+        }
+    },
+    {
+        "organism": "Homo sapiens",
+        "experiment": "Human_UV_Damage-seq",
+        "cell_line": "NHF1",
+        "tissue": false,
+        "damage": "UV_64PP",
+        "protocol": "Damage-seq",
+        "replicate": "A",
+        "treatment": {
+            "time_after_irradiation": "0h",
+            "DNA": "cell",
+            "damage_dose": "20J"
+        },
+        "title": "huDS_NHF1_64PP_A_0h_cell_20J",
+        "SRA": {
+            "id": "",
+            "runs": []    
+        }
+    },
+    {
+        "organism": "Homo sapiens",
+        "experiment": "Human_UV_Damage-seq",
+        "cell_line": "NHF1",
+        "tissue": false,
+        "damage": "UV_64PP",
+        "protocol": "Damage-seq",
+        "replicate": "B",
+        "treatment": {
+            "time_after_irradiation": "0h",
+            "DNA": "cell",
+            "damage_dose": "20J"
+        },
+        "title": "huDS_NHF1_64PP_B_0h_cell_20J",
+        "SRA": {
+            "id": "",
+            "runs": []    
+        }
+    },
+    {
+        "organism": "Homo sapiens",
+        "experiment": "Human_UV_Damage-seq",
+        "cell_line": "NHF1",
+        "tissue": false,
+        "damage": "UV_64PP",
+        "protocol": "Damage-seq",
+        "replicate": "A",
+        "treatment": {
+            "time_after_irradiation": "20m",
+            "DNA": "cell",
+            "damage_dose": "20J"
+        },
+        "title": "huDS_NHF1_64PP_A_20m_cell_20J",
+        "SRA": {
+            "id": "",
+            "runs": []    
+        }
+    },
+    {
+        "organism": "Homo sapiens",
+        "experiment": "Human_UV_Damage-seq",
+        "cell_line": "NHF1",
+        "tissue": false,
+        "damage": "UV_64PP",
+        "protocol": "Damage-seq",
+        "replicate": "B",
+        "treatment": {
+            "time_after_irradiation": "20m",
+            "DNA": "cell",
+            "damage_dose": "20J"
+        },
+        "title": "huDS_NHF1_64PP_B_20m_cell_20J",
+        "SRA": {
+            "id": "",
+            "runs": []    
+        }
+    },
+    {
+        "organism": "Homo sapiens",
+        "experiment": "Human_UV_Damage-seq",
+        "cell_line": "NHF1",
+        "tissue": false,
+        "damage": "UV_64PP",
+        "protocol": "Damage-seq",
+        "replicate": "A",
+        "treatment": {
+            "time_after_irradiation": "1h",
+            "DNA": "cell",
+            "damage_dose": "20J"
+        },
+        "title": "huDS_NHF1_64PP_A_1h_cell_20J",
+        "SRA": {
+            "id": "",
+            "runs": []    
+        }
+    },
+    {
+        "organism": "Homo sapiens",
+        "experiment": "Human_UV_Damage-seq",
+        "cell_line": "NHF1",
+        "tissue": false,
+        "damage": "UV_64PP",
+        "protocol": "Damage-seq",
+        "replicate": "B",
+        "treatment": {
+            "time_after_irradiation": "1h",
+            "DNA": "cell",
+            "damage_dose": "20J"
+        },
+        "title": "huDS_NHF1_64PP_B_1h_cell_20J",
+        "SRA": {
+            "id": "",
+            "runs": []    
+        }
+    },
+    {
+        "organism": "Homo sapiens",
+        "experiment": "Human_UV_Damage-seq",
+        "cell_line": "NHF1",
+        "tissue": false,
+        "damage": "UV_64PP",
+        "protocol": "Damage-seq",
+        "replicate": "A",
+        "treatment": {
+            "time_after_irradiation": "2h",
+            "DNA": "cell",
+            "damage_dose": "20J"
+        },
+        "title": "huDS_NHF1_64PP_A_2h_cell_20J",
+        "SRA": {
+            "id": "",
+            "runs": []    
+        }
+    },
+    {
+        "organism": "Homo sapiens",
+        "experiment": "Human_UV_Damage-seq",
+        "cell_line": "NHF1",
+        "tissue": false,
+        "damage": "UV_64PP",
+        "protocol": "Damage-seq",
+        "replicate": "B",
+        "treatment": {
+            "time_after_irradiation": "2h",
+            "DNA": "cell",
+            "damage_dose": "20J"
+        },
+        "title": "huDS_NHF1_64PP_B_2h_cell_20J",
+        "SRA": {
+            "id": "",
+            "runs": []    
+        }
+    },
+    {
+        "organism": "Homo sapiens",
+        "experiment": "Human_UV_Damage-seq",
+        "cell_line": "NHF1",
+        "tissue": false,
+        "damage": "UV_64PP",
+        "protocol": "Damage-seq",
+        "replicate": "A",
+        "treatment": {
+            "time_after_irradiation": "4h",
+            "DNA": "cell",
+            "damage_dose": "20J"
+        },
+        "title": "huDS_NHF1_64PP_A_4h_cell_20J",
+        "SRA": {
+            "id": "",
+            "runs": []    
+        }
+    },
+    {
+        "organism": "Homo sapiens",
+        "experiment": "Human_UV_Damage-seq",
+        "cell_line": "NHF1",
+        "tissue": false,
+        "damage": "UV_64PP",
+        "protocol": "Damage-seq",
+        "replicate": "B",
+        "treatment": {
+            "time_after_irradiation": "4h",
+            "DNA": "cell",
+            "damage_dose": "20J"
+        },
+        "title": "huDS_NHF1_64PP_B_4h_cell_20J",
+        "SRA": {
+            "id": "",
+            "runs": []    
+        }
+    },
+    {
+        "organism": "Homo sapiens",
+        "experiment": "Human_UV_Damage-seq",
+        "cell_line": "GM12878",
+        "tissue": false,
+        "damage": "UV_CPD",
+        "protocol": "Damage-seq",
+        "replicate": "A",
+        "treatment": {
+            "time_after_irradiation": "0h",
+            "DNA": "naked",
+            "damage_dose": "20J"
+        },
+        "title": "huDS_GM12878_CPD_A_0h_naked_20J",
+        "SRA": {
+            "id": "",
+            "runs": []    
+        }
+    },
+    {
+        "organism": "Homo sapiens",
+        "experiment": "Human_UV_Damage-seq",
+        "cell_line": "GM12878",
+        "tissue": false,
+        "damage": "UV_CPD",
+        "protocol": "Damage-seq",
+        "replicate": "B",
+        "treatment": {
+            "time_after_irradiation": "0h",
+            "DNA": "naked",
+            "damage_dose": "20J"
+        },
+        "title": "huDS_GM12878_CPD_B_0h_naked_20J",
+        "SRA": {
+            "id": "",
+            "runs": []    
+        }
+    },
+    {
+        "organism": "Homo sapiens",
+        "experiment": "Human_UV_Damage-seq",
+        "cell_line": "GM12878",
+        "tissue": false,
+        "damage": "UV_64PP",
+        "protocol": "Damage-seq",
+        "replicate": "A",
+        "treatment": {
+            "time_after_irradiation": "0h",
+            "DNA": "naked",
+            "damage_dose": "20J"
+        },
+        "title": "huDS_GM12878_64PP_A_0h_naked_20J",
+        "SRA": {
+            "id": "",
+            "runs": []    
+        }
+    },
+    {
+        "organism": "Homo sapiens",
+        "experiment": "Human_UV_Damage-seq",
+        "cell_line": "GM12878",
+        "tissue": false,
+        "damage": "UV_64PP",
+        "protocol": "Damage-seq",
+        "replicate": "B",
+        "treatment": {
+            "time_after_irradiation": "0h",
+            "DNA": "naked",
+            "damage_dose": "20J"
+        },
+        "title": "huDS_GM12878_64PP_B_0h_naked_20J",
+        "SRA": {
+            "id": "",
+            "runs": []    
+        }
+    },
+    {
+        "organism": "Homo sapiens",
+        "experiment": "Human_UV_Damage-seq",
+        "cell_line": "GM12878",
+        "tissue": false,
+        "damage": "UV_CPD",
+        "protocol": "Damage-seq",
+        "replicate": "A",
+        "treatment": {
+            "time_after_irradiation": "0h",
+            "DNA": "cell",
+            "damage_dose": "20J"
+        },
+        "title": "huDS_GM12878_CPD_A_0h_cell_20J",
+        "SRA": {
+            "id": "",
+            "runs": []    
+        }
+    },
+    {
+        "organism": "Homo sapiens",
+        "experiment": "Human_UV_Damage-seq",
+        "cell_line": "GM12878",
+        "tissue": false,
+        "damage": "UV_CPD",
+        "protocol": "Damage-seq",
+        "replicate": "B",
+        "treatment": {
+            "time_after_irradiation": "0h",
+            "DNA": "cell",
+            "damage_dose": "20J"
+        },
+        "title": "huDS_GM12878_CPD_B_0h_cell_20J",
+        "SRA": {
+            "id": "",
+            "runs": []    
+        }
+    },
+    {
+        "organism": "Homo sapiens",
+        "experiment": "Human_UV_Damage-seq",
+        "cell_line": "GM12878",
+        "tissue": false,
+        "damage": "UV_64PP",
+        "protocol": "Damage-seq",
+        "replicate": "A",
+        "treatment": {
+            "time_after_irradiation": "0h",
+            "DNA": "cell",
+            "damage_dose": "20J"
+        },
+        "title": "huDS_GM12878_64PP_A_0h_cell_20J",
+        "SRA": {
+            "id": "",
+            "runs": []    
+        }
+    },
+    {
+        "organism": "Homo sapiens",
+        "experiment": "Human_UV_Damage-seq",
+        "cell_line": "GM12878",
+        "tissue": false,
+        "damage": "UV_64PP",
+        "protocol": "Damage-seq",
+        "replicate": "B",
+        "treatment": {
+            "time_after_irradiation": "0h",
+            "DNA": "cell",
+            "damage_dose": "20J"
+        },
+        "title": "huDS_GM12878_64PP_B_0h_cell_20J",
+        "SRA": {
+            "id": "",
+            "runs": []    
+        }
+    },
+    {
+        "organism": "Saccharomyces cerevisiae",
+        "experiment": "Yeast_UV_XR-seq",
+        "cell_line": false,
+        "tissue": false,
+        "damage": "UV_CPD",
+        "protocol": "XR-seq",
+        "replicate": "A",
+        "treatment": {
+            "time_after_irradiation": "5m",
+        },
+        "title": "yeastXR_CPD_A_5m",
+        "SRA": {
+            "id": "",
+            "runs": []    
+        }
+    },
+    {
+        "organism": "Saccharomyces cerevisiae",
+        "experiment": "Yeast_UV_XR-seq",
+        "cell_line": false,
+        "tissue": false,
+        "damage": "UV_CPD",
+        "protocol": "XR-seq",
+        "replicate": "B",
+        "treatment": {
+            "time_after_irradiation": "5m",
+        },
+        "title": "yeastXR_CPD_B_5m",
+        "SRA": {
+            "id": "",
+            "runs": []    
+        }
+    },
+    {
+        "organism": "Saccharomyces cerevisiae",
+        "experiment": "Yeast_UV_XR-seq",
+        "cell_line": false,
+        "tissue": false,
+        "damage": "UV_CPD",
+        "protocol": "XR-seq",
+        "replicate": "A",
+        "treatment": {
+            "time_after_irradiation": "20m"
+        },
+        "title": "yeastXR_CPD_A_20m",
+        "SRA": {
+            "id": "",
+            "runs": []    
+        }
+    },
+    {
+        "organism": "Saccharomyces cerevisiae",
+        "experiment": "Yeast_UV_XR-seq",
+        "cell_line": false,
+        "tissue": false,
+        "damage": "UV_CPD",
+        "protocol": "XR-seq",
+        "replicate": "B",
+        "treatment": {
+            "time_after_irradiation": "20m"
+        },
+        "title": "yeastXR_CPD_B_20m",
+        "SRA": {
+            "id": "",
+            "runs": []    
+        }
+    },
+    {
+        "organism": "Saccharomyces cerevisiae",
+        "experiment": "Yeast_UV_XR-seq",
+        "cell_line": false,
+        "tissue": false,
+        "damage": "UV_CPD",
+        "protocol": "XR-seq",
+        "replicate": "A",
+        "treatment": {
+            "time_after_irradiation": "1h"
+        },
+        "title": "yeastXR_CPD_A_1h",
+        "SRA": {
+            "id": "",
+            "runs": []    
+        }
+    },
+    {
+        "organism": "Saccharomyces cerevisiae",
+        "experiment": "Yeast_UV_XR-seq",
+        "cell_line": false,
+        "tissue": false,
+        "damage": "UV_CPD",
+        "protocol": "XR-seq",
+        "replicate": "B",
+        "treatment": {
+            "time_after_irradiation": "1h"
+        },
+        "title": "yeastXR_CPD_B_1h",
+        "SRA": {
+            "id": "",
+            "runs": []    
+        }
+    },
+    {
+        "organism": "Saccharomyces cerevisiae",
+        "experiment": "Yeast_UV_XR-seq",
+        "cell_line": false,
+        "tissue": false,
+        "damage": "UV_64PP",
+        "protocol": "XR-seq",
+        "replicate": "A",
+        "treatment": {
+            "time_after_irradiation": "5m",
+        },
+        "title": "yeastXR_64PP_A_5m",
+        "SRA": {
+            "id": "",
+            "runs": []    
+        }
+    },
+    {
+        "organism": "Saccharomyces cerevisiae",
+        "experiment": "Yeast_UV_XR-seq",
+        "cell_line": false,
+        "tissue": false,
+        "damage": "UV_64PP",
+        "protocol": "XR-seq",
+        "replicate": "B",
+        "treatment": {
+            "time_after_irradiation": "5m",
+        },
+        "title": "yeastXR_64PP_B_5m",
+        "SRA": {
+            "id": "",
+            "runs": []    
+        }
+    },
+    {
+        "organism": "Saccharomyces cerevisiae",
+        "experiment": "Yeast_UV_XR-seq",
+        "cell_line": false,
+        "tissue": false,
+        "damage": "UV_64PP",
+        "protocol": "XR-seq",
+        "replicate": "A",
+        "treatment": {
+            "time_after_irradiation": "20m"
+        },
+        "title": "yeastXR_64PP_A_20m",
+        "SRA": {
+            "id": "",
+            "runs": []    
+        }
+    },
+    {
+        "organism": "Saccharomyces cerevisiae",
+        "experiment": "Yeast_UV_XR-seq",
+        "cell_line": false,
+        "tissue": false,
+        "damage": "UV_64PP",
+        "protocol": "XR-seq",
+        "replicate": "B",
+        "treatment": {
+            "time_after_irradiation": "20m"
+        },
+        "title": "yeastXR_64PP_B_20m",
+        "SRA": {
+            "id": "",
+            "runs": []    
+        }
+    },
+    {
+        "organism": "Arabidopsis thaliana",
+        "experiment": "Arabidopsis_CPD_XR-seq",
+        "cell_line": false,
+        "tissue": "whole plant",
+        "damage": "UV_CPD",
+        "protocol": "XR-seq",
+        "replicate": "A",
+        "treatment": {
+            "time_after_irradiation": "30m",
+            "ZT": 0
+        },
+        "title": "arabidopsis_CPD_A_0",
+        "SRA": {
+            "id": "",
+            "runs": []    
+        }
+    },
+    {
+        "organism": "Arabidopsis thaliana",
+        "experiment": "Arabidopsis_CPD_XR-seq",
+        "cell_line": false,
+        "tissue": "whole plant",
+        "damage": "UV_CPD",
+        "protocol": "XR-seq",
+        "replicate": "B",
+        "treatment": {
+            "time_after_irradiation": "30m",
+            "ZT": 0
+        },
+        "title": "arabidopsis_CPD_B_0",
+        "SRA": {
+            "id": "",
+            "runs": []    
+        }
+    },
+    {
+        "organism": "Arabidopsis thaliana",
+        "experiment": "Arabidopsis_CPD_XR-seq",
+        "cell_line": false,
+        "tissue": "whole plant",
+        "damage": "UV_CPD",
+        "protocol": "XR-seq",
+        "replicate": "A",
+        "treatment": {
+            "time_after_irradiation": "30m",
+            "ZT": 4
+        },
+        "title": "arabidopsis_CPD_A_4",
+        "SRA": {
+            "id": "",
+            "runs": []    
+        }
+    },
+    {
+        "organism": "Arabidopsis thaliana",
+        "experiment": "Arabidopsis_CPD_XR-seq",
+        "cell_line": false,
+        "tissue": "whole plant",
+        "damage": "UV_CPD",
+        "protocol": "XR-seq",
+        "replicate": "B",
+        "treatment": {
+            "time_after_irradiation": "30m",
+            "ZT": 4
+        },
+        "title": "arabidopsis_CPD_B_4",
+        "SRA": {
+            "id": "",
+            "runs": []    
+        }
+    },
+    {
+        "organism": "Arabidopsis thaliana",
+        "experiment": "Arabidopsis_CPD_XR-seq",
+        "cell_line": false,
+        "tissue": "whole plant",
+        "damage": "UV_CPD",
+        "protocol": "XR-seq",
+        "replicate": "A",
+        "treatment": {
+            "time_after_irradiation": "30m",
+            "ZT": 8
+        },
+        "title": "arabidopsis_CPD_A_8",
+        "SRA": {
+            "id": "",
+            "runs": []    
+        }
+    },
+    {
+        "organism": "Arabidopsis thaliana",
+        "experiment": "Arabidopsis_CPD_XR-seq",
+        "cell_line": false,
+        "tissue": "whole plant",
+        "damage": "UV_CPD",
+        "protocol": "XR-seq",
+        "replicate": "B",
+        "treatment": {
+            "time_after_irradiation": "30m",
+            "ZT": 8
+        },
+        "title": "arabidopsis_CPD_B_8",
+        "SRA": {
+            "id": "",
+            "runs": []    
+        }
+    },
+    {
+        "organism": "Arabidopsis thaliana",
+        "experiment": "Arabidopsis_CPD_XR-seq",
+        "cell_line": false,
+        "tissue": "whole plant",
+        "damage": "UV_CPD",
+        "protocol": "XR-seq",
+        "replicate": "A",
+        "treatment": {
+            "time_after_irradiation": "30m",
+            "ZT": 12
+        },
+        "title": "arabidopsis_CPD_A_12",
+        "SRA": {
+            "id": "",
+            "runs": []    
+        }
+    },
+    {
+        "organism": "Arabidopsis thaliana",
+        "experiment": "Arabidopsis_CPD_XR-seq",
+        "cell_line": false,
+        "tissue": "whole plant",
+        "damage": "UV_CPD",
+        "protocol": "XR-seq",
+        "replicate": "B",
+        "treatment": {
+            "time_after_irradiation": "30m",
+            "ZT": 12
+        },
+        "title": "arabidopsis_CPD_B_12",
+        "SRA": {
+            "id": "",
+            "runs": []    
+        }
+    },
+    {
+        "organism": "Arabidopsis thaliana",
+        "experiment": "Arabidopsis_CPD_XR-seq",
+        "cell_line": false,
+        "tissue": "whole plant",
+        "damage": "UV_CPD",
+        "protocol": "XR-seq",
+        "replicate": "A",
+        "treatment": {
+            "time_after_irradiation": "30m",
+            "ZT": 16
+        },
+        "title": "arabidopsis_CPD_A_16",
+        "SRA": {
+            "id": "",
+            "runs": []    
+        }
+    },
+    {
+        "organism": "Arabidopsis thaliana",
+        "experiment": "Arabidopsis_CPD_XR-seq",
+        "cell_line": false,
+        "tissue": "whole plant",
+        "damage": "UV_CPD",
+        "protocol": "XR-seq",
+        "replicate": "B",
+        "treatment": {
+            "time_after_irradiation": "30m",
+            "ZT": 16
+        },
+        "title": "arabidopsis_CPD_B_16",
+        "SRA": {
+            "id": "",
+            "runs": []    
+        }
+    },
+    {
+        "organism": "Arabidopsis thaliana",
+        "experiment": "Arabidopsis_CPD_XR-seq",
+        "cell_line": false,
+        "tissue": "whole plant",
+        "damage": "UV_CPD",
+        "protocol": "XR-seq",
+        "replicate": "A",
+        "treatment": {
+            "time_after_irradiation": "30m",
+            "ZT": 20
+        },
+        "title": "arabidopsis_CPD_A_20",
+        "SRA": {
+            "id": "",
+            "runs": []    
+        }
+    },
+    {
+        "organism": "Arabidopsis thaliana",
+        "experiment": "Arabidopsis_CPD_XR-seq",
+        "cell_line": false,
+        "tissue": "whole plant",
+        "damage": "UV_CPD",
+        "protocol": "XR-seq",
+        "replicate": "B",
+        "treatment": {
+            "time_after_irradiation": "30m",
+            "ZT": 20
+        },
+        "title": "arabidopsis_CPD_B_20",
+        "SRA": {
+            "id": "",
+            "runs": []    
+        }
+    },
+    {
+        "organism": "Mus musculus",
+        "experiment": "Mouse_cisplatin_ciradian_XR-seq",
+        "cell_line": false,
+        "tissue": "kidney",
+        "damage": "cisplatin",
+        "protocol": "XR-seq",
+        "replicate": "A",
+        "treatment": {
+            "time_after_treatment": "2h",
+            "dose": "10mg/kg",
+            "ZT": 0
+        },
+        "title": "mouseCirca_kidney_A_0",
+        "SRA": {
+            "id": "",
+            "runs": []    
+        }
+    },
+    {
+        "organism": "Mus musculus",
+        "experiment": "Mouse_cisplatin_ciradian_XR-seq",
+        "cell_line": false,
+        "tissue": "kidney",
+        "damage": "cisplatin",
+        "protocol": "XR-seq",
+        "replicate": "B",
+        "treatment": {
+            "time_after_treatment": "2h",
+            "dose": "10mg/kg",
+            "ZT": 0
+        },
+        "title": "mouseCirca_kidney_B_0",
+        "SRA": {
+            "id": "",
+            "runs": []    
+        }
+    },
+    {
+        "organism": "Mus musculus",
+        "experiment": "Mouse_cisplatin_ciradian_XR-seq",
+        "cell_line": false,
+        "tissue": "kidney",
+        "damage": "cisplatin",
+        "protocol": "XR-seq",
+        "replicate": "A",
+        "treatment": {
+            "time_after_treatment": "2h",
+            "dose": "10mg/kg",
+            "ZT": 4
+        },
+        "title": "mouseCirca_kidney_A_4",
+        "SRA": {
+            "id": "",
+            "runs": []    
+        }
+    },
+    {
+        "organism": "Mus musculus",
+        "experiment": "Mouse_cisplatin_ciradian_XR-seq",
+        "cell_line": false,
+        "tissue": "kidney",
+        "damage": "cisplatin",
+        "protocol": "XR-seq",
+        "replicate": "B",
+        "treatment": {
+            "time_after_treatment": "2h",
+            "dose": "10mg/kg",
+            "ZT": 4
+        },
+        "title": "mouseCirca_kidney_B_4",
+        "SRA": {
+            "id": "",
+            "runs": []    
+        }
+    },
+    {
+        "organism": "Mus musculus",
+        "experiment": "Mouse_cisplatin_ciradian_XR-seq",
+        "cell_line": false,
+        "tissue": "kidney",
+        "damage": "cisplatin",
+        "protocol": "XR-seq",
+        "replicate": "A",
+        "treatment": {
+            "time_after_treatment": "2h",
+            "dose": "10mg/kg",
+            "ZT": 8
+        },
+        "title": "mouseCirca_kidney_A_8",
+        "SRA": {
+            "id": "",
+            "runs": []    
+        }
+    },
+    {
+        "organism": "Mus musculus",
+        "experiment": "Mouse_cisplatin_ciradian_XR-seq",
+        "cell_line": false,
+        "tissue": "kidney",
+        "damage": "cisplatin",
+        "protocol": "XR-seq",
+        "replicate": "B",
+        "treatment": {
+            "time_after_treatment": "2h",
+            "dose": "10mg/kg",
+            "ZT": 8
+        },
+        "title": "mouseCirca_kidney_B_8",
+        "SRA": {
+            "id": "",
+            "runs": []    
+        }
+    },
+    {
+        "organism": "Mus musculus",
+        "experiment": "Mouse_cisplatin_ciradian_XR-seq",
+        "cell_line": false,
+        "tissue": "kidney",
+        "damage": "cisplatin",
+        "protocol": "XR-seq",
+        "replicate": "A",
+        "treatment": {
+            "time_after_treatment": "2h",
+            "dose": "10mg/kg",
+            "ZT": 12
+        },
+        "title": "mouseCirca_kidney_A_12",
+        "SRA": {
+            "id": "",
+            "runs": []    
+        }
+    },
+    {
+        "organism": "Mus musculus",
+        "experiment": "Mouse_cisplatin_ciradian_XR-seq",
+        "cell_line": false,
+        "tissue": "kidney",
+        "damage": "cisplatin",
+        "protocol": "XR-seq",
+        "replicate": "B",
+        "treatment": {
+            "time_after_treatment": "2h",
+            "dose": "10mg/kg",
+            "ZT": 12
+        },
+        "title": "mouseCirca_kidney_B_12",
+        "SRA": {
+            "id": "",
+            "runs": []    
+        }
+    },
+    {
+        "organism": "Mus musculus",
+        "experiment": "Mouse_cisplatin_ciradian_XR-seq",
+        "cell_line": false,
+        "tissue": "kidney",
+        "damage": "cisplatin",
+        "protocol": "XR-seq",
+        "replicate": "A",
+        "treatment": {
+            "time_after_treatment": "2h",
+            "dose": "10mg/kg",
+            "ZT": 16
+        },
+        "title": "mouseCirca_kidney_A_16",
+        "SRA": {
+            "id": "",
+            "runs": []    
+        }
+    },
+    {
+        "organism": "Mus musculus",
+        "experiment": "Mouse_cisplatin_ciradian_XR-seq",
+        "cell_line": false,
+        "tissue": "kidney",
+        "damage": "cisplatin",
+        "protocol": "XR-seq",
+        "replicate": "B",
+        "treatment": {
+            "time_after_treatment": "2h",
+            "dose": "10mg/kg",
+            "ZT": 16
+        },
+        "title": "mouseCirca_kidney_B_16",
+        "SRA": {
+            "id": "",
+            "runs": []    
+        }
+    },
+    {
+        "organism": "Mus musculus",
+        "experiment": "Mouse_cisplatin_ciradian_XR-seq",
+        "cell_line": false,
+        "tissue": "kidney",
+        "damage": "cisplatin",
+        "protocol": "XR-seq",
+        "replicate": "A",
+        "treatment": {
+            "time_after_treatment": "2h",
+            "dose": "10mg/kg",
+            "ZT": 20
+        },
+        "title": "mouseCirca_kidney_A_20",
+        "SRA": {
+            "id": "",
+            "runs": []    
+        }
+    },
+    {
+        "organism": "Mus musculus",
+        "experiment": "Mouse_cisplatin_ciradian_XR-seq",
+        "cell_line": false,
+        "tissue": "kidney",
+        "damage": "cisplatin",
+        "protocol": "XR-seq",
+        "replicate": "B",
+        "treatment": {
+            "time_after_treatment": "2h",
+            "dose": "10mg/kg",
+            "ZT": 20
+        },
+        "title": "mouseCirca_kidney_B_20",
+        "SRA": {
+            "id": "",
+            "runs": []    
+        }
+    },
+    {
+        "organism": "Mus musculus",
+        "experiment": "Mouse_cisplatin_ciradian_XR-seq",
+        "cell_line": false,
+        "tissue": "liver",
+        "damage": "cisplatin",
+        "protocol": "XR-seq",
+        "replicate": "A",
+        "treatment": {
+            "time_after_treatment": "2h",
+            "dose": "10mg/kg",
+            "ZT": 0
+        },
+        "title": "mouseCirca_liver_A_0",
+        "SRA": {
+            "id": "",
+            "runs": []    
+        }
+    },
+    {
+        "organism": "Mus musculus",
+        "experiment": "Mouse_cisplatin_ciradian_XR-seq",
+        "cell_line": false,
+        "tissue": "liver",
+        "damage": "cisplatin",
+        "protocol": "XR-seq",
+        "replicate": "B",
+        "treatment": {
+            "time_after_treatment": "2h",
+            "dose": "10mg/kg",
+            "ZT": 0
+        },
+        "title": "mouseCirca_liver_B_0",
+        "SRA": {
+            "id": "",
+            "runs": []    
+        }
+    },
+    {
+        "organism": "Mus musculus",
+        "experiment": "Mouse_cisplatin_ciradian_XR-seq",
+        "cell_line": false,
+        "tissue": "liver",
+        "damage": "cisplatin",
+        "protocol": "XR-seq",
+        "replicate": "A",
+        "treatment": {
+            "time_after_treatment": "2h",
+            "dose": "10mg/kg",
+            "ZT": 4
+        },
+        "title": "mouseCirca_liver_A_4",
+        "SRA": {
+            "id": "",
+            "runs": []    
+        }
+    },
+    {
+        "organism": "Mus musculus",
+        "experiment": "Mouse_cisplatin_ciradian_XR-seq",
+        "cell_line": false,
+        "tissue": "liver",
+        "damage": "cisplatin",
+        "protocol": "XR-seq",
+        "replicate": "B",
+        "treatment": {
+            "time_after_treatment": "2h",
+            "dose": "10mg/kg",
+            "ZT": 4
+        },
+        "title": "mouseCirca_liver_B_4",
+        "SRA": {
+            "id": "",
+            "runs": []    
+        }
+    },
+    {
+        "organism": "Mus musculus",
+        "experiment": "Mouse_cisplatin_ciradian_XR-seq",
+        "cell_line": false,
+        "tissue": "liver",
+        "damage": "cisplatin",
+        "protocol": "XR-seq",
+        "replicate": "A",
+        "treatment": {
+            "time_after_treatment": "2h",
+            "dose": "10mg/kg",
+            "ZT": 8
+        },
+        "title": "mouseCirca_liver_A_8",
+        "SRA": {
+            "id": "",
+            "runs": []    
+        }
+    },
+    {
+        "organism": "Mus musculus",
+        "experiment": "Mouse_cisplatin_ciradian_XR-seq",
+        "cell_line": false,
+        "tissue": "liver",
+        "damage": "cisplatin",
+        "protocol": "XR-seq",
+        "replicate": "B",
+        "treatment": {
+            "time_after_treatment": "2h",
+            "dose": "10mg/kg",
+            "ZT": 8
+        },
+        "title": "mouseCirca_liver_B_8",
+        "SRA": {
+            "id": "",
+            "runs": []    
+        }
+    },
+    {
+        "organism": "Mus musculus",
+        "experiment": "Mouse_cisplatin_ciradian_XR-seq",
+        "cell_line": false,
+        "tissue": "liver",
+        "damage": "cisplatin",
+        "protocol": "XR-seq",
+        "replicate": "A",
+        "treatment": {
+            "time_after_treatment": "2h",
+            "dose": "10mg/kg",
+            "ZT": 12
+        },
+        "title": "mouseCirca_liver_A_12",
+        "SRA": {
+            "id": "",
+            "runs": []    
+        }
+    },
+    {
+        "organism": "Mus musculus",
+        "experiment": "Mouse_cisplatin_ciradian_XR-seq",
+        "cell_line": false,
+        "tissue": "liver",
+        "damage": "cisplatin",
+        "protocol": "XR-seq",
+        "replicate": "B",
+        "treatment": {
+            "time_after_treatment": "2h",
+            "dose": "10mg/kg",
+            "ZT": 12
+        },
+        "title": "mouseCirca_liver_B_12",
+        "SRA": {
+            "id": "",
+            "runs": []    
+        }
+    },
+    {
+        "organism": "Mus musculus",
+        "experiment": "Mouse_cisplatin_ciradian_XR-seq",
+        "cell_line": false,
+        "tissue": "liver",
+        "damage": "cisplatin",
+        "protocol": "XR-seq",
+        "replicate": "A",
+        "treatment": {
+            "time_after_treatment": "2h",
+            "dose": "10mg/kg",
+            "ZT": 16
+        },
+        "title": "mouseCirca_liver_A_16",
+        "SRA": {
+            "id": "",
+            "runs": []    
+        }
+    },
+    {
+        "organism": "Mus musculus",
+        "experiment": "Mouse_cisplatin_ciradian_XR-seq",
+        "cell_line": false,
+        "tissue": "liver",
+        "damage": "cisplatin",
+        "protocol": "XR-seq",
+        "replicate": "B",
+        "treatment": {
+            "time_after_treatment": "2h",
+            "dose": "10mg/kg",
+            "ZT": 16
+        },
+        "title": "mouseCirca_liver_B_16",
+        "SRA": {
+            "id": "",
+            "runs": []    
+        }
+    },
+    {
+        "organism": "Mus musculus",
+        "experiment": "Mouse_cisplatin_ciradian_XR-seq",
+        "cell_line": false,
+        "tissue": "liver",
+        "damage": "cisplatin",
+        "protocol": "XR-seq",
+        "replicate": "A",
+        "treatment": {
+            "time_after_treatment": "2h",
+            "dose": "10mg/kg",
+            "ZT": 20
+        },
+        "title": "mouseCirca_liver_A_20",
+        "SRA": {
+            "id": "",
+            "runs": []    
+        }
+    },
+    {
+        "organism": "Mus musculus",
+        "experiment": "Mouse_cisplatin_ciradian_XR-seq",
+        "cell_line": false,
+        "tissue": "liver",
+        "damage": "cisplatin",
+        "protocol": "XR-seq",
+        "replicate": "B",
+        "treatment": {
+            "time_after_treatment": "2h",
+            "dose": "10mg/kg",
+            "ZT": 20
+        },
+        "title": "mouseCirca_liver_B_20",
+        "SRA": {
+            "id": "",
+            "runs": []    
+        }
+    },
+    {
+        "organism": "Escherichia coli",
+        "experiment": "ecoli_XR-seq",
+        "cell_line": "K-12 MG1655 WT",
+        "tissue": false,
+        "damage": "UV_CPD",
+        "protocol": "XR-seq",
+        "replicate": "A",
+        "treatment": {
+            "time_after_treatment": "5m",
+            "dose": "120J",
+            "background": "WT"
+        },
+        "title": "ecoli_WT_A",
+        "SRA": {
+            "id": "",
+            "runs": []    
+        }
+    },
+    {
+        "organism": "Escherichia coli",
+        "experiment": "ecoli_XR-seq",
+        "cell_line": "K-12 MG1655 WT",
+        "tissue": false,
+        "damage": "UV_CPD",
+        "protocol": "XR-seq",
+        "replicate": "B",
+        "treatment": {
+            "time_after_treatment": "5m",
+            "dose": "120J",
+            "background": "WT"
+        },
+        "title": "ecoli_WT_B",
+        "SRA": {
+            "id": "",
+            "runs": []    
+        }
+    },
+    {
+        "organism": "Escherichia coli",
+        "experiment": "ecoli_XR-seq",
+        "cell_line": "K-12 MG1655 phr",
+        "tissue": false,
+        "damage": "UV_CPD",
+        "protocol": "XR-seq",
+        "replicate": "A",
+        "treatment": {
+            "time_after_treatment": "5m",
+            "dose": "120J",
+            "background": "phr"
+        },
+        "title": "ecoli_phr_A",
+        "SRA": {
+            "id": "",
+            "runs": []    
+        }
+    },
+    {
+        "organism": "Escherichia coli",
+        "experiment": "ecoli_XR-seq",
+        "cell_line": "K-12 MG1655 phr",
+        "tissue": false,
+        "damage": "UV_CPD",
+        "protocol": "XR-seq",
+        "replicate": "B",
+        "treatment": {
+            "time_after_treatment": "5m",
+            "dose": "120J",
+            "background": "phr"
+        },
+        "title": "ecoli_phr_B",
+        "SRA": {
+            "id": "",
+            "runs": []    
+        }
+    },
+    {
+        "organism": "Escherichia coli",
+        "experiment": "ecoli_XR-seq",
+        "cell_line": "K-12 MG1655 mfd",
+        "tissue": false,
+        "damage": "UV_CPD",
+        "protocol": "XR-seq",
+        "replicate": "A",
+        "treatment": {
+            "time_after_treatment": "5m",
+            "dose": "120J",
+            "background": "mfd"
+        },
+        "title": "ecoli_mfd_A",
+        "SRA": {
+            "id": "",
+            "runs": []    
+        }
+    },
+    {
+        "organism": "Escherichia coli",
+        "experiment": "ecoli_XR-seq",
+        "cell_line": "K-12 MG1655 mfd",
+        "tissue": false,
+        "damage": "UV_CPD",
+        "protocol": "XR-seq",
+        "replicate": "B",
+        "treatment": {
+            "time_after_treatment": "5m",
+            "dose": "120J",
+            "background": "mfd"
+        },
+        "title": "ecoli_mfd_B",
+        "SRA": {
+            "id": "",
+            "runs": []    
+        }
+    },
+    {
+        "organism": "Escherichia coli",
+        "experiment": "ecoli_XR-seq",
+        "cell_line": "K-12 MG1655 uvrD",
+        "tissue": false,
+        "damage": "UV_CPD",
+        "protocol": "XR-seq",
+        "replicate": "A",
+        "treatment": {
+            "time_after_treatment": "5m",
+            "dose": "120J",
+            "background": "uvrD"
+        },
+        "title": "ecoli_uvrD_A",
+        "SRA": {
+            "id": "",
+            "runs": []    
+        }
+    },
+    {
+        "organism": "Escherichia coli",
+        "experiment": "ecoli_XR-seq",
+        "cell_line": "K-12 MG1655 uvrD",
+        "tissue": false,
+        "damage": "UV_CPD",
+        "protocol": "XR-seq",
+        "replicate": "B",
+        "treatment": {
+            "time_after_treatment": "5m",
+            "dose": "120J",
+            "background": "uvrD"
+        },
+        "title": "ecoli_uvrD_B",
+        "SRA": {
+            "id": "",
+            "runs": []    
+        }
+    },
+    {
+        "organism": "Homo sapiens",
+        "experiment": "tXR-seq",
+        "cell_line": "GM12878",
+        "tissue": false,
+        "damage": "UV_CPD",
+        "protocol": "XR-seq",
+        "replicate": "A",
+        "treatment": {
+            "time_after_treatment": "1h",
+            "dose": "20J"
+        },
+        "title": "tXR_CPD_A",
+        "SRA": {
+            "id": "",
+            "runs": []    
+        }
+    },
+    {
+        "organism": "Homo sapiens",
+        "experiment": "tXR-seq",
+        "cell_line": "GM12878",
+        "tissue": false,
+        "damage": "UV_CPD",
+        "protocol": "XR-seq",
+        "replicate": "B",
+        "treatment": {
+            "time_after_treatment": "1h",
+            "dose": "20J"
+        },
+        "title": "tXR_CPD_B",
+        "SRA": {
+            "id": "",
+            "runs": []    
+        }
+    },
+    {
+        "organism": "Homo sapiens",
+        "experiment": "tXR-seq",
+        "cell_line": "GM12878",
+        "tissue": false,
+        "damage": "UV_BPDE",
+        "protocol": "XR-seq",
+        "replicate": "A",
+        "treatment": {
+            "time_after_treatment": "1h",
+            "dose": "20J"
+        },
+        "title": "tXR_BPDE_A",
+        "SRA": {
+            "id": "",
+            "runs": []    
+        }
+    },
+    {
+        "organism": "Homo sapiens",
+        "experiment": "tXR-seq",
+        "cell_line": "GM12878",
+        "tissue": false,
+        "damage": "UV_BPDE",
+        "protocol": "XR-seq",
+        "replicate": "B",
+        "treatment": {
+            "time_after_treatment": "1h",
+            "dose": "20J"
+        },
+        "title": "tXR_BPDE_B",
+        "SRA": {
+            "id": "",
+            "runs": []    
+        }
+    },
+    {
+        "organism": "Homo sapiens",
+        "experiment": "human_TCR_UV_XR",
+        "cell_line": "NHF1",
+        "tissue": false,
+        "damage": "UV_CPD",
+        "protocol": "XR-seq",
+        "replicate": "A",
+        "treatment": {
+            "time_after_treatment": "?",
+            "dose": "20J",
+            "background": "WT"
+        },
+        "title": "NHF1_XR-seq_TCR_CPD_A",
+        "SRA": {
+            "id": "",
+            "runs": []    
+        }
+    },
+    {
+        "organism": "Homo sapiens",
+        "experiment": "human_TCR_UV_XR",
+        "cell_line": "NHF1",
+        "tissue": false,
+        "damage": "UV_CPD",
+        "protocol": "XR-seq",
+        "replicate": "B",
+        "treatment": {
+            "time_after_treatment": "?",
+            "dose": "20J",
+            "background": "WT"
+        },
+        "title": "NHF1_XR-seq_TCR_CPD_B",
+        "SRA": {
+            "id": "",
+            "runs": []    
+        }
+    },
+    {
+        "organism": "Homo sapiens",
+        "experiment": "human_TCR_UV_XR",
+        "cell_line": "NHF1",
+        "tissue": false,
+        "damage": "UV_64PP",
+        "protocol": "XR-seq",
+        "replicate": "A",
+        "treatment": {
+            "time_after_treatment": "?",
+            "dose": "20J",
+            "background": "WT"
+        },
+        "title": "NHF1_XR-seq_TCR_64PP_A",
+        "SRA": {
+            "id": "",
+            "runs": []    
+        }
+    },
+    {
+        "organism": "Homo sapiens",
+        "experiment": "human_TCR_UV_XR",
+        "cell_line": "NHF1",
+        "tissue": false,
+        "damage": "UV_64PP",
+        "protocol": "XR-seq",
+        "replicate": "B",
+        "treatment": {
+            "time_after_treatment": "?",
+            "dose": "20J",
+            "background": "WT"
+        },
+        "title": "NHF1_XR-seq_TCR_64PP_B",
+        "SRA": {
+            "id": "",
+            "runs": []    
+        }
+    },
+    {
+        "organism": "Homo sapiens",
+        "experiment": "human_TCR_UV_XR",
+        "cell_line": "GM15983",
+        "tissue": false,
+        "damage": "UV_CPD",
+        "protocol": "XR-seq",
+        "replicate": "A",
+        "treatment": {
+            "time_after_treatment": "?",
+            "dose": "20J",
+            "background": "XPC"
+        },
+        "title": "XPC_XR-seq_TCR_CPD_A",
+        "SRA": {
+            "id": "",
+            "runs": []    
+        }
+    },
+    {
+        "organism": "Homo sapiens",
+        "experiment": "human_TCR_UV_XR",
+        "cell_line": "GM15983",
+        "tissue": false,
+        "damage": "UV_CPD",
+        "protocol": "XR-seq",
+        "replicate": "B",
+        "treatment": {
+            "time_after_treatment": "?",
+            "dose": "20J",
+            "background": "XPC"
+        },
+        "title": "XPC_XR-seq_TCR_CPD_B",
+        "SRA": {
+            "id": "",
+            "runs": []    
+        }
+    },
+    {
+        "organism": "Homo sapiens",
+        "experiment": "human_TCR_UV_XR",
+        "cell_line": "GM15983",
+        "tissue": false,
+        "damage": "UV_64PP",
+        "protocol": "XR-seq",
+        "replicate": "A",
+        "treatment": {
+            "time_after_treatment": "?",
+            "dose": "20J",
+            "background": "XPC"
+        },
+        "title": "XPC_XR-seq_TCR_64PP_A",
+        "SRA": {
+            "id": "",
+            "runs": []    
+        }
+    },
+    {
+        "organism": "Homo sapiens",
+        "experiment": "human_TCR_UV_XR",
+        "cell_line": "GM15983",
+        "tissue": false,
+        "damage": "UV_64PP",
+        "protocol": "XR-seq",
+        "replicate": "B",
+        "treatment": {
+            "time_after_treatment": "?",
+            "dose": "20J",
+            "background": "XPC"
+        },
+        "title": "XPC_XR-seq_TCR_64PP_B",
+        "SRA": {
+            "id": "",
+            "runs": []    
+        }
+    },
+    {
+        "organism": "Homo sapiens",
+        "experiment": "human_TCR_UV_XR",
+        "cell_line": "GM16095",
+        "tissue": false,
+        "damage": "UV_CPD",
+        "protocol": "XR-seq",
+        "replicate": "A",
+        "treatment": {
+            "time_after_treatment": "?",
+            "dose": "20J",
+            "background": "CSB"
+        },
+        "title": "CSB_XR-seq_TCR_CPD_A",
+        "SRA": {
+            "id": "",
+            "runs": []    
+        }
+    },
+    {
+        "organism": "Homo sapiens",
+        "experiment": "human_TCR_UV_XR",
+        "cell_line": "GM16095",
+        "tissue": false,
+        "damage": "UV_CPD",
+        "protocol": "XR-seq",
+        "replicate": "B",
+        "treatment": {
+            "time_after_treatment": "?",
+            "dose": "20J",
+            "background": "CSB"
+        },
+        "title": "CSB_XR-seq_TCR_CPD_B",
+        "SRA": {
+            "id": "",
+            "runs": []    
+        }
+    },
+    {
+        "organism": "Homo sapiens",
+        "experiment": "human_TCR_UV_XR",
+        "cell_line": "GM16095",
+        "tissue": false,
+        "damage": "UV_64PP",
+        "protocol": "XR-seq",
+        "replicate": "A",
+        "treatment": {
+            "time_after_treatment": "?",
+            "dose": "20J",
+            "background": "CSB"
+        },
+        "title": "CSB_XR-seq_TCR_64PP_A",
+        "SRA": {
+            "id": "",
+            "runs": []    
+        }
+    },
+    {
+        "organism": "Homo sapiens",
+        "experiment": "human_TCR_UV_XR",
+        "cell_line": "GM16095",
+        "tissue": false,
+        "damage": "UV_64PP",
+        "protocol": "XR-seq",
+        "replicate": "B",
+        "treatment": {
+            "time_after_treatment": "?",
+            "dose": "20J",
+            "background": "CSB"
+        },
+        "title": "CSB_XR-seq_TCR_64PP_B",
+        "SRA": {
+            "id": "",
+            "runs": []    
+        }
+    }
+    
+]
