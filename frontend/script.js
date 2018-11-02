@@ -2,7 +2,7 @@
 $(document).ready(function(){
 
         // load in header/footer & call function to identify current page
-        $('#header').load('/frontend/header.html', getCurrentPage());
+        //$('#header').load('/frontend/header.html', getCurrentPage());
         $('#footer').load('/frontend/footer.html');
 
         //load tabs for gene queries
@@ -11,10 +11,10 @@ $(document).ready(function(){
 
 
         //first, create list of gene names for autocomplete
-        queryResultsAuto([{}])
+        //queryResultsAuto([{}])
     
         //query db for sample sheet in order to get columns/data for each experiment for plotting purposes
-        getSampleSheet();     
+        //getSampleSheet();     
         
         
 
