@@ -20,8 +20,8 @@ $(document).ready(function(){
 
     
         //prep server connection
-        var clientPromise = stitch.Stitch.initializeDefaultAppClient('dataretrieval-vwdtg');
-        var db = clientPromise.getServiceClient(stitch.RemoteMongoClient.factory, 'mongodb-atlas').db('data');
+        const clientPromise = stitch.Stitch.initializeDefaultAppClient('dataretrieval-vwdtg');
+        const db = clientPromise.getServiceClient(stitch.RemoteMongoClient.factory, 'mongodb-atlas').db('data');
         
     
         //Global Variables
@@ -199,14 +199,15 @@ $(document).ready(function(){
         var names = [];
         var namesList = [];
         function queryResultsAuto(arg4){
-            const clientPromise = stitch.Stitch.initializeDefaultAppClient('dataretrieval-vwdtg');
-            clientPromise.auth.loginWithCredential(new stitch.AnonymousCredential()).then(user =>{
-                //client = stitchClient;
-                //db = client.service('mongodb', 'mongodb-atlas').db('data');
-                clientPromise.getServiceClient(stitch.RemoteMongoClient.factory, 'mongodb-atlas').db('data');
-                return queryAuto(arg4)
-                //return client.login().then(queryAuto(arg4))
-            });
+            // const clientPromise = stitch.Stitch.initializeDefaultAppClient('dataretrieval-vwdtg');
+            // clientPromise.auth.loginWithCredential(new stitch.AnonymousCredential()).then(user =>{
+            //     //client = stitchClient;
+            //     //db = client.service('mongodb', 'mongodb-atlas').db('data');
+            //     clientPromise.getServiceClient(stitch.RemoteMongoClient.factory, 'mongodb-atlas').db('data');
+            //     return queryAuto(arg4)
+            //     //return client.login().then(queryAuto(arg4))
+            // });
+            return queryAuto(arg4)
         }
         function queryAuto(arg4){
             
