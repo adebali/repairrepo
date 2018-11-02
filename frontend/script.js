@@ -21,7 +21,7 @@ $(document).ready(function(){
     
         //prep server connection
         const clientPromise = stitch.Stitch.initializeDefaultAppClient('dataretrieval-vwdtg');
-        const db = clientPromise.getServiceClient(stitch.RemoteMongoClient.factory, 'mongodb-atlas').db('data');
+        var db = clientPromise.getServiceClient(stitch.RemoteMongoClient.factory, 'mongodb-atlas').db('data');
         
     
         //Global Variables
@@ -34,7 +34,7 @@ $(document).ready(function(){
         var inputStartChr;
         var inputEndChr;
         var client;
-        var db;
+        //var db;
         var returned;
         var geneInputName;
         var queryArray = [];
