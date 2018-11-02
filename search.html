@@ -26,22 +26,23 @@
         <script src="/frontend/script.js"></script>
 
         <script src="https://s3.amazonaws.com/stitch-sdks/js/bundles/4.0.8/stitch.js"></script>
-        <script>
-          const client = stitch.Stitch.initializeDefaultAppClient('dataretrieval-vwdtg');
-        
-          const db = client.getServiceClient(stitch.RemoteMongoClient.factory, 'mongodb-atlas').db('sampleResultsDb');
-        
-          client.auth.loginWithCredential(new stitch.AnonymousCredential()).then(user => 
-            db.collection('gene').updateOne({owner_id: client.auth.user.id}, {$set:{number:42}}, {upsert:true})
-          ).then(() => 
-            db.collection('gene').find({owner_id: client.auth.user.id}, { limit: 100}).asArray()
-          ).then(docs => {
-              console.log("Found docs", docs)
-              console.log("[MongoDB Stitch] Connected to Stitch")
-          }).catch(err => {
-            console.error(err)
-          });
-        </script>
+        <script src="https://s3.amazonaws.com/stitch-sdks/js/bundles/4.0.8/stitch.js"></script>
+<script>
+  const client = stitch.Stitch.initializeDefaultAppClient('dataretrieval-vwdtg');
+
+  const db = client.getServiceClient(stitch.RemoteMongoClient.factory, 'mongodb-atlas').db('sampleResultsDb');
+
+  client.auth.loginWithCredential(new stitch.AnonymousCredential()).then(user => 
+    db.collection('gene').updateOne({owner_id: client.auth.user.id}, {$set:{number:42}}, {upsert:true})
+  ).then(() => 
+    db.collection('gene').find({owner_id: client.auth.user.id}, { limit: 100}).asArray()
+  ).then(docs => {
+      console.log("Found docs", docs)
+      console.log("[MongoDB Stitch] Connected to Stitch")
+  }).catch(err => {
+    console.error(err)
+  });
+</script>
 
   </head>
   <body>
