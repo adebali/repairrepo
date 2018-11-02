@@ -22,7 +22,7 @@ $(document).ready(function(){
         //prep server connection
         const clientPromise = stitch.Stitch.initializeDefaultAppClient('dataretrieval-vwdtg');
         const db = clientPromise.getServiceClient(stitch.RemoteMongoClient.factory, 'mongodb-atlas').db('data');
-        console.log(db.find({}, {limit:10}).asArray());
+        console.log("test" + db.collection("gene").find({}, {limit:10}).asArray());
     
         //Global Variables
         var selectedOrganism = 'mouse';
