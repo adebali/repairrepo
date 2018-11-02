@@ -210,6 +210,7 @@ $(document).ready(function(){
             return queryAuto(arg4)
         }
         function queryAuto(arg4){
+            const db = clientPromise.getServiceClient(stitch.RemoteMongoClient.factory, 'mongodb-atlas').db('data');
             
             arg4.push(orgDict)
             arg4 = arg4.length > 0 ? { $and: arg4 } : {};
