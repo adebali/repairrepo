@@ -44,7 +44,24 @@ $(document).ready(function(){
         var functions = []; //list of dictionaries {"Experiment name": "Function name"} functions (string name) 
         //that will be called to plot the respective experiment
         
+        /**
+         * Get sample sheet to inform script of how to plot depending on experiment, stored in the 
+         */
         
+        function getSampleSheet(){
+            //const clientPromise = stitch.StitchClientFactory.create('dataretrieval-vwdtg'); 
+            //const clientPromise = stitch.Stitch.initializeDefaultAppClient('dataretrieval-vwdtg');            
+            clientPromise.then(stitchClient =>{
+                client = stitchClient;
+                db = client.service('mongodb', 'mongodb-atlas').db('data');
+                client.login()
+                db.collection('sample').find({}).execute().then(result => {
+                    sampleSheet = result;
+                    
+                })
+            }); 
+        }
+    
         
         //page loads this by default, can change later
         orgDict.organism = 'mouse'
@@ -515,24 +532,7 @@ $(document).ready(function(){
             var elmnt = document.getElementById("plots");
             elmnt.scrollIntoView();
         }
-        /**
-         * Get sample sheet to inform script of how to plot depending on experiment, stored in the 
-         */
         
-        function getSampleSheet(){
-            //const clientPromise = stitch.StitchClientFactory.create('dataretrieval-vwdtg'); 
-            const clientPromise = stitch.Stitch.initializeDefaultAppClient('dataretrieval-vwdtg');            
-            clientPromise.then(stitchClient =>{
-                client = stitchClient;
-                db = client.service('mongodb', 'mongodb-atlas').db('data');
-                client.login()
-                db.collection('sample').find({}).execute().then(result => {
-                    sampleSheet = result;
-                    
-                })
-            }); 
-        }
-    
     
         /**
          * Function to compare the sampleSheet queried to data provided
