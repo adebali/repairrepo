@@ -198,7 +198,7 @@ $(document).ready(function(){
         var names = [];
         var namesList = [];
         function queryResultsAuto(arg4){
-            const clientPromise = stitch.StitchClientFactory.create('dataretrieval-vwdtg');
+            //const clientPromise = stitch.StitchClientFactory.create('dataretrieval-vwdtg');
             clientPromise.then(stitchClient =>{
                 client = stitchClient;
                 db = client.service('mongodb', 'mongodb-atlas').db('data');
