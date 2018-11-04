@@ -1,7 +1,6 @@
 //Script for RepairRepo database project's search page- written by Yashar Asgari
 $(document).ready(function(){
-    import Stitch from "mongodb-stitch-browser-sdk"; 
-    import AnonymousCredential from "mongodb-stitch-browser-sdk"; 
+    
       
             // load in header/footer & call function to identify current page
             $('#header').load('/frontend/header.html', getCurrentPage());
@@ -22,9 +21,8 @@ $(document).ready(function(){
     
         
             //prep server connection
-            //const clientPromise = stitch.StitchClientFactory.create('dataretrieval-vwdtg');
-            const clientPromise = Stitch.initializeDefaultAppClient('dataretrieval-vwdtg');
-            clientPromise.auth.login(new AnonymousCredential());
+            const clientPromise = stitch.StitchClientFactory.create('dataretrieval-vwdtg');
+            
         
         
             //Global Variables
