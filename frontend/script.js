@@ -1,4 +1,9 @@
 //Script for RepairRepo database project's search page- written by Yashar Asgari
+import { 
+    Stitch,
+    RemoteMongoClient,
+    AnonymousCredential
+} from "mongodb-stitch-browser-sdk";
 $(document).ready(function(){
     
             // load in header/footer & call function to identify current page
