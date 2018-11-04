@@ -17,18 +17,30 @@ $(document).ready(function(){
             //query db for sample sheet in order to get columns/data for each experiment for plotting purposes
             getSampleSheet();     
             
-            const {
+            import { 
                 Stitch,
                 RemoteMongoClient,
-                UserPasswordCredential
-              } = stitch;
-    
+                AnonymousCredential
+            } from "mongodb-stitch-browser-sdk";
+            
+            const client = Stitch.initializeDefaultAppClient('dataretrieval-vwdtg');
+            
+            const db = client.getServiceClient(RemoteMongoClient.factory, 'mongodb-atlas').db('data');
+            
+            client.auth.loginWithCredential(new AnonymousCredential()).then(user => 
+              db.collection('gene').updateOne({owner_id: client.auth.user.id}, {$set:{number:42}}, {upsert:true})
+            ).then(() => 
+              db.collection('gene').find({owner_id: client.auth.user.id}, { limit: 100}).asArray()
+            ).then(docs => {
+                console.log("Found docs", docs)
+                console.log("[MongoDB Stitch] Connected to Stitch")
+            }).catch(err => {
+                console.error(err)
+            });
         
             //prep server connection
             const clientPromise = stitch.StitchClientFactory.create('dataretrieval-vwdtg');
-            Stitch.defaultAppClient.auth.loginWithCredential(new AnonymousCredential()).then(user => {
-                console.log(`Logged in as anonymous user with id: ${user.id}`);
-             }).catch(console.error);
+            
         
         
             //Global Variables
