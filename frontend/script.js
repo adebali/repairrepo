@@ -22,7 +22,9 @@ $(document).ready(function(){
         
             //prep server connection
             const clientPromise = stitch.StitchClientFactory.create('dataretrieval-vwdtg');
-            
+            Stitch.defaultAppClient.auth.loginWithCredential(new AnonymousCredential()).then(user => {
+                console.log(`Logged in as anonymous user with id: ${user.id}`);
+             }).catch(console.error);
         
         
             //Global Variables
