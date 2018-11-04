@@ -17,7 +17,11 @@ $(document).ready(function(){
             //query db for sample sheet in order to get columns/data for each experiment for plotting purposes
             getSampleSheet();     
             
-            
+            const {
+                Stitch,
+                RemoteMongoClient,
+                UserPasswordCredential
+              } = stitch;
     
         
             //prep server connection
