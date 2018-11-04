@@ -1,4 +1,7 @@
 //Script for RepairRepo database project's search page- written by Yashar Asgari
+import Stitch from "mongodb-stitch-browser-sdk";
+import RemoteMongoClient from "mongodb-stitch-browser-sdk";
+import AnonymousCredential from "mongodb-stitch-browser-sdk";
 $(document).ready(function(){
     
       
@@ -16,10 +19,7 @@ $(document).ready(function(){
         
             //query db for sample sheet in order to get columns/data for each experiment for plotting purposes
             getSampleSheet();     
-            
-            import Stitch from "mongodb-stitch-browser-sdk";
-            import RemoteMongoClient from "mongodb-stitch-browser-sdk";
-            import AnonymousCredential from "mongodb-stitch-browser-sdk";
+        
             const client = Stitch.initializeDefaultAppClient('dataretrieval-vwdtg');
             
             const db = client.getServiceClient(RemoteMongoClient.factory, 'mongodb-atlas').db('data');
