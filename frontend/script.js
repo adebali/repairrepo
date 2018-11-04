@@ -17,12 +17,9 @@ $(document).ready(function(){
             //query db for sample sheet in order to get columns/data for each experiment for plotting purposes
             getSampleSheet();     
             
-            import { 
-                Stitch,
-                RemoteMongoClient,
-                AnonymousCredential
-            } from "mongodb-stitch-browser-sdk";
-            
+            import Stitch from "mongodb-stitch-browser-sdk";
+            import RemoteMongoClient from "mongodb-stitch-browser-sdk";
+            import AnonymousCredential from "mongodb-stitch-browser-sdk";
             const client = Stitch.initializeDefaultAppClient('dataretrieval-vwdtg');
             
             const db = client.getServiceClient(RemoteMongoClient.factory, 'mongodb-atlas').db('data');
