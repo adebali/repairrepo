@@ -20,7 +20,8 @@ $(document).ready(function(){
     
         
             //prep server connection
-            const clientPromise = stitch.StitchClientFactory.create('dataretrieval-vwdtg');
+            //const clientPromise = stitch.StitchClientFactory.create('dataretrieval-vwdtg');
+            const client = Stitch.initializeDefaultAppClient('dataretrieval-vwdtg');
             clientPromise.auth.login(new AnonymousCredential());
         
         
