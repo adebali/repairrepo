@@ -21,6 +21,7 @@ $(document).ready(function(){
         
             //prep server connection
             const clientPromise = stitch.StitchClientFactory.create('dataretrieval-vwdtg');
+            clientPromise.auth.login(new AnonymousCredential());
         
         
             //Global Variables
