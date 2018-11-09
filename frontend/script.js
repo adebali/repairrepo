@@ -71,7 +71,6 @@ $(document).ready(function(){
                         
                         if(docs.length == 0){
                             $('#results').html("<div class = 'alert alert-warning' role = 'alert'> <strong> No results left</strong></div>")
-                            console.log("here first")
                         }else{
                             html =  createDynamicTable(docs) +"<button id ='prev' type='button' class='button'> &lt;- Previous</button> <button id = 'next' type='button' class='button'>Next -> </button>"
                             document.getElementById("results").innerHTML = html; 
@@ -97,7 +96,6 @@ $(document).ready(function(){
                 }else if(prev){
                     db.collection('gene').find({"$and":[{'_id':{"$lt":last_id1}},arg1]}).limit(10).execute().then(docs => {
                         var html;
-                        console.log("here third")                        
                         if(docs.length == 0){
                             $('#results').html("<div class = 'alert alert-warning' role = 'alert'> <strong> No results left</strong></div>")
                         }else{
@@ -159,7 +157,7 @@ $(document).ready(function(){
         
             var appended = false;
             //pagination event handlers (next&prev buttons)
-            $('#results').on("click", "#next", function(){
+            $('#results').on("click", "#next button", function(){
                 if(queryArray2.length === 0){
                     queryResultsChr(queryArray, false)
                 }else if(queryArray.length === 0){
@@ -175,7 +173,7 @@ $(document).ready(function(){
             })
         
             
-            $('#results').on("click", "#prev", function(){
+            $('#results').on("click", "#prev button", function(){
                 if(queryArray2.length === 0){
                     queryResultsChr(queryArray, true)
                 }else if (queryArray.length === 0){
