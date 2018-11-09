@@ -442,7 +442,7 @@ $(document).ready(function(){
                     if((index.localeCompare("_id") == 0) || (index.localeCompare("number")==0)){
                         //skip these columns
                     }else{
-                        str += '<td>' + array[i][index] + '</td>';
+                        str += '<th scope="col">' + index + '</th>';
                     }
                 }
                 
@@ -452,10 +452,9 @@ $(document).ready(function(){
                     str += "<tr class = 'dynTr' tabindex = '0' id = 'dataRow_" + i +"'> ";
                 
                     for (var index in array[i]) {
-                       
+                      
                         if((index.localeCompare("_id") == 0) || (index.localeCompare("number")==0)){
                         //skip these columns
-
                         }else{
                         str += '<td>' + array[i][index] + '</td>';
                         }
