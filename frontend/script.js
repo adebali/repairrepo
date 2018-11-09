@@ -209,6 +209,7 @@ $(document).ready(function(){
             function queryAuto(arg4){
                 
                 arg4.push(orgDict)
+                console.log("orgDict" + JSON.stringify(orgDict))
                 arg4 = arg4.length > 0 ? { $and: arg4 } : {};
                 
                 db.collection('gene').find(arg4, {"name":1, "_id" : 0}).execute().then(docs => {    
