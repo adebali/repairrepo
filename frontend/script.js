@@ -439,7 +439,7 @@ $(document).ready(function(){
                 str += '<tr>';
                 //create table headers
                 for (var index in array[0]) {
-                    if((index.localeCompare("_id") == 0) || (index.localeCompare("number")==0)){
+                    if((index.localeCompare("_id") == 0) || (index.localeCompare("number")==0)|| (index.localeCompare("chr")==0)){
                         //skip these columns
                     }else{
                         str += '<th scope="col">' + index + '</th>';
@@ -452,8 +452,8 @@ $(document).ready(function(){
                     str += "<tr class = 'dynTr' tabindex = '0' id = 'dataRow_" + i +"'> ";
                 
                     for (var index in array[i]) {
-                      
-                        if((index.localeCompare("_id") == 0) || (index.localeCompare("number")==0)){
+                      var checker = "chr" + i;
+                        if((index.localeCompare("_id") == 0) || (index.localeCompare("number")==0)|| (index.localeCompare(checker)==0)){
                         //skip these columns
                         }else{
                         str += '<td>' + array[i][index] + '</td>';
