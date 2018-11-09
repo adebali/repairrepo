@@ -60,7 +60,7 @@ table{
   overflow-x: auto;
   white-space: nowrap;
 }
-tr:hover{
+.dynTr:hover{
   outline: 0;
   background-color: #f1b756;
 }
