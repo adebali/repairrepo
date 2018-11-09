@@ -438,8 +438,8 @@ $(document).ready(function(){
                 var str = '<table class="table-striped" role = "grid"> <thead class = "thead-dark">';
                 str += '<tr>';
                 for (var index in array[0]) {
-                    //get rid of _id column
-                    if(!(index == "_id") || !(index == "number")|| !(index.startsWith("chr"))){
+                    //get rid of certain columns
+                    if(!(index == "_id") || !(index == "number")|| (index.startsWith("chr"))){
                     str += '<th scope="col">' + index + '</th>';
                     }
                 }
@@ -450,8 +450,8 @@ $(document).ready(function(){
                     str += "<tr class = 'dynTr' tabindex = '0' id = 'dataRow_" + i +"'> ";
                 
                     for (var index in array[i]) {
-                        //get rid of _id column
-                        if(!(index == "_id")|| !(index == "number")|| !(index.startsWith("chr"))){
+                        //get rid of certain columns
+                        if(!(index == "_id")|| !(index == "number")|| (index.startsWith("chr"))){
                             str += '<td>' + array[i][index] + '</td>';
 
                         }
