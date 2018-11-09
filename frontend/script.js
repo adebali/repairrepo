@@ -65,7 +65,7 @@ $(document).ready(function(){
                 
                 arg1 = arg1.length > 0 ? { $and: arg1 } : {};
                 
-                console.log("arg1 " + arg1)
+                console.log("arg1 " + JSON.stringify(arg1));
                 if(last_id1 === null){
                     db.collection('gene').find(arg1).limit(10).execute().then(docs => {
                         var html;
@@ -127,7 +127,7 @@ $(document).ready(function(){
                 nameInput = geneInputName;       
                 arg2 = arg2.length > 0 ? { $and: arg2 } : {};
                 
-        
+                //Pagination for name query
                 // if(last_id2 === null){
                 //     db.collection('gene').find(arg2).limit(1).execute().then(docs2 => {
                         
