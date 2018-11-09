@@ -65,7 +65,7 @@ $(document).ready(function(){
                 
                 arg1 = arg1.length > 0 ? { $and: arg1 } : {};
                 
-                console.log("arg4 " + arg4)
+                console.log("arg1 " + arg1)
                 if(last_id1 === null){
                     db.collection('gene').find(arg1).limit(10).execute().then(docs => {
                         var html;
@@ -212,7 +212,6 @@ $(document).ready(function(){
                 
                 db.collection('gene').find(arg4, {"name":1, "_id" : 0}).execute().then(docs => {    
                     names = docs;
-                    console.log("returned from query: " + JSON.stringify(docs))
                     for(var i in names){
                         
                         namesList.push(names[i]["name"])
