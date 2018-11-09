@@ -213,14 +213,16 @@ $(document).ready(function(){
                 
                 db.collection('gene').find(arg4, {"name":1, "_id" : 0}).execute().then(docs => {    
                     names = docs;
-                    
+                    console.log("returned from query: " + JSON.stringify(docs))
                     for(var i in names){
                         
                         namesList.push(names[i]["name"])
                     }
+                    if(namesList.length == 0){
+                        console.log("list returned size 0, query didn't return anything")
+                    }else{
                     console.log('names list for autocomplete ready.')
-                    console.log("namesList = " + namesList.toString()); //prints nothing
-                    console.log(namesList.length)
+                    }
                     return namesList;
                 });
             }
