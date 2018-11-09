@@ -445,7 +445,7 @@ $(document).ready(function(){
                 str += '</tr></thead>';
                 str += "<tbody>";
                 for (var i = 0; i < array.length; i++) {
-                    str += "<tr class = 'dynTr' tabindex = '0' id = 'dataRow_" + i +"'> ";
+                    str += "<tr class = 'dynTr' id = 'dataRow_" + i +"'> ";
                 
                     for (var index in array[i]) {
                         str += '<td>' + array[i][index] + '</td>';
