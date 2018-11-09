@@ -62,7 +62,7 @@ table{
 }
 tr:focus{
   outline: 0;
-  background-color: #B3DCCC,
+  background-color: #F1B756,
 }
 #submitButtonDiv{
   display: flex;
