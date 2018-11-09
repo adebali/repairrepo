@@ -65,14 +65,13 @@ $(document).ready(function(){
                 
                 arg1 = arg1.length > 0 ? { $and: arg1 } : {};
                 
-                console.log("arg1 " + JSON.stringify(arg1));
                 if(last_id1 === null){
                     db.collection('gene').find(arg1).limit(10).execute().then(docs => {
                         var html;
                         
                         if(docs.length == 0){
                             $('#results').html("<div class = 'alert alert-warning' role = 'alert'> <strong> No results left</strong></div>")
-                            
+                            console.log("here first")
                         }else{
                             html =  createDynamicTable(docs) +"<button id ='prev' type='button' class='button'> &lt;- Previous</button> <button id = 'next' type='button' class='button'>Next -> </button>"
                             document.getElementById("results").innerHTML = html; 
@@ -82,7 +81,8 @@ $(document).ready(function(){
                 }else if(!prev){
                     db.collection('gene').find({"$and":[{'_id':{"$gt":last_id1}},arg1]}).limit(10).execute().then(docs => {
                         var html;
-                            
+                        console.log("here second")
+                        
                         if(docs.length == 0){
                             $('#results').html("<div class = 'alert alert-warning' role = 'alert'> <strong> No results left</strong></div>")
                             
@@ -97,6 +97,7 @@ $(document).ready(function(){
                 }else if(prev){
                     db.collection('gene').find({"$and":[{'_id':{"$lt":last_id1}},arg1]}).limit(10).execute().then(docs => {
                         var html;
+                        console.log("here third")                        
                         if(docs.length == 0){
                             $('#results').html("<div class = 'alert alert-warning' role = 'alert'> <strong> No results left</strong></div>")
                         }else{
