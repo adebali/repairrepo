@@ -62,7 +62,7 @@ table{
 }
 tr:hover{
   outline: 0;
-  background-color: #F1B756,
+  background-color: #f1b756,
 }
 #submitButtonDiv{
   display: flex;
