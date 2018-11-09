@@ -1451,6 +1451,11 @@ kbd {
   h3 {
     page-break-after: avoid; } }
 
+
+  tr:hover{
+    outline: 2;
+    background-color: #F1B756,
+  }  
 .button {
   display: inline-block;
   text-align: center;
@@ -3149,7 +3154,7 @@ table.scroll {
   width: 100%;
   overflow-x: auto; }
 
-table.hover tr:hover {
+table.hover {
   background-color: #f9f9f9; }
 
 table.hover tr:nth-of-type(even):hover {
