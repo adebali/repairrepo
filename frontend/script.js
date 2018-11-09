@@ -437,6 +437,7 @@ $(document).ready(function(){
             
                 var str = '<table class="table-striped" role = "grid"> <thead class = "thead-dark">';
                 str += '<tr>';
+                //create table headers
                 for (var index in array[0]) {
                     //get rid of _id column
                     if(!(index == "_id") || !(index == "number")){
@@ -451,7 +452,9 @@ $(document).ready(function(){
                 
                     for (var index in array[i]) {
                         //get rid of _id column
-                        if(!(index == "_id")|| !(index == "number")){
+                        if(!(index == "_id") || !(index == "number")){
+
+                            console.log('here')
                             str += '<td>' + array[i][index] + '</td>';
 
                         }
