@@ -456,9 +456,9 @@ $(document).ready(function(){
                         if((index.localeCompare("_id") == 0) || (index.localeCompare("number")==0)|| (index.startsWith("chr")==true)){
                         //skip these columns
                         }else{
-                            if(!isNaN(parseFloat(array[i][index])) && isFinite(array[i][index])){
-                                array[i][index] = parseInt(array[i][index]).toFixed(2)
-                            }
+                            // if(!isNaN(parseFloat(array[i][index])) && isFinite(array[i][index])){
+                            //     array[i][index] = parseInt(array[i][index]).toFixed(2)
+                            // }
                         str += '<td>' + array[i][index] + '</td>';
                         }
                     }
