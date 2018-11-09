@@ -60,7 +60,7 @@ table{
   overflow-x: auto;
   white-space: nowrap;
 }
-tr:focus{
+tr:hover{
   outline: 0;
   background-color: #F1B756,
 }
