@@ -439,7 +439,7 @@ $(document).ready(function(){
                 str += '<tr>';
                 for (var index in array[0]) {
                     //get rid of _id column
-                    if(!(index == "_id")){
+                    if(!(index == "_id") || !(index == "number")){
                     str += '<th scope="col">' + index + '</th>';
                     }
                 }
@@ -451,7 +451,7 @@ $(document).ready(function(){
                 
                     for (var index in array[i]) {
                         //get rid of _id column
-                        if(!(index == "_id")){
+                        if(!(index == "_id")|| !(index == "number")){
                             str += '<td>' + array[i][index] + '</td>';
 
                         }
