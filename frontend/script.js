@@ -219,7 +219,8 @@ $(document).ready(function(){
                         namesList.push(names[i]["name"])
                     }
                     console.log('names list for autocomplete ready.')
-                    console.log("namesList = " + namesList.toString());
+                    console.log("namesList = " + namesList.toString()); //prints nothing
+                    console.log(namesList == null)
                     return namesList;
                 });
             }
