@@ -128,22 +128,30 @@ $(document).ready(function(){
                 arg2 = arg2.length > 0 ? { $and: arg2 } : {};
                 
         
-                if(last_id2 === null){
-                    db.collection('gene').find(arg2).limit(1).execute().then(docs2 => {
+                // if(last_id2 === null){
+                //     db.collection('gene').find(arg2).limit(1).execute().then(docs2 => {
                         
-                        analyzeData(docs2) 
-                        last_id2 = docs2[docs2.length-1]['_id'] 
+                //         analyzeData(docs2) 
+                //         last_id2 = docs2[docs2.length-1]['_id'] 
                         
                         
-                    });
-                }else{
-                    db.collection('gene').find({"$and":[{'_id':{"$gt":last_id2}},arg2]}).limit(1).execute().then(docs2 => {
+                //     });
+                // }else{
+                //     db.collection('gene').find({"$and":[{'_id':{"$gt":last_id2}},arg2]}).limit(1).execute().then(docs2 => {
         
-                        analyzeData(docs2) 
-                        last_id2 = docs2[docs2.length-1]['_id'] 
+                //         analyzeData(docs2) 
+                //         last_id2 = docs2[docs2.length-1]['_id'] 
         
-                    });
-                }
+                //     });
+                // }
+
+                db.collection('gene').find(arg2).limit(1).execute().then(docs2 => {
+                    
+                     analyzeData(docs2) 
+                     //last_id2 = docs2[docs2.length-1]['_id'] 
+                    
+                    
+                });
                 $('#results').html("")
         
             }
