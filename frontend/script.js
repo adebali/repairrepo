@@ -453,6 +453,7 @@ $(document).ready(function(){
                 
                     for (var index in array[i]) {
                       var checker = "chr" + i;
+                      console.log("checker" + checker)
                         if((index.localeCompare("_id") == 0) || (index.localeCompare("number")==0)|| (index.localeCompare(checker)==0)){
                         //skip these columns
                         }else{
