@@ -440,7 +440,7 @@ $(document).ready(function(){
                 //create table headers
                 for (var index in array[0]) {
                     //get rid of _id column
-                    if(!(index == "_id") || !(index == "number")){
+                    if((index.localeCompare("_id") == 0) || (index.localeCompare("number")==0)){
                     str += '<th scope="col">' + index + '</th>';
                     }
                 }
@@ -452,9 +452,8 @@ $(document).ready(function(){
                 
                     for (var index in array[i]) {
                         //get rid of _id column
-                        if(!(index == "_id") || !(index == "number")){
-
-                            console.log('here')
+                        console.log(index)
+                        if((index.localeCompare("_id") == 0) || (index.localeCompare("number")==0)){
                             str += '<td>' + array[i][index] + '</td>';
 
                         }
