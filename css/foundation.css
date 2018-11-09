@@ -1451,11 +1451,7 @@ kbd {
   h3 {
     page-break-after: avoid; } }
 
-
-  tr:hover{
-    outline: 2;
-    background-color: #f1b756;
-  }  
+ 
 .button {
   display: inline-block;
   text-align: center;
