@@ -60,6 +60,10 @@ table{
   overflow-x: auto;
   white-space: nowrap;
 }
+.dynTr:focus{
+  outline: 0;
+  background-color: #B3DCCC,
+}
 #submitButtonDiv{
   display: flex;
   justify-content: center;

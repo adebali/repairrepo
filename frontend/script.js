@@ -157,7 +157,7 @@ $(document).ready(function(){
         
             var appended = false;
             //pagination event handlers (next&prev buttons)
-            $('#results').on("click", "#next button", function(){
+            $('#results').on("click", "#next", function(){
                 if(queryArray2.length === 0){
                     queryResultsChr(queryArray, false)
                 }else if(queryArray.length === 0){
@@ -173,7 +173,7 @@ $(document).ready(function(){
             })
         
             
-            $('#results').on("click", "#prev button", function(){
+            $('#results').on("click", "#prev", function(){
                 if(queryArray2.length === 0){
                     queryResultsChr(queryArray, true)
                 }else if (queryArray.length === 0){
@@ -445,7 +445,7 @@ $(document).ready(function(){
                 str += '</tr></thead>';
                 str += "<tbody>";
                 for (var i = 0; i < array.length; i++) {
-                    str += "<tr id = 'dataRow_" + i +"'> ";
+                    str += "<tr class = 'dynTr' id = 'dataRow_" + i +"'> ";
                 
                     for (var index in array[i]) {
                         str += '<td>' + array[i][index] + '</td>';
