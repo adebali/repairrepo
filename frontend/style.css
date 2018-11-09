@@ -63,6 +63,7 @@ table{
 .dynTr:hover{
   outline: 0;
   background-color: #f1b756;
+  cursor: pointer;
 }
 #submitButtonDiv{
   display: flex;
