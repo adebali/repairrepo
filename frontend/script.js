@@ -220,7 +220,7 @@ $(document).ready(function(){
                     }
                     console.log('names list for autocomplete ready.')
                     console.log("namesList = " + namesList.toString()); //prints nothing
-                    console.log(namesList === null)
+                    console.log(namesList.length)
                     return namesList;
                 });
             }
