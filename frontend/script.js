@@ -80,7 +80,6 @@ $(document).ready(function(){
                 }else if(!prev){
                     db.collection('gene').find({"$and":[{'_id':{"$gt":last_id1}},arg1]}).limit(10).execute().then(docs => {
                         var html;
-                        console.log("here second")
                         
                         if(docs.length == 0){
                             $('#results').html("<div class = 'alert alert-warning' role = 'alert'> <strong> No results left</strong></div>")
@@ -439,6 +438,7 @@ $(document).ready(function(){
                 var str = '<table class="table-striped" role = "grid"> <thead class = "thead-dark">';
                 str += '<tr>';
                 for (var index in array[0]) {
+                    console.log('index in 1st loop' + index)
                     str += '<th scope="col">' + index + '</th>';
                 }
                 
@@ -448,6 +448,7 @@ $(document).ready(function(){
                     str += "<tr class = 'dynTr' tabindex = '0' id = 'dataRow_" + i +"'> ";
                 
                     for (var index in array[i]) {
+                        console.log('index in 3rd loop' + index)
                         str += '<td>' + array[i][index] + '</td>';
                         
                     }
