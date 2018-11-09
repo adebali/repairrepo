@@ -202,7 +202,7 @@ $(document).ready(function(){
                 clientPromise.then(stitchClient =>{
                     client = stitchClient;
                     db = client.service('mongodb', 'mongodb-atlas').db('data');
-                    console.log("arg4: " + arg4)
+                    console.log("arg4: " + JSON.stringify(arg4))
                     return client.login().then(queryAuto(arg4))
                 });
             }
