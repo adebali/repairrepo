@@ -60,7 +60,7 @@ table{
   overflow-x: auto;
   white-space: nowrap;
 }
-.dynTr:focus{
+tr:focus{
   outline: 0;
   background-color: #B3DCCC,
 }
