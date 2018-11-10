@@ -433,6 +433,7 @@ $(document).ready(function(){
              * @param {*} objArray Query results stored here
              */
             function createDynamicTable(objArray) {
+                console.log(parseFloat(10))
                 var array = objArray;
             
                 var str = '<table class="table-striped" role = "grid"> <thead class = "thead-dark">';
