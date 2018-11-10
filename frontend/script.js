@@ -458,7 +458,8 @@ $(document).ready(function(){
                         //skip these columns
                         }else{
                             if(!isNaN(parseFloat(array[i][index])) && isFinite(array[i][index])){
-                                 array[i][index] = parseFloat(array[i][index]).toFixed(2)
+                                 var temp  = parseFloat(array[i][index])
+                                 array[i][index] = Math.round(temp * 100) / 100
                                
                             }
                             
