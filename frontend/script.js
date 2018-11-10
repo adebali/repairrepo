@@ -460,8 +460,8 @@ $(document).ready(function(){
                             //     array[i][index] = parseFloat(array[i][index]).toFixed(2)
                                
                             // }
-                            var checkfloat = parseFloat(array[i][index])
-                            if(!isNaN(checkfloat)){
+                            //var checkfloat = parseFloat(array[i][index])
+                            if(!isNaN(array[i][index])){
                                 array[i][index] = parseFloat(array[i][index]).toFixed(2)
 
                             }
