@@ -458,8 +458,7 @@ $(document).ready(function(){
                         }else{
                             if(!isNaN(parseFloat(array[i][index])) && isFinite(array[i][index])){
                                 array[i][index] = parseFloat(array[i][index]).toFixed(2)
-                                //remove trailing zeros
-                                array[i][index] = toString(array[i][index])
+                               
                             }
                         str += '<td>' + array[i][index] + '</td>';
                         }
