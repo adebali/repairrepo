@@ -385,6 +385,7 @@ $(document).ready(function(){
                     if($('#chrDropdown').val() != '-'){
                         queryArray.push({"$and":[{"start":{"$gte": inputStartChr}},{"end":{"$lte": inputEndChr}}]})
                         queryArray.push(orgDict)
+                        console.log("queryArray " + JSON.stringify(queryArray))
                         queryResultsChr(queryArray);
                     }
                 }else{
