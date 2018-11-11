@@ -36,6 +36,7 @@ $(document).ready(function(){
             var db;
             var returned;
             var geneInputName;
+            var numberGenes;
             var queryArray = [];
             var queryArray2 = [];
             var sampleSheet = []; //seeing which columns/data go to which experiment for plotting purposes
@@ -64,11 +65,13 @@ $(document).ready(function(){
             function queryChr(arg1, prev){
                 
                 arg1 = arg1.length > 0 ? { $and: arg1 } : {};
-                
+                db.collection('gene').find(arg1).execute().then(temp =>{
+                    numberGenes = temp.length
+                })
+                console.log('num genes' + numberGenes)
                 if(last_id1 === null){
                     db.collection('gene').find(arg1).sort({"start":1}).limit(10).execute().then(docs => {
                         var html;
-                        console.log('docs len' + docs.length)
                         if(docs.length == 0){
                             $('#results').html("<div class = 'alert alert-warning' role = 'alert'> <strong> No results left</strong></div>")
                         }else{
