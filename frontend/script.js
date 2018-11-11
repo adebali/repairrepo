@@ -383,6 +383,7 @@ $(document).ready(function(){
         
                 if($('#startChr').val().length != 0 && $('#endChr').val().length != 0){
                     if($('#chrDropdown').val() != '-'){
+                        console.log('input end chr: '  + inputEndChr)
                         queryArray.push({"$and":[{"start":{"$gte": inputStartChr}},{"end":{"$lte": inputEndChr}}]})
                         queryArray.push(orgDict)
                         console.log("queryArray " + JSON.stringify(queryArray))
