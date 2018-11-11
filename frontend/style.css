@@ -45,24 +45,16 @@ th:first-child {
 th:not(:first-child) {
   height: 10px;
 } */
-div.vertical
-{
- margin-left: -85px;
- position: absolute;
- width: 215px;
- transform: rotate(-45deg);
- -webkit-transform: rotate(-45deg); /* Safari/Chrome */
- -moz-transform: rotate(-45deg); /* Firefox */
- -o-transform: rotate(-45deg); /* Opera */
- -ms-transform: rotate(-45deg); /* IE 9 */
-}
+div.vertical {
+  overflow: hidden;
+  text-align: center;
+  transform: translate(-50%, -50%) rotate(-90deg) translate(-50%, 50%) translate(-3px, 0);
+  white-space: nowrap;
+  position: absolute;
+  line-height: 30px;
 
-th.vertical
-{
- height: 220px;
- line-height: 14px;
- padding-bottom: 20px;
- text-align: left;
+  font-size: 0.875em;
+  text-overflow: ellipsis;
 }
 
 .page-header{
