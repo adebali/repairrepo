@@ -73,7 +73,7 @@ $(document).ready(function(){
                 })
                 console.log('num genes' + numberGenes)
                 if(last_id1 === null){
-                    db.collection('gene').find(arg1).sort({"start":1}).limit(10).execute().then(docs => {
+                    db.collection('gene').find(arg1).limit(10).execute().then(docs => {
                         var html;
                         if(docs.length == 0){
                             $('#results').html("<div class = 'alert alert-warning' role = 'alert'> <strong> No results left</strong></div>")
