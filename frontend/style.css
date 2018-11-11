@@ -45,16 +45,10 @@ th:first-child {
 th:not(:first-child) {
   height: 10px;
 } */
-th.vertical {
-  overflow: hidden;
-  text-align: center;
-  transform: translate(-50%, -50%) rotate(-45deg) translate(-50%, 50%) translate(-3px, 0);
-  white-space: nowrap;
-  position: absolute;
-  line-height: 30px;
-
-  font-size: 0.875em;
-  text-overflow: ellipsis;
+th.vertical{
+  transform: rotate(90deg);
+  transform-origin: left top 0;
+  float: left;
 }
 
 .page-header{
