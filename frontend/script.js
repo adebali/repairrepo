@@ -68,7 +68,7 @@ $(document).ready(function(){
                 if(last_id1 === null){
                     db.collection('gene').find(arg1).sort({"start":1}).limit(10).execute().then(docs => {
                         var html;
-                        
+                        console.log('docs len' + docs.length)
                         if(docs.length == 0){
                             $('#results').html("<div class = 'alert alert-warning' role = 'alert'> <strong> No results left</strong></div>")
                         }else{
