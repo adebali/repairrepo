@@ -45,10 +45,10 @@ th:first-child {
 th:not(:first-child) {
   height: 10px;
 } */
-div.vertical {
+th.vertical {
   overflow: hidden;
   text-align: center;
-  transform: translate(-50%, -50%) rotate(-90deg) translate(-50%, 50%) translate(-3px, 0);
+  transform: translate(-50%, -50%) rotate(-45deg) translate(-50%, 50%) translate(-3px, 0);
   white-space: nowrap;
   position: absolute;
   line-height: 30px;
