@@ -458,7 +458,7 @@ $(document).ready(function(){
                 
                     for (var index in array[i]) {
                       
-                        if((index.localeCompare("_id") == 0) || (index.localeCompare("number")==0)|| (index.startsWith("chr")==true)){
+                        if((index.localeCompare("_id") == 0) || (index.localeCompare("number")==0)|| (index.startsWith("chr")==true)|| (index.localeCompare("score") ==0)){
                         //skip these columns
                         }else{
                             if(!isNaN(parseFloat(array[i][index])) && isFinite(array[i][index])){
