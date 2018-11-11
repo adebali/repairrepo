@@ -27,6 +27,14 @@ body{
 .thead-dark {
     color: #fff;
     background-color: #373a3c;
+    -webkit-transform: rotate(-45deg);
+    -moz-transform: rotate(-45deg);
+    -ms-transform: rotate(-45deg);
+    -o-transform: rotate(-45deg);
+    transform: rotate(-45deg);
+    width: 70px;
+    font-weight: normal;
+    text-align: justify;
 }
 th {
   -webkit-transform: rotate(-45deg);
