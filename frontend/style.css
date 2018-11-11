@@ -28,6 +28,15 @@ body{
     color: #fff;
     background-color: #373a3c;
 }
+th {
+  -webkit-transform: rotate(-90deg);
+  -moz-transform: rotate(-90deg);
+  -ms-transform: rotate(-90deg);
+  -o-transform: rotate(-90deg);
+  transform: rotate(-90deg);
+  width: 95px;
+  font-weight: normal;
+}
 .page-header{
     font-size: 20px;
 }
