@@ -78,7 +78,7 @@ $(document).ready(function(){
                         }
                     });
                 }else if(!prev){
-                    db.collection('gene').find({"$and":[{'_id':{"$gt":last_id1}},arg1]}).sort({"start":1}).limit(10).execute().then(docs => {
+                    db.collection('gene').find({"$and":[{'_id':{"$gt":last_id1}},arg1]}).limit(10).execute().then(docs => {
                         var html;
                         
                         if(docs.length == 0){
@@ -93,7 +93,7 @@ $(document).ready(function(){
                         
                     });
                 }else if(prev){
-                    db.collection('gene').find({"$and":[{'_id':{"$lt":last_id1}},arg1]}).sort({"start":1}).limit(10).execute().then(docs => {
+                    db.collection('gene').find({"$and":[{'_id':{"$lt":last_id1}},arg1]}).limit(10).execute().then(docs => {
                         var html;
                         if(docs.length == 0){
                             $('#results').html("<div class = 'alert alert-warning' role = 'alert'> <strong> No results left</strong></div>")
