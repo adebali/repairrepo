@@ -367,7 +367,7 @@ $(document).ready(function(){
             })
         
             function submitChrMethod(){
-                queryArray = [];
+                //queryArray = [];
                 inputEndChr = $('#endChr').val();
                 $('#plots div').empty();
                 
@@ -385,9 +385,9 @@ $(document).ready(function(){
                 if($('#startChr').val().length != 0 && $('#endChr').val().length != 0){
                     if($('#chrDropdown').val() != '-'){
                         console.log('input end chr: '  + inputEndChr)
-                        queryArray.push({"$and":[{"start":{"$gte": inputStartChr}},{"end":{"$lte": inputEndChr}}, orgDict, {'chr': val}]})
+                        // /queryArray.push({"$and":[{"start":{"$gte": inputStartChr}},{"end":{"$lte": inputEndChr}}, orgDict, {'chr': val}]})
                         //queryArray.push(orgDict)
-                        console.log("queryArray " + JSON.stringify(queryArray))
+                        //console.log("queryArray " + JSON.stringify(queryArray))
                         //queryResultsChr(queryArray);
                         queryResultsChr({"$and":[{"start":{"$gte": inputStartChr}},{"end":{"$lte": inputEndChr}}, orgDict, {'chr': val}]})
                     }
