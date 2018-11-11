@@ -37,6 +37,12 @@ th {
   width: 95px;
   font-weight: normal;
 }
+th:first-child {
+  height: 100px;
+}
+th:not(:first-child) {
+  height: 10px;
+}
 .page-header{
     font-size: 20px;
 }
