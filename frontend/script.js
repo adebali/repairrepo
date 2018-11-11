@@ -63,10 +63,10 @@ $(document).ready(function(){
             var last_id1 = null;
             function queryChr(arg1, prev){
                 
-                //arg1 = arg1.length > 0 ? { $and: arg1 } : {};
+                arg1 = arg1.length > 0 ? { $and: arg1 } : {};
                 
                 if(last_id1 === null){
-                    db.collection('gene').find(arg1).limit(10).execute().then(docs => {
+                    db.collection('gene').find(arg1).sort({"start":1}).limit(10).execute().then(docs => {
                         var html;
                         
                         if(docs.length == 0){
@@ -78,7 +78,7 @@ $(document).ready(function(){
                         }
                     });
                 }else if(!prev){
-                    db.collection('gene').find({"$and":[{'_id':{"$gt":last_id1}},arg1]}).limit(10).execute().then(docs => {
+                    db.collection('gene').find({"$and":[{'_id':{"$gt":last_id1}},arg1]}).sort({"start":1}).limit(10).execute().then(docs => {
                         var html;
                         
                         if(docs.length == 0){
@@ -93,7 +93,7 @@ $(document).ready(function(){
                         
                     });
                 }else if(prev){
-                    db.collection('gene').find({"$and":[{'_id':{"$lt":last_id1}},arg1]}).limit(10).execute().then(docs => {
+                    db.collection('gene').find({"$and":[{'_id':{"$lt":last_id1}},arg1]}).sort({"start":1}).limit(10).execute().then(docs => {
                         var html;
                         if(docs.length == 0){
                             $('#results').html("<div class = 'alert alert-warning' role = 'alert'> <strong> No results left</strong></div>")
@@ -390,7 +390,7 @@ $(document).ready(function(){
                         //console.log("queryArray " + JSON.stringify(queryArray))
                         //queryResultsChr(queryArray);
                         var query = {"$and":[{"start":{"$gte": inputStartChr}},{"end":{"$lte": inputEndChr}}, orgDict, {'chr': val}]}
-                        queryResultsChr({"$query": query, "$orderby": {"start":1}})
+                        queryResultsChr({"$query": query})
                     }
                 }else{
                     //change div color to show to select both start and end
