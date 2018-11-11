@@ -330,7 +330,7 @@ $(document).ready(function(){
             $('#endChr').change(function(){
                 if($('#endChr').val() != ''){
                     inputEndChr = $('#endChr').val();
-                    console.log('inputEndChr previously' + inputEndChr)
+                
                     $('#endChr').removeClass('ui-state-error ui-corner-all');
                 }
                 last_id1 = null;
@@ -378,15 +378,15 @@ $(document).ready(function(){
                 }else{
         
                     var val = 'chr'+ $('#chrDropdown').val();
-                    queryArray.push({'chr': val})
+                    //queryArray.push({'chr': val})
                     
                 }
         
                 if($('#startChr').val().length != 0 && $('#endChr').val().length != 0){
                     if($('#chrDropdown').val() != '-'){
                         console.log('input end chr: '  + inputEndChr)
-                        queryArray.push({"$and":[{"start":{"$gte": inputStartChr}},{"end":{"$lte": inputEndChr}}]})
-                        queryArray.push(orgDict)
+                        queryArray.push({"$and":[{"start":{"$gte": inputStartChr}},{"end":{"$lte": inputEndChr}}, orgDict, {'chr': val}]})
+                        //queryArray.push(orgDict)
                         console.log("queryArray " + JSON.stringify(queryArray))
                         queryResultsChr(queryArray);
                     }
