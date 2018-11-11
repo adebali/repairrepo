@@ -397,7 +397,7 @@ $(document).ready(function(){
                         //queryResultsChr(queryArray);
                         console.log('input start' + inputStartChr)
                         var query = {"$and":[{"start":{"$gte": inputStartChr}},{"end":{"$lte": inputEndChr}}, orgDict, {'chr': val}]}
-                        queryResultsChr({"$query": query})
+                        queryResultsChr(query)
                     }
                 }else{
                     //change div color to show to select both start and end
