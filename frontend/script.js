@@ -63,7 +63,7 @@ $(document).ready(function(){
             var last_id1 = null;
             function queryChr(arg1, prev){
                 
-                arg1 = arg1.length > 0 ? { $and: arg1 } : {};
+                //arg1 = arg1.length > 0 ? { $and: arg1 } : {};
                 
                 if(last_id1 === null){
                     db.collection('gene').find(arg1).limit(10).execute().then(docs => {
