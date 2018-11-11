@@ -439,11 +439,11 @@ $(document).ready(function(){
             function createDynamicTable(objArray) {
                 var array = objArray;
                 
-                var str = '<table class="table-striped" role = "grid"> <thead>'; //originally thead had class 'thead-dark'
-                str += '<tr>';
+                var str = '<table class="table-striped" role = "grid"> <thead> <tr>'; //originally thead had class 'thead-dark'
+    
                 //create table headers
                 for (var index in array[0]) {
-                    if((index.localeCompare("_id") == 0) || (index.localeCompare("number")==0)|| (index.localeCompare("chr")==0)){
+                    if((index.localeCompare("_id") == 0) || (index.localeCompare("number")==0)|| (index.localeCompare("chr")==0) || (index.localeCompare("score") ==0)){
                         //skip these columns
                     }else{
                         str += '<th scope="col" class = "rotate"><div><span>' + index + '</span></div></th>';

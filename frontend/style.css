@@ -47,9 +47,7 @@ th:not(:first-child) {
 } */
 
 /* Styling for table */
-table{
-  border-collapse: collapse;
-}
+
 th.rotate {
   height: 140px;
   white-space: nowrap;
