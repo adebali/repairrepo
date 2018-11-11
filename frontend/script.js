@@ -367,7 +367,7 @@ $(document).ready(function(){
         
             function submitChrMethod(){
                 queryArray = [];
-        
+                inputEndChr = $('#endChr').val();
                 $('#plots div').empty();
                 
                 if($('#chrDropdown').val() === '-'){
