@@ -330,6 +330,7 @@ $(document).ready(function(){
             $('#endChr').change(function(){
                 if($('#endChr').val() != ''){
                     inputEndChr = $('#endChr').val();
+                    console.log('inputEndChr previously' + inputEndChr)
                     $('#endChr').removeClass('ui-state-error ui-corner-all');
                 }
                 last_id1 = null;
