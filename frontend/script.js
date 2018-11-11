@@ -65,9 +65,11 @@ $(document).ready(function(){
             function queryChr(arg1, prev){
                 
                 arg1 = arg1.length > 0 ? { $and: arg1 } : {};
+                //show number on page out of total returned from query 
                 db.collection('gene').find(arg1).execute().then(temp =>{
                     numberGenes = temp.length
                     console.log('temp len'  + temp.length)
+                    //$('#pagination').append("showing" + something + "out of " + temp.length)
                 })
                 console.log('num genes' + numberGenes)
                 if(last_id1 === null){
@@ -393,6 +395,7 @@ $(document).ready(function(){
                         //queryArray.push(orgDict)
                         //console.log("queryArray " + JSON.stringify(queryArray))
                         //queryResultsChr(queryArray);
+                        console.log('input start' + inputStartChr)
                         var query = {"$and":[{"start":{"$gte": inputStartChr}},{"end":{"$lte": inputEndChr}}, orgDict, {'chr': val}]}
                         queryResultsChr({"$query": query})
                     }
