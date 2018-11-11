@@ -64,7 +64,7 @@ $(document).ready(function(){
             var last_id1 = null;
             function queryChr(arg1, prev){
                 
-                //arg1 = arg1.length > 0 ? { $and: arg1 } : {};
+                arg1 = arg1.length > 0 ? { $and: arg1 } : {};
                 //show number on page out of total returned from query 
                 db.collection('gene').find(arg1).execute().then(temp =>{
                     numberGenes = temp.length
