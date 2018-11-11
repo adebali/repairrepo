@@ -446,7 +446,7 @@ $(document).ready(function(){
                     if((index.localeCompare("_id") == 0) || (index.localeCompare("number")==0)|| (index.localeCompare("chr")==0)){
                         //skip these columns
                     }else{
-                        str += '<th scope="col" class = "vertical">' + index + '</th>';
+                        str += '<th scope="col" class = "rotate"><div><span>' + index + '</span></div></th>';
                     }
                 }
                 
