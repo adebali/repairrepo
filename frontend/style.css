@@ -27,16 +27,9 @@ body{
 .thead-dark {
     color: #fff;
     background-color: #373a3c;
-    -webkit-transform: rotate(-45deg);
-    -moz-transform: rotate(-45deg);
-    -ms-transform: rotate(-45deg);
-    -o-transform: rotate(-45deg);
-    transform: rotate(-45deg);
-    width: 70px;
-    font-weight: normal;
-    text-align: justify;
 }
-th {
+
+/* th {
   -webkit-transform: rotate(-45deg);
   -moz-transform: rotate(-45deg);
   -ms-transform: rotate(-45deg);
@@ -51,6 +44,25 @@ th:first-child {
 }
 th:not(:first-child) {
   height: 10px;
+} */
+div.vertical
+{
+ margin-left: -85px;
+ position: absolute;
+ width: 215px;
+ transform: rotate(-45deg);
+ -webkit-transform: rotate(-45deg); /* Safari/Chrome */
+ -moz-transform: rotate(-45deg); /* Firefox */
+ -o-transform: rotate(-45deg); /* Opera */
+ -ms-transform: rotate(-45deg); /* IE 9 */
+}
+
+th.vertical
+{
+ height: 220px;
+ line-height: 14px;
+ padding-bottom: 20px;
+ text-align: left;
 }
 
 .page-header{
