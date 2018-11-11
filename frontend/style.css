@@ -24,10 +24,10 @@ body{
 #plots{
     font-size: 14px;
 }
-.thead-dark {
+/* .thead-dark {
     color: #fff;
     background-color: #373a3c;
-}
+} */
 
 /* th {
   -webkit-transform: rotate(-45deg);
@@ -45,6 +45,11 @@ th:first-child {
 th:not(:first-child) {
   height: 10px;
 } */
+
+/* Styling for table */
+table{
+  border-collapse: collapse;
+}
 th.rotate {
   height: 140px;
   white-space: nowrap;

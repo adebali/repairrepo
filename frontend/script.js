@@ -438,8 +438,8 @@ $(document).ready(function(){
              */
             function createDynamicTable(objArray) {
                 var array = objArray;
-            
-                var str = '<table class="table-striped" role = "grid"> <thead class = "thead-dark">';
+                
+                var str = '<table class="table-striped" role = "grid"> <thead>'; //originally thead had class 'thead-dark'
                 str += '<tr>';
                 //create table headers
                 for (var index in array[0]) {
