@@ -397,7 +397,7 @@ $(document).ready(function(){
                         //queryResultsChr(queryArray);
                         
                         var query = {"$and":[{"start":{"$gte": inputStartChr}},{"end":{"$lte": inputEndChr}}, orgDict, {'chr': val}]}
-                        console.log('query' + query)
+                        console.log('query' + JSON.stringify(query))
                         queryResultsChr(query)
                     }
                 }else{
