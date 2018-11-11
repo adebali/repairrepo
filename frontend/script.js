@@ -67,6 +67,7 @@ $(document).ready(function(){
                 arg1 = arg1.length > 0 ? { $and: arg1 } : {};
                 db.collection('gene').find(arg1).execute().then(temp =>{
                     numberGenes = temp.length
+                    console.log('temp len'  + temp.length)
                 })
                 console.log('num genes' + numberGenes)
                 if(last_id1 === null){
