@@ -24,10 +24,48 @@ body{
 #plots{
     font-size: 14px;
 }
-.thead-dark {
+/* .thead-dark {
     color: #fff;
     background-color: #373a3c;
+} */
+
+/* th {
+  -webkit-transform: rotate(-45deg);
+  -moz-transform: rotate(-45deg);
+  -ms-transform: rotate(-45deg);
+  -o-transform: rotate(-45deg);
+  transform: rotate(-45deg);
+  width: 70px;
+  font-weight: normal;
+  text-align: justify;
 }
+th:first-child {
+  height: 100px;
+}
+th:not(:first-child) {
+  height: 10px;
+} */
+
+/* Styling for table */
+th{
+  border:none;
+}
+th.rotate {
+  height: 140px;
+  white-space: nowrap;
+}
+
+th.rotate > div {
+  transform: 
+    translate(25px, 51px)
+    rotate(315deg);
+  width: 30px;
+}
+th.rotate > div > span {
+  border-bottom: 1px solid #ccc;
+  padding: 5px 10px;
+}
+
 .page-header{
     font-size: 20px;
 }
@@ -59,6 +97,11 @@ table{
   display: block;
   overflow-x: auto;
   white-space: nowrap;
+}
+.dynTr:hover{
+  outline: 0;
+  background-color: #f1b756;
+  cursor: pointer;
 }
 #submitButtonDiv{
   display: flex;

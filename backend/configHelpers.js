@@ -1,8 +1,8 @@
 class Samples{
     constructor(inputJson){
-        this.input = inputJson
+        this.input = inputJson;
         this.sampleDict = JSON.parse(JSON.stringify(this.input)); //load json file (already is JSON when passed in??)
-        this.qualityTest()
+        this.qualityTest();
         this.completeSampleDict = this.completeSamples();
     }
 }
@@ -31,7 +31,6 @@ Samples.prototype.key2attributes = function(key){
     var thisObject = this;
     function recursiveBase(d){
         console.log(JSON.stringify(d))
-
         if('base' in d ){ 
             
             //baseD = Object.assign(thisObject.sampleDict[d['base']])
