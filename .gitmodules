@@ -1,0 +1,6 @@
+[submodule "igv.js"]
+	path = igv.js
+	url = https://github.com/igvteam/igv.js.git
+[submodule "get-reference-genomes"]
+	path = get-reference-genomes
+	url = https://github.com/refinery-platform/get-reference-genomes.git
