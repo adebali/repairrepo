@@ -466,7 +466,7 @@ $(document).ready(function(){
                         //skip these columns
                     }else{
                         if((index.localeCompare("start") == 0) || (index.localeCompare("end") == 0) ||(index.localeCompare("name") == 0)||(index.localeCompare("strand") == 0)){
-                            str += '<th scope="col" ><div><span>' + index + '</span></div></th>';
+                            str += '<th scope="col" >' + index + '</th>';
                         }else{
                             str += '<th scope="col" class = "rotate"><div><span>' + index + '</span></div></th>';
                             
