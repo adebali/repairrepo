@@ -323,21 +323,12 @@ $(document).ready(function(){
             })
         
             //Style table rows to stay highlighted when clicked
-            $('tr').click(function(){
+            $('#dataTable tr').click(function(){
                 console.log("tr clicked")
-                if(this.style.background =="white") {
-                    console.log('here white')
-                    $(this).css('background', '#f1b756');
-                }
-                else {
-                    $(this).css('background', 'white');
-                }
-                if(this.style.backgroundColor == "#f1f1f1"){
-                    console.log('here alt')
-                    
-                    $(this).css('background', '#f1b756');
-                }else{
-                    $(this).css('background', '#f1f1f1');
+                var selected = $(this).hasClass("highlight");
+                $("#data tr").removeClass("highlight");
+                if(!selected){
+                    $(this).addClass("highlight");
                 }
             });
         
@@ -465,7 +456,7 @@ $(document).ready(function(){
             function createDynamicTable(objArray) {
                 var array = objArray;
                 
-                var str = '<table class="table-striped" role = "grid"> <thead> <tr>'; //originally thead had class 'thead-dark'
+                var str = '<table id = "dataTable" class="table-striped" role = "grid"> <thead> <tr>'; //originally thead had class 'thead-dark'
     
                 //create table headers
                 for (var index in array[0]) {
