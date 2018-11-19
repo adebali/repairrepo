@@ -518,11 +518,11 @@ $(document).ready(function(){
             }
             var len = 0;
             function createPaginationText(length, first){
-                var numberOfPages = Math.ceil(len/10)
                 
                 if(!(length == -1)){
                     len = length
                 }
+                var numberOfPages = Math.ceil(len/10)
                 if(first){
                     console.log('here first')
                     $('#results').append("<br> Page " + pageNum + "/"+ numberOfPages+", genes 1-10"+ "/"+len)
