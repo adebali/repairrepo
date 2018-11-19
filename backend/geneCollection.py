@@ -22,7 +22,13 @@ elif (args.action == "push" or args.action == "Push"):
     txtfile = open('sample.txt', 'r') #txt file containing sample data
     reader = csv.DictReader(txtfile, delimiter = '\t')
 
+    i = 0
     for row in reader:
+        for key, value in row.iteritems():
+             #todo, convert all fields to int
+
+        if(key)
+
         data = dict(row)
         db['gene'].insert(data)
 
