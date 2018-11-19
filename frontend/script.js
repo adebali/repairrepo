@@ -70,9 +70,9 @@ $(document).ready(function(){
                 //show number on page out of total returned from query 
                 db.collection('gene').find(arg1).execute().then(temp =>{
                     numberGenes = temp.length
-                    console.log('temp len'  + temp.length)
-                    numberOfPages = Math.ceil(temp.length/10)
-                    $('#pagination').html("Page " + pageNum + "/"+ numberOfPages+", genes 1-10"+ "/"+temp.length)
+                    // console.log('temp len'  + temp.length)
+                    // numberOfPages = Math.ceil(temp.length/10)
+                    // $('#pagination').html("Page " + pageNum + "/"+ numberOfPages+", genes 1-10"+ "/"+temp.length)
                 })
                 console.log('num genes' + numberGenes)
                 if(last_id1 === null){
@@ -511,6 +511,10 @@ $(document).ready(function(){
                 }
                 str += '</tbody>'
                 str += '</table>';
+
+                console.log('results len'  + numberGenes.length)
+                numberOfPages = Math.ceil(numberGenes.length/10)
+                $('#results').append("Page " + pageNum + "/"+ numberOfPages+", genes 1-10"+ "/"+numberGenes.length)
                 return str;
             }
             
