@@ -53,6 +53,7 @@ th:not(:first-child) {
 /* Styling for table */
 th{
   border:none;
+  padding: 5px 10px;
 }
 th.rotate {
   height: 200px;
