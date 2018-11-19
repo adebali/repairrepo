@@ -437,7 +437,7 @@ $(document).ready(function(){
             $('.thumbnail').hover(function(e){
                 $('#organismName').html('Select <b>' + this.id + "</b>") 
             }, function(){
-                
+                $('#organismName').html("Select <b>" + orgDict.organism + "</b>")
             })
            
             /**
