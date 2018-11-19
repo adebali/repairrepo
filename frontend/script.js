@@ -437,8 +437,7 @@ $(document).ready(function(){
             $('.thumbnail').hover(function(e){
                 $('#nameHover').html('Select <b>' + this.id + "</b>") 
             }, function(){
-                if(orgDict.organism == 'mouse')
-                $('#nameHover').html("Select <b>" + orgDict.organism + "</b>")
+                $("nameHover").empty();
             })
            
             /**
