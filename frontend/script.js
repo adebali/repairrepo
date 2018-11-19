@@ -52,27 +52,28 @@ $(document).ready(function(){
         
         
             //sets up server connection and chromosome placement query method
-            function queryResultsChr(arg1, prev){
+            function queryResultsChr(arg1, prev, first){
                 $('#results').html("<img src = 'loading.gif' alt = 'Loading...'>")
                 
                 clientPromise.then(stitchClient =>{
                     client = stitchClient;
                     db = client.service('mongodb', 'mongodb-atlas').db('data');
                     
-                    return client.login().then(queryChr(arg1, prev))
+                    return client.login().then(queryChr(arg1, prev, first))
                 });
             }
             var last_id1 = null;
-            function queryChr(arg1, prev){
+            function queryChr(arg1, prev, first){
                 
                 arg1 = arg1.length > 0 ? { $and: arg1 } : {};
                 //show number on page out of total returned from query 
-                db.collection('gene').find(arg1).execute().then(temp =>{
-                    createPaginationText(temp.length, true);
-                    // console.log('temp len'  + temp.length)
-                    // numberOfPages = Math.ceil(temp.length/10)
-                    // $('#pagination').html("Page " + pageNum + "/"+ numberOfPages+", genes 1-10"+ "/"+temp.length)
-                })
+                if(first){
+                    db.collection('gene').find(arg1).execute().then(temp =>{
+
+                        createPaginationText(temp.length, true);
+                    
+                    })
+                }
                 
                 if(last_id1 === null){
                     db.collection('gene').find(arg1).sort({"start": 1}).limit(10).execute().then(docs => {
@@ -165,7 +166,7 @@ $(document).ready(function(){
             //pagination event handlers (next&prev buttons)
             $('#results').on("click", "#next", function(){
                 if(queryArray2.length === 0){
-                    queryResultsChr(queryArray, false)
+                    queryResultsChr(queryArray, false, false)
                 }else if(queryArray.length === 0){
                     if(appended){
                         return;
@@ -183,7 +184,7 @@ $(document).ready(function(){
             
             $('#results').on("click", "#prev", function(){
                 if(queryArray2.length === 0){
-                    queryResultsChr(queryArray, true)
+                    queryResultsChr(queryArray, true, false)
                 }else if (queryArray.length === 0){
                     if(appended){
                         return;
@@ -414,7 +415,7 @@ $(document).ready(function(){
                         
                         var query = {"$and":[{"start":{"$gte": inputStartChr}},{"end":{"$lte": inputEndChr}}, orgDict, {'chr': val}]}
                         console.log('query' + JSON.stringify(query))
-                        queryResultsChr(query)
+                        queryResultsChr(query, false, true)
                     }
                 }else{
                     //change div color to show to select both start and end
@@ -525,10 +526,10 @@ $(document).ready(function(){
                 var numberOfPages = Math.ceil(len/10)
                 if(first){
                     console.log('here first')
-                    $('#results').append("<br> Page " + pageNum + "/"+ numberOfPages+", genes 1-10"+ "/"+len)
+                    $('#pagination').html("<br> Page " + pageNum + "/"+ numberOfPages+", genes 1-10"+ "/"+len)
                 }else{
                     console.log('here after')
-                    $('#results').append("<br> Page " + pageNum + "/"+ numberOfPages+", genes "+ (pageNum*10)+"-" + ((pageNum*10)+9) +"/"+len)
+                    $('#pagination').html("<br> Page " + pageNum + "/"+ numberOfPages+", genes "+ (pageNum*10)+"-" + ((pageNum*10)+9) +"/"+len)
                     
                 }
             }
