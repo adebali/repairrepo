@@ -97,7 +97,6 @@ $(document).ready(function(){
                             document.getElementById("results").innerHTML = html; 
                             last_id1 = docs[docs.length-1]['_id']
                         }
-                        createPaginationText(-1,false)
                         
                     });
                 }else if(prev){
@@ -110,7 +109,6 @@ $(document).ready(function(){
                         document.getElementById("results").innerHTML = html; 
                         last_id1 = docs[docs.length-1]['_id']
                         }
-                        createPaginationText(-1,false)
                     });
                 }
             }
@@ -178,6 +176,8 @@ $(document).ready(function(){
                     appended = true;
                 }
                 pageNum +=1;
+                createPaginationText(-1,false)
+                
             })
         
             
@@ -194,6 +194,8 @@ $(document).ready(function(){
                     appended = true;
                 }
                 pageNum -=1;
+                createPaginationText(-1,false)
+                
             })
     
             // $('li').click(function(e){
@@ -516,15 +518,18 @@ $(document).ready(function(){
             }
             var len = 0;
             function createPaginationText(length, first){
+                var numberOfPages = Math.ceil(len/10)
                 
                 if(!(length == -1)){
                     len = length
                 }
                 if(first){
-                    var numberOfPages = Math.ceil(len/10)
-                    $('#results').append("Page " + pageNum + "/"+ numberOfPages+", genes 1-10"+ "/"+len)
+                    console.log('here first')
+                    $('#results').append("<br> Page " + pageNum + "/"+ numberOfPages+", genes 1-10"+ "/"+len)
                 }else{
-
+                    console.log('here after')
+                    $('#results').append("<br> Page " + pageNum + "/"+ numberOfPages+", genes "+ (pageNum*10)+"-" + ((pageNum*10)+9) +"/"+len)
+                    
                 }
             }
         
