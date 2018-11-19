@@ -481,7 +481,6 @@ $(document).ready(function(){
                 for (var i = 0; i < array.length; i++) {
                     str += "<tr class = 'dynTr' tabindex = '0' id = 'dataRow_" + i +"'> ";
                     $('#results').on('click', 'tbody tr', function(event) {
-                        console.log('clicked')
                         $(this).addClass('highlight').siblings().removeClass('highlight');
                     })
                 
