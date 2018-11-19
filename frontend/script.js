@@ -72,7 +72,7 @@ $(document).ready(function(){
                     numberGenes = temp.length
                     console.log('temp len'  + temp.length)
                     numberOfPages = ceil(temp.length/10)
-                    $('#pagination').html("Page " + pageNum + "/"+ numberOfPages+", genes"+ pageNum*10 + "-"+((pageNum*10)+9)+"/"+temp.length)
+                    $('#pagination').html("Page " + pageNum + "/"+ numberOfPages+", genes 1-10"+ "/"+temp.length)
                 })
                 console.log('num genes' + numberGenes)
                 if(last_id1 === null){
