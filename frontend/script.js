@@ -323,7 +323,7 @@ $(document).ready(function(){
             })
         
             //Style table rows to stay highlighted when clicked
-            $('#dataTable tr').click(function(){
+            $('#results').on('click', 'table tr', function(){
                 console.log("tr clicked")
                 var selected = $(this).hasClass("highlight");
                 $("#data tr").removeClass("highlight");
@@ -456,7 +456,7 @@ $(document).ready(function(){
             function createDynamicTable(objArray) {
                 var array = objArray;
                 
-                var str = '<table id = "dataTable" class="table-striped" role = "grid"> <thead> <tr>'; //originally thead had class 'thead-dark'
+                var str = '<table class="table-striped" role = "grid"> <thead> <tr>'; //originally thead had class 'thead-dark'
     
                 //create table headers
                 for (var index in array[0]) {
