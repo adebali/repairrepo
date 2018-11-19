@@ -480,7 +480,7 @@ $(document).ready(function(){
                 str += "<tbody>";
                 for (var i = 0; i < array.length; i++) {
                     str += "<tr class = 'dynTr' tabindex = '0' id = 'dataRow_" + i +"'> ";
-                    $('#myTable tbody tr').click(function() {
+                    $('#results table tbody tr').on("click", "", function() {
                         $(this).addClass('bg-success').siblings().removeClass('bg-success');
                     });
                 
