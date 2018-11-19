@@ -68,7 +68,7 @@ $(document).ready(function(){
                 arg1 = arg1.length > 0 ? { $and: arg1 } : {};
                 //show number on page out of total returned from query 
                 db.collection('gene').find(arg1).execute().then(temp =>{
-                    createPaginationText(temp.length);
+                    createPaginationText(temp.length, true);
                     // console.log('temp len'  + temp.length)
                     // numberOfPages = Math.ceil(temp.length/10)
                     // $('#pagination').html("Page " + pageNum + "/"+ numberOfPages+", genes 1-10"+ "/"+temp.length)
@@ -97,7 +97,7 @@ $(document).ready(function(){
                             document.getElementById("results").innerHTML = html; 
                             last_id1 = docs[docs.length-1]['_id']
                         }
-                            
+                        createPaginationText(-1,false)
                         
                     });
                 }else if(prev){
@@ -110,6 +110,7 @@ $(document).ready(function(){
                         document.getElementById("results").innerHTML = html; 
                         last_id1 = docs[docs.length-1]['_id']
                         }
+                        createPaginationText(-1,false)
                     });
                 }
             }
@@ -513,10 +514,18 @@ $(document).ready(function(){
 
                 return str;
             }
-            
-            function createPaginationText(length){
-                var numberOfPages = Math.ceil(length/10)
-                $('#results').append("Page " + pageNum + "/"+ numberOfPages+", genes 1-10"+ "/"+length)
+            var len = 0;
+            function createPaginationText(length, first){
+                
+                if(!(length == -1)){
+                    len = length
+                }
+                if(first){
+                    var numberOfPages = Math.ceil(len/10)
+                    $('#results').append("Page " + pageNum + "/"+ numberOfPages+", genes 1-10"+ "/"+len)
+                }else{
+
+                }
             }
         
         //CODE FOR EXPERIMENT PLOTS BELOW
