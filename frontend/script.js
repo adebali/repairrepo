@@ -36,7 +36,6 @@ $(document).ready(function(){
             var db;
             var returned;
             var geneInputName;
-            var numberGenes;
             var queryArray = [];
             var queryArray2 = [];
             var sampleSheet = []; //seeing which columns/data go to which experiment for plotting purposes
@@ -69,12 +68,12 @@ $(document).ready(function(){
                 arg1 = arg1.length > 0 ? { $and: arg1 } : {};
                 //show number on page out of total returned from query 
                 db.collection('gene').find(arg1).execute().then(temp =>{
-                    numberGenes = temp.length
+                    createPaginationText(temp.length);
                     // console.log('temp len'  + temp.length)
                     // numberOfPages = Math.ceil(temp.length/10)
                     // $('#pagination').html("Page " + pageNum + "/"+ numberOfPages+", genes 1-10"+ "/"+temp.length)
                 })
-                console.log('num genes' + numberGenes)
+                
                 if(last_id1 === null){
                     db.collection('gene').find(arg1).sort({"start": 1}).limit(10).execute().then(docs => {
                         var html;
@@ -512,12 +511,13 @@ $(document).ready(function(){
                 str += '</tbody>'
                 str += '</table>';
 
-                console.log('results len'  + numberGenes)
-                numberOfPages = Math.ceil(numberGenes/10)
-                $('#results').append("Page " + pageNum + "/"+ numberOfPages+", genes 1-10"+ "/"+numberGenes)
                 return str;
             }
             
+            function createPaginationText(length){
+                var numberOfPages = Math.ceil(length/10)
+                $('#results').append("Page " + pageNum + "/"+ numberOfPages+", genes 1-10"+ "/"+length)
+            }
         
         //CODE FOR EXPERIMENT PLOTS BELOW
         
