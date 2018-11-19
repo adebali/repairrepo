@@ -458,7 +458,7 @@ $(document).ready(function(){
             function createDynamicTable(objArray) {
                 var array = objArray;
                 
-                var str = '<table class="table-striped" role = "grid" id = "myTable"> <thead> <tr>'; //originally thead had class 'thead-dark'
+                var str = '<table class="table-striped" role = "grid" id = "chrTable"> <thead> <tr>'; //originally thead had class 'thead-dark'
     
                 //create table headers
                 for (var index in array[0]) {
@@ -480,10 +480,9 @@ $(document).ready(function(){
                 str += "<tbody>";
                 for (var i = 0; i < array.length; i++) {
                     str += "<tr class = 'dynTr' tabindex = '0' id = 'dataRow_" + i +"'> ";
-                    $('#results table tbody tr').on("click", "tr", function() {
-                        console.log("clicked tr")
-                        $(this).addClass('bg-success').siblings().removeClass('bg-success');
-                    });
+                    $(document).on('click', '#chrTable tr', function(event) {
+                        $(this).addClass('highlight').siblings().removeClass('highlight');
+                    });​
                 
                     for (var index in array[i]) {
                       

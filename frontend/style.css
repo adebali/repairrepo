@@ -126,3 +126,4 @@ table{
 .active{
   color: red;
 }
+.table-striped tbody tr.highlight td { background-color: #f1b756; }
