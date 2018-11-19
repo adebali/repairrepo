@@ -324,13 +324,17 @@ $(document).ready(function(){
         
             //Style table rows to stay highlighted when clicked
             $('tr').click(function(){
+                console.log("tr clicked")
                 if(this.style.background =="white") {
+                    console.log('here white')
                     $(this).css('background', '#f1b756');
                 }
                 else {
                     $(this).css('background', 'white');
                 }
                 if(this.style.backgroundColor == "#f1f1f1"){
+                    console.log('here alt')
+                    
                     $(this).css('background', '#f1b756');
                 }else{
                     $(this).css('background', '#f1f1f1');
