@@ -43,6 +43,8 @@ $(document).ready(function(){
             var experiments = []; //list of each unique experiment name used in analyzeData
             var functions = []; //list of dictionaries {"Experiment name": "Function name"} functions (string name) 
             //that will be called to plot the respective experiment
+            var pageNum = 1;
+            var numberOfPages = 0;
             
             
             
@@ -69,7 +71,8 @@ $(document).ready(function(){
                 db.collection('gene').find(arg1).execute().then(temp =>{
                     numberGenes = temp.length
                     console.log('temp len'  + temp.length)
-                    //$('#pagination').append("showing" + something + "out of " + temp.length)
+                    numberOfPages = ceil(temp.length/10)
+                    $('#pagination').html("Page " + pageNum + "/"+ numberOfPages+", genes"+ pageNum*10 + "-"+((pageNum*10)+9)+"/"+temp.length)
                 })
                 console.log('num genes' + numberGenes)
                 if(last_id1 === null){
@@ -174,7 +177,7 @@ $(document).ready(function(){
                     $('#results').append('<b> Only one gene for each name')
                     appended = true;
                 }
-                
+                pageNum +=1;
             })
         
             
@@ -190,6 +193,7 @@ $(document).ready(function(){
                     $('#results').append('<b> Only one gene for each name')
                     appended = true;
                 }
+                pageNum -=1;
             })
     
             // $('li').click(function(e){
