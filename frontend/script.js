@@ -483,7 +483,7 @@ $(document).ready(function(){
                     $('#results').on('click', 'tbody tr', function(event) {
                         console.log('clicked')
                         $(this).addClass('highlight').siblings().removeClass('highlight');
-                    });​
+                    })
                 
                     for (var index in array[i]) {
                       
