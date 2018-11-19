@@ -435,9 +435,10 @@ $(document).ready(function(){
             }
             //Hover event handler for organism images 
             $('.thumbnail').hover(function(e){
-                $('#organismName').html('Select <b>' + this.id + "</b>") 
+                $('#nameHover').html('Select <b>' + this.id + "</b>") 
             }, function(){
-                $('#organismName').html("Select <b>" + orgDict.organism + "</b>")
+                if(orgDict.organism == 'mouse')
+                $('#nameHover').html("Select <b>" + orgDict.organism + "</b>")
             })
            
             /**
