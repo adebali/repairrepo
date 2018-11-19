@@ -322,7 +322,20 @@ $(document).ready(function(){
                 }
             })
         
-        
+            //Style table rows to stay highlighted when clicked
+            $('tr').click(function(){
+                if(this.style.background =="white") {
+                    $(this).css('background', '#f1b756');
+                }
+                else {
+                    $(this).css('background', 'white');
+                }
+                if(this.style.backgroundColor == "#f1f1f1"){
+                    $(this).css('background', '#f1b756');
+                }else{
+                    $(this).css('background', '#f1f1f1');
+                }
+            });
         
             //CHANGE handlers for input fields
             $('#startChr').change(function(){
