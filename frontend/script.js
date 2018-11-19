@@ -513,7 +513,7 @@ $(document).ready(function(){
                 str += '</table>';
 
                 console.log('results len'  + numberGenes)
-                numberOfPages = Math.ceil(numberGenes.length/10)
+                numberOfPages = Math.ceil(numberGenes/10)
                 $('#results').append("Page " + pageNum + "/"+ numberOfPages+", genes 1-10"+ "/"+numberGenes)
                 return str;
             }
