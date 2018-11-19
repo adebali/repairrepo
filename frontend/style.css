@@ -24,7 +24,7 @@ body{
 #plots{
     font-size: 14px;
 }
-tr.highlighted{
+tr.highlight{
   background-color: #f1b756;
 }
 
