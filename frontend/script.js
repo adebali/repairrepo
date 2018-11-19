@@ -498,11 +498,11 @@ $(document).ready(function(){
 
                     }
                 }
-                
+                var onclickString = "HighLightTR(this,'#c9cc99','cc3333');"
                 str += '</tr></thead>';
                 str += "<tbody>";
                 for (var i = 0; i < array.length; i++) {
-                    str += "<tr class = 'dynTr' tabindex = '0' id = 'dataRow_" + i +"' onClick = 'HighLightTR(this,'#c9cc99','cc3333');'> ";
+                    str += "<tr class = 'dynTr' tabindex = '0' id = 'dataRow_" + i +"' onClick = " + onclickString + "> ";
                 
                     for (var index in array[i]) {
                       
