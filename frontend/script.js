@@ -465,12 +465,14 @@ $(document).ready(function(){
                     if((index.localeCompare("_id") == 0) || (index.localeCompare("number")==0)|| (index.localeCompare("chr")==0) || (index.localeCompare("score") ==0)){
                         //skip these columns
                     }else{
-                        if((index.localeCompare("start") == 0) || (index.localeCompare("end") == 0) ||(index.localeCompare("name") == 0)||(index.localeCompare("strand") == 0)){
-                            str += '<th scope="col" >' + index + '</th>';
-                        }else{
-                            str += '<th scope="col" class = "rotate"><div><span>' + index + '</span></div></th>';
+                        // if((index.localeCompare("start") == 0) || (index.localeCompare("end") == 0) ||(index.localeCompare("name") == 0)||(index.localeCompare("strand") == 0)){
+                        //     str += '<th scope="col" >' + index + '</th>';
+                        // }else{
+                        //     str += '<th scope="col" class = "rotate"><div><span>' + index + '</span></div></th>';
                             
-                        }
+                        // }
+                        str += '<th scope="col" class = "rotate"><div><span>' + index + '</span></div></th>';
+
                     }
                 }
                 
