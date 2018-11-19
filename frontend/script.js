@@ -322,14 +322,14 @@ $(document).ready(function(){
                 }
             })
         
+            var trArr = [];
             //Style table rows to stay highlighted when clicked
             $('#results').on('click', 'table tr', function(){
                 console.log("tr clicked")
-                var selected = $(this).hasClass("highlight");
                 $("#results table tr").removeClass("highlight");
-                if(!selected){
-                    $(this).addClass("highlight");
-                }
+                
+                $(this).addClass("highlight");
+                
             });
         
             //CHANGE handlers for input fields
