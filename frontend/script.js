@@ -437,7 +437,7 @@ $(document).ready(function(){
             $('.thumbnail').hover(function(e){
                 $('#nameHover').html('Select <b>' + this.id + "</b>") 
             }, function(){
-                $("nameHover").empty();
+                $("#nameHover").empty();
             })
            
             /**
