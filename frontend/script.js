@@ -435,9 +435,9 @@ $(document).ready(function(){
             }
             //Hover event handler for organism images 
             $('.thumbnail').hover(function(e){
-                $('#nameHover').html('Select <b>' + this.id + "</b>") 
+                $('#organismName').html('Select <b>' + this.id + "</b>") 
             }, function(){
-                $('#nameHover').empty();
+                $('#organismName').html('Select an organism');
             })
            
             /**
