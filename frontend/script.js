@@ -512,9 +512,9 @@ $(document).ready(function(){
                 str += '</tbody>'
                 str += '</table>';
 
-                console.log('results len'  + numberGenes.length)
+                console.log('results len'  + numberGenes)
                 numberOfPages = Math.ceil(numberGenes.length/10)
-                $('#results').append("Page " + pageNum + "/"+ numberOfPages+", genes 1-10"+ "/"+numberGenes.length)
+                $('#results').append("Page " + pageNum + "/"+ numberOfPages+", genes 1-10"+ "/"+numberGenes)
                 return str;
             }
             
