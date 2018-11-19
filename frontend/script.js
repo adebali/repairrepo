@@ -480,7 +480,8 @@ $(document).ready(function(){
                 str += "<tbody>";
                 for (var i = 0; i < array.length; i++) {
                     str += "<tr class = 'dynTr' tabindex = '0' id = 'dataRow_" + i +"'> ";
-                    $(document).on('click', '#chrTable tr', function(event) {
+                    $('#results').on('click', 'tbody tr', function(event) {
+                        console.log('clicked')
                         $(this).addClass('highlight').siblings().removeClass('highlight');
                     });​
                 
