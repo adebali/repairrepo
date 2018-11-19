@@ -322,17 +322,40 @@ $(document).ready(function(){
                 }
             })
         
-            var trArr = [];
-            //Style table rows to stay highlighted when clicked
-            $('#results').on('click', 'table tr', function(){
-                console.log("tr clicked")
-                var selected = $(this).hasClass("highlight");
-                $("#results table tr").removeClass("highlight");
-                if(!selected){
-                    console.log('assign class')
-                    $(this).addClass("highlight");
-                }
-            });
+            // var trArr = [];
+            // //Style table rows to stay highlighted when clicked
+            // $('#results').on('click', 'table tr', function(){
+            //     console.log("tr clicked")
+            //     var selected = $(this).hasClass("highlight");
+            //     $("#results table tr").removeClass("highlight");
+            //     if(!selected){
+            //         console.log('assign class')
+            //         $(this).addClass("highlight");
+            //     }
+            // });
+
+            //stable highlight rows
+            var preEl ;
+            var orgBColor;
+            var orgTColor;
+            function HighLightTR(el, backColor,textColor){
+              if(typeof(preEl)!='undefined') {
+                 preEl.bgColor=orgBColor;
+                 try{ChangeTextColor(preEl,orgTColor);}catch(e){;}
+              }
+              orgBColor = el.bgColor;
+              orgTColor = el.style.color;
+              el.bgColor=backColor;
+            
+              try{ChangeTextColor(el,textColor);}catch(e){;}
+              preEl = el;
+            }
+            
+            
+            function ChangeTextColor(a_obj,a_color){  ;
+               for (i=0;i<a_obj.cells.length;i++)
+                a_obj.cells(i).style.color=a_color;
+            }
         
             //CHANGE handlers for input fields
             $('#startChr').change(function(){
@@ -479,7 +502,7 @@ $(document).ready(function(){
                 str += '</tr></thead>';
                 str += "<tbody>";
                 for (var i = 0; i < array.length; i++) {
-                    str += "<tr class = 'dynTr' tabindex = '0' id = 'dataRow_" + i +"'> ";
+                    str += "<tr class = 'dynTr' tabindex = '0' id = 'dataRow_" + i +"' onClick = 'HighLightTR(this,'#c9cc99','cc3333');'> ";
                 
                     for (var index in array[i]) {
                       
