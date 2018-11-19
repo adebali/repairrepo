@@ -326,7 +326,7 @@ $(document).ready(function(){
             $('#results').on('click', 'table tr', function(){
                 console.log("tr clicked")
                 var selected = $(this).hasClass("highlight");
-                $("#data tr").removeClass("highlight");
+                $("tr").removeClass("highlight");
                 if(!selected){
                     $(this).addClass("highlight");
                 }
