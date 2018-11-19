@@ -71,7 +71,7 @@ $(document).ready(function(){
                 db.collection('gene').find(arg1).execute().then(temp =>{
                     numberGenes = temp.length
                     console.log('temp len'  + temp.length)
-                    numberOfPages = ceil(temp.length/10)
+                    numberOfPages = Math.ceil(temp.length/10)
                     $('#pagination').html("Page " + pageNum + "/"+ numberOfPages+", genes 1-10"+ "/"+temp.length)
                 })
                 console.log('num genes' + numberGenes)
