@@ -528,7 +528,7 @@ $(document).ready(function(){
                 if(first || pageNum == 1){
                     $('#pagination').html("<br> Page " + pageNum + "/"+ numberOfPages+", genes 1-10"+ "/"+len)
                 }else{
-                    $('#pagination').html("<br> Page " + pageNum + "/"+ numberOfPages+", genes "+ ((pageNum-1)*10)+"-" + (((pageNum-1)*10)+9) +"/"+len)
+                    $('#pagination').html("<br> Page " + pageNum + "/"+ numberOfPages+", genes "+ (((pageNum-1)*10)+1)+"-" + ((pageNum)*10) +"/"+len)
                     
                 }
             }
