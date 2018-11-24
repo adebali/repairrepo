@@ -195,6 +195,7 @@ $(document).ready(function(){
                     appended = true;
                 }
                 pageNum -=1;
+                console.log('page num in prev' + pageNum)
                 createPaginationText(-1,false)
                 
             })
@@ -528,7 +529,7 @@ $(document).ready(function(){
                     console.log('here first')
                     $('#pagination').html("<br> Page " + pageNum + "/"+ numberOfPages+", genes 1-10"+ "/"+len)
                 }else{
-                    console.log('here after')
+                    console.log('here after' + pageNum)
                     $('#pagination').html("<br> Page " + pageNum + "/"+ numberOfPages+", genes "+ (pageNum*10)+"-" + ((pageNum*10)+9) +"/"+len)
                     
                 }
