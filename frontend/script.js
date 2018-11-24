@@ -531,7 +531,7 @@ $(document).ready(function(){
                     $('#pagination').html("<br> Page " + pageNum + "/"+ numberOfPages+", genes 1-10"+ "/"+len)
                 }else{
                     console.log('here after' + pageNum)
-                    $('#pagination').html("<br> Page " + pageNum + "/"+ numberOfPages+", genes "+ ((pageNum-1)*10)+"-" + ((pageNum*10-1)+9) +"/"+len)
+                    $('#pagination').html("<br> Page " + pageNum + "/"+ numberOfPages+", genes "+ ((pageNum-1)*10)+"-" + (((pageNum-1)*10)+9) +"/"+len)
                     
                 }
             }
