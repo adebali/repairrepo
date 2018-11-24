@@ -469,7 +469,7 @@ $(document).ready(function(){
     
                 //create table headers
                 for (var index in array[0]) {
-                    if((index.localeCompare("_id") == 0) || (index.localeCompare("number")==0)|| (index.localeCompare("chr")==0) || (index.localeCompare("score") ==0)){
+                    if((index.localeCompare("_id") == 0) || (index.localeCompare("number")==0)|| (index.localeCompare("chr")==0) || (index.localeCompare("score") ==0)|| (index.localeCompare("organism") ==0)){
                         //skip these columns
                     }else{
                         // if((index.localeCompare("start") == 0) || (index.localeCompare("end") == 0) ||(index.localeCompare("name") == 0)||(index.localeCompare("strand") == 0)){
@@ -493,7 +493,7 @@ $(document).ready(function(){
                 
                     for (var index in array[i]) {
                       
-                        if((index.localeCompare("_id") == 0) || (index.localeCompare("number")==0)|| (index.startsWith("chr")==true)|| (index.localeCompare("score") ==0)){
+                        if((index.localeCompare("_id") == 0) || (index.localeCompare("number")==0)|| (index.startsWith("chr")==true)|| (index.localeCompare("score") ==0)|| (index.localeCompare("organism") ==0)){
                         //skip these columns
                         }else{
                             if(!isNaN(parseFloat(array[i][index])) && isFinite(array[i][index])){
