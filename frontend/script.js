@@ -525,7 +525,7 @@ $(document).ready(function(){
                     len = length
                 }
                 var numberOfPages = Math.ceil(len/10)
-                if(first || pageNum == 1){
+                if(first){
                     console.log('here first')
                     $('#pagination').html("<br> Page " + pageNum + "/"+ numberOfPages+", genes 1-10"+ "/"+len)
                 }else{
