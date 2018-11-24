@@ -519,18 +519,19 @@ $(document).ready(function(){
                 return str;
             }
             var len = 0;
+            var firstVisited = false;
             function createPaginationText(length, first){
                 
                 if(!(length == -1)){
                     len = length
                 }
                 var numberOfPages = Math.ceil(len/10)
-                if(first){
+                if(first || pageNum == 1){
                     console.log('here first')
                     $('#pagination').html("<br> Page " + pageNum + "/"+ numberOfPages+", genes 1-10"+ "/"+len)
                 }else{
                     console.log('here after' + pageNum)
-                    $('#pagination').html("<br> Page " + pageNum + "/"+ numberOfPages+", genes "+ (pageNum*10)+"-" + ((pageNum*10)+9) +"/"+len)
+                    $('#pagination').html("<br> Page " + pageNum + "/"+ numberOfPages+", genes "+ ((pageNum-1)*10)+"-" + ((pageNum*10)+9) +"/"+len)
                     
                 }
             }
