@@ -566,8 +566,8 @@ $(document).ready(function(){
                 
                 
             }
-            var chromosomes = [];
-            var chrList = [];
+          
+            var chrList = {};
             function queryChrAuto(arg5){
                 const clientPromise = stitch.StitchClientFactory.create('dataretrieval-vwdtg');
                 clientPromise.then(stitchClient =>{
@@ -581,12 +581,14 @@ $(document).ready(function(){
                 arg5.push(orgDict)
                 arg5 = arg5.length > 0 ? { $and: arg5 } : {};
                 db.collection('gene').find(arg5, {"chr":1, "_id" : 0}).execute().then(docs => {    
-                    chromosomes = docs;
-                    for(var i in chromosomes){
-                        if(chrList.indexOf(chromosomes[i]["chr"]) == -1){
-                            chrList.push(chromosomes[i]["chr"])
-                        }
-                    }
+                    
+                    console.log('docs'+docs)
+                    // for(var i in chromosomes){
+                    //     if(chrList.indexOf(chromosomes[i]["chr"]) == -1){
+                    //         chrList.push(chromosomes[i]["chr"])
+                    //     }
+                    // }
+
                     if(chrList.length == 0){
                         console.log("list returned size 0 for chr, query didn't return anything")
                     }else{
