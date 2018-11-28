@@ -66,7 +66,7 @@ $(document).ready(function(){
             function queryChr(arg1, prev, first){
                 
                 //arg1 = arg1.length > 0 ? { $and: arg1 } : {};
-                var arg1 = arg1.substring(1, arg1.length-1);
+                var arg1 = arg1[0];
                 console.log("arg1" + JSON.stringify(arg1))
                 //show number on page out of total returned from query 
                 if(first){
