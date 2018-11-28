@@ -72,9 +72,9 @@ $(document).ready(function(){
                 //show number on page out of total returned from query 
                 if(first){
                     db.collection('gene').find(arg1).execute().then(temp =>{
-
+                        if(temp.length != 0){
                         createPaginationText(temp.length, true);
-                    
+                        }
                     })
                 }
                 
@@ -363,7 +363,7 @@ $(document).ready(function(){
             $('#endChr').change(function(){
                 if($('#endChr').val() != ''){
                     inputEndChr = parseInt($('#endChr').val());
-                
+                    console.log('type endchr' + typeof inputEndChr)
                     $('#endChr').removeClass('ui-state-error ui-corner-all');
                 }
                 last_id1 = null;
@@ -536,7 +536,7 @@ $(document).ready(function(){
                 if(!(length == -1)){
                     len = length
                 }
-                if(!noResults){
+                
 
                     var numberOfPages = Math.ceil(len/10)
                     if(first || pageNum == 1){
@@ -545,9 +545,8 @@ $(document).ready(function(){
                         $('#pagination').html("<br> Page " + pageNum + "/"+ numberOfPages+", genes "+ (((pageNum-1)*10)+1)+"-" + ((pageNum)*10) +"/"+len)
                         
                     }
-                }else{
-                    //do nothing
-                }
+                
+                
             }
         
         //CODE FOR EXPERIMENT PLOTS BELOW
