@@ -44,7 +44,7 @@ $(document).ready(function(){
             //that will be called to plot the respective experiment
             var pageNum = 1;
             var numberOfPages = 0;
-            var noResults = false;
+            var noResults = true;
             
             
             
@@ -86,7 +86,7 @@ $(document).ready(function(){
                             $('#results').html("<div class = 'alert alert-warning' role = 'alert'> <strong> No results left</strong></div>")
                         }else{
                             noResults = false;
-                            
+
                             html =  createDynamicTable(docs) +"<button id ='prev' type='button' class='button'> &lt;- Previous</button> <button id = 'next' type='button' class='button'>Next -> </button>"
                             document.getElementById("results").innerHTML = html; 
                             last_id1 = docs[docs.length-1]['_id']
@@ -536,16 +536,17 @@ $(document).ready(function(){
                     len = length
                 }
                 if(!noResults){
-                var numberOfPages = Math.ceil(len/10)
-                if(first || pageNum == 1){
-                    $('#pagination').html("<br> Page " + pageNum + "/"+ numberOfPages+", genes 1-10"+ "/"+len)
+
+                    var numberOfPages = Math.ceil(len/10)
+                    if(first || pageNum == 1){
+                        $('#pagination').html("<br> Page " + pageNum + "/"+ numberOfPages+", genes 1-10"+ "/"+len)
+                    }else{
+                        $('#pagination').html("<br> Page " + pageNum + "/"+ numberOfPages+", genes "+ (((pageNum-1)*10)+1)+"-" + ((pageNum)*10) +"/"+len)
+                        
+                    }
                 }else{
-                    $('#pagination').html("<br> Page " + pageNum + "/"+ numberOfPages+", genes "+ (((pageNum-1)*10)+1)+"-" + ((pageNum)*10) +"/"+len)
-                    
+                    //do nothing
                 }
-            }else{
-                //do nothing
-            }
             }
         
         //CODE FOR EXPERIMENT PLOTS BELOW
