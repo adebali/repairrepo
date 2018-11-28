@@ -274,26 +274,46 @@ $(document).ready(function(){
              * @param {int} numChr Number of chromosomes for the given organism
              * @param {boolean} sexChr True if organism has sex chromosomes
              */
-            function buildChrDropdown(numChr, sexChr){
+            // function buildChrDropdown(numChr, sexChr){
+            //     var select = "<select class='inline' id = 'chrDropdown' width = '60' style='width: 60px' >";
+            //     if(numChr === 1){
+            //         select += "<option val = 'chr'>chr</option>"
+            //     }else{
+            //         for (i=0;i<=numChr;i++){
+            //             if(i == 0){
+            //                 select += "<option val = 'chr'>-</option>";
+            //             }else{
+            //                 select += '<option val=' + i + '>' + i + '</option>';
+            //             }
+            //         }
+            //     }
+            //     if(sexChr){
+            //         select += "<option val = 'x'> X </option>"
+            //         select += "<option val = 'y'> Y </option>"
+            //     }
+            //     select+='</select>'
+            //     $('#chrDropDiv').html(select);
+            // }
+
+            /**
+             * Make chromosome dropdown given chromosomses (chrList) from the selected organism (org)
+             */
+            function buildChrDropdown2(chrList){
                 var select = "<select class='inline' id = 'chrDropdown' width = '60' style='width: 60px' >";
-                if(numChr === 1){
-                    select += "<option val = 'chr'>chr</option>"
-                }else{
-                    for (i=0;i<=numChr;i++){
-                        if(i == 0){
-                            select += "<option val = 'chr'>-</option>";
-                        }else{
-                            select += '<option val=' + i + '>' + i + '</option>';
-                        }
+                var counter = 0;
+                for(i=0; i <chrList.length; i++){
+                    if(counter == 0){
+                        counter++;
+                        //make first option a placeholder
+                        select += "<option val = 'chr'>-</option>";
+                    }else{
+                        select += '<option val=' + i + '>' + i + '</option>';
                     }
                 }
-                if(sexChr){
-                    select += "<option val = 'x'> X </option>"
-                    select += "<option val = 'y'> Y </option>"
-                }
                 select+='</select>'
-                $('#chrDropDiv').html(select);
+                $('#chrDropDiv').html(select)
             }
+
     
             function getCurrentPage(){
                 var count = 0;
@@ -316,25 +336,29 @@ $(document).ready(function(){
                 switch(org){ 
                     case 'Human':
                         orgDict.organism = 'human'
+                        queryChrAuto({})
                         $('#organismName').html('Organism: <b>' + org + "</b>") 
-                        buildChrDropdown(22, true)
+                        //buildChrDropdown(22, true)
                         $('#'+org).css({'border-style':'solid', 'border-color':'#32CD32'})
                         break;
                     case 'Mouse':
                         orgDict.organism = 'mouse'
-                        buildChrDropdown(19, true)
+                        queryChrAuto({})                        
+                        //buildChrDropdown(19, true)
                         $('#organismName').html('Organism: <b>' + org + "</b>")                 
                         $('#'+org).css({'border-style':'solid', 'border-color':'#32CD32'})     
                         break;
                     case 'Arabidopsis':
                         orgDict.organism = 'arabidopsis'
-                        buildChrDropdown(5, false)
+                        queryChrAuto({})                        
+                        //buildChrDropdown(5, false)
                         $('#organismName').html('Organism: <b>' + org + "</b>")                 
                         $('#'+org).css({'border-style':'solid', 'border-color':'#32CD32'})     
                         break;
                     case 'Ecoli':
                         orgDict.organism = 'ecoli'
-                        buildChrDropdown(1, false)
+                        queryChrAuto({})                        
+                        //buildChrDropdown(1, false)
                         $('#organismName').html('Organism: <b>' + org + "</b>")                 
                         $('#'+org).css({'border-style':'solid', 'border-color':'#32CD32'})                
                         break;
@@ -578,7 +602,7 @@ $(document).ready(function(){
                     console.log('chr list for dropdown ready.')
                     }
                     console.log('chrlist' +  JSON.stringify(chrList))
-                    return chrList;
+                    return buildChrDropdown2(chrList);
                 });
             }
         
