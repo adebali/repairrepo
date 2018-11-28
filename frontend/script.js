@@ -527,6 +527,7 @@ $(document).ready(function(){
                 if(!(length == -1)){
                     len = length
                 }
+                if(!($("#results").text() === "No results left")){
                 var numberOfPages = Math.ceil(len/10)
                 if(first || pageNum == 1){
                     $('#pagination').html("<br> Page " + pageNum + "/"+ numberOfPages+", genes 1-10"+ "/"+len)
@@ -534,6 +535,9 @@ $(document).ready(function(){
                     $('#pagination').html("<br> Page " + pageNum + "/"+ numberOfPages+", genes "+ (((pageNum-1)*10)+1)+"-" + ((pageNum)*10) +"/"+len)
                     
                 }
+            }else{
+                //do nothing
+            }
             }
         
         //CODE FOR EXPERIMENT PLOTS BELOW
