@@ -71,7 +71,6 @@ $(document).ready(function(){
                 
                 //arg1 = arg1.length > 0 ? { $and: arg1 } : {};
                 var arg1 = arg1[0];
-                console.log("arg1" + JSON.stringify(arg1))
                 //show number on page out of total returned from query 
                 if(first){
                     db.collection('gene').find(arg1).execute().then(temp =>{
@@ -238,7 +237,6 @@ $(document).ready(function(){
                 });
             }
             function queryAuto(arg4){
-                console.log('arg4'+typeof arg4)
                 arg4.push(orgDict)
                 arg4 = arg4.length > 0 ? { $and: arg4 } : {};
                 
@@ -299,7 +297,6 @@ $(document).ready(function(){
              * Make chromosome dropdown given chromosomses (chrList) from the selected organism (org)
              */
             function buildChrDropdown2(chrList){
-                console.log('in buildchr')
                 var select = "<select class='inline' id = 'chrDropdown' width = '60' style='width: 60px' >";
                 //create placeholder for chr dropdown
                 select += "<option val = 'chr'>-</option>";
@@ -442,17 +439,13 @@ $(document).ready(function(){
         
                 if($('#startChr').val().length != 0 && $('#endChr').val().length != 0){
                     if($('#chrDropdown').val() != '-'){
-                        //TODO: possibly trim chrval to only look before the first '_'
-                        //{ $regex: '^'+val, $options: 'i' }
+                        
                         queryArray.push({"$and":[{"start":{"$gte": parseInt(inputStartChr)}},{"end":{"$lte": parseInt(inputEndChr)}}, orgDict, {'chr': val}]})
-                        //queryArray.push(orgDict)
-                        //console.log("queryArray " + JSON.stringify(queryArray))
-                        //queryResultsChr(queryArray);
+                        
                         
                         var query = {"$and":[{"start":{"$gte": inputStartChr}},{"end":{"$lte": inputEndChr}}, orgDict, {'chr': val}]}
-                        //console.log('query' + JSON.stringify(query))
                         queryResultsChr(queryArray, false, true)
-                        queryArray = [];
+                        
                     }
                 }else{
                     //change div color to show to select both start and end
@@ -584,11 +577,9 @@ $(document).ready(function(){
                 });
             }
             function queryChrAutoDrop(arg5){
-                console.log('arg5'+typeof arg5)
                 
                 arg5.push(orgDict)
                 arg5 = arg5.length > 0 ? { $and: arg5 } : {};
-                console.log("arg5" + JSON.stringify(arg5))
                 db.collection('gene').find(arg5, {"chr":1, "_id" : 0}).execute().then(docs => {    
                     chromosomes = docs;
                     for(var i in chromosomes){
