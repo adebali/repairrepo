@@ -410,7 +410,7 @@ $(document).ready(function(){
                     if($('#chrDropdown').val() != '-'){
                         
                         queryArray.push({"$and":[{"start":{"$gte": inputStartChr}},{"end":{"$lte": inputEndChr}}, orgDict, {'chr': val}]})
-                        queryArray.push(orgDict)
+                        //queryArray.push(orgDict)
                         //console.log("queryArray " + JSON.stringify(queryArray))
                         //queryResultsChr(queryArray);
                         
