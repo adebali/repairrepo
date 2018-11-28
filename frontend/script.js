@@ -294,9 +294,11 @@ $(document).ready(function(){
             // }
 
             /**
-             * Make chromosome dropdown given chromosomses (chrList) from the selected organism (org)
+             * Make chromosome dropdown given chromosomses (chrDict) (key is organism, value is array of chr names)
              */
-            function buildChrDropdown2(chrList){
+            function buildChrDropdown2(chrDict){
+                chrList = chrDict.orgDict.organism
+
                 var select = "<select class='inline' id = 'chrDropdown' width = '60' style='width: 60px' >";
                 //create placeholder for chr dropdown
                 select += "<option val = 'chr'>-</option>";
@@ -307,6 +309,7 @@ $(document).ready(function(){
                 }
                 select+='</select>'
                 $('#chrDropDiv').html(select)
+                console.log('chrlist after drop built'+JSON.stringify(chrList))
             }
 
     
@@ -590,13 +593,13 @@ $(document).ready(function(){
 
                     //add chr to respective organism
                     chrDict[orgDict.organism] = chromosomes;
-                    console.log('chrdict'+JSON.stringify(chrDict))
+                    
                     if(chrDict.length == 0){
                         console.log("list returned size 0 for chr, query didn't return anything")
                     }else{
                     console.log('chr list for dropdown ready.')
                     }
-                    console.log('chrlist' +  JSON.stringify(chrDict))
+                    
                     //change
                     return buildChrDropdown2(chrList);
                 });
