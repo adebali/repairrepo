@@ -583,7 +583,7 @@ $(document).ready(function(){
                 db.collection('gene').find(arg5, {"chr":1, "_id" : 0}).execute().then(docs => {    
                     //sort through docs to add only unique chr
                     for(var i in docs){
-                        if(JSON.stringify(chromosomes.indexOf(docs[i])) == -1){
+                        if(chromosomes.indexOf(docs[i]) == -1){
                             chromosomes.push(docs[i])
                         }
                     }
