@@ -409,14 +409,14 @@ $(document).ready(function(){
                 if($('#startChr').val().length != 0 && $('#endChr').val().length != 0){
                     if($('#chrDropdown').val() != '-'){
                         
-                        queryArray.push({"$and":[{"start":{"$gte": inputStartChr}},{"end":{"$lte": inputEndChr}}, orgDict, {'chr': val}]})
+                        //queryArray.push({"$and":[{"start":{"$gte": inputStartChr}},{"end":{"$lte": inputEndChr}}, orgDict, {'chr': val}]})
                         //queryArray.push(orgDict)
                         //console.log("queryArray " + JSON.stringify(queryArray))
                         //queryResultsChr(queryArray);
                         
-                        //var query = {"$and":[{"start":{"$gte": inputStartChr}},{"end":{"$lte": inputEndChr}}, orgDict, {'chr': val}]}
+                        var query = {"$and":[{"start":{"$gte": inputStartChr}},{"end":{"$lte": inputEndChr}}, orgDict, {'chr': val}]}
                         //console.log('query' + JSON.stringify(query))
-                        queryResultsChr(queryArray, false, true)
+                        queryResultsChr(query, false, true)
                     }
                 }else{
                     //change div color to show to select both start and end
