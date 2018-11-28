@@ -44,6 +44,7 @@ $(document).ready(function(){
             //that will be called to plot the respective experiment
             var pageNum = 1;
             var numberOfPages = 0;
+            var noResults = false;
             
             
             
@@ -81,8 +82,11 @@ $(document).ready(function(){
                     db.collection('gene').find(arg1).sort({"start": 1}).limit(10).execute().then(docs => {
                         var html;
                         if(docs.length == 0){
+                            noResults = true;
                             $('#results').html("<div class = 'alert alert-warning' role = 'alert'> <strong> No results left</strong></div>")
                         }else{
+                            noResults = false;
+                            
                             html =  createDynamicTable(docs) +"<button id ='prev' type='button' class='button'> &lt;- Previous</button> <button id = 'next' type='button' class='button'>Next -> </button>"
                             document.getElementById("results").innerHTML = html; 
                             last_id1 = docs[docs.length-1]['_id']
@@ -93,9 +97,11 @@ $(document).ready(function(){
                         var html;
                         
                         if(docs.length == 0){
+                            noResults = true;
                             $('#results').html("<div class = 'alert alert-warning' role = 'alert'> <strong> No results left</strong></div>")
                             
                         }else{
+                            noResults = false;
                             html =  createDynamicTable(docs) +"<button id ='prev' type='button' class='button'> &lt;- Previous</button> <button id = 'next' type='button' class='button'>Next -> </button>"
                             document.getElementById("results").innerHTML = html; 
                             last_id1 = docs[docs.length-1]['_id']
@@ -106,8 +112,10 @@ $(document).ready(function(){
                     db.collection('gene').find({"$and":[{'_id':{"$lt":last_id1}},arg1]}).sort({"start": 1}).limit(10).execute().then(docs => {
                         var html;
                         if(docs.length == 0){
+                            noResults = true;
                             $('#results').html("<div class = 'alert alert-warning' role = 'alert'> <strong> No results left</strong></div>")
                         }else{
+                            noResults = false;
                         html =  createDynamicTable(docs) +"<button id ='prev' type='button' class='button'> &lt;- Previous</button> <button id = 'next' type='button' class='button'>Next -> </button>"
                         document.getElementById("results").innerHTML = html; 
                         last_id1 = docs[docs.length-1]['_id']
@@ -527,7 +535,7 @@ $(document).ready(function(){
                 if(!(length == -1)){
                     len = length
                 }
-                if(!($("#results").text() === "No results left")){
+                if(!noResults){
                 var numberOfPages = Math.ceil(len/10)
                 if(first || pageNum == 1){
                     $('#pagination').html("<br> Page " + pageNum + "/"+ numberOfPages+", genes 1-10"+ "/"+len)
