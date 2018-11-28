@@ -345,7 +345,7 @@ $(document).ready(function(){
             //CHANGE handlers for input fields
             $('#startChr').change(function(){
                 if($('#startChr').val() != ''){
-                    inputStartChr = $('#startChr').val();
+                    inputStartChr = parseInt($('#startChr').val());
                     $('#startChr').removeClass('ui-state-error ui-corner-all');
                 }
                 last_id1 = null
@@ -353,7 +353,7 @@ $(document).ready(function(){
         
             $('#endChr').change(function(){
                 if($('#endChr').val() != ''){
-                    inputEndChr = $('#endChr').val();
+                    inputEndChr = parseInt($('#endChr').val());
                 
                     $('#endChr').removeClass('ui-state-error ui-corner-all');
                 }
