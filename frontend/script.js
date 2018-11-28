@@ -567,7 +567,7 @@ $(document).ready(function(){
                 
             }
             var chromosomes = [];
-            var chrList = {};
+            var chrDict = {};
             function queryChrAuto(arg5){
                 const clientPromise = stitch.StitchClientFactory.create('dataretrieval-vwdtg');
                 clientPromise.then(stitchClient =>{
@@ -577,24 +577,28 @@ $(document).ready(function(){
                 });
             }
             function queryChrAutoDrop(arg5){
-                
+                console.log(JSON.stringify(orgDict))
                 arg5.push(orgDict)
                 arg5 = arg5.length > 0 ? { $and: arg5 } : {};
                 db.collection('gene').find(arg5, {"chr":1, "_id" : 0}).execute().then(docs => {    
-
+                    //sort through docs to add only unique chr
                     for(var i in docs){
-                        if(JSON.stringify(chrList.indexOf(docs[i])) != JSON.stringify(i)){
+                        if(JSON.stringify(chromosomes.indexOf(docs[i])) != JSON.stringify(i)){
                             console.log('here in if ')
-                            chrList.push(docs[i])
+                            chromosomes.push(docs[i])
                         }
                     }
 
-                    if(chrList.length == 0){
+                    //add chr to respective organism
+                    console.log('chromosomes'+ JSON.stringify(chromosomes))
+
+                    if(chrDict.length == 0){
                         console.log("list returned size 0 for chr, query didn't return anything")
                     }else{
                     console.log('chr list for dropdown ready.')
                     }
-                    console.log('chrlist' +  JSON.stringify(chrList))
+                    console.log('chrlist' +  JSON.stringify(chrDict))
+                    //change
                     return buildChrDropdown2(chrList);
                 });
             }
