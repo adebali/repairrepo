@@ -601,7 +601,7 @@ $(document).ready(function(){
                     }
                     
                     //change
-                    return buildChrDropdown2(chrList);
+                    return buildChrDropdown2(chrDict);
                 });
             }
         
