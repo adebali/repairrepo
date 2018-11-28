@@ -334,28 +334,28 @@ $(document).ready(function(){
                 switch(org){ 
                     case 'Human':
                         orgDict.organism = 'human'
-                        queryChrAuto({})
+                        queryChrAuto([{}])
                         $('#organismName').html('Organism: <b>' + org + "</b>") 
                         //buildChrDropdown(22, true)
                         $('#'+org).css({'border-style':'solid', 'border-color':'#32CD32'})
                         break;
                     case 'Mouse':
                         orgDict.organism = 'mouse'
-                        queryChrAuto({})                        
+                        queryChrAuto([{}])                        
                         //buildChrDropdown(19, true)
                         $('#organismName').html('Organism: <b>' + org + "</b>")                 
                         $('#'+org).css({'border-style':'solid', 'border-color':'#32CD32'})     
                         break;
                     case 'Arabidopsis':
                         orgDict.organism = 'arabidopsis'
-                        queryChrAuto({})                        
+                        queryChrAuto([{}])                        
                         //buildChrDropdown(5, false)
                         $('#organismName').html('Organism: <b>' + org + "</b>")                 
                         $('#'+org).css({'border-style':'solid', 'border-color':'#32CD32'})     
                         break;
                     case 'Ecoli':
                         orgDict.organism = 'ecoli'
-                        queryChrAuto({})                        
+                        queryChrAuto([{}])                        
                         //buildChrDropdown(1, false)
                         $('#organismName').html('Organism: <b>' + org + "</b>")                 
                         $('#'+org).css({'border-style':'solid', 'border-color':'#32CD32'})                
@@ -580,7 +580,7 @@ $(document).ready(function(){
                 });
             }
             function queryChrAutoDrop(arg5){
-                console.log(JSON.stringify(orgDict))
+   
                 arg5.push(orgDict)
                 arg5 = arg5.length > 0 ? { $and: arg5 } : {};
                 db.collection('gene').find(arg5, {"chr":1, "_id" : 0}).execute().then(docs => {    
