@@ -238,7 +238,7 @@ $(document).ready(function(){
                 });
             }
             function queryAuto(arg4){
-                
+                console.log('arg4'+typeof arg4)
                 arg4.push(orgDict)
                 arg4 = arg4.length > 0 ? { $and: arg4 } : {};
                 
@@ -586,6 +586,8 @@ $(document).ready(function(){
                 });
             }
             function queryChrAutoDrop(arg5){
+                console.log('arg5'+typeof arg5)
+                
                 arg5.push(orgDict)
                 arg5 = arg5.length > 0 ? { $and: arg5 } : {};
                 console.log("arg5" + JSON.stringify(arg5))
