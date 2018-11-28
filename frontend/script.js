@@ -419,7 +419,7 @@ $(document).ready(function(){
                     if($('#chrDropdown').val() != '-'){
                         //TODO: possibly trim chrval to only look before the first '_'
 
-                        queryArray.push({"$and":[{"start":{"$gte": inputStartChr}},{"end":{"$lte": inputEndChr}}, orgDict, {'chr': { $regex: '^'+val, $options: 'i' }}]})
+                        queryArray.push({"$and":[{"start":{"$gte": inputStartChr}},{"end":{"$lte": inputEndChr}}, orgDict, {'chr': { $regex: `^${val}`, $options: 'i' }}]})
                         //queryArray.push(orgDict)
                         //console.log("queryArray " + JSON.stringify(queryArray))
                         //queryResultsChr(queryArray);
