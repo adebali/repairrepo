@@ -564,12 +564,12 @@ $(document).ready(function(){
             function queryChrAutoDrop(arg5){
                 arg5.push(orgDict)
                 arg5 = arg5.length > 0 ? { $and: arg5 } : {};
-                
+                console.log("arg5" + JSON.stringify(arg5))
                 db.collection('gene').find(arg5, {"chr":1, "_id" : 0}).execute().then(docs => {    
                     chromosomes = docs;
                     for(var i in chromosomes){
                         
-                        chrList.push(chromosomes[i]["name"])
+                        chrList.push(chromosomes[i]["chr"])
                     }
                     if(chrList.length == 0){
                         console.log("list returned size 0 for chr, query didn't return anything")
