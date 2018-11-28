@@ -304,7 +304,7 @@ $(document).ready(function(){
                 select += "<option val = 'chr'>-</option>";
                 for(i=0; i <chrList.length; i++){
                     
-                    select += '<option val=' + chrList[i] + '>' + chrList[i] + '</option>';
+                    select += '<option val=' + chrList[i]["chr"] + '>' + chrList[i]["chr"] + '</option>';
                     
                 }
                 select+='</select>'
@@ -600,7 +600,6 @@ $(document).ready(function(){
                     console.log('chr list for dropdown ready.')
                     }
                     
-                    //change
                     return buildChrDropdown2(chrDict);
                 });
             }
