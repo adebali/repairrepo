@@ -583,15 +583,14 @@ $(document).ready(function(){
                 db.collection('gene').find(arg5, {"chr":1, "_id" : 0}).execute().then(docs => {    
                     //sort through docs to add only unique chr
                     for(var i in docs){
-                        
                         if(!chromosomes.some(e => e.chr == docs[i]["chr"])){
                             chromosomes.push(docs[i])
                         }
                     }
 
                     //add chr to respective organism
-                    console.log('chromosomes'+ JSON.stringify(chromosomes))
-
+                    chrDict[orgDict.organism] = chromosomes;
+                    console.log('chrdict'+JSON.stringify(chrDict))
                     if(chrDict.length == 0){
                         console.log("list returned size 0 for chr, query didn't return anything")
                     }else{
