@@ -299,16 +299,14 @@ $(document).ready(function(){
              * Make chromosome dropdown given chromosomses (chrList) from the selected organism (org)
              */
             function buildChrDropdown2(chrList){
+                console.log('in buildchr')
                 var select = "<select class='inline' id = 'chrDropdown' width = '60' style='width: 60px' >";
-                var counter = 0;
+                //create placeholder for chr dropdown
+                select += "<option val = 'chr'>-</option>";
                 for(i=0; i <chrList.length; i++){
-                    if(counter == 0){
-                        counter++;
-                        //make first option a placeholder
-                        select += "<option val = 'chr'>-</option>";
-                    }else{
-                        select += '<option val=' + i + '>' + i + '</option>';
-                    }
+                    
+                    select += '<option val=' + chrList[i] + '>' + chrList[i] + '</option>';
+                    
                 }
                 select+='</select>'
                 $('#chrDropDiv').html(select)
