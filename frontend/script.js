@@ -568,7 +568,7 @@ $(document).ready(function(){
                 db.collection('gene').find(arg5, {"chr":1, "_id" : 0}).execute().then(docs => {    
                     chromosomes = docs;
                     for(var i in chromosomes){
-                        if(!chrList.indexOf(chromosomes[i]["chr"])){
+                        if(chrList.indexOf(chromosomes[i]["chr"]) == -1){
                             chrList.push(chromosomes[i]["chr"])
                         }
                     }
