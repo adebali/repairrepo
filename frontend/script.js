@@ -13,6 +13,9 @@ $(document).ready(function(){
     
             //first, create list of gene names for autocomplete
             queryResultsAuto([{}])
+
+            //next, create dropdown for organism chromosome numbers
+            queryChrAuto([{}])
         
             //query db for sample sheet in order to get columns/data for each experiment for plotting purposes
             getSampleSheet();     
@@ -547,6 +550,35 @@ $(document).ready(function(){
                     }
                 
                 
+            }
+            var chromosomes = [];
+            var chrList = [];
+            function queryChrAuto(){
+                const clientPromise = stitch.StitchClientFactory.create('dataretrieval-vwdtg');
+                clientPromise.then(stitchClient =>{
+                    client = stitchClient;
+                    db = client.service('mongodb', 'mongodb-atlas').db('data');
+                    return client.login().then(queryChrAutoDrop(arg5))
+                });
+            }
+            function queryChrAutoDrop(arg5){
+                arg5.push(orgDict)
+                arg5 = arg5.length > 0 ? { $and: arg5 } : {};
+                
+                db.collection('gene').find(arg5, {"chr":1, "_id" : 0}).execute().then(docs => {    
+                    chromosomes = docs;
+                    for(var i in chromosomes){
+                        
+                        chrList.push(chromosomes[i]["name"])
+                    }
+                    if(chrList.length == 0){
+                        console.log("list returned size 0 for chr, query didn't return anything")
+                    }else{
+                    console.log('chr list for dropdown ready.')
+                    }
+                    console.log('chrlist' +  JSON.stringify(chrList))
+                    return chrList;
+                });
             }
         
         //CODE FOR EXPERIMENT PLOTS BELOW
