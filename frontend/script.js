@@ -553,7 +553,7 @@ $(document).ready(function(){
             }
             var chromosomes = [];
             var chrList = [];
-            function queryChrAuto(){
+            function queryChrAuto(arg5){
                 const clientPromise = stitch.StitchClientFactory.create('dataretrieval-vwdtg');
                 clientPromise.then(stitchClient =>{
                     client = stitchClient;
