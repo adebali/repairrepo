@@ -435,7 +435,7 @@ $(document).ready(function(){
                     console.log('enter chromsome');
                 }else{
         
-                    var val = 'chr'+ $('#chrDropdown').val();
+                    var val = $('#chrDropdown').val();
                     //queryArray.push({'chr': val})
                     
                 }
