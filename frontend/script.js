@@ -568,8 +568,9 @@ $(document).ready(function(){
                 db.collection('gene').find(arg5, {"chr":1, "_id" : 0}).execute().then(docs => {    
                     chromosomes = docs;
                     for(var i in chromosomes){
-                        
-                        chrList.push(chromosomes[i]["chr"])
+                        if(!chrList.indexOf(chromosomes[i]["chr"])){
+                            chrList.push(chromosomes[i]["chr"])
+                        }
                     }
                     if(chrList.length == 0){
                         console.log("list returned size 0 for chr, query didn't return anything")
