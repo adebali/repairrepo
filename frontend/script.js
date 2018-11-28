@@ -581,12 +581,11 @@ $(document).ready(function(){
                 arg5.push(orgDict)
                 arg5 = arg5.length > 0 ? { $and: arg5 } : {};
                 db.collection('gene').find(arg5, {"chr":1, "_id" : 0}).execute().then(docs => {    
-                    
-                    console.log('docs'+JSON.stringify(docs))
-                    for(var i in chromosomes){
-                        if(JSON.stringify(chrList.indexOf(chromosomes[i])) != JSON.stringify(i)){
+
+                    for(var i in docs){
+                        if(JSON.stringify(chrList.indexOf(docs[i])) != JSON.stringify(i)){
                             console.log('here in if ')
-                            chrList.push(chromosomes[i]["chr"])
+                            chrList.push(docs[i])
                         }
                     }
 
