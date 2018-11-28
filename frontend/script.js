@@ -585,6 +585,7 @@ $(document).ready(function(){
                     console.log('docs'+JSON.stringify(docs))
                     for(var i in chromosomes){
                         if(JSON.stringify(chrList.indexOf(chromosomes[i])) != JSON.stringify(i)){
+                            console.log('here in if ')
                             chrList.push(chromosomes[i]["chr"])
                         }
                     }
