@@ -336,7 +336,7 @@ $(document).ready(function(){
                     case 'Human':
                         $("#chrDropdown").empty()
                         orgDict.organism = 'human'
-                        buildChrDropdown2()
+                        queryChrAuto([{}])
                         $('#organismName').html('Organism: <b>' + org + "</b>") 
                         //buildChrDropdown(22, true)
                         $('#'+org).css({'border-style':'solid', 'border-color':'#32CD32'})
@@ -344,7 +344,7 @@ $(document).ready(function(){
                     case 'Mouse':
                         $("#chrDropdown").empty()
                         orgDict.organism = 'mouse'
-                        buildChrDropdown2()                       
+                        queryChrAuto([{}])                       
                         //buildChrDropdown(19, true)
                         $('#organismName').html('Organism: <b>' + org + "</b>")                 
                         $('#'+org).css({'border-style':'solid', 'border-color':'#32CD32'})     
@@ -352,7 +352,7 @@ $(document).ready(function(){
                     case 'Arabidopsis':
                         $("#chrDropdown").empty()
                         orgDict.organism = 'arabidopsis'
-                        buildChrDropdown2()                        
+                        queryChrAuto([{}])                       
                         //buildChrDropdown(5, false)
                         $('#organismName').html('Organism: <b>' + org + "</b>")                 
                         $('#'+org).css({'border-style':'solid', 'border-color':'#32CD32'})     
@@ -360,7 +360,7 @@ $(document).ready(function(){
                     case 'Ecoli':
                         $("#chrDropdown").empty()
                         orgDict.organism = 'ecoli'
-                        buildChrDropdown2()                        
+                        queryChrAuto([{}])                        
                         //buildChrDropdown(1, false)
                         $('#organismName').html('Organism: <b>' + org + "</b>")                 
                         $('#'+org).css({'border-style':'solid', 'border-color':'#32CD32'})                
@@ -591,7 +591,7 @@ $(document).ready(function(){
                 
                 db.collection('gene').find(arg5, {"chr":1, "_id" : 0, "organism" : 1}).execute().then(docs => {    
                     //sort through docs to add only unique chr
-                    console.log('docs'+JSON.stringify(docs))
+                    
                     for(var i in docs){
                         if(!chromosomes.some(e => e.chr == docs[i]["chr"])){
                             chromosomes.push(docs[i])
