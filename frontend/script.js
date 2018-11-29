@@ -502,15 +502,15 @@ $(document).ready(function(){
              * @param {*} objArray Query results stored here
              */
             function createDynamicTable(objArray) {
-                //var array = objArray;
-                var array = []; //ordered
-                var row = {};
-                for(var i = 0; i < objArray.length; i++){
-                    Object.keys(objArray[i]).sort().forEach(function(key) {
-                        row[key] = objArray[i][key];
-                        array.push(row)
-                    });
-                }
+                var array = objArray;
+                // var array = []; //ordered
+                // var row = {};
+                // for(var i = 0; i < objArray.length; i++){
+                //     Object.keys(objArray[i]).sort().forEach(function(key) {
+                //         row[key] = objArray[i][key];
+                //         array.push(row)
+                //     });
+                // }
                 var str = '<table class="table-striped" role = "grid" id = "chrTable"> <thead> <tr>'; //originally thead had class 'thead-dark'
     
                 //create table headers
