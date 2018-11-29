@@ -310,7 +310,7 @@ $(document).ready(function(){
                 }
                 select+='</select>'
                 $('#chrDropDiv').html(select)
-                console.log('chrlist after drop built'+JSON.stringify(chrList))
+                
             }
 
     
@@ -502,7 +502,12 @@ $(document).ready(function(){
              */
             function createDynamicTable(objArray) {
                 var array = objArray;
-                array.keys(data).sort();
+                array = Object.keys(array)
+                .sort()
+                .reduce(function (acc, key) { 
+                    acc[key] = array[key];
+                    return acc;
+                }, {});
                 console.log("array abc" +JSON.stringify(array))
                 
                 var str = '<table class="table-striped" role = "grid" id = "chrTable"> <thead> <tr>'; //originally thead had class 'thead-dark'
