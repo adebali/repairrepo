@@ -334,6 +334,7 @@ $(document).ready(function(){
                 var org = e.target.id
                 switch(org){ 
                     case 'Human':
+                        $("#chrDropdown").empty()
                         orgDict.organism = 'human'
                         buildChrDropdown2()
                         $('#organismName').html('Organism: <b>' + org + "</b>") 
@@ -341,6 +342,7 @@ $(document).ready(function(){
                         $('#'+org).css({'border-style':'solid', 'border-color':'#32CD32'})
                         break;
                     case 'Mouse':
+                        $("#chrDropdown").empty()
                         orgDict.organism = 'mouse'
                         buildChrDropdown2()                       
                         //buildChrDropdown(19, true)
@@ -348,6 +350,7 @@ $(document).ready(function(){
                         $('#'+org).css({'border-style':'solid', 'border-color':'#32CD32'})     
                         break;
                     case 'Arabidopsis':
+                        $("#chrDropdown").empty()
                         orgDict.organism = 'arabidopsis'
                         buildChrDropdown2()                        
                         //buildChrDropdown(5, false)
@@ -355,6 +358,7 @@ $(document).ready(function(){
                         $('#'+org).css({'border-style':'solid', 'border-color':'#32CD32'})     
                         break;
                     case 'Ecoli':
+                        $("#chrDropdown").empty()
                         orgDict.organism = 'ecoli'
                         buildChrDropdown2()                        
                         //buildChrDropdown(1, false)
