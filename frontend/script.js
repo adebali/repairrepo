@@ -573,7 +573,7 @@ $(document).ready(function(){
                 if(length <=10){
                     $('#pagination').html("<br> Page 1/1, genes 1-"+len)
 
-                }
+                }else{
 
                     var numberOfPages = Math.ceil(len/10)
                     if(first || pageNum == 1){
@@ -582,7 +582,7 @@ $(document).ready(function(){
                         $('#pagination').html("<br> Page " + pageNum + "/"+ numberOfPages+", genes "+ (((pageNum-1)*10)+1)+"-" + ((pageNum)*10) +"/"+len)
                         
                     }
-                
+                }
                 
             }
             var chromosomes = [];
