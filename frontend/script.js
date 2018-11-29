@@ -297,6 +297,7 @@ $(document).ready(function(){
              * Make chromosome dropdown given chromosomses (chrDict) (key is organism, value is array of chr names)
              */
             function buildChrDropdown2(chrDict){
+                console.log('orgdict in build'+ orgDict.organism)
                 chrList = chrDict[orgDict.organism]
 
                 var select = "<select class='inline' id = 'chrDropdown' width = '60' style='width: 60px' >";
@@ -570,7 +571,7 @@ $(document).ready(function(){
                 
             }
             var chromosomes = [];
-            
+            var chrDict = {};
             function queryChrAuto(arg5){
                 const clientPromise = stitch.StitchClientFactory.create('dataretrieval-vwdtg');
                 clientPromise.then(stitchClient =>{
@@ -580,7 +581,7 @@ $(document).ready(function(){
                 });
             }
             function queryChrAutoDrop(arg5){
-                var chrDict = {};
+   
                 arg5.push(orgDict)
                 arg5 = arg5.length > 0 ? { $and: arg5 } : {};
                 console.log(JSON.stringify())
