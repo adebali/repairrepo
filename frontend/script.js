@@ -296,7 +296,7 @@ $(document).ready(function(){
             /**
              * Make chromosome dropdown given chromosomses (chrDict) (key is organism, value is array of chr names)
              */
-            function buildChrDropdown2(chrDict){
+            function buildChrDropdown2(){
                 console.log('orgdict in build'+ orgDict.organism)
                 chrList = chrDict[orgDict.organism]
 
@@ -335,28 +335,28 @@ $(document).ready(function(){
                 switch(org){ 
                     case 'Human':
                         orgDict.organism = 'human'
-                        queryChrAuto([{}])
+                        buildChrDropdown2()
                         $('#organismName').html('Organism: <b>' + org + "</b>") 
                         //buildChrDropdown(22, true)
                         $('#'+org).css({'border-style':'solid', 'border-color':'#32CD32'})
                         break;
                     case 'Mouse':
                         orgDict.organism = 'mouse'
-                        queryChrAuto([{}])                        
+                        buildChrDropdown2()                       
                         //buildChrDropdown(19, true)
                         $('#organismName').html('Organism: <b>' + org + "</b>")                 
                         $('#'+org).css({'border-style':'solid', 'border-color':'#32CD32'})     
                         break;
                     case 'Arabidopsis':
                         orgDict.organism = 'arabidopsis'
-                        queryChrAuto([{}])                        
+                        buildChrDropdown2()                        
                         //buildChrDropdown(5, false)
                         $('#organismName').html('Organism: <b>' + org + "</b>")                 
                         $('#'+org).css({'border-style':'solid', 'border-color':'#32CD32'})     
                         break;
                     case 'Ecoli':
                         orgDict.organism = 'ecoli'
-                        queryChrAuto([{}])                        
+                        buildChrDropdown2()                        
                         //buildChrDropdown(1, false)
                         $('#organismName').html('Organism: <b>' + org + "</b>")                 
                         $('#'+org).css({'border-style':'solid', 'border-color':'#32CD32'})                
@@ -602,7 +602,7 @@ $(document).ready(function(){
                     console.log('chr list for dropdown ready.')
                     }
                     
-                    return buildChrDropdown2(chrDict);
+                    return buildChrDropdown2();
                 });
             }
         
