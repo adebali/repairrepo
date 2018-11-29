@@ -586,11 +586,12 @@ $(document).ready(function(){
             }
             function queryChrAutoDrop(arg5){
    
-                arg5.push(orgDict)
+                //arg5.push(orgDict)
                 arg5 = arg5.length > 0 ? { $and: arg5 } : {};
-                console.log(JSON.stringify())
+                
                 db.collection('gene').find(arg5, {"chr":1, "_id" : 0}).execute().then(docs => {    
                     //sort through docs to add only unique chr
+                    console.log('docs'+JSON.stringify(docs))
                     for(var i in docs){
                         if(!chromosomes.some(e => e.chr == docs[i]["chr"])){
                             chromosomes.push(docs[i])
