@@ -570,7 +570,10 @@ $(document).ready(function(){
                 if(!(length == -1)){
                     len = length
                 }
-                
+                if(length <=10){
+                    $('#pagination').html("<br> Page 1/1, genes 1-"+len)
+
+                }
 
                     var numberOfPages = Math.ceil(len/10)
                     if(first || pageNum == 1){
