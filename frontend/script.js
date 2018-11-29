@@ -71,6 +71,7 @@ $(document).ready(function(){
                 
                 //arg1 = arg1.length > 0 ? { $and: arg1 } : {};
                 var arg1 = arg1[0];
+                console.log(JSON.stringify(arg1))
                 //show number on page out of total returned from query 
                 if(first){
                     db.collection('gene').find(arg1).execute().then(temp =>{
