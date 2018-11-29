@@ -506,12 +506,12 @@ $(document).ready(function(){
                 var array = []; //ordered
                 var row = {};
                 for(var i = 0; i < objArray.length; i++){
-                    Object.keys(objArray[i]).sort().forEach(function(key) {
+                    Object.keys(objArray[i]).sort().reverse().forEach(function(key) {
                         row[key] = objArray[i][key];
                         array.push(row)
                     });
                 }
-                console.log("array after sort"+JSON.stringify(array))
+                console.log("array after sort"+JSON.stringify(array[0]))
                 var str = '<table class="table-striped" role = "grid" id = "chrTable"> <thead> <tr>'; //originally thead had class 'thead-dark'
     
                 //create table headers
