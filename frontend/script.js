@@ -589,7 +589,7 @@ $(document).ready(function(){
                 //arg5.push(orgDict)
                 arg5 = arg5.length > 0 ? { $and: arg5 } : {};
                 
-                db.collection('gene').find(arg5, {"chr":1, "_id" : 0}).execute().then(docs => {    
+                db.collection('gene').find(arg5, {"chr":1, "_id" : 0, "organism" : 1}).execute().then(docs => {    
                     //sort through docs to add only unique chr
                     console.log('docs'+JSON.stringify(docs))
                     for(var i in docs){
