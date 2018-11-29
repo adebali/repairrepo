@@ -570,7 +570,7 @@ $(document).ready(function(){
                 
             }
             var chromosomes = [];
-            var chrDict = {};
+            
             function queryChrAuto(arg5){
                 const clientPromise = stitch.StitchClientFactory.create('dataretrieval-vwdtg');
                 clientPromise.then(stitchClient =>{
@@ -580,9 +580,10 @@ $(document).ready(function(){
                 });
             }
             function queryChrAutoDrop(arg5){
-   
+                var chrDict = {};
                 arg5.push(orgDict)
                 arg5 = arg5.length > 0 ? { $and: arg5 } : {};
+                console.log(JSON.stringify())
                 db.collection('gene').find(arg5, {"chr":1, "_id" : 0}).execute().then(docs => {    
                     //sort through docs to add only unique chr
                     for(var i in docs){
