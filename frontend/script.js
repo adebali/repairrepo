@@ -612,11 +612,12 @@ $(document).ready(function(){
                 });
             }
             function queryChrAutoDrop(arg5){
-   
-                arg5.push(orgDict)
-                arg5 = arg5.length > 0 ? { $and: arg5 } : {};
+                console.log('orgdict in querychrautodrop' + JSON.stringify(orgDict))
+
+                // arg5.push(orgDict)
+                // arg5 = arg5.length > 0 ? { $and: arg5 } : {};
                 console.log('query for new dropdown' + JSON.stringify(arg5))
-                db.collection('gene').find(arg5, {"chr":1, "_id" : 0, "organism" : 1}).execute().then(docs => {    
+                db.collection('gene').find(orgDict, {"chr":1, "_id" : 0, "organism" : 1}).execute().then(docs => {    
                     //sort through docs to add only unique chr
                     
                     for(var i in docs){
@@ -624,7 +625,6 @@ $(document).ready(function(){
                             chromosomes.push(docs[i])
                         }
                     }
-
                     //add chr to respective organism
                     chrDict[orgDict.organism] = chromosomes;
                     
@@ -633,7 +633,7 @@ $(document).ready(function(){
                     }else{
                     console.log('chr list for dropdown ready.')
                     }
-                    
+                    chromoso
                     return buildChrDropdown2();
                 });
             }
