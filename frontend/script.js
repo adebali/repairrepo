@@ -613,11 +613,9 @@ $(document).ready(function(){
                 });
             }
             function queryChrAutoDrop(arg5){
-                console.log('query in querychrautodrop' + JSON.stringify(orgDict))
 
                 db.collection('gene').find(orgDict, {"chr":1, "_id" : 0, "organism" : 1}).execute().then(docs => {    
 
-                    console.log('docs returned' + JSON.stringify(docs))
                     if(docs.length == 0){
                         //no results for this organism, return
                         return;
