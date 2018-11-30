@@ -615,12 +615,13 @@ $(document).ready(function(){
             function queryChrAutoDrop(arg5){
                 console.log('orgdict in querychrautodrop' + JSON.stringify(orgDict))
 
-                // arg5.push(orgDict)
-                // arg5 = arg5.length > 0 ? { $and: arg5 } : {};
-                console.log('query for new dropdown' + JSON.stringify(arg5))
                 db.collection('gene').find(orgDict, {"chr":1, "_id" : 0, "organism" : 1}).execute().then(docs => {    
-                    //sort through docs to add only unique chr
                     
+                    if(docs.length == 0){
+                        //no results for this organism, return
+                        return;
+                    }
+                    //sort through docs to add only unique chr
                     for(var i in docs){
                         if(!chromosomes.some(e => e.chr == docs[i]["chr"])){
                             chromosomes.push(docs[i])
