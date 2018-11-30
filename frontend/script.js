@@ -324,6 +324,7 @@ $(document).ready(function(){
                 }
                 select+='</select>'
                 $('#chrDropDiv').html(select)
+                chromosomes = [];
                 //console.log('chrlist after drop built'+JSON.stringify(chrList))
             }
 
@@ -633,7 +634,7 @@ $(document).ready(function(){
                     }else{
                     console.log('chr list for dropdown ready.')
                     }
-                    chromoso
+                    
                     return buildChrDropdown2();
                 });
             }
