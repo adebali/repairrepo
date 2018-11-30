@@ -624,6 +624,7 @@ $(document).ready(function(){
                     for(var i in docs){
                         if(!chromosomes.some(e => e.chr.localeCompare(docs[i]["chr"]) == 0)){
                             chromosomes.push(docs[i])
+                            console.log(docs[i]["chr"].localeCompare("chrX") == 0)
                         }
                     }
                     //add chr to respective organism
