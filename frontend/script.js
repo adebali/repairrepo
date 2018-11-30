@@ -324,7 +324,7 @@ $(document).ready(function(){
                 select+='</select>'
                 $('#chrDropDiv').html(select)
                 chromosomes = [];
-                
+
                 //console.log('chrlist after drop built'+JSON.stringify(chrList))
             }
 
@@ -616,14 +616,13 @@ $(document).ready(function(){
                 console.log('orgdict in querychrautodrop' + JSON.stringify(orgDict))
 
                 db.collection('gene').find(orgDict, {"chr":1, "_id" : 0, "organism" : 1}).execute().then(docs => {    
-                    
                     if(docs.length == 0){
                         //no results for this organism, return
                         return;
                     }
                     //sort through docs to add only unique chr
                     for(var i in docs){
-                        if(!chromosomes.some(e => e.chr == docs[i]["chr"])){
+                        if(chromosomes.some(e => e.chr.localeCompare(docs[i]["chr"]) != 0)){
                             chromosomes.push(docs[i])
                         }
                     }
