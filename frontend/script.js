@@ -613,9 +613,11 @@ $(document).ready(function(){
                 });
             }
             function queryChrAutoDrop(arg5){
-                console.log('orgdict in querychrautodrop' + JSON.stringify(orgDict))
+                console.log('query in querychrautodrop' + JSON.stringify(orgDict))
 
                 db.collection('gene').find(orgDict, {"chr":1, "_id" : 0, "organism" : 1}).execute().then(docs => {    
+
+                    console.log('docs returned' + JSON.stringify(docs))
                     if(docs.length == 0){
                         //no results for this organism, return
                         return;
@@ -624,7 +626,7 @@ $(document).ready(function(){
                     for(var i in docs){
                         if(!chromosomes.some(e => e.chr.localeCompare(docs[i]["chr"]) == 0)){
                             chromosomes.push(docs[i])
-                            console.log(docs[i]["chr"].localeCompare("chrX") == 0)
+                            
                         }
                     }
                     //add chr to respective organism
