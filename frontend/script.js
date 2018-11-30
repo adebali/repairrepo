@@ -517,6 +517,7 @@ $(document).ready(function(){
             function createDynamicTable(objArray) {
                 //var array = objArray;
                 var array = []; //ordered
+                console.log('here in build table')
                 
                 for(var i = 0; i < objArray.length; i++){
                     var row = {};
@@ -526,7 +527,7 @@ $(document).ready(function(){
                     });
                     array.push(row)
                 }
-                console.log("array after sort"+JSON.stringify(array))
+                //console.log("array after sort"+JSON.stringify(array))
                 var str = '<table class="table-striped" role = "grid" id = "chrTable"> <thead> <tr>'; //originally thead had class 'thead-dark'
     
                 //create table headers
