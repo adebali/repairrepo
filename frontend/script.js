@@ -618,7 +618,6 @@ $(document).ready(function(){
 
                     if(docs.length == 0){
                         //no results for this organism, return
-                        $('#results').html('<div class="alert alert-info" role="alert"> There are no chromosomes for this organism, please try again later.</div>')
                         return;
                     }
                     //sort through docs to add only unique chr
