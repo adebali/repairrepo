@@ -622,7 +622,7 @@ $(document).ready(function(){
                     }
                     //sort through docs to add only unique chr
                     for(var i in docs){
-                        if(chromosomes.some(e => e.chr.localeCompare(docs[i]["chr"]) != 0)){
+                        if(!chromosomes.some(e => e.chr.localeCompare(docs[i]["chr"]) == 0)){
                             chromosomes.push(docs[i])
                         }
                     }
