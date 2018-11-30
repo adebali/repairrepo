@@ -517,7 +517,6 @@ $(document).ready(function(){
             function createDynamicTable(objArray) {
                 //var array = objArray;
                 var array = []; //ordered
-                console.log('here in build table')
                 
                 for(var i = 0; i < objArray.length; i++){
                     var row = {};
@@ -616,7 +615,7 @@ $(document).ready(function(){
    
                 arg5.push(orgDict)
                 arg5 = arg5.length > 0 ? { $and: arg5 } : {};
-                
+                console.log('query for new dropdown' + JSON.stringify(arg5))
                 db.collection('gene').find(arg5, {"chr":1, "_id" : 0, "organism" : 1}).execute().then(docs => {    
                     //sort through docs to add only unique chr
                     
