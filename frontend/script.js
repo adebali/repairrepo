@@ -311,7 +311,6 @@ $(document).ready(function(){
              * Make chromosome dropdown given chromosomses (chrDict) (key is organism, value is array of chr names)
              */
             function buildChrDropdown2(){
-                console.log('orgdict in build'+ orgDict.organism)
                 chrList = chrDict[orgDict.organism]
 
                 var select = "<select class='inline' id = 'chrDropdown' width = '60' style='width: 60px' >";
@@ -325,6 +324,7 @@ $(document).ready(function(){
                 select+='</select>'
                 $('#chrDropDiv').html(select)
                 chromosomes = [];
+                
                 //console.log('chrlist after drop built'+JSON.stringify(chrList))
             }
 
@@ -630,11 +630,6 @@ $(document).ready(function(){
                     //add chr to respective organism
                     chrDict[orgDict.organism] = chromosomes;
                     
-                    if(chrDict[orgDict.organism].length == 0){
-                        console.log("list returned size 0 for chr, query didn't return anything")
-                    }else{
-                    console.log('chr list for dropdown ready.')
-                    }
                     
                     return buildChrDropdown2();
                 });
