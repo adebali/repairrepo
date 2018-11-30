@@ -79,9 +79,6 @@ $(document).ready(function(){
                         createPaginationText(temp.length, true);
                         }
                     })
-                }
-                
-                if(last_id1 === null){
                     db.collection('gene').find(arg1).sort({"start": 1}).limit(10).execute().then(docs => {
                         var html;
                         if(docs.length == 0){
@@ -95,6 +92,22 @@ $(document).ready(function(){
                             last_id1 = docs[docs.length-1]['_id']
                         }
                     });
+                }
+                
+                if(last_id1 === null){
+                    // db.collection('gene').find(arg1).sort({"start": 1}).limit(10).execute().then(docs => {
+                    //     var html;
+                    //     if(docs.length == 0){
+                    //         noResults = true;
+                    //         $('#results').html("<div class = 'alert alert-warning' role = 'alert'> <strong> No results left</strong></div>")
+                    //     }else{
+                    //         noResults = false;
+
+                    //         html =  createDynamicTable(docs) +"<button id ='prev' type='button' class='button'> &lt;- Previous</button> <button id = 'next' type='button' class='button'>Next -> </button>"
+                    //         document.getElementById("results").innerHTML = html; 
+                    //         last_id1 = docs[docs.length-1]['_id']
+                    //     }
+                    // });
                 }else if(!prev){
                     db.collection('gene').find({"$and":[{'_id':{"$gt":last_id1}},arg1]}).sort({"start": 1}).limit(10).execute().then(docs => {
                         var html;
