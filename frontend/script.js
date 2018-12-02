@@ -78,50 +78,63 @@ $(document).ready(function(){
                         createPaginationText(temp.length, true);
                         }
                     })
-                }
-                
-                if(last_id1 === null){
                     db.collection('gene').find(arg1).sort({"start": 1}).limit(10).execute().then(docs => {
                         var html;
-                        if(docs.length == 0){
-                            noResults = true;
-                            $('#results').html("<div class = 'alert alert-warning' role = 'alert'> <strong> No results left</strong></div>")
-                        }else{
+                        // if(docs.length == 0){
+                        //     noResults = true;
+                        //     $('#results').html("<div class = 'alert alert-warning' role = 'alert'> <strong> No results left</strong></div>")
+                        // }else{
                             noResults = false;
 
                             html =  createDynamicTable(docs) +"<button id ='prev' type='button' class='button'> &lt;- Previous</button> <button id = 'next' type='button' class='button'>Next -> </button>"
                             document.getElementById("results").innerHTML = html; 
                             last_id1 = docs[docs.length-1]['_id']
-                        }
+                        //}
                     });
+                }
+                
+                if(last_id1 === null){
+                    // db.collection('gene').find(arg1).sort({"start": 1}).limit(10).execute().then(docs => {
+                    //     var html;
+                    //     if(docs.length == 0){
+                    //         noResults = true;
+                    //         $('#results').html("<div class = 'alert alert-warning' role = 'alert'> <strong> No results left</strong></div>")
+                    //     }else{
+                    //         noResults = false;
+
+                    //         html =  createDynamicTable(docs) +"<button id ='prev' type='button' class='button'> &lt;- Previous</button> <button id = 'next' type='button' class='button'>Next -> </button>"
+                    //         document.getElementById("results").innerHTML = html; 
+                    //         last_id1 = docs[docs.length-1]['_id']
+                    //     }
+                    // });
                 }else if(!prev){
                     db.collection('gene').find({"$and":[{'_id':{"$gt":last_id1}},arg1]}).sort({"start": 1}).limit(10).execute().then(docs => {
                         var html;
                         
-                        if(docs.length == 0){
-                            noResults = true;
-                            $('#results').html("<div class = 'alert alert-warning' role = 'alert'> <strong> No results left</strong></div>")
+                        // if(docs.length == 0){
+                        //     noResults = true;
+                        //     $('#results').html("<div class = 'alert alert-warning' role = 'alert'> <strong> No results left</strong></div>")
                             
-                        }else{
+                        // }else{
                             noResults = false;
                             html =  createDynamicTable(docs) +"<button id ='prev' type='button' class='button'> &lt;- Previous</button> <button id = 'next' type='button' class='button'>Next -> </button>"
                             document.getElementById("results").innerHTML = html; 
                             last_id1 = docs[docs.length-1]['_id']
-                        }
+                        //}
                         
                     });
                 }else if(prev){
                     db.collection('gene').find({"$and":[{'_id':{"$lt":last_id1}},arg1]}).sort({"start": 1}).limit(10).execute().then(docs => {
                         var html;
-                        if(docs.length == 0){
-                            noResults = true;
-                            $('#results').html("<div class = 'alert alert-warning' role = 'alert'> <strong> No results left</strong></div>")
-                        }else{
+                        // if(docs.length == 0){
+                        //     noResults = true;
+                        //     $('#results').html("<div class = 'alert alert-warning' role = 'alert'> <strong> No results left</strong></div>")
+                        // }else{
                             noResults = false;
                         html =  createDynamicTable(docs) +"<button id ='prev' type='button' class='button'> &lt;- Previous</button> <button id = 'next' type='button' class='button'>Next -> </button>"
                         document.getElementById("results").innerHTML = html; 
                         last_id1 = docs[docs.length-1]['_id']
-                        }
+                        //}
                     });
                 }
             }
@@ -297,7 +310,6 @@ $(document).ready(function(){
              * Make chromosome dropdown given chromosomses (chrDict) (key is organism, value is array of chr names)
              */
             function buildChrDropdown2(){
-                console.log('orgdict in build'+ orgDict.organism)
                 chrList = chrDict[orgDict.organism]
 
                 var select = "<select class='inline' id = 'chrDropdown' width = '60' style='width: 60px' >";
@@ -310,6 +322,8 @@ $(document).ready(function(){
                 }
                 select+='</select>'
                 $('#chrDropDiv').html(select)
+                chromosomes = [];
+
                 //console.log('chrlist after drop built'+JSON.stringify(chrList))
             }
 
@@ -513,7 +527,7 @@ $(document).ready(function(){
                     });
                     array.push(row)
                 }
-                console.log("array after sort"+JSON.stringify(array))
+                //console.log("array after sort"+JSON.stringify(array))
                 var str = '<table class="table-striped" role = "grid" id = "chrTable"> <thead> <tr>'; //originally thead had class 'thead-dark'
     
                 //create table headers
@@ -599,27 +613,23 @@ $(document).ready(function(){
                 });
             }
             function queryChrAutoDrop(arg5){
-   
-                arg5.push(orgDict)
-                arg5 = arg5.length > 0 ? { $and: arg5 } : {};
-                
-                db.collection('gene').find(arg5, {"chr":1, "_id" : 0, "organism" : 1}).execute().then(docs => {    
+
+                db.collection('gene').find(orgDict, {"chr":1, "_id" : 0, "organism" : 1}).execute().then(docs => {    
+
+                    if(docs.length == 0){
+                        //no results for this organism, return
+                        return;
+                    }
                     //sort through docs to add only unique chr
-                    
                     for(var i in docs){
-                        if(!chromosomes.some(e => e.chr == docs[i]["chr"])){
+                        if(!chromosomes.some(e => e.chr.localeCompare(docs[i]["chr"]) == 0)){
                             chromosomes.push(docs[i])
+                            
                         }
                     }
-
                     //add chr to respective organism
                     chrDict[orgDict.organism] = chromosomes;
                     
-                    if(chrDict[orgDict.organism].length == 0){
-                        console.log("list returned size 0 for chr, query didn't return anything")
-                    }else{
-                    console.log('chr list for dropdown ready.')
-                    }
                     
                     return buildChrDropdown2();
                 });
