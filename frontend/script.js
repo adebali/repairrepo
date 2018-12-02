@@ -312,7 +312,7 @@ $(document).ready(function(){
             function buildChrDropdown2(){
                 chrList = chrDict[orgDict.organism]
 
-                var select = "<select class='inline' id = 'chrDropdown' width = '60' style='width: 60px' >";
+                var select = "<select class='inline' id = 'chrDropdown'  style='width: auto' >";
                 //create placeholder for chr dropdown
                 select += "<option val = 'chr'>-</option>";
                 for(i=0; i <chrList.length; i++){

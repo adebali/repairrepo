@@ -27,13 +27,7 @@ body{
 .highlight{
   background-color: #f1b756;
 }
-select {
-  min-width:265px;
-  min-height: 45px;
-  border-width: 3px;
-  border-color: rgba(50, 50, 50, 0.14);
-  margin: 10px 10px 10px 0px;
-}
+
 
 /* .thead-dark {
     color: #fff;
