@@ -445,6 +445,7 @@ $(document).ready(function(){
             })
         
             function submitChrMethod(){
+                $('#pagination').empty();
                 //queryArray = [];
                 inputEndChr = $('#endChr').val();
                 $('#plots div').empty();
