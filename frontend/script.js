@@ -1,7 +1,6 @@
 //Script for RepairRepo database project's search page- written by Yashar Asgari
 $(document).ready(function(){
     
-      
             // load in header/footer & call function to identify current page
             $('#header').load('/frontend/header.html', getCurrentPage());
             $('#footer').load('/frontend/footer.html');
@@ -418,6 +417,7 @@ $(document).ready(function(){
             //event handlers for query (submit button and 'enter' press)
             $('#submitChr').click(submitChrMethod);
             $(document).keypress(function(e){
+                pageNum = 1;
                 if(e.which === 13){
                     var tabId = $('div[id="tabsList"] ul .ui-tabs-active').attr("id")
                     if(tabId === 'geneNameTab'){
