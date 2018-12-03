@@ -425,6 +425,7 @@ $(document).ready(function(){
                     $('#gene').removeClass('ui-state-error ui-corner-all');
                 }
                 last_id2 = null;
+                //testing
             })
         
         
