@@ -641,7 +641,7 @@ $(document).ready(function(){
 
             //CODE FOR IGV.JS GENOME BROSWER 
 
-            var igv =  document.getElementById("igvContainer");
+            var igvDiv =  document.getElementById("igvContainer");
             var options = {
                 genome: "hg19",
                 locus: "chr8:128,747,267-128,754,546",
