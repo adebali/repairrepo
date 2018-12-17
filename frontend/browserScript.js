@@ -4,6 +4,7 @@ $(document).ready(function(){
     $('#header').load('header.html', getCurrentPage());
     $('#footer').load('footer.html');
 
+    getCurrentOrganism()
 
     //CODE FOR IGV.JS GENOME BROSWER 
 
