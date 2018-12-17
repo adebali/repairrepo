@@ -1,7 +1,7 @@
 $(document).ready(function(){
 
-    $('#header').load('../header.html', getCurrentPage());
-    $('#footer').load('../footer.html');
+    $('#header').load('header.html', getCurrentPage());
+    $('#footer').load('footer.html');
 
     //CODE FOR IGV.JS GENOME BROSWER 
 
