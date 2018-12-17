@@ -4,7 +4,7 @@ $(document).ready(function(){
     $('#header').load('header.html', getCurrentPage());
     $('#footer').load('footer.html');
 
-    console.log("orgn" + getCurrentOrganism())
+    console.log("org" + getCurrentOrganism())
 
     //CODE FOR IGV.JS GENOME BROSWER 
 
@@ -45,7 +45,7 @@ $(document).ready(function(){
 
     function getCurrentOrganism(){
         var url = window.location.href
-        var organism = url.split("/").pop().split("browser")
+        var organism = url.split("/").pop().split("browser").split(",")[0]
         return organism;
     }
 
