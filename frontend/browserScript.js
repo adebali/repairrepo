@@ -1,7 +1,9 @@
 $(document).ready(function(){
 
+
     $('#header').load('header.html', getCurrentPage());
     $('#footer').load('footer.html');
+
 
     //CODE FOR IGV.JS GENOME BROSWER 
 
@@ -24,6 +26,7 @@ $(document).ready(function(){
     })
 
 
+    //helper functions
 
     function getCurrentPage(){
         var count = 0;
@@ -37,6 +40,11 @@ $(document).ready(function(){
             }
         });
         console.log('# of hrefs' + count)
+    }
+
+    function getCurrentOrganism(){
+        var url = window.location.href
+        console.log("url" + url)
     }
 
 });
