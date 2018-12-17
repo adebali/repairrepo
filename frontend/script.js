@@ -50,8 +50,10 @@ $(document).ready(function(){
             
             
             
-            //page loads this by default, can change later
+            //page loads mouse genes by default, show organism highlighted
             orgDict.organism = 'mouse'
+            $('#mouse').css({'border-style':'solid', 'border-color':'#32CD32'})     
+            
         
         
             //sets up server connection and chromosome placement query method
