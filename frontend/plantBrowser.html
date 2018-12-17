@@ -1,0 +1,113 @@
+<!doctype html>
+<html class="no-js" lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DNA Damage and Repair Database</title>
+    <link rel="stylesheet" href="/css/foundation.css">
+    <link rel="stylesheet" href="/css/app.css">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!-- Font Style -->
+    <link href="https://fonts.googleapis.com/css?family=Karla" rel="stylesheet">
+
+        <!-- import JQuery, IGV.js, Bootstrap, and Google Fonts -->
+        <script src="jquery-3.2.1.js"></script>
+        <link rel="stylesheet" href="../ui/jquery-ui.min.css">
+        <link rel="stylesheet" href="style.css">
+        <script src="/ui/external/jquery/jquery.js"></script>
+        <link href="https://fonts.googleapis.com/css?family=Cabin" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Trocchi" rel="stylesheet">        
+        <script src="https://cdn.jsdelivr.net/npm/igv@2.1.0/dist/igv.min.js"></script>        
+        <script src="browserScript.js"></script>        
+
+  </head>
+  <body>
+    <div class="off-canvas-wrapper">
+      <div class="off-canvas-wrapper-inner" data-off-canvas-wrapper>
+
+        <!-- OFF-CANVAS MENU -->
+
+        <div class="off-canvas position-left" id="mobile-menu" data-off-canvas>
+          <button class="accordion" id="home">HOME</button>
+            <script type="text/javascript">
+                document.getElementById("home").onclick = function () {
+                    location.href = "index.html";
+                };
+            </script>
+
+          <button class="accordion" id="browse">BROWSE</button>
+          <div class="panel">
+            <ul style="text-align:left">
+              <p>
+                <li>HUMAN</li>
+                <li>BROWSE</li>
+                <li>ARABIDOPSIS</li>
+                <li>PLANT</li>
+              </p>
+            </ul>
+          </div>
+
+          <button class="accordion" id="search">SEARCH</button>
+          <script type="text/javascript">
+            document.getElementById("search").onclick = function () {
+                location.href = "search.html";
+            };
+          </script>
+
+          <button class="accordion" id="download">DOWNLOAD</button>
+            <script type="text/javascript">
+                document.getElementById("download").onclick = function () {
+                    location.href = "download.html";
+                };
+            </script>
+
+          <button class="accordion" id="help">HELP</button>
+          <script type="text/javascript">
+            document.getElementById("help").onclick = function () {
+                location.href = "help.html";
+            };
+          </script>
+        </div>
+
+        <!-- KEEP -->
+        <div class="off-canvas-content" data-off-canvas-content>
+
+          <!-- MOBILE NAVIGATION -->
+
+          <div class="title-bar show-for-small-only">
+            <div class="title-bar-left">
+              <button class="menu-icon" type="button" data-open="mobile-menu"></button>
+              <!-- <span class="title-bar-title">MENU</span> -->
+              
+            </div>
+            <div class="title-bar-center show-for-small-only"><img class="logo-image logo-center" src="../img/xr_logo_white.png" width="75" height="92"></img></div>
+          </div>
+
+          <!-- DESKTOP NAVIGATION -->
+
+         <div id = 'header'></div>
+
+          <!-- MAIN SECTION -->
+
+          <h1> Plant Genome Browser</h1>
+            <!-- For IGV.js -->
+            <div id = "igvContainer">
+
+            </div>
+          </section>
+
+          <!-- FOOTER -->
+
+          <div id = 'footer'></div>
+        </div>
+      </div>
+    </div>
+
+    <script src="../js/vendor/what-input.js"></script>
+    <script src="../js/vendor/foundation.js"></script>
+    <script src="../js/app.js"></script>
+    <script src="../js/accordion.js"></script>
+  </body>
+</html>
