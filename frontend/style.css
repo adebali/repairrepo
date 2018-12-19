@@ -28,6 +28,9 @@ body{
   background-color: #f1b756;
 }
 
+.jumbotron h1{
+  font-family: "Cabin";
+}
 
 /* .thead-dark {
     color: #fff;
