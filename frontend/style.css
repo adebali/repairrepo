@@ -31,6 +31,9 @@ body{
 .jumbotron h1{
   font-family: "Cabin";
 }
+.jumbotron h2{
+  font-family: "Trocchi"
+}
 
 /* .thead-dark {
     color: #fff;
