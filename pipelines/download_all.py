@@ -19,4 +19,4 @@ for sample in j:
         IDs = sample["SRA"]["runs"]
         code = "python3 fastq-dump-all.py -i " + " ".join(IDs) + " -o " + outputFile
         print(code)
-        # os.system(code)
+        os.system(code)
