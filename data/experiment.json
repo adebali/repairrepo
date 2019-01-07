@@ -2,7 +2,7 @@
     "Human_UV_Damage-seq": {
         "pmid": 28607063,
         "doi": "10.1073/pnas.1706522114",
-        "GEO_ID":"",
+        "GEO_ID":"GSE98025",
         "published": true,
         "pipeline": {
             "reference": "GRCh38",
@@ -17,7 +17,7 @@
     "Yeast_UV_XR-seq": {
         "pmid": 29581276,
         "doi": "10.1073/pnas.1801687115",
-        "GEO_ID":"",
+        "GEO_ID":" GSE110621",
         "published": true,
         "pipeline": {
             "reference": "?"
@@ -27,7 +27,7 @@
     "Arabidopsis_CPD_XR-seq": {
         "pmid": 29666379,
         "doi": "10.1038/s41467-018-03922-5",
-        "GEO_ID":"",
+        "GEO_ID":"GSE108932",
         "published": true,
         "pipeline": {
             "reference": "TAIR10"
@@ -46,7 +46,7 @@
     "ecoli_XR-seq": {
         "pmid": 28167766,
         "doi": "10.1073/pnas.1700230114",
-        "GEO_ID":"",
+        "GEO_ID":"GSE92734",
         "published": true,
         "pipeline": {
             "reference": "?"
@@ -55,7 +55,7 @@
     "tXR-seq": {
         "pmid": 28607059,
         "doi": "10.1073/pnas.1706021114",
-        "GEO_ID":"",
+        "GEO_ID":"GSE97675",
         "published": true,
         "pipeline": {
             "reference": "GRCh38"
@@ -70,6 +70,35 @@
         "pipeline": {
             "reference": "GRCh38"
         } 
-    }
-
-}
+    },
+     "Saccharomyces_cerevisiae_XR-seq": {
+        "pmid": 29581276,
+        "doi": "10.1073/pnas.1801687115",
+        "GEO_ID":"GSE110621",
+        "published": true,
+        "pipeline": {
+            "reference": "SacCer3"
+            
+                }
+         },
+    "Mus_musculus-seq": {
+        "pmid": 29735688,
+        "doi": "10.1073/pnas.1804493115",
+        "GEO_ID":"GSE109938",
+        "published": true,
+        "pipeline": {
+            "reference": "mm10"
+            
+                }
+        },
+    "Escherichia_coli_XR-seq": {
+        "pmid": 28167766,
+        "doi": "10.1073/pnas.1700230114",
+        "GEO_ID":"GSE92734",
+        "published": true,
+        "pipeline": {
+            "reference": "Nc_00913.2"
+                
+                    }
+                }
+            }
