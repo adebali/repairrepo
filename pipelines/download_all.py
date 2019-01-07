@@ -17,6 +17,6 @@ for sample in j:
     outputFile = os.path.join(dataLocation, sample["title"] + ".fastq")
     if not os.path.isfile(outputFile):
         IDs = sample["SRA"]["runs"]
-        code = "python fastq-dump-all.py -i " + " ".join(IDs) + " -o " + outputFile
+        code = "python fastq-dump-multi.py -i " + " ".join(IDs) + " -o " + outputFile
         print(code)
         os.system(code)
