@@ -1,6 +1,7 @@
 #!/usr/bin/env python
 import argparse
 import json
+import os
 
 parser = argparse.ArgumentParser(description='download all files through fastq')
 parser.add_argument('-i', type=str, required= True, help='SRA ID(s)')
