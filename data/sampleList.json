@@ -1,6 +1,7 @@
 [
     {
         "organism": "Homo sapiens",
+        "reference_genome": "GRCh38",
         "experiment": "Human_UV_Damage-seq",
         "cell_line": "NHF1",
         "tissue": false,
@@ -20,6 +21,7 @@
     },
     {
         "organism": "Homo sapiens",
+        "reference_genome": "GRCh38",
         "experiment": "Human_UV_Damage-seq",
         "cell_line": "NHF1",
         "tissue": false,
@@ -39,6 +41,7 @@
     },
     {
         "organism": "Homo sapiens",
+        "reference_genome": "GRCh38",
         "experiment": "Human_UV_Damage-seq",
         "cell_line": "NHF1",
         "tissue": false,
@@ -58,6 +61,7 @@
     },
     {
         "organism": "Homo sapiens",
+        "reference_genome": "GRCh38",
         "experiment": "Human_UV_Damage-seq",
         "cell_line": "NHF1",
         "tissue": false,
@@ -77,6 +81,7 @@
     },
     {
         "organism": "Homo sapiens",
+        "reference_genome": "GRCh38",
         "experiment": "Human_UV_Damage-seq",
         "cell_line": "NHF1",
         "tissue": false,
@@ -96,6 +101,7 @@
     },
     {
         "organism": "Homo sapiens",
+        "reference_genome": "GRCh38",
         "experiment": "Human_UV_Damage-seq",
         "cell_line": "NHF1",
         "tissue": false,
@@ -115,6 +121,7 @@
     },
     {
         "organism": "Homo sapiens",
+        "reference_genome": "GRCh38",
         "experiment": "Human_UV_Damage-seq",
         "cell_line": "NHF1",
         "tissue": false,
@@ -134,6 +141,7 @@
     },
     {
         "organism": "Homo sapiens",
+        "reference_genome": "GRCh38",
         "experiment": "Human_UV_Damage-seq",
         "cell_line": "NHF1",
         "tissue": false,
@@ -153,6 +161,7 @@
     },
     {
         "organism": "Homo sapiens",
+        "reference_genome": "GRCh38",
         "experiment": "Human_UV_Damage-seq",
         "cell_line": "NHF1",
         "tissue": false,
@@ -172,6 +181,7 @@
     },
     {
         "organism": "Homo sapiens",
+        "reference_genome": "GRCh38",
         "experiment": "Human_UV_Damage-seq",
         "cell_line": "NHF1",
         "tissue": false,
@@ -191,6 +201,7 @@
     },
     {
         "organism": "Homo sapiens",
+        "reference_genome": "GRCh38",
         "experiment": "Human_UV_Damage-seq",
         "cell_line": "NHF1",
         "tissue": false,
@@ -210,6 +221,7 @@
     },
     {
         "organism": "Homo sapiens",
+        "reference_genome": "GRCh38",
         "experiment": "Human_UV_Damage-seq",
         "cell_line": "NHF1",
         "tissue": false,
@@ -229,6 +241,7 @@
     },
     {
         "organism": "Homo sapiens",
+        "reference_genome": "GRCh38",
         "experiment": "Human_UV_Damage-seq",
         "cell_line": "NHF1",
         "tissue": false,
@@ -248,6 +261,7 @@
     },
     {
         "organism": "Homo sapiens",
+        "reference_genome": "GRCh38",
         "experiment": "Human_UV_Damage-seq",
         "cell_line": "NHF1",
         "tissue": false,
@@ -267,6 +281,7 @@
     },
     {
         "organism": "Homo sapiens",
+        "reference_genome": "GRCh38",
         "experiment": "Human_UV_Damage-seq",
         "cell_line": "NHF1",
         "tissue": false,
@@ -286,6 +301,7 @@
     },
     {
         "organism": "Homo sapiens",
+        "reference_genome": "GRCh38",
         "experiment": "Human_UV_Damage-seq",
         "cell_line": "NHF1",
         "tissue": false,
@@ -305,6 +321,7 @@
     },
     {
         "organism": "Homo sapiens",
+        "reference_genome": "GRCh38",
         "experiment": "Human_UV_Damage-seq",
         "cell_line": "NHF1",
         "tissue": false,
@@ -324,6 +341,7 @@
     },
     {
         "organism": "Homo sapiens",
+        "reference_genome": "GRCh38",
         "experiment": "Human_UV_Damage-seq",
         "cell_line": "NHF1",
         "tissue": false,
@@ -343,6 +361,7 @@
     },
     {
         "organism": "Homo sapiens",
+        "reference_genome": "GRCh38",
         "experiment": "Human_UV_Damage-seq",
         "cell_line": "NHF1",
         "tissue": false,
@@ -362,6 +381,7 @@
     },
     {
         "organism": "Homo sapiens",
+        "reference_genome": "GRCh38",
         "experiment": "Human_UV_Damage-seq",
         "cell_line": "NHF1",
         "tissue": false,
@@ -381,6 +401,7 @@
     },
     {
         "organism": "Homo sapiens",
+        "reference_genome": "GRCh38",
         "experiment": "Human_UV_Damage-seq",
         "cell_line": "NHF1",
         "tissue": false,
@@ -400,6 +421,7 @@
     },
     {
         "organism": "Homo sapiens",
+        "reference_genome": "GRCh38",
         "experiment": "Human_UV_Damage-seq",
         "cell_line": "NHF1",
         "tissue": false,
@@ -419,6 +441,7 @@
     },
     {
         "organism": "Homo sapiens",
+        "reference_genome": "GRCh38",
         "experiment": "Human_UV_Damage-seq",
         "cell_line": "NHF1",
         "tissue": false,
@@ -438,6 +461,7 @@
     },
     {
         "organism": "Homo sapiens",
+        "reference_genome": "GRCh38",
         "experiment": "Human_UV_Damage-seq",
         "cell_line": "NHF1",
         "tissue": false,
@@ -457,6 +481,7 @@
     },
     {
         "organism": "Homo sapiens",
+        "reference_genome": "GRCh38",
         "experiment": "Human_UV_Damage-seq",
         "cell_line": "NHF1",
         "tissue": false,
@@ -476,6 +501,7 @@
     },
     {
         "organism": "Homo sapiens",
+        "reference_genome": "GRCh38",
         "experiment": "Human_UV_Damage-seq",
         "cell_line": "NHF1",
         "tissue": false,
@@ -495,6 +521,7 @@
     },
     {
         "organism": "Homo sapiens",
+        "reference_genome": "GRCh38",
         "experiment": "Human_UV_Damage-seq",
         "cell_line": "GM12878",
         "tissue": false,
@@ -514,6 +541,7 @@
     },
     {
         "organism": "Homo sapiens",
+        "reference_genome": "GRCh38",
         "experiment": "Human_UV_Damage-seq",
         "cell_line": "GM12878",
         "tissue": false,
@@ -533,6 +561,7 @@
     },
     {
         "organism": "Homo sapiens",
+        "reference_genome": "GRCh38",
         "experiment": "Human_UV_Damage-seq",
         "cell_line": "GM12878",
         "tissue": false,
@@ -552,6 +581,7 @@
     },
     {
         "organism": "Homo sapiens",
+        "reference_genome": "GRCh38",
         "experiment": "Human_UV_Damage-seq",
         "cell_line": "GM12878",
         "tissue": false,
@@ -571,6 +601,7 @@
     },
     {
         "organism": "Homo sapiens",
+        "reference_genome": "GRCh38",
         "experiment": "Human_UV_Damage-seq",
         "cell_line": "GM12878",
         "tissue": false,
@@ -590,6 +621,7 @@
     },
     {
         "organism": "Homo sapiens",
+        "reference_genome": "GRCh38",
         "experiment": "Human_UV_Damage-seq",
         "cell_line": "GM12878",
         "tissue": false,
@@ -609,6 +641,7 @@
     },
     {
         "organism": "Homo sapiens",
+        "reference_genome": "GRCh38",
         "experiment": "Human_UV_Damage-seq",
         "cell_line": "GM12878",
         "tissue": false,
@@ -628,6 +661,7 @@
     },
     {
         "organism": "Homo sapiens",
+        "reference_genome": "GRCh38",
         "experiment": "Human_UV_Damage-seq",
         "cell_line": "GM12878",
         "tissue": false,
@@ -647,6 +681,7 @@
     },
     {
         "organism": "Saccharomyces cerevisiae",
+        "reference_genome": "R64-1-1",
         "experiment": "Yeast_UV_XR-seq",
         "cell_line": false,
         "tissue": false,
@@ -664,6 +699,7 @@
     },
     {
         "organism": "Saccharomyces cerevisiae",
+        "reference_genome": "R64-1-1",
         "experiment": "Yeast_UV_XR-seq",
         "cell_line": false,
         "tissue": false,
@@ -681,6 +717,7 @@
     },
     {
         "organism": "Saccharomyces cerevisiae",
+        "reference_genome": "R64-1-1",
         "experiment": "Yeast_UV_XR-seq",
         "cell_line": false,
         "tissue": false,
@@ -698,6 +735,7 @@
     },
     {
         "organism": "Saccharomyces cerevisiae",
+        "reference_genome": "R64-1-1",
         "experiment": "Yeast_UV_XR-seq",
         "cell_line": false,
         "tissue": false,
@@ -715,6 +753,7 @@
     },
     {
         "organism": "Saccharomyces cerevisiae",
+        "reference_genome": "R64-1-1",
         "experiment": "Yeast_UV_XR-seq",
         "cell_line": false,
         "tissue": false,
@@ -732,6 +771,7 @@
     },
     {
         "organism": "Saccharomyces cerevisiae",
+        "reference_genome": "R64-1-1",
         "experiment": "Yeast_UV_XR-seq",
         "cell_line": false,
         "tissue": false,
@@ -749,6 +789,7 @@
     },
     {
         "organism": "Saccharomyces cerevisiae",
+        "reference_genome": "R64-1-1",
         "experiment": "Yeast_UV_XR-seq",
         "cell_line": false,
         "tissue": false,
@@ -766,6 +807,7 @@
     },
     {
         "organism": "Saccharomyces cerevisiae",
+        "reference_genome": "R64-1-1",
         "experiment": "Yeast_UV_XR-seq",
         "cell_line": false,
         "tissue": false,
@@ -783,6 +825,7 @@
     },
     {
         "organism": "Saccharomyces cerevisiae",
+        "reference_genome": "R64-1-1",
         "experiment": "Yeast_UV_XR-seq",
         "cell_line": false,
         "tissue": false,
@@ -800,6 +843,7 @@
     },
     {
         "organism": "Saccharomyces cerevisiae",
+        "reference_genome": "R64-1-1",
         "experiment": "Yeast_UV_XR-seq",
         "cell_line": false,
         "tissue": false,
@@ -817,6 +861,7 @@
     },
     {
         "organism": "Arabidopsis thaliana",
+        "reference_genome": "TAIR10",
         "experiment": "Arabidopsis_CPD_XR-seq",
         "cell_line": false,
         "tissue": "whole plant",
@@ -835,6 +880,7 @@
     },
     {
         "organism": "Arabidopsis thaliana",
+        "reference_genome": "TAIR10",
         "experiment": "Arabidopsis_CPD_XR-seq",
         "cell_line": false,
         "tissue": "whole plant",
@@ -853,6 +899,7 @@
     },
     {
         "organism": "Arabidopsis thaliana",
+        "reference_genome": "TAIR10",
         "experiment": "Arabidopsis_CPD_XR-seq",
         "cell_line": false,
         "tissue": "whole plant",
@@ -871,6 +918,7 @@
     },
     {
         "organism": "Arabidopsis thaliana",
+        "reference_genome": "TAIR10",
         "experiment": "Arabidopsis_CPD_XR-seq",
         "cell_line": false,
         "tissue": "whole plant",
@@ -889,6 +937,7 @@
     },
     {
         "organism": "Arabidopsis thaliana",
+        "reference_genome": "TAIR10",
         "experiment": "Arabidopsis_CPD_XR-seq",
         "cell_line": false,
         "tissue": "whole plant",
@@ -907,6 +956,7 @@
     },
     {
         "organism": "Arabidopsis thaliana",
+        "reference_genome": "TAIR10",
         "experiment": "Arabidopsis_CPD_XR-seq",
         "cell_line": false,
         "tissue": "whole plant",
@@ -925,6 +975,7 @@
     },
     {
         "organism": "Arabidopsis thaliana",
+        "reference_genome": "TAIR10",
         "experiment": "Arabidopsis_CPD_XR-seq",
         "cell_line": false,
         "tissue": "whole plant",
@@ -943,6 +994,7 @@
     },
     {
         "organism": "Arabidopsis thaliana",
+        "reference_genome": "TAIR10",
         "experiment": "Arabidopsis_CPD_XR-seq",
         "cell_line": false,
         "tissue": "whole plant",
@@ -961,6 +1013,7 @@
     },
     {
         "organism": "Arabidopsis thaliana",
+        "reference_genome": "TAIR10",
         "experiment": "Arabidopsis_CPD_XR-seq",
         "cell_line": false,
         "tissue": "whole plant",
@@ -979,6 +1032,7 @@
     },
     {
         "organism": "Arabidopsis thaliana",
+        "reference_genome": "TAIR10",
         "experiment": "Arabidopsis_CPD_XR-seq",
         "cell_line": false,
         "tissue": "whole plant",
@@ -997,6 +1051,7 @@
     },
     {
         "organism": "Arabidopsis thaliana",
+        "reference_genome": "TAIR10",
         "experiment": "Arabidopsis_CPD_XR-seq",
         "cell_line": false,
         "tissue": "whole plant",
@@ -1015,6 +1070,7 @@
     },
     {
         "organism": "Arabidopsis thaliana",
+        "reference_genome": "TAIR10",
         "experiment": "Arabidopsis_CPD_XR-seq",
         "cell_line": false,
         "tissue": "whole plant",
@@ -1033,6 +1089,7 @@
     },
     {
         "organism": "Mus musculus",
+        "reference_genome": "GRCm38",
         "experiment": "Mouse_cisplatin_ciradian_XR-seq",
         "cell_line": false,
         "tissue": "kidney",
@@ -1052,6 +1109,7 @@
     },
     {
         "organism": "Mus musculus",
+        "reference_genome": "GRCm38",
         "experiment": "Mouse_cisplatin_ciradian_XR-seq",
         "cell_line": false,
         "tissue": "kidney",
@@ -1071,6 +1129,7 @@
     },
     {
         "organism": "Mus musculus",
+        "reference_genome": "GRCm38",
         "experiment": "Mouse_cisplatin_ciradian_XR-seq",
         "cell_line": false,
         "tissue": "kidney",
@@ -1090,6 +1149,7 @@
     },
     {
         "organism": "Mus musculus",
+        "reference_genome": "GRCm38",
         "experiment": "Mouse_cisplatin_ciradian_XR-seq",
         "cell_line": false,
         "tissue": "kidney",
@@ -1109,6 +1169,7 @@
     },
     {
         "organism": "Mus musculus",
+        "reference_genome": "GRCm38",
         "experiment": "Mouse_cisplatin_ciradian_XR-seq",
         "cell_line": false,
         "tissue": "kidney",
@@ -1128,6 +1189,7 @@
     },
     {
         "organism": "Mus musculus",
+        "reference_genome": "GRCm38",
         "experiment": "Mouse_cisplatin_ciradian_XR-seq",
         "cell_line": false,
         "tissue": "kidney",
@@ -1147,6 +1209,7 @@
     },
     {
         "organism": "Mus musculus",
+        "reference_genome": "GRCm38",
         "experiment": "Mouse_cisplatin_ciradian_XR-seq",
         "cell_line": false,
         "tissue": "kidney",
@@ -1166,6 +1229,7 @@
     },
     {
         "organism": "Mus musculus",
+        "reference_genome": "GRCm38",
         "experiment": "Mouse_cisplatin_ciradian_XR-seq",
         "cell_line": false,
         "tissue": "kidney",
@@ -1185,6 +1249,7 @@
     },
     {
         "organism": "Mus musculus",
+        "reference_genome": "GRCm38",
         "experiment": "Mouse_cisplatin_ciradian_XR-seq",
         "cell_line": false,
         "tissue": "kidney",
@@ -1204,6 +1269,7 @@
     },
     {
         "organism": "Mus musculus",
+        "reference_genome": "GRCm38",
         "experiment": "Mouse_cisplatin_ciradian_XR-seq",
         "cell_line": false,
         "tissue": "kidney",
@@ -1223,6 +1289,7 @@
     },
     {
         "organism": "Mus musculus",
+        "reference_genome": "GRCm38",
         "experiment": "Mouse_cisplatin_ciradian_XR-seq",
         "cell_line": false,
         "tissue": "kidney",
@@ -1242,6 +1309,7 @@
     },
     {
         "organism": "Mus musculus",
+        "reference_genome": "GRCm38",
         "experiment": "Mouse_cisplatin_ciradian_XR-seq",
         "cell_line": false,
         "tissue": "kidney",
@@ -1261,6 +1329,7 @@
     },
     {
         "organism": "Mus musculus",
+        "reference_genome": "GRCm38",
         "experiment": "Mouse_cisplatin_ciradian_XR-seq",
         "cell_line": false,
         "tissue": "liver",
@@ -1280,6 +1349,7 @@
     },
     {
         "organism": "Mus musculus",
+        "reference_genome": "GRCm38",
         "experiment": "Mouse_cisplatin_ciradian_XR-seq",
         "cell_line": false,
         "tissue": "liver",
@@ -1299,6 +1369,7 @@
     },
     {
         "organism": "Mus musculus",
+        "reference_genome": "GRCm38",
         "experiment": "Mouse_cisplatin_ciradian_XR-seq",
         "cell_line": false,
         "tissue": "liver",
@@ -1318,6 +1389,7 @@
     },
     {
         "organism": "Mus musculus",
+        "reference_genome": "GRCm38",
         "experiment": "Mouse_cisplatin_ciradian_XR-seq",
         "cell_line": false,
         "tissue": "liver",
@@ -1337,6 +1409,7 @@
     },
     {
         "organism": "Mus musculus",
+        "reference_genome": "GRCm38",
         "experiment": "Mouse_cisplatin_ciradian_XR-seq",
         "cell_line": false,
         "tissue": "liver",
@@ -1356,6 +1429,7 @@
     },
     {
         "organism": "Mus musculus",
+        "reference_genome": "GRCm38",
         "experiment": "Mouse_cisplatin_ciradian_XR-seq",
         "cell_line": false,
         "tissue": "liver",
@@ -1375,6 +1449,7 @@
     },
     {
         "organism": "Mus musculus",
+        "reference_genome": "GRCm38",
         "experiment": "Mouse_cisplatin_ciradian_XR-seq",
         "cell_line": false,
         "tissue": "liver",
@@ -1394,6 +1469,7 @@
     },
     {
         "organism": "Mus musculus",
+        "reference_genome": "GRCm38",
         "experiment": "Mouse_cisplatin_ciradian_XR-seq",
         "cell_line": false,
         "tissue": "liver",
@@ -1413,6 +1489,7 @@
     },
     {
         "organism": "Mus musculus",
+        "reference_genome": "GRCm38",
         "experiment": "Mouse_cisplatin_ciradian_XR-seq",
         "cell_line": false,
         "tissue": "liver",
@@ -1432,6 +1509,7 @@
     },
     {
         "organism": "Mus musculus",
+        "reference_genome": "GRCm38",
         "experiment": "Mouse_cisplatin_ciradian_XR-seq",
         "cell_line": false,
         "tissue": "liver",
@@ -1451,6 +1529,7 @@
     },
     {
         "organism": "Mus musculus",
+        "reference_genome": "GRCm38",
         "experiment": "Mouse_cisplatin_ciradian_XR-seq",
         "cell_line": false,
         "tissue": "liver",
@@ -1470,6 +1549,7 @@
     },
     {
         "organism": "Mus musculus",
+        "reference_genome": "GRCm38",
         "experiment": "Mouse_cisplatin_ciradian_XR-seq",
         "cell_line": false,
         "tissue": "liver",
@@ -1641,6 +1721,7 @@
     },
     {
         "organism": "Homo sapiens",
+        "reference_genome": "GRCh38",
         "experiment": "tXR-seq",
         "cell_line": "GM12878",
         "tissue": false,
@@ -1659,6 +1740,7 @@
     },
     {
         "organism": "Homo sapiens",
+        "reference_genome": "GRCh38",
         "experiment": "tXR-seq",
         "cell_line": "GM12878",
         "tissue": false,
@@ -1677,6 +1759,7 @@
     },
     {
         "organism": "Homo sapiens",
+        "reference_genome": "GRCh38",
         "experiment": "tXR-seq",
         "cell_line": "GM12878",
         "tissue": false,
@@ -1695,6 +1778,7 @@
     },
     {
         "organism": "Homo sapiens",
+        "reference_genome": "GRCh38",
         "experiment": "tXR-seq",
         "cell_line": "GM12878",
         "tissue": false,
@@ -1713,6 +1797,7 @@
     },
     {
         "organism": "Homo sapiens",
+        "reference_genome": "GRCh38",
         "experiment": "human_TCR_UV_XR",
         "cell_line": "NHF1",
         "tissue": false,
@@ -1732,6 +1817,7 @@
     },
     {
         "organism": "Homo sapiens",
+        "reference_genome": "GRCh38",
         "experiment": "human_TCR_UV_XR",
         "cell_line": "NHF1",
         "tissue": false,
@@ -1751,6 +1837,7 @@
     },
     {
         "organism": "Homo sapiens",
+        "reference_genome": "GRCh38",
         "experiment": "human_TCR_UV_XR",
         "cell_line": "NHF1",
         "tissue": false,
@@ -1770,6 +1857,7 @@
     },
     {
         "organism": "Homo sapiens",
+        "reference_genome": "GRCh38",
         "experiment": "human_TCR_UV_XR",
         "cell_line": "NHF1",
         "tissue": false,
@@ -1789,6 +1877,7 @@
     },
     {
         "organism": "Homo sapiens",
+        "reference_genome": "GRCh38",
         "experiment": "human_TCR_UV_XR",
         "cell_line": "GM15983",
         "tissue": false,
@@ -1808,6 +1897,7 @@
     },
     {
         "organism": "Homo sapiens",
+        "reference_genome": "GRCh38",
         "experiment": "human_TCR_UV_XR",
         "cell_line": "GM15983",
         "tissue": false,
@@ -1827,6 +1917,7 @@
     },
     {
         "organism": "Homo sapiens",
+        "reference_genome": "GRCh38",
         "experiment": "human_TCR_UV_XR",
         "cell_line": "GM15983",
         "tissue": false,
@@ -1846,6 +1937,7 @@
     },
     {
         "organism": "Homo sapiens",
+        "reference_genome": "GRCh38",
         "experiment": "human_TCR_UV_XR",
         "cell_line": "GM15983",
         "tissue": false,
@@ -1865,6 +1957,7 @@
     },
     {
         "organism": "Homo sapiens",
+        "reference_genome": "GRCh38",
         "experiment": "human_TCR_UV_XR",
         "cell_line": "GM16095",
         "tissue": false,
@@ -1884,6 +1977,7 @@
     },
     {
         "organism": "Homo sapiens",
+        "reference_genome": "GRCh38",
         "experiment": "human_TCR_UV_XR",
         "cell_line": "GM16095",
         "tissue": false,
@@ -1903,6 +1997,7 @@
     },
     {
         "organism": "Homo sapiens",
+        "reference_genome": "GRCh38",
         "experiment": "human_TCR_UV_XR",
         "cell_line": "GM16095",
         "tissue": false,
@@ -1922,6 +2017,7 @@
     },
     {
         "organism": "Homo sapiens",
+        "reference_genome": "GRCh38",
         "experiment": "human_TCR_UV_XR",
         "cell_line": "GM16095",
         "tissue": false,
