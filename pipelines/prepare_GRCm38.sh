@@ -13,7 +13,7 @@ cd $WORKING_DIRECTORY
 
 wget -r --no-parent -A ${ORGANISM}.${GENOME}.dna.chromosome.*.fa.gz ${ENSEMBL_BASE}/release-${ENSEMBL_VERSION}/${FASTA_MID}/${ORGANISM,,}/dna/
 
-cd ${ENSEMBL_BASE_BASE}/pub/release-${ENSEMBL_VERSION}/fasta/${ORGANISM,,}/dna
+cd ${ENSEMBL_BASE_BASE}/pub/release-${ENSEMBL_VERSION}/${FASTA_MID}/${ORGANISM,,}/dna
 mkdir -p ${GENOMES_DIRECTORY}/${GENOME}/Bowtie2
 
 bowtie2-build --threads 4 -f \
