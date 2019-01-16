@@ -23,4 +23,4 @@ ${ORGANISM}.${GENOME}.dna.chromosome.Chromosome.fa.gz \
 ${BASE_DIR}/${GENOMES_DIRECTORY}/${GENOME}/Bowtie2/genome
 
 zcat *gz >${BASE_DIR}/${GENOMES_DIRECTORY}/${GENOME}/genome.fa && cd ${BASE_DIR}/${GENOMES_DIRECTORY}/${GENOME} && samtools faidx genome.fa
-wget -O ${BASE_DIR}/${GENOMES_DIRECTORY}/${GENOME}/genes.gff3.gz ${ENSEMBL_BASE}/release-${ENSEMBL_VERSION}/${GFF3_MID}/${ORGANISM,,}/${ORGANISM}.${GENOME}.${ENSEMBL_VERSION}.gff3.gz && gunzip ${BASE_DIR}/${GENOMES_DIRECTORY}/${GENOME}/genes.gff3.gz && gff2bed.py -i ${BASE_DIR}/${GENOMES_DIRECTORY}/${GENOME}/genes.gff3 -r gene -o ${BASE_DIR}/${GENOMES_DIRECTORY}/${GENOME}/genes.bed && rm ${BASE_DIR}/${GENOMES_DIRECTORY}/${GENOME}/genes.gff3
+wget -O ${BASE_DIR}/${GENOMES_DIRECTORY}/${GENOME}/genes.gff3.gz ${ENSEMBL_BASE}/release-${ENSEMBL_VERSION}/${GFF3_MID}/${ORGANISM,,}/${ORGANISM}.${GENOME}.37.gff3.gz && gunzip ${BASE_DIR}/${GENOMES_DIRECTORY}/${GENOME}/genes.gff3.gz && gff2bed.py -i ${BASE_DIR}/${GENOMES_DIRECTORY}/${GENOME}/genes.gff3 -r gene -o ${BASE_DIR}/${GENOMES_DIRECTORY}/${GENOME}/genes.bed && rm ${BASE_DIR}/${GENOMES_DIRECTORY}/${GENOME}/genes.gff3
