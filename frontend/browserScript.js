@@ -19,6 +19,13 @@ $(document).ready(function(){
                 format: 'bam',
                 url: 'https://data.broadinstitute.org/igvdata/1KG/b37/data/HG02450/alignment/HG02450.mapped.ILLUMINA.bwa.ACB.low_coverage.20120522.bam',
                 name: 'HG02450'
+            },
+            //second track, use example from igv to toggle certain tracks on and off
+            {
+                type: 'alignment',
+                format: 'bam',
+                url: 'https://data.broadinstitute.org/igvdata/1KG/b37/data/HG02450/alignment/HG02450.mapped.ILLUMINA.bwa.ACB.low_coverage.20120522.bam',
+                name: 'HG02450'
             }
         ]
     };
