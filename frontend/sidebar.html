@@ -7,13 +7,13 @@
     var cellLineList = []
     samplejson.forEach(element => {
         //check if elements are in list already, if not, add it
-        if(experimentList.includes(element["experiment"])){
+        if(!experimentList.includes(element["experiment"])){
             experimentList.push(element["experiment"]);
         }
-        if(damageList.includes(element["damage"])){
+        if(!damageList.includes(element["damage"])){
             damageList.push(element["damage"]);
         }
-        if(cellLineList.includes(element["cell_line"])){
+        if(!cellLineList.includes(element["cell_line"])){
             cellLineList.push(element["cell_line"]);
         }
     });
