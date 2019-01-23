@@ -1,8 +1,25 @@
-
-
 <script>
-    //script for querying the experiments, damage type, cell line, and tissue
+    //script for querying the experiments, damage type, cell line, and tissue from the json file
     
+    var samplejson = [ { "organism": "Homo sapiens", "reference_genome": "GRCh38", "experiment": "Human_UV_Damage-seq", "cell_line": "NHF1", "tissue": false, "damage": "UV_CPD", "protocol": "Damage-seq", "replicate": "A", "treatment": { "time_after_irradiation": "0h", "DNA": "cell", "damage_dose": "0J" }, "title": "huDS_NHF1_CPD_A_0h_cell_0J", "SRA": { "id": "SRX2749363", "runs": ["SRR5461429"] } }, { "organism": "Homo sapiens", "reference_genome": "GRCh38", "experiment": "Human_UV_Damage-seq", "cell_line": "NHF1", "tissue": false, "damage": "UV_CPD", "protocol": "Damage-seq", "replicate": "B", "treatment": { "time_after_irradiation": "0h", "DNA": "cell", "damage_dose": "0J" }, "title": "huDS_NHF1_CPD_B_0h_cell_0J", "SRA": { "id": "SRX2749364", "runs": ["SRR5461430"] } }, { "organism": "Homo sapiens", "reference_genome": "GRCh38", "experiment": "Human_UV_Damage-seq", "cell_line": "NHF1", "tissue": false, "damage": "UV_CPD", "protocol": "Damage-seq", "replicate": "A", "treatment": { "time_after_irradiation": "0h", "DNA": "cell", "damage_dose": "10J" }, "title": "huDS_NHF1_CPD_A_0h_cell_10J", "SRA": { "id": "SRX2749365", "runs": ["SRR5461431"] } }, { "organism": "Homo sapiens", "reference_genome": "GRCh38", "experiment": "Human_UV_Damage-seq", "cell_line": "NHF1", "tissue": false, "damage": "UV_CPD", "protocol": "Damage-seq", "replicate": "B", "treatment": { "time_after_irradiation": "0h", "DNA": "cell", "damage_dose": "10J" }, "title": "huDS_NHF1_CPD_B_0h_cell_10J", "SRA": { "id": "SRX2749366", "runs": ["SRR5461432"] } }, { "organism": "Homo sapiens", "reference_genome": "GRCh38", "experiment": "Human_UV_Damage-seq", "cell_line": "NHF1", "tissue": false, "damage": "UV_CPD", "protocol": "Damage-seq", "replicate": "A", "treatment": { "time_after_irradiation": "1h", "DNA": "cell", "damage_dose": "10J" }, "title": "huDS_NHF1_CPD_A_1h_cell_10J", "SRA": { "id": "SRX2749367", "runs": ["SRR5461433"] } }, { "organism": "Homo sapiens", "reference_genome": "GRCh38", "experiment": "Human_UV_Damage-seq", "cell_line": "NHF1", "tissue": false, "damage": "UV_CPD", "protocol": "Damage-seq", "replicate": "B", "treatment": { "time_after_irradiation": "1h", "DNA": "cell", "damage_dose": "10J" }, "title": "huDS_NHF1_CPD_B_1h_cell_10J", "SRA": { "id": "SRX2749368", "runs": ["SRR5461434"] } }, { "organism": "Homo sapiens", "reference_genome": "GRCh38", "experiment": "Human_UV_Damage-seq", "cell_line": "NHF1", "tissue": false, "damage": "UV_CPD", "protocol": "Damage-seq", "replicate": "A", "treatment": { "time_after_irradiation": "8h", "DNA": "cell", "damage_dose": "10J" }, "title": "huDS_NHF1_CPD_A_8h_cell_10J", "SRA": { "id": "SRX2749369", "runs": ["SRR5461435"] } }, { "organism": "Homo sapiens", "reference_genome": "GRCh38", "experiment": "Human_UV_Damage-seq", "cell_line": "NHF1", "tissue": false, "damage": "UV_CPD", "protocol": "Damage-seq", "replicate": "B", "treatment": { "time_after_irradiation": "8h", "DNA": "cell", "damage_dose": "10J" }, "title": "huDS_NHF1_CPD_B_8h_cell_10J", "SRA": { "id": "SRX2749370", "runs": ["SRR5461436"] } } ]   
+    var experimentList = []
+    var damageList= []
+    var cellLineList = []
+    samplejson.forEach(element => {
+        //check if elements are in list already, if not, add it
+        if(experimentList.indexOf(element["experiment"])<1){
+            experimentList.push(element["experiment"]);
+        }
+        if(experimentList.indexOf(element["damage"])<1){
+            damageList.push(element["damage"]);
+        }
+        if(cellLineList.indexOf(element["cell_line"])<1){
+            cellLineList.push(element["cell_line"]);
+        }
+    });
+    console.log("exp list= " + JSON.stringify(experimentList))
+    console.log("damage list= " + JSON.stringify(damageList))
+    console.log("celline list= " + JSON.stringify(cellLineList))
     </script>
 
 <section>
