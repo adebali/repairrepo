@@ -24,10 +24,9 @@
             cellLineList.push(element["cell_line"]);
         }
     });
-    //working
-    // console.log("exp list= " + JSON.stringify(experimentList))
-    // console.log("damage list= " + JSON.stringify(damageList))
-    // console.log("celline list= " + JSON.stringify(cellLineList))
+ 
+
+
     </script>
 
 <section>
@@ -47,6 +46,12 @@
     <div id = "cellLine">
             Cell Line 
             <div id ="cellLineList">
+                   
+            </div>
+    </div>
+    <div id = "tissue">
+            Tissue 
+            <div id ="tissueTF">
                     <div class="form-check">
                             <input class="form-check-input" name = "tissueRadio" type="radio"  id="tissueTrue" value="true" checked>
                             <label class="form-check-label" for="tissueTrue">
@@ -59,12 +64,6 @@
                               False
                             </label>
                           </div>
-            </div>
-    </div>
-    <div id = "tissue">
-            Tissue 
-            <div id ="tissueTF">
-                
             </div>
         </div>    
 
