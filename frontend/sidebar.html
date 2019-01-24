@@ -38,18 +38,7 @@
 
 
 </section>
-<script>
-$("p").click(function(){
 
-    var selected = $(this).hasClass("highlight");
-    $("p").parent().removeClass("highlight");
-    if(!selected){
-        $(this).addClass("highlight");
-    }
-    console.log($(this).attr("id") + " selected")
-    return($(this).attr("id"))
-})
-</script>
 <script>
         //script for querying the experiments, damage type, cell line, and tissue from the json file
         
@@ -82,5 +71,47 @@ $("p").click(function(){
             });
             return html;
         }
+
+
+        $("#tissueTF p").click(function(){
+
+            var selected = $(this).hasClass("highlight");
+            $("#tissueTF p").removeClass("highlight");
+            if(!selected){
+                $(this).addClass("highlight");
+            }
+            console.log($(this).attr("id") + " selected")
+            return($(this).attr("id"))
+        })
+        $("#cellLineList p").click(function(){
+            console.log("heres")
+            var selected = $(this).hasClass("highlight");
+            $("#cellLineList p").removeClass("highlight");
+            if(!selected){
+                $(this).addClass("highlight");
+            }
+            console.log($(this).attr("id") + " selected")
+            return($(this).attr("id"))
+        })
+        $("#damageList p").click(function(){
+
+            var selected = $(this).hasClass("highlight");
+            $("#damageList p").removeClass("highlight");
+            if(!selected){
+                $(this).addClass("highlight");
+            }
+            console.log($(this).attr("id") + " selected")
+            return($(this).attr("id"))
+        })
+        $("#expList p").click(function(){
+
+            var selected = $(this).hasClass("highlight");
+            $("#expList p").removeClass("highlight");
+            if(!selected){
+                $(this).addClass("highlight");
+            }
+            console.log($(this).attr("id") + " selected")
+            return($(this).attr("id"))
+        })
     
-        </script>
+    </script>
