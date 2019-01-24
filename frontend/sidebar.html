@@ -65,21 +65,18 @@
                               False
                             </label>
                           </div> -->
-                <table class = "table">
-                    <tbody id ="values">
-                        <tr id = "true" >True</tr>
-                        <tr id = "false">False</tr>
-                    </tbody>
-                </table> 
+                <p id = "true">True</p>
+                <p id = "false">False</p>
             </div>
         </div>    
 
 
 </section>
 <script>
-$("#values tr").click(function(){
+$("#tissueTF p").click(function(){
+    console.log("clicked")
     var selected = $(this).hasClass("highlight");
-    $("#values tr").removeClass("highlight");
+    $("#tissueTF p").removeClass("highlight");
     if(!selected){
         $(this).addClass("highlight");
     }
