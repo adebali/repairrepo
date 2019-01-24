@@ -59,15 +59,16 @@
             }
         });
         //populate categories 
-        $("#expList").html(populate(experimentList))
-        $("#damageList").html(populate(damageList))
-        $("#cellLineList").html(populate(cellLineList))
+        $("#expList").html(populate(experimentList,"exp"))
+        $("#damageList").html(populate(damageList,"damage"))
+        $("#cellLineList").html(populate(cellLineList,"cellLine"))
     
         //helper function returning an html string of list to append to sidebar 
-        function populate(list){
+        //'type' is the class denoting which category the attribute is apart of
+        function populate(list, type){
             var html = ""
             list.forEach(element =>{
-                html+="<p id = '"+element + "' class = 'tab'>" + element + "</p>"
+                html+="<p id = '"+element + "' class = 'tab " + type+"'>" + element + "</p>"
             });
             return html;
         }
