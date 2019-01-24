@@ -72,7 +72,7 @@
             return html;
         }
 
-
+        //highlighting 
         $("#tissueTF p").click(function(){
 
             var selected = $(this).hasClass("highlight");
@@ -84,7 +84,6 @@
             return($(this).attr("id"))
         })
         $("#cellLineList p").click(function(){
-            console.log("heres")
             var selected = $(this).hasClass("highlight");
             $("#cellLineList p").removeClass("highlight");
             if(!selected){

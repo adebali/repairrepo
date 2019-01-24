@@ -30,7 +30,11 @@ body{
     font-size: 14px;
 }
 .highlight{
-  background-color: #f1b756;
+  background-color: #F4A117;
+  color: white;
+}
+p:hover{
+  background-color: #F5D297
 }
 
 .jumbotron h1{
