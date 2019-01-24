@@ -65,8 +65,8 @@
                               False
                             </label>
                           </div> -->
-                <p id = "true">True</p>
-                <p id = "false">False</p>
+                <p id = "true" class = "tab">True</p>
+                <p id = "false" class = "tab">False</p>
             </div>
         </div>    
 
@@ -74,13 +74,13 @@
 </section>
 <script>
 $("#tissueTF p").click(function(){
-    console.log("clicked")
+
     var selected = $(this).hasClass("highlight");
     $("#tissueTF p").removeClass("highlight");
     if(!selected){
         $(this).addClass("highlight");
     }
-    console.log($(this).attr("id"))
+    console.log($(this).attr("id") + "selected")
     return($(this).attr("id"))
 })
 </script>
