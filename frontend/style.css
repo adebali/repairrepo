@@ -16,6 +16,9 @@ body{
   margin-left: 40px; 
   width: 20%;
 }
+#sidebar{
+  background-color: #E7E4E4;
+}
 
 .jumbotron{
     text-align: center;

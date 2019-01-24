@@ -8,26 +8,28 @@
     </head>
 
 
-<section>
+<section id = "sidebar">
     <div id = "exp">
         <b>Experiment</b>
         <div id ="expList">
 
         </div>
     </div>
-    
+    <hr>
     <div id = "damage">
         <b>Damage Type</b>
         <div id ="damageList">
             
         </div>
     </div>
+    <hr>
     <div id = "cellLine">
             <b>Cell Line </b>
             <div id ="cellLineList">
                    
             </div>
     </div>
+    <hr>
     <div id = "tissue">
             <b>Tissue </b>
             <div id ="tissueTF">
@@ -53,15 +55,15 @@
             // if(!experimentList.includes(element["experiment"])){
             //     experimentList.push(element["experiment"]);
             // }
-            experimentList.push(element["experiment"]);
-            damageList.push(element["damage"]);
-            cellLineList.push(element["cell_line"]);
             // if(!damageList.includes(element["damage"])){
             //     damageList.push(element["damage"]);
             // }
             // if(!cellLineList.includes(element["cell_line"])){
             //     cellLineList.push(element["cell_line"]);
             // }
+            experimentList.push(element["experiment"]);
+            damageList.push(element["damage"]);
+            cellLineList.push(element["cell_line"]);
         });
         //populate categories 
         $("#expList").html(populate(experimentList,"exp"))
