@@ -46,7 +46,7 @@ $("#tissueTF p").click(function(){
     if(!selected){
         $(this).addClass("highlight");
     }
-    console.log($(this).attr("id") + "selected")
+    console.log($(this).attr("id") + " selected")
     return($(this).attr("id"))
 })
 </script>
@@ -69,9 +69,10 @@ $("#tissueTF p").click(function(){
                 cellLineList.push(element["cell_line"]);
             }
         });
-        //populate experiment list
-    
+        //populate categories 
         $("#expList").html(populate(experimentList))
+        $("#damageList").html(populate(damageList))
+        $("#cellLineList").html(populate(cellLineList))
     
         //helper function returning an html string of list to append to sidebar 
         function populate(list){
