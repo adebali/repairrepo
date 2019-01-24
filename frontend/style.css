@@ -15,9 +15,11 @@ body{
 .tab { 
   margin-left: 40px; 
   width: 20%;
+  
 }
 #sidebar{
   background-color: #E7E4E4;
+  font-family: "Cabin"
 }
 
 .jumbotron{
