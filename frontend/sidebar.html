@@ -10,26 +10,26 @@
 
 <section>
     <div id = "exp">
-        Experiment
+        <b>Experiment</b>
         <div id ="expList">
 
         </div>
     </div>
     
     <div id = "damage">
-        Damage Type
+        <b>Damage Type</b>
         <div id ="damageList">
             
         </div>
     </div>
     <div id = "cellLine">
-            Cell Line 
+            <b>Cell Line </b>
             <div id ="cellLineList">
                    
             </div>
     </div>
     <div id = "tissue">
-            Tissue 
+            <b>Tissue </b>
             <div id ="tissueTF">
                 <p id = "true" class = "tab">True</p>
                 <p id = "false" class = "tab">False</p>
@@ -39,10 +39,10 @@
 
 </section>
 <script>
-$("#tissueTF p").click(function(){
+$("p").click(function(){
 
     var selected = $(this).hasClass("highlight");
-    $("#tissueTF p").removeClass("highlight");
+    $("p").parent().removeClass("highlight");
     if(!selected){
         $(this).addClass("highlight");
     }
