@@ -12,7 +12,10 @@ body{
     position: center;
     
 }
-.tab { margin-left: 40px; }
+.tab { 
+  margin-left: 40px; 
+  width: 20%;
+}
 
 .jumbotron{
     text-align: center;
