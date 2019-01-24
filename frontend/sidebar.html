@@ -67,8 +67,8 @@
                           </div> -->
                 <table class = "table">
                     <tbody id ="values">
-                        <tr id = "true" class = "tissueRow">True</tr>
-                        <tr id = "false" class = "tissueRow">False</tr>
+                        <tr id = "true" >True</tr>
+                        <tr id = "false">False</tr>
                     </tbody>
                 </table> 
             </div>
@@ -83,6 +83,7 @@ $("#values tr").click(function(){
     if(!selected){
         $(this).addClass("highlight");
     }
-    
+    console.log($(this).attr("id"))
+    return($(this).attr("id"))
 })
 </script>
