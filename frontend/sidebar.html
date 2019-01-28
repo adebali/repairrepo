@@ -18,10 +18,9 @@
     </div>
     <hr>
     <div id = "dropdown">
-        <b>Track</b>
         <div id = "trackDropdown">
-
         </div>
+        <div id = "chosenTrack"></div>
     </div>
     <hr>
     <div id = "damage">
@@ -92,12 +91,15 @@
             var htmlStr = '<button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Tracks'
                 htmlStr += '<span class="caret"></span></button> <ul class="dropdown-menu">'
                     tracks.forEach(element => {
-                        htmlStr += '<li><a href="#" id = "'+ element+'" >'+element+'</a></li>'
+                        htmlStr += '<li><a href="#" class = "track" id = "'+ element+'" >'+element+'</a></li>'
                     })
                     htmlStr += '</ul>'
 
             return htmlStr;
         }
+        $(".track").on("click", function(){
+            $("#chosenTrack").html("<b>" + event.target.id + "</b>")
+        })
         //helper function returning an html string of list to append to sidebar 
         //'type' is the class denoting which category the attribute is apart of
         function populate(list, cat){
