@@ -89,12 +89,13 @@
         $("#trackDropdown").html(createDropdown(trackList))
     
         function createDropdown(tracks){
-            var htmlStr = ```<button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Tracks```
-                htmlStr += ```<span class="caret"></span></button> <ul class="dropdown-menu">```
+            var htmlStr = '<button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Tracks'
+                htmlStr += '<span class="caret"></span></button> <ul class="dropdown-menu">'
                     tracks.forEach(element => {
                         htmlStr += '<li><a href="#" id = "'+ element+'" >'+element+'</a></li>'
                     })
-                    htmlStr += "</ul>"
+                    htmlStr += '</ul>'
+
             return htmlStr;
         }
         //helper function returning an html string of list to append to sidebar 
