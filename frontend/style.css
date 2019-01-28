@@ -21,7 +21,7 @@ body{
   display:flex;
 }
 #sidebar{
-  flex: 0 0 65%;
+  flex: 0 0 20%;
 }
 #igvContainer{
   flex: 1;
