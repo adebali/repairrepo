@@ -141,18 +141,18 @@
             organism = JSON.stringify(organism[0]).replace(/['"]+/g, '')
             
             console.log("curr org in function " + organism)
-            console.log(JSON.stringify(organism).localeCompare("human"))
+            console.log(organism.localeCompare("human"))
             //map to exact name of organism (if page name differs)
             //TODO: map file names to rest of organism names
-            if(JSON.stringify(organism).localeCompare("human")){
+            if(organism.localeCompare("human")){
                 return "Homo sapiens"
-            }else if(JSON.stringify(organism).localeCompare("mouse")){
+            }else if(organism.localeCompare("mouse")){
                 return "Mus musculus"
-            }else if(JSON.stringify(organism).localeCompare("yeast")){
+            }else if(organism.localeCompare("yeast")){
                 return "Saccharomyces cerevisiae"
-            }else if(JSON.stringify(organism).localeCompare("ecoli")){
+            }else if(organism.localeCompare("ecoli")){
                 return "Escherichia coli"
-            }else if(JSON.stringify(organism).localeCompare("arabidopsis")){
+            }else if(organism.localeCompare("arabidopsis")){
                 console.log("here in if")
                 return "Arabidopsis thaliana"
             }
