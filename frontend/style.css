@@ -17,21 +17,14 @@ body{
   width: 20%;
   
 }
+#wrapper1{
+  display:flex;
+}
 #sidebar{
-  background-color: #E7E4E4;
-  font-family: "Cabin";
-  height: auto; /* Full-height: remove this if you want "auto" height */
-  width: 300px; /* Set the width of the sidebar */
-  position: relative; 
-  float: left;
-  z-index: 1; /* Stay on top */
-  top: 0; /* Stay at the top */
-  left: 0;
-  overflow-x: hidden; /* Disable horizontal scroll */
-  /* padding-top: 20px; */
+  flex: 0 0 65%;
 }
 #igvContainer{
-  float:right;
+  flex: 1;
 }
 
 .jumbotron{
