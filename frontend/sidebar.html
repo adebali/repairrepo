@@ -141,6 +141,7 @@
             organism = JSON.stringify(organism[0]).replace(/['"]+/g, '')
             
             console.log("curr org in function " + organism)
+            console.log(JSON.stringify(organism).localeCompare("human"))
             //map to exact name of organism (if page name differs)
             //TODO: map file names to rest of organism names
             if(JSON.stringify(organism).localeCompare("human")){
