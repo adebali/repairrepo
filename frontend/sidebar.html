@@ -98,7 +98,7 @@
             return htmlStr;
         }
         $(".track").on("click", function(){
-            $("#chosenTrack").html("<b>" + event.target.id + "</b>")
+            $("#chosenTrack").html(event.target.id).addClass("highlight")
         })
         //helper function returning an html string of list to append to sidebar 
         //'type' is the class denoting which category the attribute is apart of
