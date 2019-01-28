@@ -137,7 +137,7 @@
             var url = window.location.href
             var organism = url.split("/").pop().split("browser")
             organism =  organism.slice(0,-1);
-            
+            console.log("organism sidebar" + organism)
             //map to exact name of organism (if page name differs)
             //TODO: map file names to rest of organism names
             if(JSON.stringify(organism).localeCompare("Human")){
@@ -149,6 +149,7 @@
             }else if(JSON.stringify(organism).localeCompare("Ecoli")){
                 return "Escherichia coli"
             }else if(JSON.stringify(organism).localeCompare("Arabidopsis")){
+                console.log("here in if")
                 return "Arabidopsis thaliana"
             }
         }
