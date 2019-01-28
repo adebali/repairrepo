@@ -27,6 +27,50 @@
     <div class="off-canvas-wrapper">
       <div class="off-canvas-wrapper-inner" data-off-canvas-wrapper>
 
+        <!-- OFF-CANVAS MENU -->
+
+        <div class="off-canvas position-left" id="mobile-menu" data-off-canvas>
+          <button class="accordion" id="home">HOME</button>
+            <script type="text/javascript">
+                document.getElementById("home").onclick = function () {
+                    location.href = "index.html";
+                };
+            </script>
+
+          <!-- <button class="accordion" id="browse">BROWSE</button>
+          <div class="panel">
+            <ul style="text-align:left">
+              <p>
+                <li>HUMAN</li>
+                <li>BROWSE</li>
+                <li>ARABIDOPSIS</li>
+                <li>PLANT</li>
+              </p>
+            </ul>
+          </div> -->
+
+          <button class="accordion" id="search">SEARCH</button>
+          <script type="text/javascript">
+            document.getElementById("search").onclick = function () {
+                location.href = "search.html";
+            };
+          </script>
+
+          <button class="accordion" id="download">DOWNLOAD</button>
+            <script type="text/javascript">
+                document.getElementById("download").onclick = function () {
+                    location.href = "download.html";
+                };
+            </script>
+
+          <button class="accordion" id="help">HELP</button>
+          <script type="text/javascript">
+            document.getElementById("help").onclick = function () {
+                location.href = "help.html";
+            };
+          </script>
+        </div>
+
         <!-- KEEP -->
         <div class="off-canvas-content" data-off-canvas-content>
 
