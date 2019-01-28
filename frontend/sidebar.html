@@ -51,6 +51,7 @@
         var damageList= []
         var cellLineList = []
         var currentOrganism = getCurrentOrganism();
+        console.log("curr org before loop " + currentOrganism)
         samplejson.forEach(element => {
             //check if elements are in list already, if not, add it
             // if(!experimentList.includes(element["experiment"])){
@@ -62,9 +63,8 @@
             // if(!cellLineList.includes(element["cell_line"])){
             //     cellLineList.push(element["cell_line"]);
             // }
-
             //only use data for the current page's organism 
-            if(currentOrganism.localeCompare(element["organism"]) == 0){
+            if(currentOrganism.localeCompare(element["organism"]) === 0){
                 experimentList.push(element["experiment"]);
                 damageList.push(element["damage"]);
                 cellLineList.push(element["cell_line"]);
@@ -140,6 +140,7 @@
             organism =  organism.slice(0,-1);
             organism = JSON.stringify(organism[0])
             
+            console.log("curr org in function " + organism)
             //map to exact name of organism (if page name differs)
             //TODO: map file names to rest of organism names
             if(JSON.stringify(organism).localeCompare("human")){
