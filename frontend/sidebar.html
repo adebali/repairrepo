@@ -17,6 +17,13 @@
         </div>
     </div>
     <hr>
+    <div id = "dropdown">
+        <b>Track</b>
+        <div id = "trackDropdown">
+
+        </div>
+    </div>
+    <hr>
     <div id = "damage">
         <b>Damage Type</b>
         <div id ="damageList">
@@ -50,6 +57,7 @@
         var experimentList = [] 
         var damageList= []
         var cellLineList = []
+        var trackList = [];
         var currentOrganism = getCurrentOrganism();
         
         samplejson.forEach(element => {
@@ -68,13 +76,27 @@
                 experimentList.push(element["experiment"]);
                 damageList.push(element["damage"]);
                 cellLineList.push(element["cell_line"]);
+                //add to list only if its not present
+                if(trackList.indexOf(element["title"]) === -1){
+                    trackList.push(element["title"]);
+                }
             }
         });
         //populate categories 
         $("#expList").html(populate(experimentList,"exp"))
         $("#damageList").html(populate(damageList,"damage"))
         $("#cellLineList").html(populate(cellLineList,"cellLine"))
+        $("#trackDropdown").html(createDropdown(trackList))
     
+        function createDropdown(tracks){
+            var htmlStr = ```<button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Tracks```
+                htmlStr += ```<span class="caret"></span></button> <ul class="dropdown-menu">```
+                    tracks.forEach(element => {
+                        htmlStr += '<li><a href="#" id = "'+ element+'" >'+element+'</a></li>'
+                    })
+                    htmlStr += "</ul>"
+            return htmlStr;
+        }
         //helper function returning an html string of list to append to sidebar 
         //'type' is the class denoting which category the attribute is apart of
         function populate(list, cat){
