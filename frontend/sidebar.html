@@ -50,6 +50,7 @@
         var experimentList = [] 
         var damageList= []
         var cellLineList = []
+        var currentOrganism = getCurrentOrganism();
         samplejson.forEach(element => {
             //check if elements are in list already, if not, add it
             // if(!experimentList.includes(element["experiment"])){
@@ -63,7 +64,7 @@
             // }
 
             //only use data for the current page's organism 
-            if(getCurrentOrganism().localeCompare(element["organism"]) == 0){
+            if(currentOrganism.localeCompare(element["organism"]) == 0){
                 experimentList.push(element["experiment"]);
                 damageList.push(element["damage"]);
                 cellLineList.push(element["cell_line"]);
@@ -140,15 +141,15 @@
             console.log("organism sidebar" + organism)
             //map to exact name of organism (if page name differs)
             //TODO: map file names to rest of organism names
-            if(JSON.stringify(organism).localeCompare("Human")){
+            if(JSON.stringify(organism).localeCompare("human")){
                 return "Homo sapiens"
-            }else if(JSON.stringify(organism).localeCompare("Mouse")){
+            }else if(JSON.stringify(organism).localeCompare("mouse")){
                 return "Mus musculus"
-            }else if(JSON.stringify(organism).localeCompare("Yeast")){
+            }else if(JSON.stringify(organism).localeCompare("yeast")){
                 return "Saccharomyces cerevisiae"
-            }else if(JSON.stringify(organism).localeCompare("Ecoli")){
+            }else if(JSON.stringify(organism).localeCompare("ecoli")){
                 return "Escherichia coli"
-            }else if(JSON.stringify(organism).localeCompare("Arabidopsis")){
+            }else if(JSON.stringify(organism).localeCompare("arabidopsis")){
                 console.log("here in if")
                 return "Arabidopsis thaliana"
             }
