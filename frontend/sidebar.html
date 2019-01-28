@@ -142,8 +142,14 @@
             //TODO: map file names to rest of organism names
             if(JSON.stringify(organism).localeCompare("Human")){
                 return "Homo sapiens"
-            }else{
-                return null
+            }else if(JSON.stringify(organism).localeCompare("Mouse")){
+                return "Mus musculus"
+            }else if(JSON.stringify(organism).localeCompare("Yeast")){
+                return "Saccharomyces cerevisiae"
+            }else if(JSON.stringify(organism).localeCompare("Ecoli")){
+                return "Escherichia coli"
+            }else if(JSON.stringify(organism).localeCompare("Arabidopsis")){
+                return "Arabidopsis thaliana"
             }
         }
     
