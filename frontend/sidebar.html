@@ -138,7 +138,8 @@
             var url = window.location.href
             var organism = url.split("/").pop().split("browser")
             organism =  organism.slice(0,-1);
-            console.log("organism sidebar" + organism)
+            console.log("stringiy " + JSON.stringify(organism))
+            console.log(JSON.stringify(organism).localeCompare("arabidopsis"))
             //map to exact name of organism (if page name differs)
             //TODO: map file names to rest of organism names
             if(JSON.stringify(organism).localeCompare("human")){
