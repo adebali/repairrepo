@@ -115,8 +115,9 @@
             list.forEach(element =>{
                 if(!html.includes(element["experiment"])){
                     var num = getOccurrence(list,element)
-                    html+="<div id = '"+element["experiment"] + "' class = 'tab " + cat+"'>" + element['experiment'] + "</div> "
-                    
+                    html+="<p id = '"+element["experiment"] + "' class = 'tab " + cat+"'>" + element['experiment'] + "</p> "
+                    //create a div for each experiement (used for collapsible subcategories)
+                    html+= "<div id='"+element['experiment']+"' class = 'experiment'></div>"
                 }
             });
             return html;
