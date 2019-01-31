@@ -124,6 +124,7 @@
         }
 
         function populateCellLine(exp){
+        
             var cellLineListHTML ="";
             samplejson.forEach(element =>{
                 if(element["experiment"]===exp){
@@ -132,6 +133,7 @@
                     }
                 }
             })
+            console.log("len" + $("div #" + exp).length)
             $("div #"+exp).append(cellLineListHTML)
             return;
         }
