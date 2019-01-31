@@ -117,7 +117,7 @@
                     var num = getOccurrence(list,element)
                     html+="<p id = '"+element["experiment"] + "' class = 'tab " + cat+"'>" + element['experiment'] + "</p> "
                     //create a div for each experiement (used for collapsible subcategories)
-                    html+= "<div id='"+element['experiment']+" class = 'experiment'></div>"
+                    html+= "<div id='"+element['experiment']+"' class = 'experiment'></div>"
                 }
             });
             return html;
