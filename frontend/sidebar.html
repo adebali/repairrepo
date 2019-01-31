@@ -16,7 +16,7 @@
 
         </div>
     </div>
-    <hr>
+    <!-- <hr>
     <div id = "dropdown">
         <div id = "trackDropdown">
         </div>
@@ -36,14 +36,14 @@
                    
             </div>
     </div>
-    <hr>
-    <div id = "tissue">
+    <hr> -->
+    <!-- <div id = "tissue">
             <b>Tissue </b>
             <div id ="tissueTF">
                 <p id = "true" class = "tab">True</p>
                 <p id = "false" class = "tab">False</p>
             </div>
-        </div>    
+        </div>     -->
 
 
 </section>
@@ -115,7 +115,9 @@
             list.forEach(element =>{
                 if(!html.includes(element)){
                     var num = getOccurrence(list,element)
-                    html+="<p id = '"+element + "' class = 'tab " + cat+"'>" + element + "   ("+num + ")</p>"
+                    html+="<p id = '"+element["experiment"] + "' class = 'tab " + cat+"'>" + element['experiment'] + "   ("+num + ")</p> "
+                    //create a div for each experiement (used for collapsible subcategories)
+                    html+= "<div id='"+element['experiment']+"'> </div>"
                 }
             });
             return html;
@@ -128,7 +130,7 @@
                     cellLineListHTML += "<p id = '"+ element["cell_line"] + "' class = 'tab " + cat+"'>" + element["cell_line"] + "</p>"
                 }
             })
-            $("#cellLineList").html(cellLineListHTML)
+            $("div #"+exp).html(cellLineListHTML)
             return;
         }
 
