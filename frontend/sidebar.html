@@ -135,8 +135,10 @@
                     }
                 }
             })
+            if($("div #"+exp).text().indexOf("Cell Line") < 7){
+                $("div #"+exp).append(cellLineListHTML)
+            }
             
-            $("div #"+exp).append(cellLineListHTML)
             console.log($("div #"+exp).text().indexOf("Cell Line"))
             return;
         }
