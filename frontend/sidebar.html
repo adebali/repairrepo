@@ -132,7 +132,7 @@
                     }
                 }
             })
-            $("div #"+exp).html(cellLineListHTML)
+            $("div #"+exp).append(cellLineListHTML)
             return;
         }
 
@@ -172,7 +172,7 @@
         //     console.log($(this).attr("id") + " selected")
         //     return($(this).attr("id"))
         // })
-        
+
         $(".exp").on("click", function(){
 
             var selected = $(this).hasClass("highlight");
@@ -194,6 +194,7 @@
             }else{
                 $(this).removeClass("highlight")
             }
+            console.log($(this).attr("id") + "selected cell line")
         })
 
     
