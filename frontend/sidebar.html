@@ -125,10 +125,11 @@
 
         function populateCellLine(exp){
         
-            var cellLineListHTML ="<b>Cell Line</b> <hr>";
+            var cellLineListHTML ="<br><b>Cell Line</b> <hr>";
             samplejson.forEach(element =>{
                 if(element["experiment"]===exp){
                     //prevent duplicate cell lines to be populated each a time
+                    
                     if(!cellLineListHTML.includes(element["cell_line"])){
                         cellLineListHTML += "<p id = '"+ element["cell_line"] + "' class = 'tab cellLine'>" + element["cell_line"] + "</p>";
                     }
@@ -136,6 +137,7 @@
             })
             
             $("div #"+exp).append(cellLineListHTML)
+            console.log($("div #"+exp).contains("Cell Line"))
             return;
         }
 
