@@ -124,7 +124,7 @@
         }
 
         function populateCellLine(exp){
-            var cellLineListHTML;
+            var cellLineListHTML ="";
             samplejson.forEach(element =>{
                 if(element["experiment"]===exp){
                     if(!cellLineListHTML.includes(element["cell_line"])){
