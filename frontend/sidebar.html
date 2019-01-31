@@ -113,7 +113,7 @@
         function populate(list, cat){
             var html = ""
             list.forEach(element =>{
-                if(!html.includes(element)){
+                if(!html.includes(element["experiment"])){
                     var num = getOccurrence(list,element)
                     html+="<p id = '"+element["experiment"] + "' class = 'tab " + cat+"'>" + element['experiment'] + "   ("+num + ")</p> "
                     //create a div for each experiement (used for collapsible subcategories)
