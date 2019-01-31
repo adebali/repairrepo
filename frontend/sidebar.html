@@ -127,7 +127,7 @@
             var cellLineListHTML;
             samplejson.forEach(element =>{
                 if(element["experiment"]===exp){
-                    cellLineListHTML += "<p id = '"+ element["cell_line"] + "' class = 'tab " + cat+"'>" + element["cell_line"] + "</p>"
+                    cellLineListHTML += "<p id = '"+ element["cell_line"] + "' class = 'tab'>" + element["cell_line"] + "</p>"
                 }
             })
             $("div #"+exp).html(cellLineListHTML)
