@@ -135,8 +135,8 @@
                     }
                 }
             })
-            if($("div#"+exp).text().indexOf("Cell Line") < 7){
-                $("div#"+exp).html(cellLineListHTML)
+            if($("div#"+exp).text().indexOf("Cell Line") === -1){
+                $("div#"+exp).html(cellLineListHTML).addClass("tab")
             }
             
             console.log($("div #"+exp).text().indexOf("Cell Line"))
