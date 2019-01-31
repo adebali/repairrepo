@@ -136,7 +136,7 @@
                 }
             })
             if($("div #"+exp+"_cellLine").text().indexOf("Cell Line") < 7){
-                $("div #"+exp+"_cellLine").append(cellLineListHTML)
+                $("div #"+exp+"_cellLine").html(cellLineListHTML)
             }
             
             console.log($("div #"+exp).text().indexOf("Cell Line"))
