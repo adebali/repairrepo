@@ -172,7 +172,8 @@
         //     console.log($(this).attr("id") + " selected")
         //     return($(this).attr("id"))
         // })
-        $("#expList p").click(function(){
+        
+        $(".exp").on("click", function(){
 
             var selected = $(this).hasClass("highlight");
             if(selected){
@@ -185,6 +186,7 @@
             
             return(populateCellLine($(this).attr("id")));
         })
+
         $(".cellLine").on("click", function(){
             var selected = $(this).hasClass("highlight");
             if(!selected){
