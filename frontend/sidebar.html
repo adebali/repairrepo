@@ -71,21 +71,29 @@
             //     cellLineList.push(element["cell_line"]);
             // }
             //only use data for the current page's organism 
+
+
+            // if(currentOrganism.localeCompare(element["organism"]) === 0){
+            //     experimentList.push(element["experiment"]);
+            //     damageList.push(element["damage"]);
+            //     cellLineList.push(element["cell_line"]);
+            //     //add to list only if its not present
+            //     if(trackList.indexOf(element["title"]) === -1){
+            //         trackList.push(element["title"]);
+            //     }
+            // }
+
+
             if(currentOrganism.localeCompare(element["organism"]) === 0){
-                experimentList.push(element["experiment"]);
-                damageList.push(element["damage"]);
-                cellLineList.push(element["cell_line"]);
-                //add to list only if its not present
-                if(trackList.indexOf(element["title"]) === -1){
-                    trackList.push(element["title"]);
-                }
+                experimentList.push(element)
             }
+
         });
         //populate categories 
         $("#expList").html(populate(experimentList,"exp"))
-        $("#damageList").html(populate(damageList,"damage"))
-        $("#cellLineList").html(populate(cellLineList,"cellLine"))
-        $("#trackDropdown").html(createDropdown(trackList))
+        //$("#damageList").html(populate(damageList,"damage"))
+        //$("#cellLineList").html(populate(cellLineList,"cellLine"))
+        //$("#trackDropdown").html(createDropdown(trackList))
     
         function createDropdown(tracks){
             var htmlStr = '<button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Tracks'
@@ -112,6 +120,18 @@
             });
             return html;
         }
+
+        function populateCellLine(exp){
+            var cellLineListHTML;
+            samplejson.forEach(element =>{
+                if(element["experiment"]===exp){
+                    cellLineListHTML += "<p id = '"+ element["cell_line"] + "' class = 'tab " + cat+"'>" + element["cell_line"] + "</p>"
+                }
+            })
+            $("#cellLineList").html(cellLineListHTML)
+            return;
+        }
+
         function getOccurrence(array, value) {
             var count = 0;
             array.forEach((v) => (v === value && count++));
@@ -159,6 +179,8 @@
             return($(this).attr("id"))
         })
 
+    
+
         function getCurrentOrganism(){
             var url = window.location.href
             var organism = url.split("/").pop().split("browser")
@@ -178,7 +200,6 @@
             }else if(organism == "ecoli"){
                 return "Escherichia coli"
             }else if(organism == "arabidopsis"){
-                
                 return "Arabidopsis thaliana"
             }
         }
