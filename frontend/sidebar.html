@@ -133,7 +133,7 @@
                     }
                 }
             })
-            console.log("len" + $("div #" + exp).length)
+            console.log($("div #" + exp).is(":empty"))
             $("div #"+exp).append(cellLineListHTML)
             return;
         }
