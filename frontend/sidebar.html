@@ -115,7 +115,7 @@
             list.forEach(element =>{
                 if(!html.includes(element["experiment"])){
                     var num = getOccurrence(list,element)
-                    html+="<p id = '"+element["experiment"] + "' class = 'tab " + cat+"'>" + element['experiment'] + "   ("+num + ")</p> "
+                    html+="<p id = '"+element["experiment"] + "' class = 'tab " + cat+"'>" + element['experiment'] + "</p> "
                     //create a div for each experiement (used for collapsible subcategories)
                     html+= "<div id='"+element['experiment']+"'> </div>"
                 }
@@ -178,7 +178,8 @@
                 $(this).addClass("highlight");
             }
             console.log($(this).attr("id") + " selected")
-            return($(this).attr("id"))
+            ()
+            return(populateCellLine((this).attr("id")))
         })
 
     
