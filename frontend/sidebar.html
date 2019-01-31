@@ -117,7 +117,7 @@
                     var num = getOccurrence(list,element)
                     html+="<p id = '"+element["experiment"] + "' class = 'tab " + cat+"'>" + element['experiment'] + "</p> "
                     //create a div for each experiement (used for collapsible subcategories)
-                    html+= "<div id='"+element['experiment']+"'> </div>"
+                    html+= "<div id='"+element['experiment']+" class = 'experiment'> </div>"
                 }
             });
             return html;
@@ -128,7 +128,7 @@
             samplejson.forEach(element =>{
                 if(element["experiment"]===exp){
                     if(!cellLineListHTML.includes(element["cell_line"])){
-                    cellLineListHTML += "<p id = '"+ element["cell_line"] + "' class = 'tab'>" + element["cell_line"] + "</p>"
+                    cellLineListHTML += "<p id = '"+ element["cell_line"] + "' class = 'tab cellLine'>" + element["cell_line"] + "</p>"
                     }
                 }
             })
@@ -143,45 +143,55 @@
         }
 
         //highlighting 
-        $("#tissueTF p").click(function(){
+        // $("#tissueTF p").click(function(){
 
-            var selected = $(this).hasClass("highlight");
-            $("#tissueTF p").removeClass("highlight");
-            if(!selected){
-                $(this).addClass("highlight");
-            }
-            console.log($(this).attr("id") + " selected")
-            return($(this).attr("id"))
-        })
-        $("#cellLineList p").click(function(){
-            var selected = $(this).hasClass("highlight");
-            $("#cellLineList p").removeClass("highlight");
-            if(!selected){
-                $(this).addClass("highlight");
-            }
-            console.log($(this).attr("id") + " selected")
-            return($(this).attr("id"))
-        })
-        $("#damageList p").click(function(){
+        //     var selected = $(this).hasClass("highlight");
+        //     $("#tissueTF p").removeClass("highlight");
+        //     if(!selected){
+        //         $(this).addClass("highlight");
+        //     }
+        //     console.log($(this).attr("id") + " selected")
+        //     return($(this).attr("id"))
+        // })
+        // $("#cellLineList p").click(function(){
+        //     var selected = $(this).hasClass("highlight");
+        //     $("#cellLineList p").removeClass("highlight");
+        //     if(!selected){
+        //         $(this).addClass("highlight");
+        //     }
+        //     console.log($(this).attr("id") + " selected")
+        //     return($(this).attr("id"))
+        // })
+        // $("#damageList p").click(function(){
 
-            var selected = $(this).hasClass("highlight");
-            $("#damageList p").removeClass("highlight");
-            if(!selected){
-                $(this).addClass("highlight");
-            }
-            console.log($(this).attr("id") + " selected")
-            return($(this).attr("id"))
-        })
+        //     var selected = $(this).hasClass("highlight");
+        //     $("#damageList p").removeClass("highlight");
+        //     if(!selected){
+        //         $(this).addClass("highlight");
+        //     }
+        //     console.log($(this).attr("id") + " selected")
+        //     return($(this).attr("id"))
+        // })
         $("#expList p").click(function(){
 
             var selected = $(this).hasClass("highlight");
-            $("#expList p").removeClass("highlight");
-            if(!selected){
+            if(selected){
+                $(this).removeClass("highlight");
+            }else{
                 $(this).addClass("highlight");
             }
-            console.log($(this).attr("id") + " selected")
+
+            console.log($(this).attr("id") + " selected");
             
-            return(populateCellLine($(this).attr("id")))
+            return(populateCellLine($(this).attr("id")));
+        })
+        $(".cellLine").on("click", function(){
+            var selected = $(this).hasClass("highlight");
+            if(!selected){
+                $(this).addClass("highlight")
+            }else{
+                $(this).removeClass("highlight")
+            }
         })
 
     
