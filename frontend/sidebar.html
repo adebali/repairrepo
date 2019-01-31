@@ -125,15 +125,16 @@
 
         function populateCellLine(exp){
         
-            var cellLineListHTML ="";
+            var cellLineListHTML ="<b>Cell Line</b> <hr>";
             samplejson.forEach(element =>{
                 if(element["experiment"]===exp){
+                    //prevent duplicate cell lines to be populated each a time
                     if(!cellLineListHTML.includes(element["cell_line"])){
-                    cellLineListHTML += "<p id = '"+ element["cell_line"] + "' class = 'tab cellLine'>" + element["cell_line"] + "</p>"
+                        cellLineListHTML += "<p id = '"+ element["cell_line"] + "' class = 'tab cellLine'>" + element["cell_line"] + "</p>";
                     }
                 }
             })
-            console.log($("div #" + exp).is(":empty"))
+            
             $("div #"+exp).append(cellLineListHTML)
             return;
         }
