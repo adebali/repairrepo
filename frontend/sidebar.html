@@ -125,7 +125,7 @@
 
         function populateCellLine(exp){
         
-            var cellLineListHTML ="<br><b>Cell Line</b> <hr>";
+            var cellLineListHTML ="<br><b>Cell Line</b>";
             samplejson.forEach(element =>{
                 if(element["experiment"]===exp){
                     //prevent duplicate cell lines to be populated each a time
@@ -137,7 +137,7 @@
             })
             
             $("div #"+exp).append(cellLineListHTML)
-            console.log($("div #"+exp).contains("Cell Line"))
+            console.log($("div #"+exp).text().indexOf("Cell Line"))
             return;
         }
 
