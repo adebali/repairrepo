@@ -115,7 +115,7 @@
             list.forEach(element =>{
                 if(!html.includes(element["experiment"])){
                     var num = getOccurrence(list,element)
-                    html+="<p id = '"+element["experiment"] + "' class = 'tab " + cat+"'>" + element['experiment'] + "</p> "
+                    // html+="<div id = '"+element["experiment"] + "' class = 'tab " + cat+"'>" + element['experiment'] + "</div> "
                     //create a div for each experiement (used for collapsible subcategories)
                     html+= "<div id='"+element['experiment']+"' class = 'experiment'></div>"
                 }
@@ -180,7 +180,7 @@
         //     return($(this).attr("id"))
         // })
 
-        $(".exp").on("click", function(){
+        $(".experiment").on("click", function(){
 
             var selected = $(this).hasClass("highlight");
             if(selected){
