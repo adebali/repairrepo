@@ -132,7 +132,7 @@
                     //prevent duplicate cell lines to be populated each a time
                     
                     if(!cellLineListHTML.includes(element["cell_line"])){
-                        cellLineListHTML += "<div id = '"+ element["cell_line"] + "' class = 'tab2 cellLine'>" + element["cell_line"] + "</div>";
+                        cellLineListHTML += "<p>" + + element["cell_line"] + "</p>" + "<div id = '"+ element["cell_line"] + "' class = 'tab2 cellLine'>" + "</div>";
                     }
                 }
             })
@@ -165,36 +165,6 @@
             }
         }
 
-        //highlighting 
-        // $("#tissueTF p").click(function(){
-
-        //     var selected = $(this).hasClass("highlight");
-        //     $("#tissueTF p").removeClass("highlight");
-        //     if(!selected){
-        //         $(this).addClass("highlight");
-        //     }
-        //     console.log($(this).attr("id") + " selected")
-        //     return($(this).attr("id"))
-        // })
-        // $("#cellLineList p").click(function(){
-        //     var selected = $(this).hasClass("highlight");
-        //     $("#cellLineList p").removeClass("highlight");
-        //     if(!selected){
-        //         $(this).addClass("highlight");
-        //     }
-        //     console.log($(this).attr("id") + " selected")
-        //     return($(this).attr("id"))
-        // })
-        // $("#damageList p").click(function(){
-
-        //     var selected = $(this).hasClass("highlight");
-        //     $("#damageList p").removeClass("highlight");
-        //     if(!selected){
-        //         $(this).addClass("highlight");
-        //     }
-        //     console.log($(this).attr("id") + " selected")
-        //     return($(this).attr("id"))
-        // })
 
         $(".exp").on("click", function(){
 
