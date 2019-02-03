@@ -132,7 +132,7 @@
                     //prevent duplicate cell lines to be populated each a time
                     
                     if(!cellLineListHTML.includes(element["cell_line"])){
-                        cellLineListHTML += "<p id = 'cellLineP'>" + element["cell_line"] + "</p>" + "<div id = '"+ element["cell_line"] + "' class = 'tab2 cellLine'>" + "</div>";
+                        cellLineListHTML += "<p class = 'cellLineP' id = '" element["cell_line"]+ "' >" + element["cell_line"] + "</p>" + "<div id = '"+ element["cell_line"] + "' class = 'tab2 cellLine'>" + "</div>";
                     }
                 }
             })
@@ -181,7 +181,7 @@
             return(populateCellLine($(this).attr("id")));
         })
 
-        $(document).on("click", "#cellLineP", function(){
+        $(document).on("click", ".cellLineP", function(){
             var selected = $(this).hasClass("highlight");
             if(!selected){
                 $(this).addClass("highlight")
