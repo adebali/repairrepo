@@ -136,8 +136,8 @@
                     }
                 }
             })
-            if($("div#"+exp).text().indexOf("Cell Line") === -1){
-                $("div#"+exp).html(cellLineListHTML).addClass("tab2")
+            if($("div#"+element["cell_line"]).text().indexOf("Cell Line") === -1){
+                $("div#"+element["cell_line"]).html(cellLineListHTML).addClass("tab2")
             }
             
             console.log($("div #"+exp).text().indexOf("Cell Line"))
