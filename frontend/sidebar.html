@@ -181,7 +181,7 @@
             return(populateCellLine($(this).attr("id")));
         })
 
-        $(document).on("click", ".cellLine", function(){
+        $(document).on("click", "div.cellLine", function(){
             var selected = $(this).hasClass("highlight");
             if(!selected){
                 $(this).addClass("highlight")
