@@ -151,7 +151,6 @@
         }
 
         function populateDamageType(cellLine){
-            console.log("in damage")
             var damageHTML = "<br><b>Damage Type: "+cellLine+"</b>";
             samplejson.forEach(element =>{
                 if(element["cell_line"]===cellLine){
@@ -164,6 +163,7 @@
             if($("div#"+cellLine).text().indexOf("Damage") === -1){
                 $("div#"+cellLine).html(damageHTML).addClass("tab3")
             }
+            return console.log(damageHTML)
         }
 
 
