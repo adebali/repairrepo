@@ -16,6 +16,9 @@ body{
   margin-left: 40px; 
   
 }
+.tab2{
+  margin-left: 60px;
+}
 #wrapper1{
   display:flex;
 }
