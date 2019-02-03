@@ -151,6 +151,7 @@
         }
 
         function populateDamageType(cellLine){
+            console.log("in damage")
             var damageHTML = "<br><b>Damage Type: "+cellLine+"</b>";
             samplejson.forEach(element =>{
                 if(element["cell_line"]===cellLine){
