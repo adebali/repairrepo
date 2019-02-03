@@ -150,6 +150,21 @@
             return count;
         }
 
+        function populateDamageType(cellLine){
+            var damageHTML = "<br><b>Damage Type: "+cellLine+"</b>";
+            samplejson.forEach(element =>{
+                if(element["cell_line"]===cellLine){
+                    //prevent duplicate cell lines to be populated each a time
+                    if(!damageHTML.includes(element["cell_line"])){
+                        damageHTML += "<div id = '"+ element["damage"] + "' class = 'tab3 damage'>" + element["damage"] + "</div>";
+                    }
+                }
+            })
+            if($("div#"+cellLine).text().indexOf("Damage") === -1){
+                $("div#"+cellLine).html(damageHTML).addClass("tab3")
+            }
+        }
+
         //highlighting 
         // $("#tissueTF p").click(function(){
 
@@ -203,6 +218,7 @@
                 $(this).removeClass("highlight")
             }
             console.log($(this).attr("id") + "selected cell line")
+            return(populateDamageType($(this).attr("id")))
         })
 
     
