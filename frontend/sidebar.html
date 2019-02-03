@@ -11,7 +11,8 @@
 
 <section id = "sidebar">
     <div id = "exp">
-        <b>Experiment</b>
+        <h3><b>Experiment</b></h3>
+
         <div id ="expList">
 
         </div>
@@ -131,7 +132,7 @@
                     //prevent duplicate cell lines to be populated each a time
                     
                     if(!cellLineListHTML.includes(element["cell_line"])){
-                        cellLineListHTML += "<div id = '"+ element["cell_line"] + "' class = 'tab2 cellLine'>" + element["cell_line"] + "</div>";
+                        cellLineListHTML += "<div id = '"+ element["cell_line"] + "' class = 'tab2 cellLine'>" + element["cell_line"] + ": " + element["experiment"] "</div>";
                     }
                 }
             })
