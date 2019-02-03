@@ -19,6 +19,9 @@ body{
 .tab2{
   margin-left: 60px;
 }
+.tab3{
+  margin-left: 80px;
+}
 #wrapper1{
   display:flex;
 }
