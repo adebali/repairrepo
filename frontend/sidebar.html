@@ -172,7 +172,8 @@
             if(selected){
                 $(this).removeClass("highlight");
                 var thisExp = $(this).attr("id")
-                $("div#"+thisExp).empty();
+                $("div#"+thisExp).remove();
+                $("p#"+thisExp).remove();
             }else{
                 $(this).addClass("highlight");
             }
