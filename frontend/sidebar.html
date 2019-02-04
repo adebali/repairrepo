@@ -157,8 +157,8 @@
                     //prevent duplicate cell lines to be populated each a time
                     if(!damageHTML.includes(element["damage"])){
                        
-                        damageHTML += "<p class = 'damageP' id = '"+element["damage"]+"'>"+element["damage"]+"</p>";
-                        damageHTML += "<div id = '"+element["damage"]+"' class = 'tab3 damage'></div>";
+                        damageHTML += "<p class = 'damageP "+cellLine+ "' id = '"+element["damage"]+"'>"+element["damage"]+"</p>";
+                        damageHTML += "<div id = '"+element["damage"]+"' class = 'tab3 damage "+cellLine+ "'></div>";
                     }
                 }
             })
@@ -216,6 +216,7 @@
                 $(this).removeClass("highlight")
                 var thisCellLine = $(this).attr("id")
                 $("#damageList"+thisCellLine).empty();
+                $("."+thisCellLine).empty();
                 return;
             }
             console.log($(this).attr("id") + "selected cell line")
