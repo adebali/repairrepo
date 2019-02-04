@@ -183,6 +183,7 @@
 
             console.log($(this).attr("id") + " selected");
             console.log("split id " + $(this).attr("id").split("Exp")[0])
+            console.log("split id len " + $(this).attr("id").split("Exp")[0].length)
             return(populateCellLine($(this).attr("id").split("Exp")[0]));
         })
 
