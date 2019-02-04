@@ -150,7 +150,7 @@
         }
 
         function populateDamageType(cellLine){
-            var damageHTML = "<br><b>Damage Type: "+cellLine+"</b>";
+            var damageHTML = "<p id = 'damageList"+ exp+"'><br><b>Damage Type: "+cellLine+"</b></p>";
             samplejson.forEach(element =>{
                 if(element["cell_line"]===cellLine){
                     //prevent duplicate cell lines to be populated each a time
@@ -193,7 +193,8 @@
                 $(this).addClass("highlight")
             }else{
                 $(this).removeClass("highlight")
-                $(this).empty();
+                var thisCellLine = $(this).attr("id")
+                $("#damageList"+thisCellLine).empty();
             }
             console.log($(this).attr("id") + "selected cell line")
             return(populateDamageType($(this).attr("id")))
