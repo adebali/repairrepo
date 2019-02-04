@@ -183,7 +183,7 @@
 
             console.log($(this).attr("id") + " selected");
             
-            return(populateCellLine($(this).attr("id")));
+            return(populateCellLine($(this).attr("id").split("Exp")[0]));
         })
 
         $(document).on("click", ".cellLineP", function(){
