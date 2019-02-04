@@ -174,8 +174,8 @@
                 var thisExp = $(this).attr("id")
                 //  $("#"+thisExp+" .cellLine").remove();
                 //  $("#"+thisExp + " .cellLineP").remove();
-                $("#"+thisExp + " .experiment").empty();
-                console.log($("#"+thisExp + " .experiment").length)
+                $("div #"+thisExp).remove();
+                console.log($("div#"+thisExp).length)
                 console.log("here in empty")
                 return;
                
