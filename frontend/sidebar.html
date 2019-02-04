@@ -196,7 +196,7 @@
             var selected = $(this).hasClass("highlight");
             if(!selected){
                 $(this).addClass("highlight")
-                return(populateTracks($(this).attr("id")))
+                return(populateDamageType($(this).attr("id")))
             }else{
                 $(this).removeClass("highlight")
                 var thisCellLine = $(this).attr("id")
@@ -211,7 +211,7 @@
             var selected = $(this).hasClass("highlight");
             if(!selected){
                 $(this).addClass("highlight")
-                return(populateDamageType($(this).attr("id")))
+                return(populateTracks($(this).attr("id")))
             }else{
                 $(this).removeClass("highlight")
                 var damage = $(this).attr("id")
