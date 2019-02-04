@@ -118,7 +118,7 @@
                     var num = getOccurrence(list,element)
                     html+="<p id = '"+element["experiment"] + "' class = 'tab " + cat+"'><b>" + element['experiment'] + "</b></p> "
                     //create a div for each experiement (used for collapsible subcategories)
-                    html+= "<div id='"+element['experiment']+"Exp' class = 'experiment'></div>"
+                    html+= "<div id='"+element['experiment']+"' class = 'experiment'></div>"
                 }
             });
             return html;
@@ -174,17 +174,17 @@
                 var thisExp = $(this).attr("id")
                 //  $("#"+thisExp+" .cellLine").remove();
                 //  $("#"+thisExp + " .cellLineP").remove();
-                $("#"+thisExp + "Exp").empty();
-                 
+                $("#"+thisExp + " .experiment").empty();
+                return;
                
             }else{
                 $(this).addClass("highlight");
+                return(populateCellLine($(this).attr("id")));
             }
 
             console.log($(this).attr("id") + " selected");
-            console.log("split id " + $(this).attr("id").split("Exp")[0])
-            console.log("split id len " + $(this).attr("id").split("Exp")[0].length)
-            return(populateCellLine($(this).attr("id").split("Exp")[0]));
+           
+            
         })
 
         $(document).on("click", ".cellLineP", function(){
