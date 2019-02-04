@@ -172,8 +172,8 @@
             if(selected){
                 $(this).removeClass("highlight");
                 var thisExp = $(this).attr("id")
-                $("div#"+thisExp+" .cellLine").remove();
-                console.log($("p#"+thisExp + " .cellLineP").remove());
+                $("#"+thisExp+" .cellLine").remove();
+                $("#"+thisExp + " .cellLineP").remove();
                
             }else{
                 $(this).addClass("highlight");
