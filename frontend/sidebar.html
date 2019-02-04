@@ -96,19 +96,19 @@
         //$("#cellLineList").html(populate(cellLineList,"cellLine"))
         //$("#trackDropdown").html(createDropdown(trackList))
     
-        function createDropdown(tracks){
-            var htmlStr = '<button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Tracks'
-                htmlStr += '<span class="caret"></span></button> <ul class="dropdown-menu">'
-                    tracks.forEach(element => {
-                        htmlStr += '<li><a href="#" class = "track" id = "'+ element+'" >'+element+'</a></li>'
-                    })
-                    htmlStr += '</ul>'
+        // function createDropdown(tracks){
+        //     var htmlStr = '<button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Tracks'
+        //         htmlStr += '<span class="caret"></span></button> <ul class="dropdown-menu">'
+        //             tracks.forEach(element => {
+        //                 htmlStr += '<li><a href="#" class = "track" id = "'+ element+'" >'+element+'</a></li>'
+        //             })
+        //             htmlStr += '</ul>'
 
-            return htmlStr;
-        }
-        $(".track").on("click", function(){
-            $("#chosenTrack").html(event.target.id).addClass("highlight")
-        })
+        //     return htmlStr;
+        // }
+        // $(".track").on("click", function(){
+        //     $("#chosenTrack").html(event.target.id).addClass("highlight")
+        // })
         //helper function returning an html string of list to append to sidebar 
         //'type' is the class denoting which category the attribute is apart of
         function populate(list, cat){
@@ -118,7 +118,7 @@
                     var num = getOccurrence(list,element)
                     html+="<p id = '"+element["experiment"] + "' class = 'tab " + cat+"'><b>" + element['experiment'] + "</b></p> "
                     //create a div for each experiement (used for collapsible subcategories)
-                    html+= "<div id='"+element['experiment']+"' class = 'experiment'></div>"
+                    html+= "<div id='"+element['experiment']+"Exp' class = 'experiment'></div>"
                 }
             });
             return html;
@@ -174,7 +174,7 @@
                 var thisExp = $(this).attr("id")
                 //  $("#"+thisExp+" .cellLine").remove();
                 //  $("#"+thisExp + " .cellLineP").remove();
-                $("#"+thisExp + " .experiment").empty();
+                $("#"+thisExp + "Exp").empty();
                  
                
             }else{
