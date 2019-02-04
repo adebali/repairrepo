@@ -156,8 +156,7 @@
                     
                     //prevent duplicate cell lines to be populated each a time
                     if(!damageHTML.includes(element["damage"])){
-                        console.log('in includes for dam pop ' + element["damage"])
-                        // damageHTML += "<p class = 'damageP' id = '" + element["damage"]> + "'>" + element["damage"]+ "</p> <div id = '"+ element["damage"] + "' class = 'tab3 damage'></div>";
+                       
                         damageHTML += "<p class = 'damageP' id = '"+element["damage"]+"'>"+element["damage"]+"</p>";
                         damageHTML += "<div id = '"+element["damage"]+"' class = 'tab3 damage'></div>";
                     }
@@ -170,7 +169,13 @@
         }
 
         function populateTracks(damage){
-            return console.log("in pop tracks "+ damage);
+            
+
+
+
+            if($("div#"+damage).text().indexOf("Damage") === -1){
+                $("div#"+damage).html(damageHTML).addClass("tab4")
+            }
         }
 
         //populate cell lines when user selects experiment
@@ -218,7 +223,6 @@
             }else{
                 $(this).removeClass("highlight")
                 var damage = $(this).attr("id")
-                //$("#trackList"+damage).empty();
                 return;
             }
         })

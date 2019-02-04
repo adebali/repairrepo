@@ -22,11 +22,14 @@ body{
 .tab3{
   margin-left: 60px;
 }
+.tab4{
+  margin-left: 70px;
+}
 #wrapper1{
   display:flex;
 }
 #sidebar{
-  flex: 0 0 20%;
+  flex: 0 0 25%;
 }
 #igvContainer{
   flex: 1;
