@@ -172,10 +172,10 @@
             if(selected){
                 $(this).removeClass("highlight");
                 var thisExp = $(this).attr("id")
-                // $("#"+thisExp+" .cellLine").remove();
-                // $("#"+thisExp + " .cellLineP").remove();
+                $("#"+thisExp+" .cellLine").remove();
+                $("#"+thisExp + " .cellLineP").remove();
                 
-               $("#"+thisExp + " .experiment").empty();
+               //$("#"+thisExp + " .experiment").empty();
             }else{
                 $(this).addClass("highlight");
             }
