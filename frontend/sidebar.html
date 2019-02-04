@@ -173,7 +173,7 @@
                 $(this).removeClass("highlight");
                 var thisExp = $(this).attr("id")
                 $("div#"+thisExp+" .cellLine").remove();
-                $("p#"+thisExp + " .cellLineP").remove();
+                console.log($("p#"+thisExp + " .cellLineP").remove());
                
             }else{
                 $(this).addClass("highlight");
