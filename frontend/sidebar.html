@@ -132,7 +132,7 @@
                     //prevent duplicate cell lines to be populated each a time
                     
                     if(!cellLineListHTML.includes(element["cell_line"])){
-                        cellLineListHTML += "<p class = 'cellLineP' id = '" + element["cell_line"]+ "' >" + element["cell_line"] + "</p>" + "<div id = '"+ element["cell_line"] + "' class = 'tab2 cellLine'>" + "</div>";
+                        cellLineListHTML += "<p class = 'cellLineP' id = '" + element["cell_line"]+ "' >" + element["cell_line"] + "</p>" + "<div id = '"+ element["cell_line"] + "' class = 'tab2 cellLine'></div>";
                     }
                 }
             })
@@ -157,7 +157,7 @@
                     //prevent duplicate cell lines to be populated each a time
                     if(!damageHTML.includes(element["damage"])){
                         
-                        damageHTML += "<p class = 'damageP' id = '" + element["damage"]> + "'>" + element["damage"]+ "</p> <div id = '"+ element["damage"] + "' class = 'tab3 damage'>" + element["damage"] + "</div>";
+                        damageHTML += "<p class = 'damageP' id = '" + element["damage"]> + "'>" + element["damage"]+ "</p> <div id = '"+ element["damage"] + "' class = 'tab3 damage'></div>";
                     }
                 }
             })
@@ -171,6 +171,7 @@
             return console.log("in pop tracks "+ damage);
         }
 
+        //populate cell lines when user selects experiment
         $(".exp").on("click", function(){
 
             var selected = $(this).hasClass("highlight");
@@ -191,7 +192,7 @@
            
             
         })
-
+        //populate damage type when user selects a cell line
         $(document).on("click", ".cellLineP", function(){
             var selected = $(this).hasClass("highlight");
             if(!selected){
@@ -206,7 +207,7 @@
             console.log($(this).attr("id") + "selected cell line")
             
         })
-
+        //populate tracks when user selects a damage type
         $(document).on("click", ".damageP", function(){
             var selected = $(this).hasClass("highlight");
             if(!selected){
