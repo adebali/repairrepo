@@ -215,7 +215,7 @@
             }else{
                 $(this).removeClass("highlight")
                 var thisCellLine = $(this).attr("id")
-                $("#damageList"+thisCellLine).empty();
+                $("#"+thisCellLine).empty();
                 return;
             }
             console.log($(this).attr("id") + "selected cell line")
