@@ -175,7 +175,7 @@
             samplejson.forEach(element =>{
                 if(element["damage"] === damage){
                     if(!tracksHTML.includes(element["title"])){
-                        tracksHTML += "<p class = 'track' id = '"+element["title"]+"'>"+ element["title"] + "</p>";
+                        tracksHTML += "<p class = 'track "+ damage+"' id = '"+element["title"]+"'>"+ element["title"] + "</p>";
                     }
                 }
             })
@@ -230,6 +230,8 @@
                 return(populateTracks($(this).attr("id")))
             }else{
                 $(this).removeClass("highlight")
+                var dam = $(this).attr("id");
+                $("."+dam).empty();
                 return;
             }
         })
