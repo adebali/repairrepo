@@ -168,14 +168,23 @@
             return;
         }
 
+        //populate track list when user selects a damage type
         function populateTracks(damage){
             
+            var tracksHTML = "<p id = 'tracksList"+damage+"'> <br> <b>Tracks</b></p>";
+            samplejson.forEach(element =>{
+                if(element["damage"] === damage){
+                    if(!tracksHTML.includes(element["title"])){
+                        tracksHTML += "<div class = 'track' id = '"+element["title"]+"'>"+ element["title"] + "</div>";
+                    }
+                }
+            })
 
 
-
-            if($("div#"+damage).text().indexOf("Damage") === -1){
-                $("div#"+damage).html(damageHTML).addClass("tab4")
+            if($("div#"+damage).text().indexOf("Tracks") === -1){
+                $("div#"+damage).html(tracksHTML).addClass("tab4")
             }
+            return;
         }
 
         //populate cell lines when user selects experiment
@@ -222,10 +231,22 @@
                 return(populateTracks($(this).attr("id")))
             }else{
                 $(this).removeClass("highlight")
-                var damage = $(this).attr("id")
                 return;
             }
         })
+
+        $(document).on("click", ".damageP", function(){
+            var selected = $(this).hasClass("highlight");
+            if(!selected){
+                $(this).addClass("highlight")
+                return(console.log("adding track"+ $(this).attr("id")+ "to browser"))
+            }else{
+                $(this).removeClass("highlight")
+                return(console.log("removing track"+ $(this).attr("id")+ "from browser"))
+                
+            }
+        })
+
 
     
 
