@@ -118,7 +118,7 @@
                     var num = getOccurrence(list,element)
                     html+="<p id = '"+element["experiment"] + "' class = 'tab " + cat+"'><b>" + element['experiment'] + "</b></p> "
                     //create a div for each experiement (used for collapsible subcategories)
-                    html+= "<div id='"+element['experiment']+"' class = 'experiment'></div>"
+                    html+= "<div id='"+element['experiment']+"_Exp' class = 'experiment'></div>"
                 }
             });
             return html;
@@ -132,7 +132,7 @@
                     //prevent duplicate cell lines to be populated each a time
                     
                     if(!cellLineListHTML.includes(element["cell_line"])){
-                        cellLineListHTML += "<p class = 'cellLineP' id = '" + element["cell_line"]+ "' >" + element["cell_line"] + "</p>" + "<div id = '"+ element["cell_line"] + "' class = 'tab2 cellLine'>" + "</div>";
+                        cellLineListHTML += "<p class = 'cellLineP' id = '" + element["cell_line"]+ "_Line' >" + element["cell_line"] + "</p>" + "<div id = '"+ element["cell_line"] + "' class = 'tab2 cellLine'>" + "</div>";
                     }
                 }
             })
@@ -155,7 +155,7 @@
                 if(element["cell_line"]===cellLine){
                     //prevent duplicate cell lines to be populated each a time
                     if(!damageHTML.includes(element["cell_line"])){
-                        damageHTML += "<div id = '"+ element["damage"] + "' class = 'tab3 damage'>" + element["damage"] + "</div>";
+                        damageHTML += "<div id = '"+ element["damage"] + "_Dam' class = 'tab3 damage'>" + element["damage"] + "</div>";
                     }
                 }
             })
@@ -174,15 +174,15 @@
                 var thisExp = $(this).attr("id")
                 // $("#"+thisExp+" .cellLine").remove();
                 // $("#"+thisExp + " .cellLineP").remove();
-                
-               $("#"+thisExp + " .experiment").css("font-weight","Bold");
+               $("#"+thisExp+"_Exp").empty(); 
+               
             }else{
                 $(this).addClass("highlight");
             }
 
             console.log($(this).attr("id") + " selected");
             
-            return(populateCellLine($(this).attr("id")));
+            return(populateCellLine($(this).attr("id").split("_")[0]));
         })
 
         $(document).on("click", ".cellLineP", function(){
@@ -193,7 +193,7 @@
                 $(this).removeClass("highlight")
             }
             console.log($(this).attr("id") + "selected cell line")
-            return(populateDamageType($(this).attr("id")))
+            return(populateDamageType($(this).attr("id").split("_")[0]))
         })
 
     
