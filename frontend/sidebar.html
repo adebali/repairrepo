@@ -155,7 +155,7 @@
                 if(element["cell_line"]===cellLine){
                     console.log("here in pop damage")
                     //prevent duplicate cell lines to be populated each a time
-                    if(!damageHTML.includes(element["cell_line"])){
+                    if(!damageHTML.includes(element["damage"])){
                         console.log("here in includes")
                         damageHTML += "<div id = '"+ element["damage"] + "' class = 'tab3 damage'>" + element["damage"] + "</div>";
                     }
