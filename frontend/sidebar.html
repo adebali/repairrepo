@@ -126,7 +126,7 @@
 
         function populateCellLine(exp){
         
-            var cellLineListHTML = "<p id = 'cellList" + exp + "'> <br><b>Cell Line: " + exp + "</b></p>";
+            var cellLineListHTML = "<p id = 'cellList" + exp + "'> <br><h5><b>Cell Line: " + exp + "</b></h5></p>";
             samplejson.forEach(element =>{
                 if(element["experiment"]===exp){
                     //prevent duplicate cell lines to be populated each a time
@@ -150,7 +150,7 @@
         }
 
         function populateDamageType(cellLine){
-            var damageHTML = "<p id = 'damageList"+ cellLine+"'><br><b>Damage Type: "+cellLine+"</b></p>";
+            var damageHTML = "<p id = 'damageList"+ cellLine+"'><br><h5><b>Damage Type: "+cellLine+"</b></h5></p>";
             samplejson.forEach(element =>{
                 if(element["cell_line"]===cellLine){
                     
@@ -171,7 +171,7 @@
         //populate track list when user selects a damage type
         function populateTracks(damage){
             
-            var tracksHTML = "<p id = 'tracksList"+damage+"'> <br> <b>Tracks</b></p>";
+            var tracksHTML = "<p id = 'tracksList"+damage+"'> <br><h5><b>Tracks</b></h5></p>";
             samplejson.forEach(element =>{
                 if(element["damage"] === damage){
                     if(!tracksHTML.includes(element["title"])){
