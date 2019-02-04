@@ -153,11 +153,11 @@
             var damageHTML = "<p id = 'damageList"+ cellLine+"'><br><b>Damage Type: "+cellLine+"</b></p>";
             samplejson.forEach(element =>{
                 if(element["cell_line"]===cellLine){
-                    console.log("here in pop damage")
+                    
                     //prevent duplicate cell lines to be populated each a time
                     if(!damageHTML.includes(element["damage"])){
-                        console.log("here in includes")
-                        damageHTML += "<div id = '"+ element["damage"] + "' class = 'tab3 damage'>" + element["damage"] + "</div>";
+                        
+                        damageHTML += "<p class = 'damageP' id = '" + element["damage"]> + "'>" + element["damage"]+ "</p> <div id = '"+ element["damage"] + "' class = 'tab3 damage'>" + element["damage"] + "</div>";
                     }
                 }
             })
@@ -167,6 +167,9 @@
             return;
         }
 
+        function populateTracks(damage){
+            return console.log("in pop tracks "+ damage);
+        }
 
         $(".exp").on("click", function(){
 
@@ -193,7 +196,7 @@
             var selected = $(this).hasClass("highlight");
             if(!selected){
                 $(this).addClass("highlight")
-                return(populateDamageType($(this).attr("id")))
+                return(populateTracks($(this).attr("id")))
             }else{
                 $(this).removeClass("highlight")
                 var thisCellLine = $(this).attr("id")
@@ -202,6 +205,19 @@
             }
             console.log($(this).attr("id") + "selected cell line")
             
+        })
+
+        $(document).on("click", ".damageP", function(){
+            var selected = $(this).hasClass("highlight");
+            if(!selected){
+                $(this).addClass("highlight")
+                return(populateDamageType($(this).attr("id")))
+            }else{
+                $(this).removeClass("highlight")
+                var damage = $(this).attr("id")
+                //$("#trackList"+damage).empty();
+                return;
+            }
         })
 
     
