@@ -193,6 +193,7 @@
                 $(this).addClass("highlight")
             }else{
                 $(this).removeClass("highlight")
+                $(this).empty();
             }
             console.log($(this).attr("id") + "selected cell line")
             return(populateDamageType($(this).attr("id")))
