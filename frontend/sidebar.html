@@ -171,7 +171,8 @@
             var selected = $(this).hasClass("highlight");
             if(selected){
                 $(this).removeClass("highlight");
-                $(this).empty();
+                var thisExp = $(this).attr("id")
+                $("div#"+thisExp).empty();
             }else{
                 $(this).addClass("highlight");
             }
