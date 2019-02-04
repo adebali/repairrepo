@@ -232,6 +232,7 @@
                 $(this).removeClass("highlight")
                 var dam = $(this).attr("id");
                 $("."+dam).empty();
+                $("#tracksList"+dam).remove();
                 return;
             }
         })
