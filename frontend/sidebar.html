@@ -140,7 +140,6 @@
                 $("div#"+exp).html(cellLineListHTML).addClass("tab2")
             }
             
-            console.log($("div #"+exp).text().indexOf("Cell Line"))
             return;
         }
 
@@ -163,7 +162,7 @@
             if($("div#"+cellLine).text().indexOf("Damage") === -1){
                 $("div#"+cellLine).html(damageHTML).addClass("tab3")
             }
-            return console.log(damageHTML)
+            return;
         }
 
 
@@ -172,6 +171,7 @@
             var selected = $(this).hasClass("highlight");
             if(selected){
                 $(this).removeClass("highlight");
+                $(this).empty();
             }else{
                 $(this).addClass("highlight");
             }
