@@ -191,13 +191,15 @@
             var selected = $(this).hasClass("highlight");
             if(!selected){
                 $(this).addClass("highlight")
+                return(populateDamageType($(this).attr("id")))
             }else{
                 $(this).removeClass("highlight")
                 var thisCellLine = $(this).attr("id")
                 $("#damageList"+thisCellLine).empty();
+                return;
             }
             console.log($(this).attr("id") + "selected cell line")
-            return(populateDamageType($(this).attr("id")))
+            
         })
 
     
