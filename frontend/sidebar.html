@@ -153,8 +153,10 @@
             var damageHTML = "<p id = 'damageList"+ cellLine+"'><br><b>Damage Type: "+cellLine+"</b></p>";
             samplejson.forEach(element =>{
                 if(element["cell_line"]===cellLine){
+                    console.log("here in pop damage")
                     //prevent duplicate cell lines to be populated each a time
                     if(!damageHTML.includes(element["cell_line"])){
+                        console.log("here in includes")
                         damageHTML += "<div id = '"+ element["damage"] + "' class = 'tab3 damage'>" + element["damage"] + "</div>";
                     }
                 }
