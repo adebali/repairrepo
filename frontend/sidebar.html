@@ -96,19 +96,19 @@
         //$("#cellLineList").html(populate(cellLineList,"cellLine"))
         //$("#trackDropdown").html(createDropdown(trackList))
     
-        function createDropdown(tracks){
-            var htmlStr = '<button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Tracks'
-                htmlStr += '<span class="caret"></span></button> <ul class="dropdown-menu">'
-                    tracks.forEach(element => {
-                        htmlStr += '<li><a href="#" class = "track" id = "'+ element+'" >'+element+'</a></li>'
-                    })
-                    htmlStr += '</ul>'
+        // function createDropdown(tracks){
+        //     var htmlStr = '<button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Tracks'
+        //         htmlStr += '<span class="caret"></span></button> <ul class="dropdown-menu">'
+        //             tracks.forEach(element => {
+        //                 htmlStr += '<li><a href="#" class = "track" id = "'+ element+'" >'+element+'</a></li>'
+        //             })
+        //             htmlStr += '</ul>'
 
-            return htmlStr;
-        }
-        $(".track").on("click", function(){
-            $("#chosenTrack").html(event.target.id).addClass("highlight")
-        })
+        //     return htmlStr;
+        // }
+        // $(".track").on("click", function(){
+        //     $("#chosenTrack").html(event.target.id).addClass("highlight")
+        // })
         //helper function returning an html string of list to append to sidebar 
         //'type' is the class denoting which category the attribute is apart of
         function populate(list, cat){
@@ -126,13 +126,13 @@
 
         function populateCellLine(exp){
         
-            var cellLineListHTML ="<br><b>Cell Line: " + exp + "</b>";
+            var cellLineListHTML = "<p id = 'cellList" + exp + "'> <br><h5><b>Cell Line: " + exp + "</b></h5></p>";
             samplejson.forEach(element =>{
                 if(element["experiment"]===exp){
                     //prevent duplicate cell lines to be populated each a time
                     
                     if(!cellLineListHTML.includes(element["cell_line"])){
-                        cellLineListHTML += "<p class = 'cellLineP' id = '" + element["cell_line"]+ "' >" + element["cell_line"] + "</p>" + "<div id = '"+ element["cell_line"] + "' class = 'tab2 cellLine'>" + "</div>";
+                        cellLineListHTML += "<p class = 'cellLineP' id = '" + element["cell_line"]+ "' >" + element["cell_line"] + "</p>" + "<div id = '"+ element["cell_line"] + "' class = 'cellLine'></div>";
                     }
                 }
             })
@@ -140,7 +140,6 @@
                 $("div#"+exp).html(cellLineListHTML).addClass("tab2")
             }
             
-            console.log($("div #"+exp).text().indexOf("Cell Line"))
             return;
         }
 
@@ -151,46 +150,105 @@
         }
 
         function populateDamageType(cellLine){
-            var damageHTML = "<br><b>Damage Type: "+cellLine+"</b>";
+            var damageHTML = "<p id = 'damageList"+ cellLine+"'><br><h5><b>Damage Type: "+cellLine+"</b></h5></p>";
             samplejson.forEach(element =>{
                 if(element["cell_line"]===cellLine){
+                    
                     //prevent duplicate cell lines to be populated each a time
-                    if(!damageHTML.includes(element["cell_line"])){
-                        damageHTML += "<div id = '"+ element["damage"] + "' class = 'tab3 damage'>" + element["damage"] + "</div>";
+                    if(!damageHTML.includes(element["damage"])){
+                       
+                        damageHTML += "<p class = 'damageP "+cellLine+ "' id = '"+element["damage"]+"'>"+element["damage"]+"</p>";
+                        damageHTML += "<div id = '"+element["damage"]+"' class = 'tab3 damage "+cellLine+ "'></div>";
                     }
                 }
             })
             if($("div#"+cellLine).text().indexOf("Damage") === -1){
                 $("div#"+cellLine).html(damageHTML).addClass("tab3")
             }
-            return console.log(damageHTML)
+            return;
         }
 
+        //populate track list when user selects a damage type
+        function populateTracks(damage){
+            
+            var tracksHTML = "<p id = 'tracksList"+damage+"'> <br><h5><b>Tracks</b></h5></p>";
+            samplejson.forEach(element =>{
+                if(element["damage"] === damage){
+                    if(!tracksHTML.includes(element["title"])){
+                        tracksHTML += "<p class = 'track "+ damage+"' id = '"+element["title"]+"'>"+ element["title"] + "</p>";
+                    }
+                }
+            })
+            if($("div#"+damage).text().indexOf("Tracks") === -1){
+                $("div#"+damage).html(tracksHTML).addClass("tab4")
+            }
+            return;
+        }
 
+        //populate cell lines when user selects experiment
         $(".exp").on("click", function(){
 
             var selected = $(this).hasClass("highlight");
             if(selected){
                 $(this).removeClass("highlight");
+                var thisExp = $(this).attr("id")
+                $("#"+thisExp+" .cellLine").remove();
+                $("#"+thisExp + " .cellLineP").remove();
+                $("#cellList" + thisExp).remove();
+                return;
+               
             }else{
                 $(this).addClass("highlight");
+                return(populateCellLine($(this).attr("id")));
             }
 
             console.log($(this).attr("id") + " selected");
+           
             
-            return(populateCellLine($(this).attr("id")));
         })
-
+        //populate damage type when user selects a cell line
         $(document).on("click", ".cellLineP", function(){
             var selected = $(this).hasClass("highlight");
             if(!selected){
                 $(this).addClass("highlight")
+                return(populateDamageType($(this).attr("id")))
             }else{
                 $(this).removeClass("highlight")
+                var thisCellLine = $(this).attr("id")
+                $("#damageList"+thisCellLine).empty();
+                $("."+thisCellLine).empty();
+                return;
             }
             console.log($(this).attr("id") + "selected cell line")
-            return(populateDamageType($(this).attr("id")))
+            
         })
+        //populate tracks when user selects a damage type
+        $(document).on("click", ".damageP", function(){
+            var selected = $(this).hasClass("highlight");
+            if(!selected){
+                $(this).addClass("highlight")
+                return(populateTracks($(this).attr("id")))
+            }else{
+                $(this).removeClass("highlight")
+                var dam = $(this).attr("id");
+                $("."+dam).empty();
+                $("#tracksList"+dam).remove();
+                return;
+            }
+        })
+
+        $(document).on("click", ".track", function(){
+            var selected = $(this).hasClass("highlight");
+            if(!selected){
+                $(this).addClass("highlight")
+                return(console.log("adding track"+ $(this).attr("id")+ "to browser"))
+            }else{
+                $(this).removeClass("highlight")
+                return(console.log("removing track"+ $(this).attr("id")+ "from browser"))
+                
+            }
+        })
+
 
     
 
