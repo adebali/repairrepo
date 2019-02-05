@@ -175,7 +175,7 @@
             experimentList.forEach(element =>{
                 if(element["damage"] === damage && element["cell_line"] === parCell && element["experiment"]===grandparentExp){
                     if(!tracksHTML.includes(element["title"])){
-                        tracksHTML += "<p class = 'track "+ damage+"' id = '"+element["title"]+"'>"+ element["title"] + "</p>";
+                        tracksHTML += "<p class = 'track "+ damage+" "+ grandparentExp+ "' id = '"+element["title"]+"'>"+ element["title"] + "</p>";
                     }
                 }
             })
@@ -241,8 +241,9 @@
                 console.log("in else")
                 $(this).removeClass("highlight")
                 var dam = $(this).attr("id");
-                console.log("dam "+ dam)
-                //$("."+dam).empty();
+                var parExp = $(this).parent().parent().attr("id");
+                console.log("dam "+ dam + " par exp "+ parExp)
+                $("."+dam + "."+parExp).empty();
                 $("#tracksList"+dam).remove();
                 return;
             }
