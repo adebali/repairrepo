@@ -148,7 +148,7 @@
             array.forEach((v) => (v === value && count++));
             return count;
         }
-
+        //needs experiment too
         function populateDamageType(cellLine){
             var damageHTML = "<h5 id = 'damageList"+ cellLine+"'><b>Damage Type:</b></h5>";
             samplejson.forEach(element =>{
@@ -167,7 +167,7 @@
             }
             return;
         }
-
+        //needs exp and cell line too
         //populate track list when user selects a damage type
         function populateTracks(damage){
             
@@ -228,6 +228,8 @@
             var selected = $(this).hasClass("highlight");
             if(!selected){
                 $(this).addClass("highlight")
+                var parCellLine  = $(this).parent().attr("id");
+                console.log("par cell " + parCellLine)
                 return(populateTracks($(this).attr("id")))
             }else{
                 $(this).removeClass("highlight")
