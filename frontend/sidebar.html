@@ -180,8 +180,8 @@
                 }
             })
             if($("div#"+damage).text().indexOf("Tracks") === -1){
-                console.log($("div ."+parCell).length)
-                $("div#"+damage + " ."+parCell).html(tracksHTML).addClass("tab4")
+                
+                $("#"+damage + "."+parCell).html(tracksHTML).addClass("tab4")
             }
             return;
         }
