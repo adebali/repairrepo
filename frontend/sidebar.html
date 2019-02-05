@@ -180,7 +180,7 @@
                     }
                 }
             })
-            if($("div#"+damage + "."+grandparentExp).text().indexOf("Tracks") === -1){
+            if($("div#"+damage).text().indexOf("Tracks") === -1){
                 
                 $("div#"+damage + "."+grandparentExp).html(tracksHTML).addClass("tab4")
             }
@@ -236,8 +236,8 @@
                 $(this).addClass("highlight")
                 var parCellLine  = $(this).parent().attr("id");
                 var parExp = $(this).parent().parent().attr("id");
-                console.log("par cell " + parCellLine  + "exp "+ parExp)
-                return(populateTracks($(this).attr("id"), parCellLine, parExp))
+                console.log("par cell " + parCellLine  + " exp "+ parExp)
+                return(populateTracks($(this).attr("id"), parCellLine, parExp));
             }else{
                 console.log("in else")
                 $(this).removeClass("highlight")
