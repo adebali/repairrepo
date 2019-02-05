@@ -229,7 +229,8 @@
             if(!selected){
                 $(this).addClass("highlight")
                 var parCellLine  = $(this).parent().attr("id");
-                console.log("par cell " + parCellLine)
+                var parExp = $(this).parent().parent().attr("id");
+                console.log("par cell " + parCellLine  + "exp "+ parExp)
                 return(populateTracks($(this).attr("id")))
             }else{
                 $(this).removeClass("highlight")
