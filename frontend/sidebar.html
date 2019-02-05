@@ -163,6 +163,7 @@
                 }
             })
             if($("div#"+cellLine).text().indexOf("Damage") === -1){
+
                 $("div#"+cellLine).html(damageHTML).addClass("tab3")
             }
             return;
@@ -170,7 +171,7 @@
         //needs exp and cell line too
         //populate track list when user selects a damage type
         function populateTracks(damage, parCell, grandparentExp){
-            
+            console.log("grandpar exo" + grandparentExp)
             var tracksHTML = "<h5 id = 'tracksList"+damage+"'><b>Tracks</b></h5>";
             experimentList.forEach(element =>{
                 if(element["damage"] === damage && element["cell_line"] === parCell && element["experiment"]===grandparentExp){
