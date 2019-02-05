@@ -148,8 +148,8 @@
             array.forEach((v) => (v === value && count++));
             return count;
         }
-        //needs experiment too
-        function populateDamageType(cellLine){
+        
+        function populateDamageType(cellLine, parentExp){
             var damageHTML = "<h5 id = 'damageList"+ cellLine+"'><b>Damage Type:</b></h5>";
             experimentList.forEach(element =>{
                 if(element["cell_line"]===cellLine){
@@ -169,7 +169,7 @@
         }
         //needs exp and cell line too
         //populate track list when user selects a damage type
-        function populateTracks(damage){
+        function populateTracks(damage, parCell, grandparentExp){
             
             var tracksHTML = "<h5 id = 'tracksList"+damage+"'><b>Tracks</b></h5>";
             experimentList.forEach(element =>{
@@ -212,6 +212,8 @@
             var selected = $(this).hasClass("highlight");
             if(!selected){
                 $(this).addClass("highlight")
+                var parentExp = $(this).parent().attr("id")
+                console.log("parent exp " + parentExp)
                 return(populateDamageType($(this).attr("id")))
             }else{
                 $(this).removeClass("highlight")
@@ -231,7 +233,7 @@
                 var parCellLine  = $(this).parent().attr("id");
                 var parExp = $(this).parent().parent().attr("id");
                 console.log("par cell " + parCellLine  + "exp "+ parExp)
-                return(populateTracks($(this).attr("id")))
+                return(populateTracks($(this).attr("id"), parCellLine, parExp))
             }else{
                 $(this).removeClass("highlight")
                 var dam = $(this).attr("id");
