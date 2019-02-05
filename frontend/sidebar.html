@@ -215,7 +215,7 @@
                 $(this).addClass("highlight")
                 var parentExp = $(this).parent().attr("id")
                 console.log("parent exp " + parentExp)
-                return(populateDamageType($(this).attr("id")))
+                return(populateDamageType($(this).attr("id"), parentExp))
             }else{
                 $(this).removeClass("highlight")
                 var thisCellLine = $(this).attr("id")
