@@ -231,12 +231,14 @@
         $(document).on("click", ".damageP", function(){
             var selected = $(this).hasClass("highlight");
             if(!selected){
+                console.log("in if")
                 $(this).addClass("highlight")
                 var parCellLine  = $(this).parent().attr("id");
                 var parExp = $(this).parent().parent().attr("id");
                 console.log("par cell " + parCellLine  + "exp "+ parExp)
                 return(populateTracks($(this).attr("id"), parCellLine, parExp))
             }else{
+                console.log("in else")
                 $(this).removeClass("highlight")
                 var dam = $(this).attr("id");
                 $("."+dam).empty();
