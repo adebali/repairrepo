@@ -157,13 +157,13 @@
                     //prevent duplicate cell lines to be populated each a time
                     if(!damageHTML.includes(element["damage"])){
                        
-                        damageHTML += "<p class = 'damageP "+cellLine+ "' id = '"+element["damage"]+"'>"+element["damage"]+"</p>";
+                        damageHTML += "<p class = 'damageP "+cellLine+ " " + parentExp + "' id = '"+element["damage"]+"'>"+element["damage"]+"</p>";
                         damageHTML += "<div id = '"+element["damage"]+"' class = 'tab3 damage "+cellLine+ "'></div>";
                     }
                 }
             })
-            if($("div#"+cellLine).text().indexOf("Damage") === -1){
-                $("div#"+cellLine).html(damageHTML).addClass("tab3")
+            if($("div#"+cellLine + "."+parentExp).text().indexOf("Damage") === -1){
+                $("div#"+cellLine+"."+parentExp).html(damageHTML).addClass("tab3")
             }
             return;
         }
