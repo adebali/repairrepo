@@ -126,7 +126,7 @@
 
         function populateCellLine(exp){
         
-            var cellLineListHTML = "<p id = 'cellList" + exp + "'> <br><h5><b>Cell Line: " + exp + "</b></h5></p>";
+            var cellLineListHTML = "<br><h5 = 'cellList" + exp + "'><b>Cell Line: " + exp + "</b></h5>";
             samplejson.forEach(element =>{
                 if(element["experiment"]===exp){
                     //prevent duplicate cell lines to be populated each a time
@@ -194,7 +194,7 @@
                 var thisExp = $(this).attr("id")
                 $("#"+thisExp+" .cellLine").remove();
                 $("#"+thisExp + " .cellLineP").remove();
-                $("#cellList" + thisExp).remove();
+                //$("#cellList" + thisExp).remove();
                 return;
                
             }else{
