@@ -179,7 +179,7 @@
                     }
                 }
             })
-            if($("div#"+damage).text().indexOf("Tracks") === -1){
+            if($("div#"+damage + "."+parCell).text().indexOf("Tracks") === -1){
                 
                 $("div#"+damage + "."+parCell).html(tracksHTML).addClass("tab4")
             }
