@@ -116,7 +116,7 @@
             list.forEach(element =>{
                 if(!html.includes(element["experiment"])){
                     var num = getOccurrence(list,element)
-                    html+="<p id = '"+element["experiment"] + "' class = 'tab " + cat+"'><b>" + element['experiment'] + "</b></p> "
+                    html+="<p id = '"+element["experiment"] + "' class = 'tab " + cat+"'><b>" + element['experiment'] + "</b></p>"
                     //create a div for each experiement (used for collapsible subcategories)
                     html+= "<div id='"+element['experiment']+"' class = 'experiment'></div>"
                 }
@@ -150,7 +150,7 @@
         }
 
         function populateDamageType(cellLine){
-            var damageHTML = "<p id = 'damageList"+ cellLine+"'><br><h5><b>Damage Type: "+cellLine+"</b></h5></p>";
+            var damageHTML = "<h5 id = 'damageList"+ cellLine+"'><b>Damage Type: "+cellLine+"</b></h5>";
             samplejson.forEach(element =>{
                 if(element["cell_line"]===cellLine){
                     
