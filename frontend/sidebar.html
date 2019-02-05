@@ -126,7 +126,7 @@
 
         function populateCellLine(exp){
         
-            var cellLineListHTML = "<br><h5 id= 'cellList" + exp + "'><b>Cell Line: " + exp + "</b></h5>";
+            var cellLineListHTML = "<h5 id= 'cellList" + exp + "'><b>Cell Line: " + exp + "</b></h5>";
             samplejson.forEach(element =>{
                 if(element["experiment"]===exp){
                     //prevent duplicate cell lines to be populated each a time
