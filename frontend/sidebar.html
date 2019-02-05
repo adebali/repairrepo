@@ -241,7 +241,8 @@
                 console.log("in else")
                 $(this).removeClass("highlight")
                 var dam = $(this).attr("id");
-                $("."+dam).empty();
+                console.log("dam "+ dam)
+                //$("."+dam).empty();
                 $("#tracksList"+dam).remove();
                 return;
             }
