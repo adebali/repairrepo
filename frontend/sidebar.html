@@ -69,11 +69,11 @@
             })
             console.log("cell html " + cellLineListHTML)
             if(!cellLineListHTML.includes("cellLineP")){
-                console.log("here in if ")
+                
                 return populateDamageType("false", exp, false)
             }
             if($("div#"+exp).text().indexOf("Cell Line") === -1){
-                console.log("here in second if")
+                
                 $("div#"+exp).html(cellLineListHTML).addClass("tab2")
                 return;
             }
@@ -91,7 +91,7 @@
             var damageHTML = "<h5 id = 'damageList"+ cellLine+"'><b>Damage Type:</b></h5>";
             experimentList.forEach(element =>{
                 if(element["cell_line"]===cellLine && element["experiment"]===parentExp){
-                    
+                    console.log("in if damage")
                     //prevent duplicate cell lines to be populated each a time
                     if(!damageHTML.includes(element["damage"])){
                        
