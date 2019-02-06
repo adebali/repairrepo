@@ -162,7 +162,6 @@
                     }
                 }
             })
-            console.log("in pop damage type ")
             if($("div#"+cellLine + "."+parentExp).text().indexOf("Damage") === -1){
                 $("div#"+cellLine+"."+parentExp).html(damageHTML).addClass("tab3")
             }
@@ -216,7 +215,6 @@
             if(!selected){
                 $(this).addClass("highlight")
                 var parentExp = $(this).parent().attr("id")
-                console.log("parent exp " + parentExp)
                 return(populateDamageType($(this).attr("id"), parentExp))
             }else{
                 $(this).removeClass("highlight")
@@ -232,18 +230,14 @@
         $(document).on("click", ".damageP", function(){
             var selected = $(this).hasClass("highlight");
             if(!selected){
-                console.log("in if")
                 $(this).addClass("highlight")
                 var parCellLine  = $(this).parent().attr("id");
                 var parExp = $(this).parent().parent().attr("id");
-                console.log("par cell " + parCellLine  + "exp "+ parExp)
                 return(populateTracks($(this).attr("id"), parCellLine, parExp))
             }else{
-                console.log("in else")
                 $(this).removeClass("highlight")
                 var dam = $(this).attr("id");
                 var parExp = $(this).parent().parent().attr("id");
-                console.log("dam "+ dam + " par exp "+ parExp)
                 $("."+dam + "."+parExp).empty();
                 $("#tracksList"+dam).remove();
                 return;
