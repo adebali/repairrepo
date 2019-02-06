@@ -64,7 +64,9 @@
                     }
                 }
             })
+            console.log(cellLineListHTML + "len "+ cellLineListHTML.length)
             if($("div#"+exp).text().indexOf("Cell Line") === -1){
+                
                 $("div#"+exp).html(cellLineListHTML).addClass("tab2")
             }
             
