@@ -180,7 +180,7 @@
                 var parExp = $(this).parent().parent().attr("id");
                 //add '-' instead of '+' when it's selected
                 var oldHTML = $(this).html()
-                var newHTML = oldHTML.split("   +")[0] + "   -";
+                var newHTML = oldHTML.split("   +")[0] + "<h3>   -</h3>";
                 $(this).html(newHTML);
                 return(populateTracks($(this).attr("id"), parCellLine, parExp))
             }else{
@@ -191,7 +191,7 @@
                 $("#tracksList"+dam).remove();
                 //add '+' instead of '-' when it's selected
                 var oldHTML = $(this).html()
-                var newHTML = oldHTML.split("   -")[0] + "   +";
+                var newHTML = oldHTML.split("   -")[0] + "<h3>   +</h3>";
                 $(this).html(newHTML);
                 return;
             }
