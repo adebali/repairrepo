@@ -137,6 +137,8 @@
                 var thisExp = $(this).attr("id")
                 $("#"+thisExp+" .cellLine").remove();
                 $("#"+thisExp + " .cellLineP").remove();
+                $("#damageListFalse").remove()
+                $(".false").remove();
                 $("#cellList" + thisExp).remove();
                 $("div#"+thisExp + " .experiment.tab2").remove();
                 //add '+' instead of '-' when it's selected
