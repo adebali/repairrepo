@@ -57,8 +57,10 @@
             var cellLineListHTML = "<h5 id= 'cellList" + exp + "'><b>Cell Line: </b></h5>";
             experimentList.forEach(element =>{
                 if(element["experiment"]===exp){
+                    console.log("here in loop first if")
                     //dont add "false" to html, resolve this in the if statement below
                     if(!element["cell_line"] === "false"){
+                        console.log("2nd if")
                     //prevent duplicate cell lines to be populated each a time
                     
                         if(!cellLineListHTML.includes(element["cell_line"])){
@@ -154,7 +156,6 @@
                 var oldHTML = $(this).html()
                 var newHTML = oldHTML.split("   +")[0] + "   -";
                 $(this).html(newHTML);
-                console.log("here in exp event")
                 return(populateCellLine($(this).attr("id")));
             }
 
