@@ -208,7 +208,6 @@
             }else{
                 $(this).removeClass("highlight")
                 var dam = $(this).attr("id");
-                var parExp = $(this).parent().parent().attr("id");
                 console.log("parExp " + parExp)
                 $("."+dam + "."+parExp).empty();
                 $("#tracksList"+dam).remove();
