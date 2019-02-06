@@ -67,7 +67,6 @@
                     }
                 }
             })
-            console.log("cell html " + cellLineListHTML)
             if(!cellLineListHTML.includes("cellLineP")){
                 
                 return populateDamageType(false, exp, false)
@@ -94,7 +93,6 @@
             
                 console.log(element["cell_line"] === cellLine)
                 if(element["cell_line"]===cellLine && element["experiment"]===parentExp){
-                    console.log("damage "+ element["damage"])
                     //prevent duplicate cell lines to be populated each a time
                     if(!damageHTML.includes(element["damage"])){
                        
@@ -192,11 +190,13 @@
             if(!selected){
                 $(this).addClass("highlight")
                 var parCellLine  = $(this).parent().attr("id");
+                console.log("parCellLine" + parCellLine)
                 var parExp = $(this).parent().parent().attr("id");
                 //add '-' instead of '+' when it's selected
                 var oldHTML = $(this).html()
                 var newHTML = oldHTML.split("   +")[0] + "   -";
                 $(this).html(newHTML);
+                
                 return(populateTracks($(this).attr("id"), parCellLine, parExp))
             }else{
                 $(this).removeClass("highlight")
