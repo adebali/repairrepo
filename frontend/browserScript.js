@@ -1,9 +1,9 @@
 $(document).ready(function(){
 
 
-   //$('#header').load('header.html', getCurrentPage());
+    $('#header').load('header.html', getCurrentPage());
     $('#footer').load('footer.html');
-    $('#sidebar').load('/frontend/sidebar.html');
+    $('#sidebar').load('sidebar.html');
 
     const organism = getCurrentOrganism();
     console.log('current organism: ' + organism)
