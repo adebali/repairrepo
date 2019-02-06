@@ -91,7 +91,6 @@
             
             experimentList.forEach(element =>{
             
-                console.log(element["cell_line"] === cellLine)
                 if(element["cell_line"]===cellLine && element["experiment"]===parentExp){
                     //prevent duplicate cell lines to be populated each a time
                     if(!damageHTML.includes(element["damage"])){
@@ -111,7 +110,7 @@
         //needs exp and cell line too
         //populate track list when user selects a damage type
         function populateTracks(damage, parCell, grandparentExp){
-            console.log("in pop damage")
+            console.log("in pop damage" + " parcell " + parCell + "grand"+  grandparentExp)
             if(parCell === grandparentExp){
                 console.log("theyre equal")
             }
