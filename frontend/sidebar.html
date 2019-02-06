@@ -191,11 +191,11 @@
         //populate tracks when user selects a damage type
         $(document).on("click", ".damageP", function(){
             var selected = $(this).hasClass("highlight");
+            var parExp;
             if(!selected){
                 $(this).addClass("highlight")
                 var parCellLine  = $(this).parent().attr("id");
-                console.log("parCellLine" + parCellLine)
-                var parExp = $(this).parent().parent().attr("id");
+                parExp = $(this).parent().parent().attr("id");
                 if(parExp === "expList"){
                     parExp = parCellLine
                 }
