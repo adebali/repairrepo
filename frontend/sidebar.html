@@ -57,20 +57,26 @@
             var cellLineListHTML = "<h5 id= 'cellList" + exp + "'><b>Cell Line: </b></h5>";
             experimentList.forEach(element =>{
                 if(element["experiment"]===exp){
+
+                    if(element["cell_line"] != "false"){
                     //prevent duplicate cell lines to be populated each a time
                     
-                    if(!cellLineListHTML.includes(element["cell_line"])){
-                        cellLineListHTML += "<p class = 'cellLineP' id = '" + element["cell_line"]+ "' >" + element["cell_line"] + "   +</p>" + "<div id = '"+ element["cell_line"] + "' class = 'cellLine " + exp+ "'></div>";
+                        if(!cellLineListHTML.includes(element["cell_line"])){
+                            cellLineListHTML += "<p class = 'cellLineP' id = '" + element["cell_line"]+ "' >" + element["cell_line"] + "   +</p>" + "<div id = '"+ element["cell_line"] + "' class = 'cellLine " + exp+ "'></div>";
+                        }
                     }
                 }
             })
-            console.log(cellLineListHTML + "len "+ cellLineListHTML.length)
+            if(!cellLineListHTML.includes("cellLineP")){
+                return populateDamageType("false", exp, false)
+            }
             if($("div#"+exp).text().indexOf("Cell Line") === -1){
                 
                 $("div#"+exp).html(cellLineListHTML).addClass("tab2")
+                return;
             }
             
-            return;
+            
         }
 
         function getOccurrence(array, value) {
@@ -79,7 +85,7 @@
             return count;
         }
         
-        function populateDamageType(cellLine, parentExp){
+        function populateDamageType(cellLine, parentExp, bool){
             var damageHTML = "<h5 id = 'damageList"+ cellLine+"'><b>Damage Type:</b></h5>";
             experimentList.forEach(element =>{
                 if(element["cell_line"]===cellLine && element["experiment"]===parentExp){
@@ -92,8 +98,10 @@
                     }
                 }
             })
-            if($("div#"+cellLine + "."+parentExp).text().indexOf("Damage") === -1){
+            if($("div#"+cellLine + "."+parentExp).text().indexOf("Damage") === -1 && bool === true){
                 $("div#"+cellLine+"."+parentExp).html(damageHTML).addClass("tab3")
+            }else if(bool === false){
+                $("div#"+parentExp+".experiment").html(damageHTML).addClass("tab3")
             }
             return;
         }
@@ -157,7 +165,7 @@
                 var oldHTML = $(this).html()
                 var newHTML = oldHTML.split("   +")[0] + "   -";
                 $(this).html(newHTML);
-                return(populateDamageType($(this).attr("id"), parentExp))
+                return(populateDamageType($(this).attr("id"), parentExp, true))
                 
             }else{
                 $(this).removeClass("highlight")
