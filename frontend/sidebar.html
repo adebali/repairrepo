@@ -29,30 +29,6 @@
         var currentOrganism = getCurrentOrganism();
         
         samplejson.forEach(element => {
-            //check if elements are in list already, if not, add it
-            // if(!experimentList.includes(element["experiment"])){
-            //     experimentList.push(element["experiment"]);
-            // }
-            // if(!damageList.includes(element["damage"])){
-            //     damageList.push(element["damage"]);
-            // }
-            // if(!cellLineList.includes(element["cell_line"])){
-            //     cellLineList.push(element["cell_line"]);
-            // }
-            //only use data for the current page's organism 
-
-
-            // if(currentOrganism.localeCompare(element["organism"]) === 0){
-            //     experimentList.push(element["experiment"]);
-            //     damageList.push(element["damage"]);
-            //     cellLineList.push(element["cell_line"]);
-            //     //add to list only if its not present
-            //     if(trackList.indexOf(element["title"]) === -1){
-            //         trackList.push(element["title"]);
-            //     }
-            // }
-
-
             if(currentOrganism.localeCompare(element["organism"]) === 0){
                 experimentList.push(element)
             }
@@ -60,23 +36,7 @@
         });
         //populate categories 
         $("#expList").html(populate(experimentList,"exp"))
-        //$("#damageList").html(populate(damageList,"damage"))
-        //$("#cellLineList").html(populate(cellLineList,"cellLine"))
-        //$("#trackDropdown").html(createDropdown(trackList))
-    
-        // function createDropdown(tracks){
-        //     var htmlStr = '<button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Tracks'
-        //         htmlStr += '<span class="caret"></span></button> <ul class="dropdown-menu">'
-        //             tracks.forEach(element => {
-        //                 htmlStr += '<li><a href="#" class = "track" id = "'+ element+'" >'+element+'</a></li>'
-        //             })
-        //             htmlStr += '</ul>'
-
-        //     return htmlStr;
-        // }
-        // $(".track").on("click", function(){
-        //     $("#chosenTrack").html(event.target.id).addClass("highlight")
-        // })
+        
         //helper function returning an html string of list to append to sidebar 
         //'type' is the class denoting which category the attribute is apart of
         function populate(list, cat){
@@ -84,7 +44,7 @@
             list.forEach(element =>{
                 if(!html.includes(element["experiment"])){
                     var num = getOccurrence(list,element)
-                    html+="<p id = '"+element["experiment"] + "' class = 'tab " + cat+"'><b>" + element['experiment'] + "</b></p>"
+                    html+="<p id = '"+element["experiment"] + "' class = 'tab " + cat+"'><b>" + element['experiment'] + "</b>   +</p>"
                     //create a div for each experiement (used for collapsible subcategories)
                     html+= "<div id='"+element['experiment']+"' class = 'experiment'></div>"
                 }
@@ -100,7 +60,7 @@
                     //prevent duplicate cell lines to be populated each a time
                     
                     if(!cellLineListHTML.includes(element["cell_line"])){
-                        cellLineListHTML += "<p class = 'cellLineP' id = '" + element["cell_line"]+ "' >" + element["cell_line"] + "</p>" + "<div id = '"+ element["cell_line"] + "' class = 'cellLine " + exp+ "'></div>";
+                        cellLineListHTML += "<p class = 'cellLineP' id = '" + element["cell_line"]+ "' >" + element["cell_line"] + "   +</p>" + "<div id = '"+ element["cell_line"] + "' class = 'cellLine " + exp+ "'></div>";
                     }
                 }
             })
@@ -125,7 +85,7 @@
                     //prevent duplicate cell lines to be populated each a time
                     if(!damageHTML.includes(element["damage"])){
                        
-                        damageHTML += "<p class = 'damageP "+cellLine+ " " + parentExp + "' id = '"+element["damage"]+"'>"+element["damage"]+"</p>";
+                        damageHTML += "<p class = 'damageP "+cellLine+ " " + parentExp + "' id = '"+element["damage"]+"'>"+element["damage"]+"   +</p>";
                         damageHTML += "<div id = '"+element["damage"]+"' class = 'tab3 damage "+cellLine+ " " + parentExp + "'></div>";
                     }
                 }
