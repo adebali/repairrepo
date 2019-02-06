@@ -57,7 +57,7 @@
             var cellLineListHTML = "<h5 id= 'cellList" + exp + "'><b>Cell Line: </b></h5>";
             experimentList.forEach(element =>{
                 if(element["experiment"]===exp){
-
+                    //dont add "false" to html, resolve this in the if statement below
                     if(element["cell_line"] != "false"){
                     //prevent duplicate cell lines to be populated each a time
                     
@@ -68,6 +68,7 @@
                 }
             })
             if(!cellLineListHTML.includes("cellLineP")){
+                console.log("here in if ")
                 return populateDamageType("false", exp, false)
             }
             if($("div#"+exp).text().indexOf("Cell Line") === -1){
