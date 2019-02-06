@@ -154,7 +154,7 @@
                 var oldHTML = $(this).html()
                 var newHTML = oldHTML.split("   +")[0] + "   -";
                 $(this).html(newHTML);
-
+                console.log("here in exp event")
                 return(populateCellLine($(this).attr("id")));
             }
 
