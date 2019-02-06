@@ -112,7 +112,6 @@
         function populateTracks(damage, parCell, grandparentExp){
             console.log("in pop damage" + " parcell " + parCell + "grand"+  grandparentExp)
             if(parCell === grandparentExp){
-                console.log("theyre equal")
             }
             var tracksHTML = "<h5 id = 'tracksList"+damage+"'><b>Tracks</b></h5>";
             experimentList.forEach(element =>{
@@ -194,6 +193,9 @@
                 var parCellLine  = $(this).parent().attr("id");
                 console.log("parCellLine" + parCellLine)
                 var parExp = $(this).parent().parent().attr("id");
+                if(parExp === "expList"){
+                    console.log("here ")
+                }
                 //add '-' instead of '+' when it's selected
                 var oldHTML = $(this).html()
                 var newHTML = oldHTML.split("   +")[0] + "   -";
