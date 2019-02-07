@@ -63,11 +63,11 @@ $(document).ready(function(){
         console.log('# of hrefs' + count)
     }
 
-    function getCurrentOrganism(){
-        var url = window.location.href
-        var organism = url.split("/").pop().split("browser")
-        return organism.slice(0,-1);
-    }
+    // function getCurrentOrganism(){
+    //     var url = window.location.href
+    //     var organism = url.split("/").pop().split("browser")
+    //     return organism.slice(0,-1);
+    // }
 
     //SIDEBAR SCRIPT
     
