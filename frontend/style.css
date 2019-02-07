@@ -56,9 +56,8 @@ p:not(.site-logo):hover{
   background-color: #F5D297
 }
 
-
-.jumbotron h1{
-  font-family: "Cabin";
+.jumbotron{
+  background-color: #074E68;
 }
 
 
