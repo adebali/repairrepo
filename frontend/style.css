@@ -12,6 +12,10 @@ body{
     position: center;
     
 }
+div{
+  margin: 0;
+  padding: 0;
+}
 .tab { 
   margin-left: 40px; 
   
