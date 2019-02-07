@@ -59,6 +59,7 @@ p:not(.site-logo):hover{
 .jumbotron{
   background-color: #074E68;
   color: white;
+  text-align: center;
 }
 
 
