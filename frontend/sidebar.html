@@ -14,7 +14,8 @@
         </div>
     </div>
 
-
+    <p id = "selectedTracks" hidden></p>
+    <p id = "deselectedTracks" hidden></p>
 </section>
 
 <script>
@@ -229,9 +230,11 @@
             var selected = $(this).hasClass("highlight");
             if(!selected){
                 $(this).addClass("highlight")
+                $("#selectedTracks").append($(this).attr("id"));
                 return(console.log("adding track"+ $(this).attr("id")+ "to browser"))
             }else{
                 $(this).removeClass("highlight")
+                $("#deselectedTracks").append($(this).attr("id"));
                 return(console.log("removing track"+ $(this).attr("id")+ "from browser"))
                 
             }
