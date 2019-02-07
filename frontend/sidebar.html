@@ -230,7 +230,7 @@
             var selected = $(this).hasClass("highlight");
             if(!selected){
                 $(this).addClass("highlight")
-                $("#selectedTracks").append($(this).attr("id"));
+                $("#selectedTracks").append("," + $(this).attr("id"));
                 console.log("before logi " + $("#selectedTracks").val())
                 var newText = $("#deselectedTracks").val().replace($(this).attr("id"), "");
                 console.log("new text "+ newText)
@@ -238,7 +238,7 @@
                 return(console.log("adding track"+ $(this).attr("id")+ "to browser"))
             }else{
                 $(this).removeClass("highlight")
-                $("#deselectedTracks").append($(this).attr("id"));
+                $("#deselectedTracks").append(","+$(this).attr("id"));
                 var newText = $("#selectedTracks").val().replace($(this).attr("id"), "");
                 $("#selectedTracks").val(newText);
                 console.log("new text "+ newText)
