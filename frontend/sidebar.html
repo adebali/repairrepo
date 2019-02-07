@@ -231,10 +231,12 @@
             if(!selected){
                 $(this).addClass("highlight")
                 $("#selectedTracks").append("," + $(this).attr("id"));
-                console.log("before logi " + $("#selectedTracks").val())
-                var newText = $("#deselectedTracks").val().replace($(this).attr("id"), "");
-                console.log("new text "+ newText)
-                $("#deselectedTracks").val(newText);
+                
+                var newText = $("#selectedTracks").val().replace($(this).attr("id"), "");
+                $("#deselectedTracks").text(newText)
+                console.log("before logi " + newText)
+                
+                //$("#deselectedTracks").val(newText);
                 return(console.log("adding track"+ $(this).attr("id")+ "to browser"))
             }else{
                 $(this).removeClass("highlight")
