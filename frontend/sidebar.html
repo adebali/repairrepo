@@ -231,6 +231,7 @@
             if(!selected){
                 $(this).addClass("highlight")
                 $("#selectedTracks").append($(this).attr("id"));
+                console.log("before logi " + $("#selectedTracks").val())
                 var newText = $("#deselectedTracks").val().replace($(this).attr("id"), "");
                 console.log("new text "+ newText)
                 $("#deselectedTracks").val(newText);
