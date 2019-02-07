@@ -35,12 +35,15 @@ $(document).ready(function(){
             console.log("Created IGV browser");
         })
     
-        //array of tracks to be selected or removed
-        var selectedTracks = $("#selectedTracks").text().split(",");
-        var removeTracks = $("#deselectedTracks").text().split(",");
+        $(document).on("change", "textarea", function(){
+            //array of tracks to be selected or removed
+            var selectedTracks = $("#selectedTracks").text().split(",");
+            var removeTracks = $("#deselectedTracks").text().split(",");
 
-        console.log("tracks to be selected " + JSON.stringify(selectedTracks))
-        console.log("tracks to be removed " + JSON.stringify(deselectedTracks))
+            console.log("tracks to be selected " + JSON.stringify(selectedTracks))
+            console.log("tracks to be removed " + JSON.stringify(deselectedTracks))
+        });
+ 
         
         //TODO
          function addTrack(track){
