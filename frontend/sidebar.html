@@ -231,14 +231,14 @@
             if(!selected){
                 $(this).addClass("highlight")
                 $("#selectedTracks").append($(this).attr("id"));
-                var val = $("#deselectedTracks").val()
-                $("#deselectedTracks").val(val.replace($(this).attr("id"), ''));
+                var newText = $("#deselectedTracks").val().replace($(this).attr("id"), "");
+                $("#deselectedTracks").val(newText);
                 return(console.log("adding track"+ $(this).attr("id")+ "to browser"))
             }else{
                 $(this).removeClass("highlight")
                 $("#deselectedTracks").append($(this).attr("id"));
-                var val = $("#selectedTracks").val()
-                $("#selectedTracks").val(val.replace($(this).attr("id"), ''));
+                var newText = $("#selectedTracks").val().replace($(this).attr("id"), "");
+                $("#selectedTracks").val(newText);
                 return(console.log("removing track"+ $(this).attr("id")+ "from browser"))
                 
             }
