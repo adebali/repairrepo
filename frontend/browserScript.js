@@ -31,10 +31,12 @@ $(document).ready(function(){
                 }
             ]
         };
+        if($("#igvContainer").empty()){
         igv.createBrowser(igvDiv, options)
         .then(function (browser) {
             console.log("Created IGV browser");
         })
+    }
     
 
     //TODO
