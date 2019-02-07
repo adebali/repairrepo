@@ -6,7 +6,7 @@ $(document).ready(function(){
     $('#sidebar').load('sidebar.html');
 
     //const organism = getCurrentOrganism();
-    console.log('current organism: ' + organism)
+    //console.log('current organism: ' + organism)
 
     //CODE FOR IGV.JS GENOME BROSWER 
 
