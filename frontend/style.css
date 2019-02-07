@@ -48,9 +48,9 @@ body{
   background-color: #F4A117;
   color: white;
 }
-p:not(.site-logo):hover{
+/* p:not(.site-logo):hover{
   background-color: #F5D297
-}
+} */
 .jumbotron{
   text-align:center
 }
