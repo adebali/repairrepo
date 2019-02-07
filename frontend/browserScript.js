@@ -10,7 +10,9 @@ $(document).ready(function(){
 
     //CODE FOR IGV.JS GENOME BROSWER 
 
-    
+        if($("igvContainer").empty()){
+            console.log("empty")
+        }
         var igvDiv =  document.getElementById("igvContainer");
         var options = {
             genome: "hg19",
@@ -32,11 +34,11 @@ $(document).ready(function(){
             ]
         };
         if($("#igvContainer").empty()){
-        igv.createBrowser(igvDiv, options)
-        .then(function (browser) {
-            console.log("Created IGV browser");
-        })
-    }
+            igv.createBrowser(igvDiv, options)
+            .then(function (browser) {
+                console.log("Created IGV browser");
+            })
+        }
     
 
     //TODO
