@@ -52,12 +52,10 @@ body{
   background-color: #F4A117;
   color: white;
 }
-p:hover{
+p:not(.site-logo):hover{
   background-color: #F5D297
 }
-p:hover:not(.site-logo){
-  /* do nothing */
-}
+
 
 .jumbotron h1{
   font-family: "Cabin";
