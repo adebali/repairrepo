@@ -10,7 +10,9 @@ $(document).ready(function(){
 
     //CODE FOR IGV.JS GENOME BROSWER 
 
-        if($("igvContainer").is(':empty')){
+    
+
+        if($("#igvContainer").is(':empty')){
             
         
         var igvDiv =  document.getElementById("igvContainer");
