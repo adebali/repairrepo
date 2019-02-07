@@ -52,11 +52,11 @@ $(document).ready(function(){
         console.log('# of hrefs' + count)
     }
 
-    function getCurrentOrganism(){
-        var url = window.location.href
-        var organism = url.split("/").pop().split("browser")
-        return organism.slice(0,-1);
-    }
+    // function getCurrentOrganism(){
+    //     var url = window.location.href
+    //     var organism = url.split("/").pop().split("browser")
+    //     return organism.slice(0,-1);
+    // }
 
         //script for querying the experiments, damage type, cell line, and tissue from the json file
         
