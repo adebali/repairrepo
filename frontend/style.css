@@ -61,6 +61,10 @@ p:not(.site-logo):hover{
   color: white;
   text-align: center;
 }
+#main{
+  background-color: #074E68;
+  color: white;
+}
 
 
 /* .thead-dark {
