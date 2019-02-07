@@ -10,7 +10,7 @@ $(document).ready(function(){
 
     //CODE FOR IGV.JS GENOME BROSWER 
 
-    function createBrowser(){
+    
         var igvDiv =  document.getElementById("igvContainer");
         var options = {
             genome: "hg19",
@@ -35,7 +35,7 @@ $(document).ready(function(){
         .then(function (browser) {
             console.log("Created IGV browser");
         })
-    }
+    
 
     //TODO
 
