@@ -49,19 +49,19 @@ $(document).ready(function(){
 
     //helper functions
 
-    function getCurrentPage(){
-        var count = 0;
-        console.log('count : ', $('.navLinks').length)
-        $(".navLinks").each(function() {
-            count+=1
-            console.log('this.href' + this.href)
-            console.log('windowloc' + window.location.href)
-            if (this.href == window.location.href) {
-                $(this).addClass("active");
-            }
-        });
-        console.log('# of hrefs' + count)
-    }
+    // function getCurrentPage(){
+    //     var count = 0;
+    //     console.log('count : ', $('.navLinks').length)
+    //     $(".navLinks").each(function() {
+    //         count+=1
+    //         console.log('this.href' + this.href)
+    //         console.log('windowloc' + window.location.href)
+    //         if (this.href == window.location.href) {
+    //             $(this).addClass("active");
+    //         }
+    //     });
+    //     console.log('# of hrefs' + count)
+    // }
 
     // function getCurrentOrganism(){
     //     var url = window.location.href
