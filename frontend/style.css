@@ -7,16 +7,12 @@
             padding-right: 20px;
 }
 body{
-    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
     font-size: 18px;
     position: center;
     
 }
-div{
-  margin: 0;
-  padding: 0;
-  display: block;
-}
+
 .tab { 
   margin-left: 40px; 
   
