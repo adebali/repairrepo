@@ -9,7 +9,7 @@ $(document).ready(function(){
         console.log('current organism: ' + organism)
     
         //CODE FOR IGV.JS GENOME BROSWER 
-    
+    console.log($("#igvContainer").is(":empty"))
         if($("#igvContainer").is(":empty")){
         var igvDiv =  document.getElementById("igvContainer");
         var options = {
