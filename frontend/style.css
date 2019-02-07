@@ -58,6 +58,9 @@ div{
 p:hover{
   background-color: #F5D297
 }
+p:hover:not(.site-logo){
+  /* do nothing */
+}
 
 .jumbotron h1{
   font-family: "Cabin";
