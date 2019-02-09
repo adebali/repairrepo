@@ -15,6 +15,7 @@
     <script src="js/multifilter.js"></script>
     <!-- d3 script -->
     <script type="text/javascript" src="http://d3js.org/d3.v3.min.js"></script>
+    <script type="text/javascript" src="frontend/browserScript.js"></script>
         
     <!-- Font Style -->
     <link href="https://fonts.googleapis.com/css?family=Karla" rel="stylesheet">
@@ -49,103 +50,7 @@
     <div class="off-canvas-wrapper">
       <div class="off-canvas-wrapper-inner" data-off-canvas-wrapper>
 
-        <a href="download2.html">Redirect</a>
-        <!-- OFF-CANVAS MENU -->
-        <div class="off-canvas position-left" id="mobile-menu" data-off-canvas>
-          <button class="accordion" id="home">HOME</button>
-            <script type="text/javascript">
-                document.getElementById("home").onclick = function () {
-                    location.href = "index.html";
-                };
-            </script>
-
-          <button class="accordion" id="browse">BROWSE</button>
-          <div class="panel">
-            <ul style="text-align:left">
-              <p>
-                <li>HUMAN</li>
-                <li>BROWSE</li>
-                <li>ARABIDOPSIS</li>
-                <li>PLANT</li>
-              </p>
-            </ul>
-          </div>
-
-          <button class="accordion" id="search">SEARCH</button>
-          <script type="text/javascript">
-            document.getElementById("search").onclick = function () {
-                location.href = "search.html";
-            };
-          </script>
-
-          <button class="accordion" id="download">DOWNLOAD</button>
-            <script type="text/javascript">
-                document.getElementById("download").onclick = function () {
-                    location.href = "download.html";
-                };
-            </script>
-
-          <button class="accordion" id="help">HELP</button>
-          <script type="text/javascript">
-            document.getElementById("help").onclick = function () {
-                location.href = "help.html";
-            };
-          </script>
-        </div>
-
-        <!-- KEEP -->
-        <div class="off-canvas-content" data-off-canvas-content>
-
-          <!-- MOBILE NAVIGATION -->
-
-          <div class="title-bar show-for-small-only">
-            <div class="title-bar-left">
-              <button class="menu-icon" type="button" data-open="mobile-menu"></button>
-              <!-- <span class="title-bar-title">MENU</span> -->
-              
-            </div>
-            <div class="title-bar-center show-for-small-only"><img class="logo-image logo-center" src="img/xr_logo_white.png" width="75" height="92"></img></div>
-          </div>
-
-          <!-- DESKTOP NAVIGATION -->
-
-          <nav class="top-bar nav-desktop">
-            <div class="wrap">
-              <div class="top-bar-left">
-                  <!-- <li class="name"> 
-                      <a href="#"><img src="img/xr_log_white.png"/></a> 
-               </li> -->
-               <div class="logo">
-                  <img class="logo-image" src="img/xr_logo_white.png" width="75" height="92"></img>
-                  <h3 class="site-logo">Excision Repair Database</h3>
-                </div>
-               <!-- <img src="img/xr_log_white.png"></img> -->
-              </div>
-              <div class="top-bar-right">
-                <ul class="menu menu-desktop">
-                  <li><a href="index.html">HOME</a></li>
-                  <li>
-                    <!-- <a href="#">Browse</a> -->
-                    <div class="dropdown">
-                      <button class="dropbtn">BROWSE
-                        <i class="fa fa-caret-down"></i>
-                      </button>
-                      <div class="dropdown-content">
-                        <a href="index.html">HUMAN</a>
-                        <a href="#">MOUSE</a>
-                        <a href="#">ARABIDOPSIS</a>
-                        <a href="#">PLANT</a>
-                      </div>
-                    </div> 
-                  </li>
-                  <li><a href="search.html">SEARCH</a></li>
-                  <li><a href="download.html">DOWNLOAD</a></li>
-                  <li><a href="help.html">HELP</a></li>
-                  <!-- <li><a href="#">Contact</a></li> -->
-                </ul>
-              </div>
-            </div>
-          </nav>
+        <div id = "header"></div>
 
           <!-- HERO SECTION -->
 
@@ -292,30 +197,7 @@
           </section>
           
           <!-- FOOTER -->
-          <footer>
-            <div class="wrap row small-up-1 medium-up-3">
-              <div class="column">
-                <h4>Contact Info</h4>
-                <hr>
-                <a href="mailto:adebali@unc.edu"><span>Email</span> adebali@unc.edu</a>
-              </div>
-              <div class="column">
-                <h4>Site Map</h4>
-                <hr>
-                <a href="#">Browse</a>
-                <a href="search.html">Search</a>
-                <a href="download.html">Download</a>
-                <a href="help.html">Help</a>
-              </div>
-              <div class="column">
-                <h4>Social Media :)</h4>
-                <hr>
-                <a href="#">Facebook</a>
-                <a href="#">Twitter</a>
-                <a href="#">Instagram</a>
-              </div>
-            </div>
-          </footer>
+          <div id = "footer"></div>
         </div>
       </div>
     </div>
