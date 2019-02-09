@@ -18,11 +18,7 @@
     <script src="https://d3js.org/d3.v5.min.js"></script>
 
 
-    <script>
-      var test = $('#header').load('frontend/header.html');
-      $('#footer').load('frontend/footer.html');
-      console.log("here" + test) 
-    </script>
+    
 
         
     <!-- Font Style -->
@@ -210,6 +206,12 @@
         </div>
       </div>
     </div>
+
+    <script>
+        var test = $('#header').load('frontend/header.html');
+        $('#footer').load('frontend/footer.html');
+        console.log("here" + JSON.stringify(test)) 
+      </script>
 
     <!-- <script src="js/vendor/jquery.js"></script> -->
     <!-- Keep above script out to prevent conflict w/ jquery script -->
