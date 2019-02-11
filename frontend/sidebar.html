@@ -96,7 +96,7 @@
         
         function populateDamageType(cellLine, parentExp, bool){
             console.log("cell " + cellLine)
-            var forId = cellLine.replace(/\s/g, ',');
+            var forId = cellLine.replace(/\s/g, 'placeholder');
             var damageHTML = "<h5 id = 'damageList"+ cellLine+"'><b>Damage Type:</b></h5>";
             
             experimentList.forEach(element =>{
@@ -184,7 +184,7 @@
                 var oldHTML = $(this).html()
                 var newHTML = oldHTML.split("   +")[0] + "   -";
                 $(this).html(newHTML);
-                var id = $(this).attr("id").replace(',', ' ')
+                var id = $(this).attr("id").replace('placeholder', ' ')
                 console.log("id in event " + id)
                 return(populateDamageType(id, parentExp, true))
                 
