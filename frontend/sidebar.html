@@ -67,7 +67,7 @@
                             console.log("in concat")
                             if(element["cell_line"].includes(" ")){
                                 console.log("original cell line " + element["cell_line"])
-                                var forId = element["cell_line"].replace(/\s/g, new RegExp(':', 'g'));
+                                var forId = element["cell_line"].replace(/\s/g, '');
                                 console.log("for id " + forId)
                             }
                             cellLineListHTML += "<p class = 'cellLineP' id = '" + forId+ "' >" + element["cell_line"] + "   +</p>" + "<div id = '"+ forId + "' class = 'cellLine " + exp+ "'></div>";
@@ -96,7 +96,7 @@
         
         function populateDamageType(cellLine, parentExp, bool){
             console.log("cell " + cellLine)
-            var forId = cellLine.replace(/\s/g, new RegExp(':', 'g'));
+            var forId = cellLine.replace(/\s/g, '');
             var damageHTML = "<h5 id = 'damageList"+ cellLine+"'><b>Damage Type:</b></h5>";
             
             experimentList.forEach(element =>{
@@ -184,7 +184,7 @@
                 var oldHTML = $(this).html()
                 var newHTML = oldHTML.split("   +")[0] + "   -";
                 $(this).html(newHTML);
-                var id = $(this).attr("id").replace(new RegExp(':', 'g'), ' ')
+                var id = $(this).attr("id").replace('', ' ')
                 console.log("id in event " + id)
                 return(populateDamageType(id, parentExp, true))
                 
