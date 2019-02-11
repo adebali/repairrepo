@@ -107,7 +107,7 @@
         $('#footer').load('/frontend/footer.html');
 
          // Load the Markdown file and convert it to HTML for display
-         var markdownURL ='https://combinatronics.com/adebali/repairrepo/develop/help.md';
+         var markdownURL ='https://raw.githubusercontent.com/adebali/repairrepo/develop/help.md';
         $.get(markdownURL, function(markdownContent) {
             var converter = new Markdown.Converter();
             var htmlContent = converter.makeHtml(markdownContent);
