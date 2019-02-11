@@ -99,8 +99,9 @@
         function populateDamageType(cellLine, parentExp, bool){
             console.log("cell " + cellLine)
             //create placeholder for cell lines w/ spaces in them, only if it works.
+            var forId;
             try {
-                var forId = cellLine.replace(/ /g, '___');
+                forId = cellLine.replace(/ /g, '___');
             } catch (error) {
                 
             }
@@ -146,7 +147,6 @@
                     }
                 }
             })
-            console.log("html str" + tracksHTML)
             if($("div#"+damage + "."+grandparentExp).text().indexOf("Tracks") === -1){
                 
                 $("div#"+damage + "."+grandparentExp).html(tracksHTML).addClass("tab4")
