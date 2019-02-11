@@ -14,17 +14,17 @@ body{
 }
 
 .tab { 
-  margin-left: 40px; 
+  margin-left: 5%; 
   
 }
 .tab2{
-  margin-left: 45px;
+  margin-left: 7%;
 }
 .tab3{
-  margin-left: 50px;
+  margin-left: 9%;
 }
 .tab4{
-  margin-left: 55px;
+  margin-left: 11%;
 }
 #wrapper1{
   display:flex;
