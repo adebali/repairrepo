@@ -68,7 +68,7 @@
                             console.log("in concat")
                             if(element["cell_line"].includes(" ")){
                                 console.log("original cell line " + element["cell_line"])
-                                var forId = element["cell_line"].replace(/\s/g, '');
+                                var forId = element["cell_line"].replace(/\s/g, ',');
                                 console.log("for id " + forId)
                             }
                             cellLineListHTML += "<p class = 'cellLineP' id = '" + forId+ "' >" + element["cell_line"] + "   +</p>" + "<div id = '"+ forId + "' class = 'cellLine " + exp+ "'></div>";
@@ -97,21 +97,24 @@
         
         function populateDamageType(cellLine, parentExp, bool){
             console.log("cell " + cellLine)
+            var forId = cellLine.replace(/\s/g, ',');
             var damageHTML = "<h5 id = 'damageList"+ cellLine+"'><b>Damage Type:</b></h5>";
             
             experimentList.forEach(element =>{
             
                 if(element["cell_line"]===cellLine && element["experiment"]===parentExp){
                     //prevent duplicate cell lines to be populated each a time
+                   
+
                     if(!damageHTML.includes(element["damage"])){
                        
-                        damageHTML += "<p class = 'damageP "+cellLine+ " " + parentExp + "' id = '"+element["damage"]+"'>"+element["damage"]+"   +</p>";
-                        damageHTML += "<div id = '"+element["damage"]+"' class = 'tab3 damage "+cellLine+ " " + parentExp + "'></div>";
+                        damageHTML += "<p class = 'damageP "+forId+ " " + parentExp + "' id = '"+element["damage"]+"'>"+element["damage"]+"   +</p>";
+                        damageHTML += "<div id = '"+element["damage"]+"' class = 'tab3 damage "+forId+ " " + parentExp + "'></div>";
                     }
                 }
             })
-            if($("div#"+cellLine + "."+parentExp).text().indexOf("Damage") === -1 && bool === true){
-                $("div#"+cellLine+"."+parentExp).html(damageHTML).addClass("tab3")
+            if($("div#"+forId + "."+parentExp).text().indexOf("Damage") === -1 && bool === true){
+                $("div#"+forId+"."+parentExp).html(damageHTML).addClass("tab3")
             }else if(bool === false){
                 $("div#"+parentExp+".experiment").html(damageHTML).addClass("tab3")
             }
@@ -182,7 +185,8 @@
                 var oldHTML = $(this).html()
                 var newHTML = oldHTML.split("   +")[0] + "   -";
                 $(this).html(newHTML);
-                return(populateDamageType($(this).attr("id"), parentExp, true))
+                var id = $(this).attr("id").replace(',', /\s/g)
+                return(populateDamageType(id, parentExp, true))
                 
             }else{
                 $(this).removeClass("highlight")
