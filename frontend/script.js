@@ -87,6 +87,7 @@ $(document).ready(function(){
                         //     noResults = true;
                         //     $('#results').html("<div class = 'alert alert-warning' role = 'alert'> <strong> No results left</strong></div>")
                         // }else{
+                            console.log(docs.length)
                             noResults = false;
 
                             html =  createDynamicTable(docs) +"<button id ='prev' type='button' class='button'> &lt;- Previous</button> <button id = 'next' type='button' class='button'>Next -> </button>"
