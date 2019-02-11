@@ -98,7 +98,13 @@
         
         function populateDamageType(cellLine, parentExp, bool){
             console.log("cell " + cellLine)
-            var forId = cellLine.replace(/ /g, '___');
+            //create placeholder for cell lines w/ spaces in them, only if it works.
+            try {
+                var forId = cellLine.replace(/ /g, '___');
+            } catch (error) {
+                
+            }
+            
             var damageHTML = "<h5 id = 'damageList"+ cellLine+"'><b>Damage Type:</b></h5>";
             
             experimentList.forEach(element =>{
