@@ -84,7 +84,7 @@ $(document).ready(function(){
                         var html;
                         if(docs.length == 0){
                             noResults = true;
-                            $('#results').html("<div class = 'alert alert-warning' role = 'alert'> <strong> No results</strong></div>")
+                            $('#results').html("<div class = 'alert alert-warning' role = 'alert' style='text-align:center';> <strong> No results</strong></div>")
                         }else{
                             noResults = false;
                             console.log(docs.length)
