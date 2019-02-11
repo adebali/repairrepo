@@ -101,6 +101,12 @@
     <script>
         $('#header').load('/frontend/header.html');
         $('#footer').load('/frontend/footer.html');
+
+
+        var helpURL = 'https://combinatronics.com/adebali/repairrepo/develop/help.md'
+        $.get(helpURL, function(data){
+          alert("Data: " + data);
+        });
         
       </script>
   </body>
