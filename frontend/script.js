@@ -21,8 +21,7 @@ $(document).ready(function(){
         
         
             //prep server connection
-            const clientPromise = stitch.Stitch.initializeDefaultAppClient('dataretrieval-vwdtg');
-
+            const clientPromise = stitch.StitchClientFactory.create('dataretrieval-vwdtg');
             
         
         
@@ -87,9 +86,8 @@ $(document).ready(function(){
                         //     noResults = true;
                         //     $('#results').html("<div class = 'alert alert-warning' role = 'alert'> <strong> No results left</strong></div>")
                         // }else{
-                            console.log(docs.length)
                             noResults = false;
-
+                            console.log(docs.length)
                             html =  createDynamicTable(docs) +"<button id ='prev' type='button' class='button'> &lt;- Previous</button> <button id = 'next' type='button' class='button'>Next -> </button>"
                             document.getElementById("results").innerHTML = html; 
                             last_id1 = docs[docs.length-1]['_id']
