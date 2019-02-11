@@ -104,8 +104,8 @@
 
 
         var helpURL = 'https://combinatronics.com/adebali/repairrepo/develop/help.md'
-        $.get(helpURL, function(data){
-          alert("Data: " + data);
+        $.getScript(helpURL, function(data){
+          console.log("Data: " + data);
         });
         
       </script>
