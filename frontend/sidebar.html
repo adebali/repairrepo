@@ -61,7 +61,6 @@
                     //dont add "false" to html, resolve this in the if statement below
                     
                     if(!element["cell_line"] === false){
-                        console.log("2nd if")
                     //prevent duplicate cell lines to be populated each a time
                     
                         if(!cellLineListHTML.includes(element["cell_line"])){
@@ -186,6 +185,7 @@
                 var newHTML = oldHTML.split("   +")[0] + "   -";
                 $(this).html(newHTML);
                 var id = $(this).attr("id").replace(',', ' ')
+                console.log("id in event " + id)
                 return(populateDamageType(id, parentExp, true))
                 
             }else{
