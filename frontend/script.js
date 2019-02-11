@@ -21,7 +21,8 @@ $(document).ready(function(){
         
         
             //prep server connection
-            const clientPromise = stitch.StitchClientFactory.create('dataretrieval-vwdtg');
+            const clientPromise = stitch.Stitch.initializeDefaultAppClient('dataretrieval-vwdtg');
+
             
         
         
