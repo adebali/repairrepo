@@ -65,6 +65,9 @@
                     //prevent duplicate cell lines to be populated each a time
                     
                         if(!cellLineListHTML.includes(element["cell_line"])){
+                            if(element["cell_line"].indexOf(" ")){
+                                element["cell_line"] = element["cell_line"].replace(" ", "")
+                            }
                             cellLineListHTML += "<p class = 'cellLineP' id = '" + element["cell_line"]+ "' >" + element["cell_line"] + "   +</p>" + "<div id = '"+ element["cell_line"] + "' class = 'cellLine " + exp+ "'></div>";
                         }
                     }
