@@ -186,7 +186,10 @@
                 var oldHTML = $(this).html()
                 var newHTML = oldHTML.split("   +")[0] + "   -";
                 $(this).html(newHTML);
-                var id = $(this).attr("id").replace(/___/g, ' ')
+                if($(this).attr("id").includes("___")){
+                    var id = $(this).attr("id").replace(/___/g, ' ')
+                }
+                
                 console.log("id in event " + id)
                 return(populateDamageType(id, parentExp, true))
                 
