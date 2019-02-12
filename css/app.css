@@ -162,7 +162,7 @@ footer hr {
 }
 
 footer a {
-  display: block;
+  display: inline-block;
   color: rgba(255, 255, 255, .6);
   font-size: .8em;
   max-width: 170px;
