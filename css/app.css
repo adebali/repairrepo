@@ -148,7 +148,7 @@ FOOTER
 
 footer {
   background-color: #2c3840;
-  padding: 10px 0;
+  padding: 20px 0;
   padding-right: 80px;
   padding-left: 80px;
 }
@@ -171,10 +171,10 @@ footer a {
 }
 footer img{
   
-  max-width: 130px;
-  max-height: 130px;
-  min-width: 130px;
-  min-height: 130px;
+  max-width: 110px;
+  max-height: 110px;
+  min-width: 110px;
+  min-height: 110px;
 }
 
 #sabanciLogo{
