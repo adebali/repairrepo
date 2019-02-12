@@ -162,13 +162,12 @@ footer hr {
 }
 
 footer a {
-  display: table-cell;
+  display: block;
   color: rgba(255, 255, 255, .6);
   font-size: .8em;
  
 }
 footer img{
-  display: table-cell;
   
   max-width: 170px;
   max-height: 120px;
