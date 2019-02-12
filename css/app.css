@@ -162,9 +162,14 @@ footer hr {
 }
 
 footer a {
-  display: inline-block;
+  display: block;
   color: rgba(255, 255, 255, .6);
   font-size: .8em;
+ 
+}
+footer img{
+  display: table-cell;
+  
   max-width: 170px;
   max-height: 120px;
   min-width: 170px;
