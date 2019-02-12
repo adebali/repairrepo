@@ -190,6 +190,7 @@
         })
         //populate damage type when user selects a cell line
         $(document).on("click", "#"+$(this).parent().attr("id") + ".cellLineP", function(){
+            console.log("here")
             var selected = $(this).hasClass("highlight");
             if(!selected){
                 $(this).addClass("highlight")
