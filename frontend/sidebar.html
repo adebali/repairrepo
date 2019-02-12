@@ -121,6 +121,7 @@
                     }
                 }
             })
+            console.log("forID " + forId + "parexp "+parentExp)
             if($("div#"+forId + "."+parentExp).text().indexOf("Damage") === -1 && bool === true){
                 $("div#"+forId+"."+parentExp).html(damageHTML).addClass("tab3")
             }else if(bool === false){
