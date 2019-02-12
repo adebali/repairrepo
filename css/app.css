@@ -165,6 +165,10 @@ footer a {
   display: block;
   color: rgba(255, 255, 255, .6);
   font-size: .8em;
+  max-width: 170px;
+  max-height: 120px;
+  min-width: 170px;
+  min-height: 120px;
 }
 
 footer a:hover {
