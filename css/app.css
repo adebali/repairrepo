@@ -177,6 +177,10 @@ footer img{
   min-height: 150px;
 }
 
+#sabanciLogo{
+  width: 170px;
+}
+
 footer a:hover {
   color: rgba(255, 255, 255, .8);
 }
