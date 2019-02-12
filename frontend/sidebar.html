@@ -121,7 +121,6 @@
                     }
                 }
             })
-            console.log("forID " + forId + "parexp "+parentExp)
             if($("div#"+forId + "."+parentExp).text().indexOf("Damage") === -1 && bool === true){
                 $("div#"+forId+"."+parentExp).html(damageHTML).addClass("tab3")
             }else if(bool === false){
@@ -148,9 +147,9 @@
                     }
                 }
             })
-            if($("div#"+damage + "."+grandparentExp).text().indexOf("Tracks") === -1){
+            if($("div#"+damage + "."+parCell).text().indexOf("Tracks") === -1){
                 
-                $("div#"+damage + "."+grandparentExp).html(tracksHTML).addClass("tab4")
+                $("div#"+damage + "."+parCell).html(tracksHTML).addClass("tab4")
             }
             return;
         }
