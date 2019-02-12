@@ -2,7 +2,7 @@ $(document).ready(function(){
     
     
         $('#header').load('header.html', getCurrentPage());
-        $('#footer').load('footer.html');
+        $('#footer').load('footerNew.html');
         $('#sidebar').load('sidebar.html');
     
         const organism = getCurrentOrganism();
