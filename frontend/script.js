@@ -3,7 +3,7 @@ $(document).ready(function(){
     
             // load in header/footer & call function to identify current page
             $('#header').load('/frontend/header.html', getCurrentPage());
-            $('#footer').load('/frontend/footer.html');
+            $('#footer').load('/frontend/footerNew.html');
     
             //load tabs for gene queries
             var $tabs = $('#tabsList').tabs();
