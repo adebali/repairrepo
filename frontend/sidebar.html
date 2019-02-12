@@ -235,7 +235,7 @@
                 var oldHTML = $(this).html()
                 var newHTML = oldHTML.split("   +")[0] + "   -";
                 $(this).html(newHTML);
-                
+                console.log("parcellline " + parCellLine   + "parexp " + parExp)
                 return(populateTracks($(this).attr("id"), parCellLine, parExp))
             }else{
                 $(this).removeClass("highlight")
