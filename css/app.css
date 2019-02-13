@@ -152,6 +152,7 @@ footer {
   padding-right: 80px;
   padding-left: 80px;
   position: absolute;
+  bottom: 0;
 }
 
 footer h4 {
