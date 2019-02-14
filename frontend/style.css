@@ -17,6 +17,10 @@ body{
 background: #074E68;
 }
 
+#tabs-1, #tabs-2{
+  align-content: center;
+}
+
 .tab { 
   margin-left: 5%; 
   
