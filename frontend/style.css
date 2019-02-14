@@ -17,8 +17,14 @@ body{
 background: #074E68;
 }
 
-#tabs-1, #tabs-2{
-  align-content: center;
+.centered .ui-tabs-nav {
+  height: 2.35em;
+  text-align: center;
+}
+.centered .ui-tabs-nav li {
+  display: inline-block;
+  float: none;
+  margin: 0em;
 }
 
 .tab { 
