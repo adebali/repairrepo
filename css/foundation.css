@@ -4207,7 +4207,7 @@ table.hover tr:nth-of-type(even):hover {
   background-color: #2D3840;
   color: white;
   min-width: 110px;
-  box-shadow: 3px 3px 1px 1px black;
+  box-shadow: 3px 3px 1px 1px #074E68;
   z-index: 1;
 }
 
