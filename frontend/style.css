@@ -147,9 +147,9 @@ table{
   justify-content: center;
 }
 .button{
-  padding: 15px 20px;
+  padding: 0px;
   height: 40px;
-  text-align: center;
+
 }
 #or{
   text-align: center;
