@@ -149,7 +149,7 @@ table{
 .button{
   padding: 0px;
   height: 40px;
-
+  width: 150px;
 }
 #or{
   text-align: center;
