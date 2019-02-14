@@ -17,7 +17,7 @@ body{
 background: #074E68;
 }
 
-.centered .ui-tabs-nav {
+/* .centered .ui-tabs-nav {
   text-align: center;
 }
 .centered .ui-tabs-nav li {
@@ -25,7 +25,7 @@ background: #074E68;
   float: none;
   margin: 0em;
   height: 2em;
-}
+} */
 
 .tab { 
   margin-left: 5%; 
