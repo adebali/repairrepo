@@ -173,7 +173,7 @@ footer a {
  
 }
 footer img{
-
+  max-height: 100px;
   object-fit: cover;
 
 }
