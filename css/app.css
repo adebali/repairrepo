@@ -171,7 +171,9 @@ footer a {
   font-size: .8em;
  
 }
-
+footer img{
+  object-fit: cover;
+}
 
 
 footer a:hover {
