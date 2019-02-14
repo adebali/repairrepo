@@ -26,7 +26,7 @@ background: #074E68;
   margin: 0em;
   height: 2em;
 }
-#nameSelector{
+#nameSelector, #querySelectors{
   align-content: center;
 }
 
