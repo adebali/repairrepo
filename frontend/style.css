@@ -26,6 +26,9 @@ background: #074E68;
   margin: 0em;
   height: 2em;
 }
+#nameSelector{
+  align-content: center;
+}
 
 .tab { 
   margin-left: 5%; 
