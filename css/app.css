@@ -171,13 +171,7 @@ footer a {
   font-size: .8em;
  
 }
-footer img{
-  
-  max-width: 250px;
-  max-height: 110px;
-  min-width: 110px;
-  min-height: 90px;
-}
+
 
 
 footer a:hover {
