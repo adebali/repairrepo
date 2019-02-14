@@ -117,6 +117,7 @@ th.rotate > div > span {
 #orgPics{
   display:block;
   margin:auto;
+  align-content: center;
 }
 #wrapper {
   display: flex;
