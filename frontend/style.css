@@ -146,6 +146,9 @@ table{
   display: flex;
   justify-content: center;
 }
+.button{
+  padding: 15px 20px;
+}
 #or{
   text-align: center;
   vertical-align: middle;
