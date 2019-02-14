@@ -113,9 +113,12 @@ th.rotate > div > span {
 }
 .thumbnail{
   height: 150px;
-  width: 100 px;
+  width: 100px;
 }
-
+#orgPics{
+  display:block;
+  margin:auto;
+}
 #wrapper {
   display: flex;
 }
