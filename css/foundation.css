@@ -4215,7 +4215,7 @@ table.hover tr:nth-of-type(even):hover {
 .dropdown-content a {
   float: none;
   color: white;
-  padding: 6px;
+  padding: 0px;
   text-decoration: none;
   display: block;
   text-align: center;
