@@ -12,7 +12,7 @@ body{
     position: center;
     
 }
-.ui-tabs .ui-tabs-panel /* just in case you want to change the panel */
+.ui-tabs .ui-tabs-nav /* just in case you want to change the panel */
 {
 background: #074E68;
 }
