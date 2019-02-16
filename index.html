@@ -17,14 +17,16 @@
       <div class="off-canvas-wrapper-inner" data-off-canvas-wrapper>
 
         <!-- OFF-CANVAS MENU -->
-        <div id = "header"></div>
+
+        <div id = "mobileHeader"></div>
+
         <!-- KEEP -->
         <div class="off-canvas-content" data-off-canvas-content>
 
 
           <!-- DESKTOP NAVIGATION -->
 
-          
+          <div id = "header"></div>
 
           <!-- HERO SECTION -->
 
@@ -137,6 +139,7 @@
     <script>
       $('#header').load('/frontend/header.html');
       $('#footer').load('/frontend/footerNew.html');
+      $("#mobileHeader").load("/frontend/mobileHeader.html")
     </script>
     <script src="js/vendor/what-input.js"></script>
     <script src="js/vendor/foundation.js"></script>
