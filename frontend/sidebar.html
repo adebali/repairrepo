@@ -103,7 +103,7 @@
                 
             }
             
-            var damageHTML = "<h5 id = 'damageList"+ cellLine+"'><b>Damage Type:</b></h5>";
+            var damageHTML = "<h5 class = 'tab3' id = 'damageList"+ cellLine+"'><b>Damage Type:</b></h5>";
             
             experimentList.forEach(element =>{
             
@@ -140,7 +140,7 @@
             experimentList.forEach(element =>{
                 if(element["damage"] === damage && element["cell_line"] === parCell && element["experiment"]===grandparentExp){
                     if(!tracksHTML.includes(element["title"])){
-                        tracksHTML += "<p class = 'track "+ damage+" "+ grandparentExp+ "' id = '"+element["title"]+"'>"+ element["title"] + "</p>";
+                        tracksHTML += "<p class = 'tab4 track "+ damage+" "+ grandparentExp+ "' id = '"+element["title"]+"'>"+ element["title"] + "</p>";
                     }
                 }
             })
