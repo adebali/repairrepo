@@ -1,4 +1,67 @@
 <header>
+    <div class="off-canvas position-left" id="mobile-menu" data-off-canvas>
+        <!-- <ul>
+          <li><a href="#">Home</a></li>
+          <li>
+            <a href="#">Browse</a>
+            <div class="dropdown">
+              <button class="dropbtn">Browse
+                <i class="fa fa-caret-down"></i>
+              </button>
+              <div class="dropdown-content">
+                <a href="/frontend/humanBrowser.html" class = 'navLinks'>HUMAN </a>
+                <a href="/frontend/mouseBrowser.html" class = 'navLinks'>MOUSE</a>
+                <a href="/frontend/arabidopsisBrowser.html" class = 'navLinks'>ARABIDOPSIS</a>
+                <a href="/frontend/yeastBrowser.html" class = 'navLinks'>YEAST</a>
+                <a href="/frontend/ecoliBrowser.html" class = 'navLinks'>E.COLI</a>
+              </div>
+            </div> 
+          </li>
+          <li><a href="#">Search</a></li>
+          <li><a href="#">Download</a></li>
+          <li><a href="#">Help</a></li>
+        </ul> -->
+        <button class="accordion" id="home">HOME</button>
+          <script type="text/javascript">
+              document.getElementById("home").onclick = function () {
+                  location.href = "index.html";
+              };
+          </script>
+
+        <button class="accordion" id="browse">BROWSE</button>
+        <div class="panel">
+          <ul style="text-align:left">
+            <p>
+              <a href="/frontend/humanBrowser.html" class = 'navLinks'>HUMAN </a>
+                <a href="/frontend/mouseBrowser.html" class = 'navLinks'>MOUSE</a>
+                <a href="/frontend/arabidopsisBrowser.html" class = 'navLinks'>ARABIDOPSIS</a>
+                <a href="/frontend/yeastBrowser.html" class = 'navLinks'>YEAST</a>
+                <a href="/frontend/ecoliBrowser.html" class = 'navLinks'>E.COLI</a>
+            </p>
+          </ul>
+        </div>
+
+        <button class="accordion" id="search">SEARCH</button>
+        <script type="text/javascript">
+          document.getElementById("search").onclick = function () {
+              location.href = "search.html";
+          };
+        </script>
+
+        <button class="accordion" id="download">DOWNLOAD</button>
+          <script type="text/javascript">
+              document.getElementById("download").onclick = function () {
+                  location.href = "download.html";
+              };
+          </script>
+
+        <button class="accordion" id="help">HELP</button>
+        <script type="text/javascript">
+          document.getElementById("help").onclick = function () {
+              location.href = "help.html";
+          };
+        </script>
+      </div>
   <!-- Mobile -->
     <div class="title-bar show-for-small-only">
         <div class="title-bar-left">
