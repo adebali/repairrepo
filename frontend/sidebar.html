@@ -68,7 +68,7 @@
                                 var forId = element["cell_line"].replace(/ /g, '___');
                                 cellLineListHTML += "<p class = 'cellLineP' id = '" + forId+ "' >" + element["cell_line"] + "   +</p>" + "<div id = '"+ forId + "' class = 'cellLine " + exp+ "'></div>";
                             }else{
-                            cellLineListHTML += "<p class = 'cellLineP' id = '" + element["cell_line"]+ "' >" + element["cell_line"] + "   +</p>" + "<div id = '"+ element["cell_line"] + "' class = 'cellLine" + exp+ "'></div>";
+                            cellLineListHTML += "<p class = 'cellLineP' id = '" + element["cell_line"]+ "' >" + element["cell_line"] + "   +</p>" + "<div id = '"+ element["cell_line"] + "' class = 'cellLine " + exp+ "'></div>";
                             }
                         }
                     }
@@ -119,9 +119,9 @@
                 }
             })
             if($("div#"+forId + "."+parentExp).text().indexOf("Damage") === -1 && bool === true){
-                $("div#"+forId+"."+parentExp).html(damageHTML).addClass("tab3")
+                $("div#"+forId+"."+parentExp).html(damageHTML)
             }else if(bool === false){
-                $("div#"+parentExp+".experiment").html(damageHTML).addClass("tab3")
+                $("div#"+parentExp+".experiment").html(damageHTML)
             }
             return;
         }
