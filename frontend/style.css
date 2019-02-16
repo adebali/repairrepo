@@ -54,9 +54,14 @@ background: #074E68;
 #igvContainer{
   flex: 1;
 }
-.column, .columns {
-  padding-left: 0.9375rem;
-  padding-right: 0.9375rem;
+.containerChrRegion > div {
+  display: inline-block;
+  display: -moz-inline-box;
+  *display: inline; /* For IE7 */
+  zoom: 1; /* Trigger hasLayout */
+  margin-left: 2%;
+  width: 32%;
+  text-align: center;
 }
 
 
