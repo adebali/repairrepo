@@ -64,14 +64,11 @@
                     //prevent duplicate cell lines to be populated each a time
                         
                         if(!cellLineListHTML.includes(element["cell_line"])){
-                            console.log("in concat")
                             if(element["cell_line"].includes(" ")){
-                                console.log("original cell line " + element["cell_line"])
                                 var forId = element["cell_line"].replace(/ /g, '___');
-                                console.log("for id " + forId)
-                                cellLineListHTML += "<p class = 'tab2 cellLineP' id = '" + forId+ "' >" + element["cell_line"] + "   +</p>" + "<div id = '"+ forId + "' class = 'cellLine " + exp+ "'></div>";
+                                cellLineListHTML += "<p class = 'cellLineP' id = '" + forId+ "' >" + element["cell_line"] + "   +</p>" + "<div id = '"+ forId + "' class = 'cellLine " + exp+ "'></div>";
                             }else{
-                            cellLineListHTML += "<p class = 'tab2 cellLineP' id = '" + element["cell_line"]+ "' >" + element["cell_line"] + "   +</p>" + "<div id = '"+ element["cell_line"] + "' class = 'cellLine " + exp+ "'></div>";
+                            cellLineListHTML += "<p class = 'cellLineP' id = '" + element["cell_line"]+ "' >" + element["cell_line"] + "   +</p>" + "<div id = '"+ element["cell_line"] + "' class = 'cellLine " + exp+ "'></div>";
                             }
                         }
                     }
@@ -116,7 +113,7 @@
 
                     if(!damageHTML.includes(element["damage"])){
                        
-                        damageHTML += "<p class = 'tab3 damageP "+forId+ " " + parentExp + "' id = '"+element["damage"]+"'>"+element["damage"]+"   +</p>";
+                        damageHTML += "<p class = 'damageP "+forId+ " " + parentExp + "' id = '"+element["damage"]+"'>"+element["damage"]+"   +</p>";
                         damageHTML += "<div id = '"+element["damage"]+"' class = 'tab3 damage "+forId+ " " + parentExp + "'></div>";
                     }
                 }
@@ -143,7 +140,7 @@
             experimentList.forEach(element =>{
                 if(element["damage"] === damage && element["cell_line"] === parCell && element["experiment"]===grandparentExp){
                     if(!tracksHTML.includes(element["title"])){
-                        tracksHTML += "<p class = 'tab4 track "+ damage+" "+ grandparentExp+ "' id = '"+element["title"]+"'>"+ element["title"] + "</p>";
+                        tracksHTML += "<p class = 'track "+ damage+" "+ grandparentExp+ "' id = '"+element["title"]+"'>"+ element["title"] + "</p>";
                     }
                 }
             })
