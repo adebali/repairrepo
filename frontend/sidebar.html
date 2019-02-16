@@ -68,7 +68,7 @@
                                 var forId = element["cell_line"].replace(/ /g, '___');
                                 cellLineListHTML += "<p class = 'cellLineP' id = '" + forId+ "' >" + element["cell_line"] + "   +</p>" + "<div id = '"+ forId + "' class = 'cellLine " + exp+ "'></div>";
                             }else{
-                            cellLineListHTML += "<p class = 'cellLineP' id = '" + element["cell_line"]+ "' >" + element["cell_line"] + "   +</p>" + "<div id = '"+ element["cell_line"] + "' class = 'cellLine " + exp+ "'></div>";
+                            cellLineListHTML += "<p class = 'cellLineP' id = '" + element["cell_line"]+ "' >" + element["cell_line"] + "   +</p>" + "<div id = '"+ element["cell_line"] + "' class = 'cellLine tab2" + exp+ "'></div>";
                             }
                         }
                     }
@@ -80,7 +80,7 @@
             }
             if($("div#"+exp).text().indexOf("Cell Line") === -1){
                 
-                $("div#"+exp).html(cellLineListHTML).addClass("tab2")
+                $("div#"+exp).html(cellLineListHTML)
                 return;
             }
             
@@ -119,9 +119,9 @@
                 }
             })
             if($("div#"+forId + "."+parentExp).text().indexOf("Damage") === -1 && bool === true){
-                $("div#"+forId+"."+parentExp).html(damageHTML)
+                $("div#"+forId+"."+parentExp).html(damageHTML).addClass("tab3")
             }else if(bool === false){
-                $("div#"+parentExp+".experiment").html(damageHTML)
+                $("div#"+parentExp+".experiment").html(damageHTML).addClass("tab3")
             }
             return;
         }
