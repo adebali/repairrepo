@@ -68,7 +68,7 @@
                                 var forId = element["cell_line"].replace(/ /g, '___');
                                 cellLineListHTML += "<p class = 'cellLineP' id = '" + forId+ "' >" + element["cell_line"] + "   +</p>" + "<div id = '"+ forId + "' class = 'cellLine " + exp+ "'></div>";
                             }else{
-                            cellLineListHTML += "<p class = 'cellLineP' id = '" + element["cell_line"]+ "' >" + element["cell_line"] + "   +</p>" + "<div id = '"+ element["cell_line"] + "' class = 'cellLine tab2" + exp+ "'></div>";
+                            cellLineListHTML += "<p class = 'cellLineP' id = '" + element["cell_line"]+ "' >" + element["cell_line"] + "   +</p>" + "<div id = '"+ element["cell_line"] + "' class = 'cellLine" + exp+ "'></div>";
                             }
                         }
                     }
@@ -80,7 +80,7 @@
             }
             if($("div#"+exp).text().indexOf("Cell Line") === -1){
                 
-                $("div#"+exp).html(cellLineListHTML)
+                $("div#"+exp).html(cellLineListHTML).addClass("tab2")
                 return;
             }
             
