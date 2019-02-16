@@ -62,7 +62,10 @@ background: #074E68;
   width: 33%;
   text-align: center;
 }
-
+input{
+  width: auto;
+  box-sizing: border-box; 
+}
 
 #bodyDiv{
   padding-left: 10px;
