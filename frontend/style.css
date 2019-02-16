@@ -54,6 +54,10 @@ background: #074E68;
 #igvContainer{
   flex: 1;
 }
+.column, .columns {
+  padding-left: 0.9375rem;
+  padding-right: 0.9375rem;
+}
 
 
 #bodyDiv{
