@@ -49,6 +49,7 @@ background: #074E68;
 #sidebar{
   flex: 0 0 25%;
   width: auto;
+  word-wrap: break-word;
 }
 #igvContainer{
   flex: 1;
