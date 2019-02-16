@@ -48,7 +48,7 @@ background: #074E68;
 }
 #sidebar{
   flex: 0 0 25%;
-  width: -webkit-calc(100% - 60px); /* note, the space is necessary */
+  width: auto;
 }
 #igvContainer{
   flex: 1;
