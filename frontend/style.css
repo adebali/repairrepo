@@ -59,8 +59,7 @@ background: #074E68;
   display: -moz-inline-box;
   *display: inline; /* For IE7 */
   zoom: 1; /* Trigger hasLayout */
-  margin-left: 2%;
-  width: 32%;
+  width: 33%;
   text-align: center;
 }
 
