@@ -64,6 +64,9 @@ input{
   width: 100%;
   box-sizing: border-box; 
 }
+div{
+  width: 100%;
+}
 
 #bodyDiv{
   padding-left: 10px;
