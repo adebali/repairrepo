@@ -54,19 +54,23 @@ background: #074E68;
 #igvContainer{
   flex: 1;
 }
-.containerChrRegion > div {
-  display: inline-block;
-  zoom: 1; /* Trigger hasLayout */
-  width: 33%;
-  text-align: center;
+.containerChrRegion{
+  text-align:justify;
+  
 }
-input{
-  width: 100%;
-  box-sizing: border-box; 
+.containerChrRegion:after {
+  content:'';
+  display:inline-block;
+  width:99.5%;/* generates an extra transparent line */
 }
-div{
-  width: 100%;
+.buttons {
+  min-width:45em;
+  padding: 1.2em 1em 0;
+  box-shadow:0 0 5px;
+  margin:1em;
+  border-radius:0.25em;
 }
+
 
 #bodyDiv{
   padding-left: 10px;
