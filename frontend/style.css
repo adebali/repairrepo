@@ -47,7 +47,7 @@ background: #074E68;
   display:flex;
 }
 #sidebar{
-  flex: 0 0 25%;
+  flex: 0 0 33%;
 }
 #igvContainer{
   flex: 1;
