@@ -50,9 +50,15 @@ $(document).ready(function(){
 
          }
 
-         function removeTrack(track){
-
-         }
+         var removeTrackByName = function (trackName) {
+            for (var i = 0, l = igv.browser.trackViews.length; i < l; i++) {
+                var trackView = igv.browser.trackViews[i];
+                if (trackView.track.name === trackName) {
+                    igv.browser.removeTrack(trackView.track);
+                    return;
+                }
+            }
+        };
 
         //helper functions
     
