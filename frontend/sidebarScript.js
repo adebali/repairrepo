@@ -284,11 +284,11 @@
 
                 //CODE FOR IGV.JS GENOME BROSWER 
     
-                var igvDiv =  document.getElementById("igvContainer");
-                var options = {
-                    genome: "hg19",
-                    locus: "chr8:128,747,267-128,754,546",
-                    tracks: [
+        var igvDiv =  document.getElementById("igvContainer");
+        var options = {
+            genome: "hg19",
+            locus: "chr8:128,747,267-128,754,546",
+            tracks: [
                         {
                             type: 'alignment',
                             format: 'bam',
@@ -303,8 +303,8 @@
                             name: 'HG02450'
                         }
                     ]
-                };
-                igv.createBrowser(igvDiv, options)
+            };
+            igv.createBrowser(igvDiv, options)
                 .then(function (browser) {
                     console.log("Created IGV browser");
                 })

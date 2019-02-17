@@ -1,7 +1,7 @@
 $(document).ready(function(){
     
     
-        $('#header').load('header.html', getCurrentPage());
+        $('#header').load('header.html');
         $('#footer').load('footerNew.html');
         $('#sidebar').load('sidebar.html');
     
