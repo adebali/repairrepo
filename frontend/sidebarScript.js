@@ -89,7 +89,7 @@
                 if(element["cell_line"]===cellLine && element["experiment"]===parentExp){
                     //prevent duplicate cell lines to be populated each a time
                    
-                    console.log("in if")
+                    
                     if(!damageHTML.includes(element["damage"])){
                        
                         damageHTML += "<p class = 'tab3 damageP "+forId+ " " + parentExp + "' id = '"+element["damage"]+"'>"+element["damage"]+"   +</p>";
@@ -98,8 +98,10 @@
                 }
             })
             if($("div#"+forId + "."+parentExp).text().indexOf("Damage") === -1 && bool === true){
+                console.log("in if")
                 $("div#"+forId+"."+parentExp).html(damageHTML)
             }else if(bool === false){
+                console.log("in else")
                 $("div#"+parentExp+".experiment").html(damageHTML)
             }
             return;
