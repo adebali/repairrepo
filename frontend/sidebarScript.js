@@ -98,7 +98,7 @@
                 }
             })
             if($("div#"+forId + "."+parentExp).text().indexOf("Damage") === -1 && bool === true){
-                console.log("in if")
+                console.log("in if: " + forId + "parexp "+ parentExp)
                 $("div#"+forId+"."+parentExp).html(damageHTML)
             }else if(bool === false){
                 console.log("in else")
