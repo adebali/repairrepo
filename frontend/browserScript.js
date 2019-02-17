@@ -34,7 +34,7 @@ $(document).ready(function(){
         .then(function (browser) {
             console.log("Created IGV browser");
         })
-        removeTrackByName("HG02450").then(console.log("removed track"))
+        
     
         $(document).on("change", "textarea", function(){
             //array of tracks to be selected or removed
@@ -60,7 +60,7 @@ $(document).ready(function(){
                 }
             }
         };
-
+        removeTrackByName("HG02450").then(console.log("removed track"))
         //helper functions
     
         function getCurrentPage(){
