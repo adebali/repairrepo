@@ -47,11 +47,11 @@ $(document).ready(function(){
  
         
         //TODO
-         function addTrack(track){
+        function addTrack(track){
 
-         }
+        }
 
-         var removeTrackByName = function (trackName) {
+        var removeTrackByName = function (trackName) {
             for (var i = 0, l = igv.browser.trackViews.length; i < l; i++) {
                 var trackView = igv.browser.trackViews[i];
                 if (trackView.track.name === trackName) {
