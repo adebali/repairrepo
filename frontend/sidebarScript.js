@@ -89,7 +89,7 @@
                 if(element["cell_line"]===cellLine && element["experiment"]===parentExp){
                     //prevent duplicate cell lines to be populated each a time
                    
-
+                    console.log("in if")
                     if(!damageHTML.includes(element["damage"])){
                        
                         damageHTML += "<p class = 'tab3 damageP "+forId+ " " + parentExp + "' id = '"+element["damage"]+"'>"+element["damage"]+"   +</p>";
@@ -159,8 +159,6 @@
                 $(this).html(newHTML);
                 return(populateCellLine($(this).attr("id")));
             }
-
-            console.log($(this).attr("id") + " selected");
            
             
         })
@@ -194,7 +192,6 @@
                 $(this).html(newHTML);
                 return;
             }
-            console.log($(this).attr("id") + "selected cell line")
             
         })
         //populate tracks when user selects a damage type
