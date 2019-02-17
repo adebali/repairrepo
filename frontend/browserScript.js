@@ -9,7 +9,7 @@ $(document).ready(function(){
         console.log('current organism: ' + organism)
     
         //CODE FOR IGV.JS GENOME BROSWER 
-        var igv;
+        var igv2;
         var igvDiv =  document.getElementById("igvContainer");
         var options = {
             genome: "hg19",
@@ -30,10 +30,10 @@ $(document).ready(function(){
                 }
             ]
         };
-        igv1.createBrowser(igvDiv, options)
+        igv.createBrowser(igvDiv, options)
         .then(function (browser) {
             console.log("Created IGV browser");
-            igv = browser;
+            igv2 = browser;
         })
         
     
@@ -53,10 +53,10 @@ $(document).ready(function(){
         }
 
         var removeTrackByName = function (trackName) {
-            for (var i = 0, l = igv.browser.trackViews.length; i < l; i++) {
-                var trackView = igv.browser.trackViews[i];
+            for (var i = 0, l = igv2.browser.trackViews.length; i < l; i++) {
+                var trackView = igv2.browser.trackViews[i];
                 if (trackView.track.name === trackName) {
-                    igv.browser.removeTrack(trackView.track);
+                    igv2.browser.removeTrack(trackView.track);
                     return;
                 }
             }
