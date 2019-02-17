@@ -33,7 +33,7 @@ $(document).ready(function(){
         igv.createBrowser(igvDiv, options)
         .then(function (browser) {
             console.log("Created IGV browser");
-            igv2 = browser;
+            igv2 = igv;
         })
         
     
