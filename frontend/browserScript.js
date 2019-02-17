@@ -30,7 +30,7 @@ $(document).ready(function(){
                 }
             ]
         };
-        igv.createBrowser(igvDiv, options)
+        igv1.createBrowser(igvDiv, options)
         .then(function (browser) {
             console.log("Created IGV browser");
             igv = browser;
