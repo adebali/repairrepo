@@ -39,7 +39,7 @@ $(document).ready(function(){
         //create placeholder browser
         createBrowser();
         
-        $(document).on("click", ".tab4", function(){
+        $(document).on("click", ".track", function(){
             //stores tracks to be visualized
             var IDs = [];
             $("#selectedTracks").find("span").each(function(){ IDs.push(this.id); });
@@ -47,24 +47,22 @@ $(document).ready(function(){
             return console.log("id array "+ JSON.stringify(IDs))
         })
     
-       
- 
-        
+
         //TODO
-        function addTrack(track){
+        // function addTrack(track){
 
-        }
+        // }
 
-        var removeTrackByName = function (trackName) {
-            for (var i = 0, l = igv.browser.trackViews.length; i < l; i++) {
-                var trackView = igv.browser.trackViews[i];
-                if (trackView.track.name === trackName) {
-                    igv.browser.removeTrack(trackView.track);
-                    return;
-                }
-            }
-        };
-        removeTrackByName("HG02450").then(console.log("removed track"))
+        // var removeTrackByName = function (trackName) {
+        //     for (var i = 0, l = igv.browser.trackViews.length; i < l; i++) {
+        //         var trackView = igv.browser.trackViews[i];
+        //         if (trackView.track.name === trackName) {
+        //             igv.browser.removeTrack(trackView.track);
+        //             return;
+        //         }
+        //     }
+        // };
+        // removeTrackByName("HG02450").then(console.log("removed track"))
         //helper functions
     
         function getCurrentPage(){

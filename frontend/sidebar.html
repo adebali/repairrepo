@@ -274,7 +274,7 @@
             // $("#selectedTracks").val(newText);
             // console.log("new text "+ newText)
             // return(console.log("removing track"+ $(this).attr("id")+ "from browser"))
-            $("span "+$(this).attr("id")).remove()
+            return $("span #"+$(this).attr("id")).remove();
         }
     })
 
