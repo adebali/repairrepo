@@ -9,6 +9,7 @@ $(document).ready(function(){
         console.log('current organism: ' + organism)
     
         //CODE FOR IGV.JS GENOME BROSWER 
+        //TODO (once data set is ready): function needs params for genome, locus, tracks
         function createBrowser(){
             var igvDiv =  document.getElementById("igvContainer");
             var options = {
@@ -35,7 +36,8 @@ $(document).ready(function(){
                 console.log("Created IGV browser");
             })
         }
-        
+        //create placeholder browser
+        createBrowser();
         
         $(document).on("click", ".tab4", function(){
             createBrowser();
@@ -58,10 +60,10 @@ $(document).ready(function(){
         }
 
         var removeTrackByName = function (trackName) {
-            for (var i = 0, l = igv2.browser.trackViews.length; i < l; i++) {
-                var trackView = igv2.browser.trackViews[i];
+            for (var i = 0, l = igv.browser.trackViews.length; i < l; i++) {
+                var trackView = igv.browser.trackViews[i];
                 if (trackView.track.name === trackName) {
-                    igv2.browser.removeTrack(trackView.track);
+                    igv.browser.removeTrack(trackView.track);
                     return;
                 }
             }
