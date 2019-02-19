@@ -40,18 +40,14 @@ $(document).ready(function(){
         createBrowser();
         
         $(document).on("click", ".tab4", function(){
+            //stores tracks to be visualized
+            var IDs = [];
+            $("#selectedTracks").find("span").each(function(){ IDs.push(this.id); });
             createBrowser();
-            return console.log("created browser in event handler")
+            return console.log("id array "+ JSON.stringify(IDs))
         })
     
-        $(document).on("change", "textarea", function(){
-            //array of tracks to be selected or removed
-            var selectedTracks = $("#selectedTracks").text().split(",");
-            var removeTracks = $("#deselectedTracks").text().split(",");
-
-            console.log("tracks to be selected " + JSON.stringify(selectedTracks))
-            console.log("tracks to be removed " + JSON.stringify(deselectedTracks))
-        });
+       
  
         
         //TODO

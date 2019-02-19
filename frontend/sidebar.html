@@ -14,8 +14,8 @@
     </div>
 </div>
 
-<textarea id = "selectedTracks" hidden></textarea>
-<textarea id = "deselectedTracks" hidden></textarea>
+<div id = "selectedTracks" hidden></div>
+
 </section>
 
 <script>
@@ -258,22 +258,23 @@
         var selected = $(this).hasClass("highlight");
         if(!selected){
             $(this).addClass("highlight")
-            $("#selectedTracks").append("," + $(this).attr("id"));
+            // $("#selectedTracks").append("," + $(this).attr("id"));
             
-            var newText = $("#selectedTracks").val().replace($(this).attr("id"), "");
-            $("#deselectedTracks").text(newText)
-            console.log("before logi " + newText)
+            // var newText = $("#selectedTracks").val().replace($(this).attr("id"), "");
+            // $("#deselectedTracks").text(newText)
+            // console.log("before logi " + newText)
             
             //$("#deselectedTracks").val(newText);
-            return(console.log("adding track"+ $(this).attr("id")+ "to browser"))
+            $("#selectedTracks").append("<span id ="+$(this).attr("id")+"></span>")
+            return;
         }else{
             $(this).removeClass("highlight")
-            $("#deselectedTracks").append(","+$(this).attr("id"));
-            var newText = $("#selectedTracks").val().replace($(this).attr("id"), "");
-            $("#selectedTracks").val(newText);
-            console.log("new text "+ newText)
-            return(console.log("removing track"+ $(this).attr("id")+ "from browser"))
-            
+            // $("#deselectedTracks").append(","+$(this).attr("id"));
+            // var newText = $("#selectedTracks").val().replace($(this).attr("id"), "");
+            // $("#selectedTracks").val(newText);
+            // console.log("new text "+ newText)
+            // return(console.log("removing track"+ $(this).attr("id")+ "from browser"))
+            $("span "+$(this).attr("id")).remove()
         }
     })
 
