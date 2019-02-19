@@ -11,6 +11,7 @@ $(document).ready(function(){
         //CODE FOR IGV.JS GENOME BROSWER 
         //TODO (once data set is ready): function needs params for genome, locus, tracks
         function createBrowser(){
+            $("#igvContainer").empty();
             var igvDiv =  document.getElementById("igvContainer");
             var options = {
                 genome: "hg19",
