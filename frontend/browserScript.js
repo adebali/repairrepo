@@ -42,10 +42,9 @@ $(document).ready(function(){
         
         $(document).on("click", ".track", function(){
             //stores tracks to be visualized
-            var IDs = [];
-            $("#selectedTracks").find("span").each(function(){ IDs.push(this.id); });
+            $("#selectedTracks").find("span").each(function(){ window.IDs.push(this.id); });
             createBrowser();
-            return console.log("id array "+ JSON.stringify(IDs))
+            return console.log("id array "+ JSON.stringify(window.IDs))
         })
     
 
