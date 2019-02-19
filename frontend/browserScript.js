@@ -44,7 +44,7 @@ $(document).ready(function(){
             //stores tracks to be visualized
             $("#selectedTracks").find("span").each(function(){ window.IDs.push(this.id); });
             createBrowser();
-            return console.log("id array "+ JSON.stringify(window.IDs))
+            return console.log("id array browser "+ JSON.stringify(window.IDs))
         })
     
 

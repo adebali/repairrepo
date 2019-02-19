@@ -267,6 +267,7 @@
             //$("#deselectedTracks").val(newText);
             //$("#selectedTracks").append("<span id ="+$(this).attr("id")+"></span>")
             window.IDs.push($(this).attr("id"));
+            console.log("id arr in sidebar " + JSON.stringify(window.IDs))
             return;
         }else{
             $(this).removeClass("highlight")
@@ -275,7 +276,9 @@
             // $("#selectedTracks").val(newText);
             // console.log("new text "+ newText)
             // return(console.log("removing track"+ $(this).attr("id")+ "from browser"))
-            return window.IDs.splice( window.IDs.indexOf($(this).attr("id")), 1 );
+            window.IDs.splice( window.IDs.indexOf($(this).attr("id")), 1 );
+            console.log("id arr in sidebar " + JSON.stringify(window.IDs))
+            return;
         }
     })
 
