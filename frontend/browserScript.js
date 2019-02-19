@@ -3,7 +3,7 @@ $(document).ready(function(){
     
         $('#header').load('header.html');
         $('#footer').load('footerNew.html');
-        $('#sidebar').load('sidebar.html');
+        //$('#sidebar').load('sidebar.html');
     
         const organism = getCurrentOrganism();
         console.log('current organism: ' + organism)
