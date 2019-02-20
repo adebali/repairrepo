@@ -173,9 +173,11 @@ footer a {
  
 }
 footer img{
-  max-height: 100px;
-  object-fit: cover;
 
+  width:100px;
+  height:100px;
+  object-fit:scale-down;
+  
 }
 
 

@@ -90,11 +90,7 @@ p:not(.site-logo):hover{
   text-align:center
 }
 
-#logo{
-  width:100px;
-  height:100px;
-  object-fit:scale-down;
-}
+
 
 /* .thead-dark {
     color: #fff;
