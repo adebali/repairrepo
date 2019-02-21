@@ -70,7 +70,7 @@ background: #074E68;
   margin:1em;
   border-radius:0.25em;
 }
-#ui-tabs-anchor{
+.ui-tabs-anchor{
   text-align: center;
 }
 
