@@ -118,6 +118,8 @@
 
         <!-- MAIN SECTION -->
         <section class="main wrap">
+          
+          <div id = "orgSelect"></div>
           <table id="organism-table" class="display" width="100%">
             <thead>
               <tr>
@@ -160,7 +162,23 @@
                   dataType: 'json',
                   success: function (data) {
                     console.log(data);
+                    
 
+                    //get all organisms from data to display in the dropdown
+                    var orgs  = [];
+                    data.forEach(element => {
+                      if(orgs.indexOf(element["organism"]) === -1){
+                        orgs.push(element["organism"])
+                      }
+                    });
+                    var selectHTML = "<select>";
+                    orgs.forEach(element =>{
+                      selectHTML += "<option value =" + element + ">"+element+"</option>"
+                    })
+                    selectHTML += "</select>"
+                    $("#orgSelect").html(selectHTML)
+
+                    
                    var table =  $('#organism-table').DataTable({
                       dom: 'Bfrtip',
                       data: data,
