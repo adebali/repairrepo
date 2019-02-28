@@ -171,14 +171,14 @@
                         orgs.push(element["organism"])
                       }
                     });
-                    var selectHTML = "<select>";
+                    var selectHTML = "<select> <option value = ''> Select Organism</option>";
                     orgs.forEach(element =>{
                       selectHTML += "<option value =" + element + ">"+element+"</option>"
                     })
                     selectHTML += "</select>"
                     $("#orgSelect").html(selectHTML)
 
-                    
+
                    var table =  $('#organism-table').DataTable({
                       dom: 'Bfrtip',
                       data: data,
