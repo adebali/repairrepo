@@ -96,9 +96,7 @@ p:not(.site-logo):hover{
 .jumbotron{
   text-align:center
 }
-#email::-webkit-input-placeholder { /* Chrome/Opera/Safari */
-  font: italic;
-}
+
 
 
 /* .thead-dark {
