@@ -171,7 +171,7 @@
                         orgs.push(element["organism"])
                       }
                     });
-                    var selectHTML = "<select> <option value = ''> Select Organism</option>";
+                    var selectHTML = "<select> <option value = '' disabled selected> Select Organism</option>";
                     orgs.forEach(element =>{
                       selectHTML += "<option value =" + element + ">"+element+"</option>"
                     })
