@@ -120,7 +120,7 @@
         <section class="main wrap">
           
           <div id = "orgSelect"></div>
-          <!-- <table id="organism-table" class="display" width="100%">
+          <table id="organism-table" class="display" width="100%">
             <thead>
               <tr>
                 <th>Organism</th>
@@ -134,7 +134,7 @@
               </tr>
             </thead>
 
-            <tfoot>
+            <!-- <tfoot>
               <tr>
                 <th>Organism</th>
                 <th>Method</th>
@@ -145,8 +145,8 @@
                 <th>Strain</th>
                 <th>Time</th>
               </tr>
-            </tfoot>
-          </table> -->
+            </tfoot> -->
+          </table>
 
           <div>
             <script type="text/javascript">
@@ -200,13 +200,13 @@
                     table.columns().every( function () {
         var that = this;
  
-        $( 'input', this.footer() ).on( 'keyup change', function () {
-            if ( that.search() !== this.value ) {
-                that
-                    .search( this.value )
-                    .draw();
-            }
-        } );
+        // $( 'input', this.footer() ).on( 'keyup change', function () {
+        //     if ( that.search() !== this.value ) {
+        //         that
+        //             .search( this.value )
+        //             .draw();
+        //     }
+        // } );
     } );
                   }
                 });
