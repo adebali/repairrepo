@@ -22,6 +22,9 @@ h1{
 .centered .ui-tabs-nav {
   text-align: center;
 }
+#emailLabel{
+  padding-top: 1em;
+}
 .centered .ui-tabs-nav li {
   display: inline-block;
   float: none;
