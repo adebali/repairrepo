@@ -206,3 +206,7 @@ table{
   color: red;
 }
 .table-striped tbody tr.highlight td { background-color: #f1b756; }
+
+#contactTitle{
+  text-align: center;
+}
