@@ -212,9 +212,12 @@ table{
 }
 #contactTitle{    
   position: absolute;
-  top: 70%;
-  left: 50%;
-  height: 30%;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
   width: 50%;
+  height: 30%;
+  margin: auto;
 
 }
