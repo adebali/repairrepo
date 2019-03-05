@@ -208,9 +208,13 @@ table{
 .table-striped tbody tr.highlight td { background-color: #f1b756; }
 
 #parentContactDiv{
-  display: table;
+  position: relative;
 }
 #contactTitle{    
-  display: table-cell;
-  vertical-align: middle;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  height: 30%;
+  width: 50%;
+  margin: -15% 0 0 -25%;
 }
