@@ -100,7 +100,7 @@ p:not(.site-logo):hover{
 .jumbotron{
   text-align:center
 }
-div{
+p{
   -webkit-transition-timing-function: ease;
   transition-timing-function: ease;
   transition: width 2s, height 4s;
