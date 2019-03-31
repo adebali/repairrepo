@@ -182,6 +182,7 @@ table{
 .dynTr:hover{
   outline: 0;
   background-color: #074E68;
+  color:white;
   cursor: pointer;
 }
 #submitButtonDiv{
