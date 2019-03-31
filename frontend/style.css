@@ -102,6 +102,8 @@ p:not(.site-logo):hover{
 }
 div{
   -webkit-transition-timing-function: ease;
+  transition-timing-function: ease;
+  transition: width 2s, height 4s;
 }
 
 
