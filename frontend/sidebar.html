@@ -153,9 +153,9 @@
     //populate cell lines when user selects experiment
     $(".exp").on("click", function(){
 
-        var selected = $(this).hasClass("highlight");
+        var selected = $(this).hasClass("selected");
         if(selected){
-            $(this).removeClass("highlight");
+            $(this).removeClass("selected");
             var thisExp = $(this).attr("id")
             $("#"+thisExp+" .cellLine").remove();
             $("#"+thisExp + " .cellLineP").remove();
@@ -172,7 +172,7 @@
             return;
            
         }else{
-            $(this).addClass("highlight");
+            $(this).addClass("selected");
             //add '-' instead of '+' when it's selected
             var oldHTML = $(this).html()
             var newHTML = oldHTML.split("   +")[0] + "   -";
@@ -186,9 +186,9 @@
     })
     //populate damage type when user selects a cell line
     $(document).on("click", ".cellLineP", function(){
-        var selected = $(this).hasClass("highlight");
+        var selected = $(this).hasClass("selected");
         if(!selected){
-            $(this).addClass("highlight")
+            $(this).addClass("selected")
             var parentExp = $(this).parent().attr("id")
             //add '-' instead of '+' when it's selected
             var oldHTML = $(this).html()
@@ -204,7 +204,7 @@
             return(populateDamageType(id, parentExp, true))
             
         }else{
-            $(this).removeClass("highlight")
+            $(this).removeClass("selected")
             var thisCellLine = $(this).attr("id")
             $("#damageList"+thisCellLine).empty();
             $("."+thisCellLine).empty();
@@ -219,10 +219,10 @@
     })
     //populate tracks when user selects a damage type
     $(document).on("click", ".damageP", function(){
-        var selected = $(this).hasClass("highlight");
+        var selected = $(this).hasClass("selected");
         
         if(!selected){
-            $(this).addClass("highlight")
+            $(this).addClass("selected")
             var parCellLine  = $(this).parent().attr("id");
             parExp = $(this).parent().parent().attr("id");
             if(parExp === "expList"){
@@ -235,7 +235,7 @@
             console.log("parcellline " + parCellLine   + "parexp " + parExp)
             return(populateTracks($(this).attr("id"), parCellLine, parExp))
         }else{
-            $(this).removeClass("highlight")
+            $(this).removeClass("selected")
             var dam = $(this).attr("id");
             var parCellLine  = $(this).parent().attr("id");
             var parExp = $(this).parent().parent().attr("id");
@@ -254,8 +254,9 @@
     })
 
     $(document).on("click", ".track", function(){
-        var selected = $(this).hasClass("highlight");
+        var selected = $(this).hasClass("selected");
         if(!selected){
+            $(this).addClass("selected")
             $(this).addClass("highlight")
             // $("#selectedTracks").append("," + $(this).attr("id"));
             
@@ -269,6 +270,7 @@
             console.log("id arr in sidebar " + JSON.stringify(window.IDs))
             return;
         }else{
+            $(this).removeClass("selected")
             $(this).removeClass("highlight")
             // $("#deselectedTracks").append(","+$(this).attr("id"));
             // var newText = $("#selectedTracks").val().replace($(this).attr("id"), "");
