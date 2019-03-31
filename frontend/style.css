@@ -87,16 +87,14 @@ h1{
     font-size: 14px;
 }
 .selected{
-  /* background-color: #F4A117; */
-  /* color: white; */
-  color: #074E68;
+  color: #2c3840;
 }
 .highlight{
    background-color: #074E68;
    color: white;
 }
 p:not(.site-logo):hover{
-  background-color: #F5D297
+  background-color: #074E68
 }
 .jumbotron{
   text-align:center
@@ -183,7 +181,7 @@ table{
 }
 .dynTr:hover{
   outline: 0;
-  background-color: #f1b756;
+  background-color: #074E68;
   cursor: pointer;
 }
 #submitButtonDiv{
@@ -210,7 +208,7 @@ table{
 .active{
   color: red;
 }
-.table-striped tbody tr.highlight td { background-color: #f1b756; }
+.table-striped tbody tr.highlight td { background-color: #074E68; }
 
 #parentContactDiv{
   position: relative;
