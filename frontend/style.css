@@ -86,9 +86,14 @@ h1{
 #plots{
     font-size: 14px;
 }
+.selected{
+  /* background-color: #F4A117; */
+  /* color: white; */
+  color: #074E68;
+}
 .highlight{
-  background-color: #F4A117;
-  color: white;
+   background-color: #074E68;
+   color: white;
 }
 p:not(.site-logo):hover{
   background-color: #F5D297
