@@ -94,7 +94,8 @@ h1{
    color: white;
 }
 p:not(.site-logo):hover{
-  background-color: #074E68
+  background-color: #074E68;
+  color:white;
 }
 .jumbotron{
   text-align:center
@@ -182,7 +183,6 @@ table{
 .dynTr:hover{
   outline: 0;
   background-color: #074E68;
-  color:white;
   cursor: pointer;
 }
 #submitButtonDiv{
