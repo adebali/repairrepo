@@ -106,10 +106,10 @@ p{
   transition: width 2s, height 4s;
 }
 .mobileLogoContainer {
-  /* margin: 10px;
-  width: 115px;
-  height: 115px;
-  line-height: 115px; */
+  margin: 10px;
+  width: 350px;
+  height: 350px;
+  line-height: 115px;
   text-align: center;
 
 }
