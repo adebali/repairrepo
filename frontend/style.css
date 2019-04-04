@@ -97,6 +97,14 @@ p:not(.site-logo):hover{
   background-color: #074E68;
   color:white;
 }
+p[class*="tab"]{
+  background-color: #074E68;
+  color:white;
+}
+p[class*="cellLine"]{
+  background-color: #074E68;
+  color:white;
+}
 .jumbotron{
   text-align:center
 }
