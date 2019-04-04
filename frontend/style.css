@@ -93,10 +93,10 @@ h1{
    background-color: #074E68;
    color: white;
 }
-p:not(.site-logo):hover{
+/* p:not(.site-logo):hover{
   background-color: #074E68;
   color:white;
-}
+} */
 p[class*="tab"]{
   background-color: #074E68;
   color:white;
