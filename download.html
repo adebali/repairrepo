@@ -123,7 +123,7 @@
         <section class="main wrap">
           
           <div id = "tableContainer">
-              <table id="table_format" class="table table-bordered"><tbody><tr><th>Product</th>
+              <!-- <table id="table_format" class="table table-bordered"><tbody><tr><th>Product</th>
                 <th>Type</th>
                 <th>In Stock</th>
                 </tr><tr><td>Iphone</td>
@@ -135,7 +135,7 @@
                 </tr><tr><td>Iphone</td>
                 <td>7</td>
                 <td>N</td>
-                </tr></tbody></table>
+                </tr></tbody></table> -->
           </div>
           
           <!-- Populate table from json-->
@@ -158,6 +158,7 @@
 
                       // CREATE DYNAMIC TABLE.
                       var table = document.createElement("table");
+                      table.setAttribute("id", "table_format");
 
                       // CREATE HTML TABLE HEADER ROW USING THE EXTRACTED HEADERS ABOVE.
 
@@ -185,7 +186,7 @@
                       divContainer.innerHTML = "";
                       divContainer.appendChild(table);
                   }
-          
+                CreateTableFromJSON();
           </script>
           <!-- <table id="organism-table" class="display" width="100%">
             <thead>
