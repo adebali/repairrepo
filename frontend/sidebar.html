@@ -127,7 +127,6 @@
     //needs exp and cell line too
     //populate track list when user selects a damage type
     function populateTracks(damage, parCell, grandparentExp){
-        console.log("here")
         if(parCell === grandparentExp){
             parCell = false;
         }
@@ -144,8 +143,9 @@
                 }
             }
         })
+        console.log("tracks" + tracksHTML)
         if($("div#"+damage + "."+parCell).text().indexOf("Tracks") === -1){
-            
+            console.log("in if")
             $("div#"+damage + "."+parCell).html(tracksHTML)
         }
         return;
