@@ -114,7 +114,10 @@ p{
   transition: width 2s, height 4s;
 }
 
-
+.form-control{
+  width: auto;
+  height: auto;
+}
 
 /* .thead-dark {
     color: #fff;
