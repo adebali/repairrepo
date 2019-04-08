@@ -143,9 +143,8 @@
                 }
             }
         })
-        console.log("tracks" + tracksHTML)
         if($("div#"+damage + "."+parCell).text().indexOf("Tracks") === -1){
-            console.log("in if")
+            console.log("in if" +damage + "parcell " + parCell)
             $("div#"+damage + "."+parCell).html(tracksHTML)
         }
         return;
