@@ -145,7 +145,13 @@
         })
         if($("div#"+damage + "."+parCell).text().indexOf("Tracks") === -1){
             console.log("in if" +damage + "parcell " + parCell)
-            $("div#"+damage + "."+parCell).html(tracksHTML)
+            if(parCell === false){
+                $("div#"+damage).html(tracksHTML)
+
+            }else{
+                $("div#"+damage + "."+parCell).html(tracksHTML)
+
+            }
         }
         return;
     }
