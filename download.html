@@ -140,6 +140,7 @@
                             //remove unnecessary columns
                             console.log(key)
                             if(key !== "SRA" || key !== "title" || key !== "treatment"){
+                              console.log("here " +key)
                               if (col.indexOf(key) === -1) {
                                   col.push(key);
                               }
