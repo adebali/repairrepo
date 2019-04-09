@@ -137,7 +137,7 @@
               var col = [];
               for (var i = 0; i < samplejson.length; i++) {
                 for (var key in samplejson[i]) {
-                  
+
                   console.log(key.localeCompare("SRA"))
                   if (key.localeCompare("SRA") === 0 || key.localeCompare("title") === 0 || key.localeCompare("treatment") === 0) {
                     //skip these
@@ -178,10 +178,85 @@
 
             // FINALLY ADD THE NEWLY CREATED TABLE WITH JSON DATA TO A CONTAINER.
             var divContainer = document.getElementById("tableContainer");
-            divContainer.innerHTML = "";
-            divContainer.appendChild(table);
-                  }
-            CreateTableFromJSON();
+            //divContainer.innerHTML = "";
+            //divContainer.appendChild(table);
+                  
+            //CreateTableFromJSON();
+
+
+
+            /**
+             * Given the results from a query, the method will build a table with embedded click 
+             * event handlers for each row (to enable plots to be shown)
+             * @param {*} objArray Query results stored here
+             */
+             function createDynamicTable(objArray) {
+                //var array = objArray;
+                var array = []; //ordered
+                
+                for(var i = 0; i < objArray.length; i++){
+                    var row = {};
+                    Object.keys(objArray[i]).sort().reverse().forEach(function(key) {
+                        row[key] = objArray[i][key];
+                        
+                    });
+                    array.push(row)
+                }
+                //console.log("array after sort"+JSON.stringify(array))
+                var str = '<table class="table-striped" role = "grid" id = "chrTable"> <thead> <tr>'; //originally thead had class 'thead-dark'
+    
+                //create table headers
+                for (var index in array[0]) {
+                    if((index.localeCompare("treatment") == 0) || (index.localeCompare("SRA")==0)|| (index.localeCompare("title")==0)){
+                        //skip these columns
+                    }else{
+                        // if((index.localeCompare("start") == 0) || (index.localeCompare("end") == 0) ||(index.localeCompare("name") == 0)||(index.localeCompare("strand") == 0)){
+                        //     str += '<th scope="col" >' + index + '</th>';
+                        // }else{
+                        //     str += '<th scope="col" class = "rotate"><div><span>' + index + '</span></div></th>';
+                            
+                        // }
+                        str += '<th scope="col" class = "rotate"><div><span>' + index + '</span></div></th>';
+
+                    }
+                }
+                
+                str += '</tr></thead>';
+                str += "<tbody>";
+                for (var i = 0; i < array.length; i++) {
+                    str += "<tr class = 'dynTr' tabindex = '0' id = 'dataRow_" + i +"'> ";
+                    $('#results').on('click', 'tbody tr', function(event) {
+                        $(this).addClass('highlight').siblings().removeClass('highlight');
+                    })
+                
+                    for (var index in array[i]) {
+                      
+                        if((index.localeCompare("treatment") == 0) || (index.localeCompare("SRA")==0)|| (index.localeCompare("title")==0)){
+                        //skip these columns
+                        }else{
+                            if(!isNaN(parseFloat(array[i][index])) && isFinite(array[i][index])){
+                                 var temp  = parseFloat(array[i][index])
+                                 array[i][index] = Math.round(temp * 100) / 100
+                               
+                            }
+                            
+                        str += '<td>' + array[i][index] + '</td>';
+                        }
+                    }
+                    $(document).on("click", "#dataRow_"  + i, function(){
+                        var arrayIndex = this.id.slice(-1)
+                        analyzeData([array[arrayIndex]])                
+                    })
+        
+                    str += '</tr>';
+                }
+                str += '</tbody>'
+                str += '</table>';
+
+                return str;
+            }
+            
+            divContainer.innerHTML = createDynamicTable(samplejson);
           </script>
           <!-- <table id="organism-table" class="display" width="100%">
             <thead>
