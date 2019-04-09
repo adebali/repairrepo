@@ -138,6 +138,7 @@
                       for (var i = 0; i < samplejson.length; i++) {
                           for (var key in samplejson[i]) {
                             //remove unnecessary columns
+                            console.log(key)
                             if(key !== "SRA" || key !== "title" || key !== "treatment"){
                               if (col.indexOf(key) === -1) {
                                   col.push(key);
