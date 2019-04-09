@@ -139,7 +139,7 @@
                           for (var key in samplejson[i]) {
                             //remove unnecessary columns
                             console.log(key)
-                            if(key !== "SRA" || key !== "title" || key !== "treatment"){
+                            if(key.localeCompare("SRA") !== 0 || key.localeCompare("title") !== 0 || key.localeCompare("treatment") !== 0){
                               console.log("here " +key)
                               if (col.indexOf(key) === -1) {
                                   col.push(key);
