@@ -170,8 +170,8 @@
 
                         var div = document.createElement("div");
                           div.setAttribute("id", i);
-                          div.addClass("collapse")
-                          div.addClass("in")
+                          div.setAttribute("class", "collapse")
+                          div.setAttribute("class", "in")
                           div.innerHTML = samplejson[i]["title"];
 
                           tr = table.insertRow(-1);
