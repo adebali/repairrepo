@@ -186,7 +186,7 @@
                               $(tabCell).attr("data-toggle", "collapse")
                               $(tabCell).attr("data-target", "#"+i)
                           }
-                          tr.insertCell
+                          $(tr).append(div)
                       }
 
                       // FINALLY ADD THE NEWLY CREATED TABLE WITH JSON DATA TO A CONTAINER.
