@@ -173,7 +173,7 @@
                           div.setAttribute("class", "collapse")
                           div.setAttribute("class", "in")
                           div.innerHTML = samplejson[i]["title"];
-                          div.style.display = 'none'; // hide
+                          $(div).hide();
 
                           tr = table.insertRow(-1);
                           tr.setAttribute("class", "accordion-toggle")
