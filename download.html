@@ -206,7 +206,12 @@
                   }
                 CreateTableFromJSON();
                 $(".accordion-toggle").on("click", function(){
-                  $(this).children('div').show() 
+                  if($(this).children("div").is(":hidden")){
+                    $(this).children('div').show() 
+
+                  }else{
+                  $(this).children('div').hide() 
+                  }
                 })
           </script>
           <!-- <table id="organism-table" class="display" width="100%">
