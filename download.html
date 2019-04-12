@@ -178,7 +178,7 @@
 
                         var div = document.createElement("div");
                           div.setAttribute("id", i);
-                          div.classList("collapse", "in")
+                          div.className = "collapse in";
                           div.innerHTML = newJSON[i]["title"];
                           $(div).hide();
 
