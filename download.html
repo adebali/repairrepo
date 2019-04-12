@@ -178,8 +178,7 @@
 
                         var div = document.createElement("div");
                           div.setAttribute("id", i);
-                          div.setAttribute("class", "collapse")
-                          div.setAttribute("class", "in")
+                          div.classList("collapse", "in")
                           div.innerHTML = newJSON[i]["title"];
                           $(div).hide();
 
@@ -205,14 +204,14 @@
                       divContainer.appendChild(table);
                   }
                 CreateTableFromJSON();
-                $(".accordion-toggle").on("click", function(){
-                  if($(this).children("div").is(":hidden")){
-                    $(this).children('div').show() 
+                // $(".accordion-toggle").on("click", function(){
+                //   if($(this).children("div").is(":hidden")){
+                //     $(this).children('div').show() 
 
-                  }else{
-                  $(this).children('div').hide() 
-                  }
-                })
+                //   }else{
+                //     $(this).children('div').hide() 
+                //   }
+                // })
           </script>
           <!-- <table id="organism-table" class="display" width="100%">
             <thead>
