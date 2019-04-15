@@ -43,8 +43,8 @@
 
       <!-- OFF-CANVAS MENU -->
 
-      <div class="off-canvas position-left" id="mobile-menu" data-off-canvas>
-        <!-- <ul>
+      <!-- <div class="off-canvas position-left" id="mobile-menu" data-off-canvas>
+         <ul>
                 <li><a href="#">Home</a></li>
                 <li>
                   <a href="#">Browse</a>
@@ -64,7 +64,7 @@
                 <li><a href="#">Search</a></li>
                 <li><a href="#">Download</a></li>
                 <li><a href="#">Help</a></li>
-              </ul> -->
+              </ul> 
         <button class="accordion" id="home">Home</button>
         <script type="text/javascript">
           document.getElementById("home").onclick = function () {
@@ -105,7 +105,7 @@
             location.href = "help.html";
           };
         </script>
-      </div>
+      </div> -->
 
       <!-- KEEP -->
       <div class="off-canvas-content" data-off-canvas-content>
@@ -255,198 +255,198 @@
 
           <div>
             <script type="text/javascript">
-                $(document).ready(function () {
+              $(document).ready(function () {
 
-                  // $('#organism-table tfoot th').each(function () {
-                  //   var title = $(this).text();
-                  //   $(this).html('<input type="text" placeholder="Search ' + title + '" />');
-                  // });
+                // $('#organism-table tfoot th').each(function () {
+                //   var title = $(this).text();
+                //   $(this).html('<input type="text" placeholder="Search ' + title + '" />');
+                // });
 
-                  $.ajax({
-                    url: 'https://raw.githubusercontent.com/adebali/repairrepo/develop/testDownloads.json',
-                    dataType: 'json',
-                    success: function (data) {
-                      console.log(data);
+                $.ajax({
+                  url: 'https://raw.githubusercontent.com/adebali/repairrepo/develop/testDownloads.json',
+                  dataType: 'json',
+                  success: function (data) {
+                    console.log(data);
 
 
-                      //get all organisms from data to display in the dropdown
-                      var orgs = [];
-                      data.forEach(element => {
-                        if (orgs.indexOf(element["organism"]) === -1) {
-                          orgs.push(element["organism"])
+                    //get all organisms from data to display in the dropdown
+                    var orgs = [];
+                    data.forEach(element => {
+                      if (orgs.indexOf(element["organism"]) === -1) {
+                        orgs.push(element["organism"])
+                      }
+                    });
+                    var selectHTML = "<select> <option value = '' disabled selected> Select Organism</option>";
+                    orgs.forEach(element => {
+                      selectHTML += "<option value =" + element + ">" + element + "</option>"
+                    })
+                    selectHTML += "</select>"
+                    $("#orgSelect").html(selectHTML)
+
+
+                    var table = $('#organism-table').DataTable({
+                      dom: 'Bfrtip',
+                      data: data,
+                      columns: [
+                        { data: 'organism' },
+                        { data: 'method' },
+                        { data: 'damage' },
+                        { data: 'cellType' },
+                        { data: 'link' },
+                        { data: 'replicate' },
+                        { data: 'strain' },
+                        { data: 'time' }
+                      ],
+                      buttons: [
+                        // 'csv', 'excel', 'pdf'
+                      ]
+                    });
+
+                    table.columns().every(function () {
+                      var that = this;
+
+                      // $( 'input', this.footer() ).on( 'keyup change', function () {
+                      //     if ( that.search() !== this.value ) {
+                      //         that
+                      //             .search( this.value )
+                      //             .draw();
+                      //     }
+                      // } );
+                    });
+                  }
+                });
+              });
+
+
+
+
+              //function to make table interactive (filtering function)
+              (function ($) {
+
+                $.fn.ddTableFilter = function (options) {
+                  options = $.extend(true, $.fn.ddTableFilter.defaultOptions, options);
+
+                  return this.each(function () {
+                    if ($(this).hasClass('ddtf-processed')) {
+                      refreshFilters(this);
+                      return;
+                    }
+                    var table = $(this);
+                    var start = new Date();
+
+                    $('th:visible', table).each(function (index) {
+                      if ($(this).hasClass('skip-filter')) return;
+                      var selectbox = $('<select class="form-control">');
+                      var values = [];
+                      var opts = [];
+                      selectbox.append('<option value="--all--">' + $(this).text() + '</option>');
+
+                      var col = $('tr:not(.skip-filter) td:nth-child(' + (index + 1) + ')', table).each(function () {
+                        var cellVal = options.valueCallback.apply(this);
+                        if (cellVal.length == 0) {
+                          cellVal = '--empty--';
+                        }
+                        $(this).attr('ddtf-value', cellVal);
+
+                        if ($.inArray(cellVal, values) === -1) {
+                          var cellText = options.textCallback.apply(this);
+                          if (cellText.length == 0) { cellText = options.emptyText; }
+                          values.push(cellVal);
+                          opts.push({ val: cellVal, text: cellText });
                         }
                       });
-                      var selectHTML = "<select> <option value = '' disabled selected> Select Organism</option>";
-                      orgs.forEach(element => {
-                        selectHTML += "<option value =" + element + ">" + element + "</option>"
-                      })
-                      selectHTML += "</select>"
-                      $("#orgSelect").html(selectHTML)
-
-
-                      var table = $('#organism-table').DataTable({
-                        dom: 'Bfrtip',
-                        data: data,
-                        columns: [
-                          { data: 'organism' },
-                          { data: 'method' },
-                          { data: 'damage' },
-                          { data: 'cellType' },
-                          { data: 'link' },
-                          { data: 'replicate' },
-                          { data: 'strain' },
-                          { data: 'time' }
-                        ],
-                        buttons: [
-                          // 'csv', 'excel', 'pdf'
-                        ]
-                      });
-
-                      table.columns().every(function () {
-                        var that = this;
-
-                        // $( 'input', this.footer() ).on( 'keyup change', function () {
-                        //     if ( that.search() !== this.value ) {
-                        //         that
-                        //             .search( this.value )
-                        //             .draw();
-                        //     }
-                        // } );
-                      });
-                    }
-                  });
-                });
-
-
-
-
-                //function to make table interactive (filtering function)
-                (function ($) {
-
-                  $.fn.ddTableFilter = function (options) {
-                    options = $.extend(true, $.fn.ddTableFilter.defaultOptions, options);
-
-                    return this.each(function () {
-                      if ($(this).hasClass('ddtf-processed')) {
-                        refreshFilters(this);
+                      if (opts.length < options.minOptions) {
                         return;
                       }
-                      var table = $(this);
-                      var start = new Date();
+                      if (options.sortOpt) {
+                        opts.sort(options.sortOptCallback);
+                      }
+                      $.each(opts, function () {
+                        $(selectbox).append('<option value="' + this.val + '">' + this.text + '</option>')
+                      });
 
-                      $('th:visible', table).each(function (index) {
-                        if ($(this).hasClass('skip-filter')) return;
-                        var selectbox = $('<select class="form-control">');
-                        var values = [];
-                        var opts = [];
-                        selectbox.append('<option value="--all--">' + $(this).text() + '</option>');
+                      $(this).wrapInner('<div style="display:none">');
+                      $(this).append(selectbox);
 
-                        var col = $('tr:not(.skip-filter) td:nth-child(' + (index + 1) + ')', table).each(function () {
-                          var cellVal = options.valueCallback.apply(this);
-                          if (cellVal.length == 0) {
-                            cellVal = '--empty--';
+                      selectbox.bind('change', { column: col }, function (event) {
+                        var changeStart = new Date();
+                        var value = $(this).val();
+
+                        event.data.column.each(function () {
+                          if ($(this).attr('ddtf-value') === value || value == '--all--') {
+                            $(this).removeClass('ddtf-filtered');
                           }
-                          $(this).attr('ddtf-value', cellVal);
-
-                          if ($.inArray(cellVal, values) === -1) {
-                            var cellText = options.textCallback.apply(this);
-                            if (cellText.length == 0) { cellText = options.emptyText; }
-                            values.push(cellVal);
-                            opts.push({ val: cellVal, text: cellText });
+                          else {
+                            $(this).addClass('ddtf-filtered');
                           }
                         });
-                        if (opts.length < options.minOptions) {
-                          return;
+                        var changeStop = new Date();
+                        if (options.debug) {
+                          console.log('Search: ' + (changeStop.getTime() - changeStart.getTime()) + 'ms');
                         }
-                        if (options.sortOpt) {
-                          opts.sort(options.sortOptCallback);
+                        refreshFilters(table);
+
+                      });
+                      table.addClass('ddtf-processed');
+                      if ($.isFunction(options.afterBuild)) {
+                        options.afterBuild.apply(table);
+                      }
+                    });
+
+                    function refreshFilters(table) {
+                      var refreshStart = new Date();
+                      $('tr', table).each(function () {
+                        var row = $(this);
+                        if ($('td.ddtf-filtered', row).length > 0) {
+                          options.transition.hide.apply(row, options.transition.options);
                         }
-                        $.each(opts, function () {
-                          $(selectbox).append('<option value="' + this.val + '">' + this.text + '</option>')
-                        });
-
-                        $(this).wrapInner('<div style="display:none">');
-                        $(this).append(selectbox);
-
-                        selectbox.bind('change', { column: col }, function (event) {
-                          var changeStart = new Date();
-                          var value = $(this).val();
-
-                          event.data.column.each(function () {
-                            if ($(this).attr('ddtf-value') === value || value == '--all--') {
-                              $(this).removeClass('ddtf-filtered');
-                            }
-                            else {
-                              $(this).addClass('ddtf-filtered');
-                            }
-                          });
-                          var changeStop = new Date();
-                          if (options.debug) {
-                            console.log('Search: ' + (changeStop.getTime() - changeStart.getTime()) + 'ms');
-                          }
-                          refreshFilters(table);
-
-                        });
-                        table.addClass('ddtf-processed');
-                        if ($.isFunction(options.afterBuild)) {
-                          options.afterBuild.apply(table);
+                        else {
+                          options.transition.show.apply(row, options.transition.options);
                         }
                       });
 
-                      function refreshFilters(table) {
-                        var refreshStart = new Date();
-                        $('tr', table).each(function () {
-                          var row = $(this);
-                          if ($('td.ddtf-filtered', row).length > 0) {
-                            options.transition.hide.apply(row, options.transition.options);
-                          }
-                          else {
-                            options.transition.show.apply(row, options.transition.options);
-                          }
-                        });
-
-                        if ($.isFunction(options.afterFilter)) {
-                          options.afterFilter.apply(table);
-                        }
-
-                        if (options.debug) {
-                          var refreshEnd = new Date();
-                          console.log('Refresh: ' + (refreshEnd.getTime() - refreshStart.getTime()) + 'ms');
-                        }
+                      if ($.isFunction(options.afterFilter)) {
+                        options.afterFilter.apply(table);
                       }
 
                       if (options.debug) {
-                        var stop = new Date();
-                        console.log('Build: ' + (stop.getTime() - start.getTime()) + 'ms');
+                        var refreshEnd = new Date();
+                        console.log('Refresh: ' + (refreshEnd.getTime() - refreshStart.getTime()) + 'ms');
                       }
-                    });
-                  };
+                    }
 
-                  $.fn.ddTableFilter.defaultOptions = {
-                    valueCallback: function () {
-                      return encodeURIComponent($.trim($(this).text()));
-                    },
-                    textCallback: function () {
-                      return $.trim($(this).text());
-                    },
-                    sortOptCallback: function (a, b) {
-                      return a.text.toLowerCase() > b.text.toLowerCase();
-                    },
-                    afterFilter: null,
-                    afterBuild: null,
-                    transition: {
-                      hide: $.fn.hide,
-                      show: $.fn.show,
-                      options: []
-                    },
-                    emptyText: '--Empty--',
-                    sortOpt: true,
-                    debug: false,
-                    minOptions: 2
-                  }
+                    if (options.debug) {
+                      var stop = new Date();
+                      console.log('Build: ' + (stop.getTime() - start.getTime()) + 'ms');
+                    }
+                  });
+                };
 
-                })(jQuery);
-                jQuery('#table_format').ddTableFilter();
+                $.fn.ddTableFilter.defaultOptions = {
+                  valueCallback: function () {
+                    return encodeURIComponent($.trim($(this).text()));
+                  },
+                  textCallback: function () {
+                    return $.trim($(this).text());
+                  },
+                  sortOptCallback: function (a, b) {
+                    return a.text.toLowerCase() > b.text.toLowerCase();
+                  },
+                  afterFilter: null,
+                  afterBuild: null,
+                  transition: {
+                    hide: $.fn.hide,
+                    show: $.fn.show,
+                    options: []
+                  },
+                  emptyText: '--Empty--',
+                  sortOpt: true,
+                  debug: false,
+                  minOptions: 2
+                }
+
+              })(jQuery);
+              jQuery('#table_format').ddTableFilter();
             </script>
           </div>
         </section>
@@ -463,8 +463,8 @@
   <script src="js/app.js"></script>
   <script src="js/accordion.js"></script>
   <script>
-              $("#header").load("/frontend/header.html")
-              $("#footer").load("/frontend/footerNew.html")
+                $("#header").load("/frontend/header.html")
+                $("#footer").load("/frontend/footerNew.html")
   </script>
   <script src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
   <script src="https://cdn.datatables.net/buttons/1.5.2/js/dataTables.buttons.min.js"></script>
