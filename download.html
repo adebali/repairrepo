@@ -261,67 +261,67 @@
 
 
           <script type="text/javascript">
-            $(document).ready(function () {
+            // $(document).ready(function () {
 
-              // $('#organism-table tfoot th').each(function () {
-              //   var title = $(this).text();
-              //   $(this).html('<input type="text" placeholder="Search ' + title + '" />');
-              // });
+            //   // $('#organism-table tfoot th').each(function () {
+            //   //   var title = $(this).text();
+            //   //   $(this).html('<input type="text" placeholder="Search ' + title + '" />');
+            //   // });
 
-              $.ajax({
-                url: 'https://raw.githubusercontent.com/adebali/repairrepo/develop/testDownloads.json',
-                dataType: 'json',
-                success: function (data) {
-                  console.log(data);
-
-
-                  //get all organisms from data to display in the dropdown
-                  var orgs = [];
-                  data.forEach(element => {
-                    if (orgs.indexOf(element["organism"]) === -1) {
-                      orgs.push(element["organism"])
-                    }
-                  });
-                  var selectHTML = "<select> <option value = '' disabled selected> Select Organism</option>";
-                  orgs.forEach(element => {
-                    selectHTML += "<option value =" + element + ">" + element + "</option>"
-                  })
-                  selectHTML += "</select>"
-                  $("#orgSelect").html(selectHTML)
+            //   $.ajax({
+            //     url: 'https://raw.githubusercontent.com/adebali/repairrepo/develop/testDownloads.json',
+            //     dataType: 'json',
+            //     success: function (data) {
+            //       console.log(data);
 
 
-                  var table = $('#organism-table').DataTable({
-                    dom: 'Bfrtip',
-                    data: data,
-                    columns: [
-                      { data: 'organism' },
-                      { data: 'method' },
-                      { data: 'damage' },
-                      { data: 'cellType' },
-                      { data: 'link' },
-                      { data: 'replicate' },
-                      { data: 'strain' },
-                      { data: 'time' }
-                    ],
-                    buttons: [
-                      // 'csv', 'excel', 'pdf'
-                    ]
-                  });
+            //       //get all organisms from data to display in the dropdown
+            //       var orgs = [];
+            //       data.forEach(element => {
+            //         if (orgs.indexOf(element["organism"]) === -1) {
+            //           orgs.push(element["organism"])
+            //         }
+            //       });
+            //       var selectHTML = "<select> <option value = '' disabled selected> Select Organism</option>";
+            //       orgs.forEach(element => {
+            //         selectHTML += "<option value =" + element + ">" + element + "</option>"
+            //       })
+            //       selectHTML += "</select>"
+            //       $("#orgSelect").html(selectHTML)
 
-                  table.columns().every(function () {
-                    var that = this;
 
-                    // $( 'input', this.footer() ).on( 'keyup change', function () {
-                    //     if ( that.search() !== this.value ) {
-                    //         that
-                    //             .search( this.value )
-                    //             .draw();
-                    //     }
-                    // } );
-                  });
-                }
-              });
-            });
+            //       var table = $('#organism-table').DataTable({
+            //         dom: 'Bfrtip',
+            //         data: data,
+            //         columns: [
+            //           { data: 'organism' },
+            //           { data: 'method' },
+            //           { data: 'damage' },
+            //           { data: 'cellType' },
+            //           { data: 'link' },
+            //           { data: 'replicate' },
+            //           { data: 'strain' },
+            //           { data: 'time' }
+            //         ],
+            //         buttons: [
+            //           // 'csv', 'excel', 'pdf'
+            //         ]
+            //       });
+
+            //       table.columns().every(function () {
+            //         var that = this;
+
+            //         // $( 'input', this.footer() ).on( 'keyup change', function () {
+            //         //     if ( that.search() !== this.value ) {
+            //         //         that
+            //         //             .search( this.value )
+            //         //             .draw();
+            //         //     }
+            //         // } );
+            //       });
+            //     }
+            //   });
+            // });
 
 
 
