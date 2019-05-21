@@ -29,7 +29,7 @@
   <!-- <script src="js/vendor/jquery.js"></script> -->
   <script src="js/multifilter.js"></script>
   <!-- d3 script -->
-  <script type="text/javascript" src="http://d3js.org/d3.v3.min.js"></script>
+  <script type="text/javascript" src="https://d3js.org/d3.v3.min.js"></script>
 
   <!-- Font Style -->
   <link href="https://fonts.googleapis.com/css?family=Karla" rel="stylesheet">
@@ -193,7 +193,8 @@
                 div.setAttribute("id", i);
                 div.className = "collapse in";
                 div.innerHTML = newJSON[i]["title"];
-                $(div).hide();
+                console.log("test div " + div.innerHTML)
+                //$(div).hide();
 
                 tr = table.insertRow(-1);
                 //tr.setAttribute("class", "accordion-toggle")
