@@ -191,10 +191,11 @@
 
                 var div = document.createElement("div");
                 div.setAttribute("id", i);
-                div.className = "collapse in";
+                div.className = "collapse";
                 div.innerHTML = newJSON[i]["title"];
                 console.log("test div " + div.innerHTML) //correct
-                
+                div.hidden = true;
+
 
                 tr = table.insertRow(-1);
                 //tr.setAttribute("class", "accordion-toggle")
@@ -212,6 +213,14 @@
                 $(tr).append(div)
               }
 
+              $(tr).on("click", "collapse", function () {
+                var id = $(this).attr('id')
+                if ($("#" + id).is(":visible")) {
+                  $("#" + id).hide();
+                } else {
+                  $("#" + id).show();
+                }
+              })
 
               // FINALLY ADD THE NEWLY CREATED TABLE WITH JSON DATA TO A CONTAINER.
               var divContainer = document.getElementById("tableContainer");
