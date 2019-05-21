@@ -217,7 +217,9 @@
               $(table).on("click", "td", function () {
                 console.log("row clicked")
                 var id = $(this).attr("data-target");
+                
                 console.log(":id "+ id)
+                console.log('len' + $(id).length)
                 if ($(id).is(":visible")) {
                   $(id).hide();
                 } else {
