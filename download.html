@@ -197,7 +197,6 @@
                 
 
                 tr = table.insertRow(-1);
-                $(tr).append(div)
                 //tr.setAttribute("class", "accordion-toggle")
 
 
@@ -210,7 +209,7 @@
                   $(tabCell).attr("data-toggle", "collapse")
                   $(tabCell).attr("data-target", "#" + i)
                 }
-                
+                $(tr).append(div)
               }
 
 
