@@ -209,12 +209,13 @@
                   tabCell.innerHTML = samplejson[i][col[j]];
                   $(tabCell).attr("data-toggle", "collapse")
                   $(tabCell).attr("data-target", "#" + i)
+                   
                 }
                 $(tr).append(div)
               }
 
-              $(tr).on("click", "collapse", function () {
-                var id = $(this).attr('id')
+              $(td).on("click", "collapse", function () {
+                var id = $(this).attr("data-target");
                 if ($("#" + id).is(":visible")) {
                   $("#" + id).hide();
                 } else {
