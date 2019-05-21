@@ -216,10 +216,10 @@
 
               $(table).on("click", "td", function () {
                 var id = $(this).attr("data-target");
-                if ($("#" + id).is(":visible")) {
-                  $("#" + id).hide();
+                if ($(id).is(":visible")) {
+                  $(id).hide();
                 } else {
-                  $("#" + id).show();
+                  $(id).show();
                 }
               })
 
