@@ -195,7 +195,7 @@
                 div.innerHTML = newJSON[i]["title"];
                 console.log("test div " + div.innerHTML) //correct
                 div.hidden = true;
-
+                
 
                 tr = table.insertRow(-1);
                 //tr.setAttribute("class", "accordion-toggle")
@@ -221,8 +221,10 @@
                 console.log(":id "+ id)
                 console.log('len' + $(id).length)
                 if ($(id).is(":visible")) {
+                  console.log("in is visible")
                   $(id).hide();
                 } else {
+                  console.log("in is hidden")
                   $(id).show();
                 }
               })
