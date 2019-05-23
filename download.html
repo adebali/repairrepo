@@ -196,12 +196,7 @@
                 //tr.setAttribute("class", "accordion-toggle")
 
 
-                var tr2 = table.insertRow(-1); 
-                tr2.setAttribute("id", i);
-                tr2.className = "collapse";
-                tr2.innerHTML = newJSON[i]["title"];
-                console.log("test div " + tr2.innerHTML) //correct
-                tr2.hidden = true;
+                
 
                 //TODO:make copy of data to keep the title in and leave original for table population
                 //make event handler to show hidden div
@@ -213,7 +208,12 @@
                   $(tabCell).attr("data-target", "#" + i)
                    
                 }
-                
+                var tr2 = table.insertRow(-1); 
+                tr2.setAttribute("id", i);
+                tr2.className = "collapse";
+                tr2.innerHTML = newJSON[i]["title"];
+                console.log("test div " + tr2.innerHTML) //correct
+                tr2.hidden = true;
                 //$(tr).append(div)
               }
 
