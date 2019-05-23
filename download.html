@@ -197,7 +197,7 @@
                 div.hidden = true;
                 
 
-                tr = table.insertRow(-1);
+                //tr = table.insertRow(-1);
                 //tr.setAttribute("class", "accordion-toggle")
 
 
@@ -211,7 +211,8 @@
                   $(tabCell).attr("data-target", "#" + i)
                    
                 }
-                $(table).append(div)
+                
+                $(tr).append(div)
               }
 
               $(table).on("click", "td", function () {
