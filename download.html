@@ -196,9 +196,6 @@
                 //tr.setAttribute("class", "accordion-toggle")
 
 
-                
-
-                //TODO:make copy of data to keep the title in and leave original for table population
                 //make event handler to show hidden div
 
                 for (var j = 0; j < col.length; j++) {
@@ -222,14 +219,15 @@
                 var id = $(this).attr("data-target");
                 
                 console.log(":id "+ id)
-                console.log('len' + $(id).length)
+                
                 if ($(id).is(":visible")) {
-                  //id = id.substr(1)
+
                   console.log("in is visible " + id )
                   $(id).attr("style", "visibility: hidden")
+                  console.log( $(id).attr())
                   //document.getElementById(id).style.visibility = "hidden";
                 } else {
-                  //id = id.substr(1)
+                  
                   console.log("in is hidden " + id)
                   $(id).removeAttr('hidden');
                   $(id).attr("style", "visibility: visible")
