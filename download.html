@@ -224,7 +224,8 @@
 
                   console.log("in is visible " + id )
                   $(id).attr("style", "visibility: hidden")
-                  console.log( $(id).attr())
+                  $(id).css("display", "none")
+                  
                   //document.getElementById(id).style.visibility = "hidden";
                 } else {
                   
